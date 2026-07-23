@@ -8,7 +8,7 @@ Downloadable, self-contained skills for ChatGPT Work and Codex.
 | --- | --- | --- |
 | [READATABLE](skills/readatable/) | 0.4.1 | Improves the readability and presentation of tables. |
 | [REVIEWCITATION](skills/reviewcitation/) | 0.3.3 | Reviews citation placement and reference consistency. |
-| [SAMPLESIZE200](skills/samplesize200/) | 1.0.0-rc.3 | Supports reproducible sample-size planning workflows. |
+| [SAMPLESIZE200](skills/samplesize200/) | 1.0.0-rc.4 | Supports reproducible sample-size planning workflows. |
 
 ## Installation
 

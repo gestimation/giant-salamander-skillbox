@@ -17,7 +17,7 @@ FIXED_TIMESTAMP = (2026, 1, 1, 0, 0, 0)
 SKILLS = {
     "readatable": ("0.4.1", "readatable-0.4.1.zip"),
     "reviewcitation": ("0.3.3", "reviewcitation-0.3.3.zip"),
-    "samplesize200": ("1.0.0-rc.3", "SAMPLESIZE200-1.0.0-rc.3.zip"),
+    "samplesize200": ("1.0.0-rc.4", "SAMPLESIZE200-1.0.0-rc.4.zip"),
 }
 FORBIDDEN_PARTS = {".git", ".pytest_cache", "__pycache__", ".venv"}
 FORBIDDEN_NAMES = {".DS_Store", ".Rhistory", "Thumbs.db"}

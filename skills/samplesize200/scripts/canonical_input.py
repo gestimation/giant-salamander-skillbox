@@ -3,6 +3,7 @@ from __future__ import annotations
 import copy
 from typing import Any
 
+from naming_contract import classify_solution_identifier, solution_identifier_registry
 from resolution_state import build_resolution_state, make_issue
 from study_contract import study_field_contract
 
@@ -145,6 +146,53 @@ def validate_canonical_envelope(payload: dict[str, Any]) -> list[dict[str, Any]]
                     reason="A non-empty CalculatorID is required when a selection constraint is supplied.",
                     blocking=True, expected_type="string", candidate_values=[], category="missing",
                 ))
+            else:
+                calculator_id = str(constraint["calculator_id"])
+                registered = solution_identifier_registry().get("calculators_by_id", {})
+                if calculator_id not in registered:
+                    requested_output = (
+                        request.get("requested_output")
+                        if isinstance(request, dict) else None
+                    )
+                    classification = classify_solution_identifier(
+                        calculator_id, requested_output=requested_output,
+                    )
+                    matched_kinds = classification["matched_kinds"]
+                    candidates = (
+                        []
+                        if matched_kinds == ["example_id"]
+                        else classification["compatible_calculator_ids"]
+                    )
+                    if matched_kinds:
+                        code = "WRONG_IDENTIFIER_NAMESPACE"
+                        supplied = ", ".join(matched_kinds)
+                        reason = (
+                            f"{supplied} was supplied where a registered "
+                            "CalculatorID is required."
+                        )
+                    else:
+                        code = "UNKNOWN_CALCULATOR_ID"
+                        reason = (
+                            "calculator_id is not registered in any known "
+                            "identifier namespace."
+                        )
+                    issues.append(make_issue(
+                        code=code,
+                        path="/calculator_selection_constraint/calculator_id",
+                        reason=reason,
+                        blocking=True,
+                        expected_type="registered CalculatorID",
+                        candidate_values=candidates,
+                        category="conflict",
+                        details={
+                            "supplied_identifier": calculator_id,
+                            "supplied_kinds": matched_kinds,
+                            "requested_output": requested_output,
+                            "mapping_status": classification["mapping_status"],
+                            "all_calculator_ids": classification["all_calculator_ids"],
+                            "linked_calculator_ids": classification["linked_calculator_ids"],
+                        },
+                    ))
             for name in unknown:
                 issues.append(make_issue(
                     code="CALCULATOR_SELECTION_CONSTRAINT_FIELD_UNKNOWN",

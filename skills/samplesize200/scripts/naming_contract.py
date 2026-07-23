@@ -29,6 +29,73 @@ def solution_identifier_registry() -> dict[str, Any]:
     )
 
 
+def classify_solution_identifier(
+    identifier: str, *, requested_output: str | None = None,
+) -> dict[str, Any]:
+    """Classify one identifier without treating another namespace as a CalculatorID."""
+    text = str(identifier)
+    registry = solution_identifier_registry()
+    calculators = registry.get("calculators_by_id", {})
+    kinds_by_field = {
+        "catalog_procedure_id": "public_procedure_id",
+        "engine_procedure_id": "engine_procedure_id",
+        "engine_model_id": "engine_model_id",
+        "procedure_key": "procedure_key",
+    }
+    matched_kinds: set[str] = set()
+    matched_records: dict[str, dict[str, Any]] = {}
+    if text in calculators:
+        matched_kinds.add("calculator_id")
+        matched_records[text] = calculators[text]
+    for calculator_id, record in calculators.items():
+        for field, kind in kinds_by_field.items():
+            if str(record.get(field) or "") == text:
+                matched_kinds.add(kind)
+                matched_records[calculator_id] = record
+
+    example = (registry.get("examples_by_id") or {}).get(text)
+    linked_calculator_ids: list[str] = []
+    if isinstance(example, dict):
+        matched_kinds.add("example_id")
+        raw_links = example.get("linked_calculator_ids") or []
+        if isinstance(raw_links, str):
+            raw_links = [
+                token.strip()
+                for token in raw_links.replace(";", ",").split(",")
+                if token.strip()
+            ]
+        linked_calculator_ids = sorted(
+            str(value)
+            for value in raw_links
+            if str(value) in calculators
+        )
+
+    all_calculator_ids = sorted(matched_records)
+    compatible = sorted(
+        calculator_id
+        for calculator_id, record in matched_records.items()
+        if requested_output is None or record.get("requested_output") == requested_output
+    )
+    status_basis = compatible
+    if matched_kinds == {"example_id"}:
+        status_basis = linked_calculator_ids
+        compatible = []
+    mapping_status = (
+        "NO_MATCH" if not status_basis
+        else "UNIQUE" if len(status_basis) == 1
+        else "AMBIGUOUS"
+    )
+    return {
+        "identifier": text,
+        "requested_output": requested_output,
+        "matched_kinds": sorted(matched_kinds),
+        "all_calculator_ids": all_calculator_ids,
+        "compatible_calculator_ids": compatible,
+        "linked_calculator_ids": linked_calculator_ids,
+        "mapping_status": mapping_status,
+    }
+
+
 def _conflict(
     result: dict[str, Any], *, canonical_name: str, legacy_name: str,
     canonical_value: Any, legacy_value: Any,

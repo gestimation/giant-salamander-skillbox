@@ -16,7 +16,7 @@ DIST_DIR = ROOT / "dist"
 EXPECTED = {
     "readatable": ("readatable", "readatable-0.4.1.zip"),
     "reviewcitation": ("reviewcitation", "reviewcitation-0.3.3.zip"),
-    "samplesize200": ("samplesize200", "SAMPLESIZE200-1.0.0-rc.3.zip"),
+    "samplesize200": ("samplesize200", "SAMPLESIZE200-1.0.0-rc.4.zip"),
 }
 FORBIDDEN_PARTS = {".git", ".pytest_cache", "__pycache__", ".venv"}
 FORBIDDEN_NAMES = {".DS_Store", ".Rhistory", "Thumbs.db"}
