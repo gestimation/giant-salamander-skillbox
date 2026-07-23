@@ -1,0 +1,4 @@
+* text=auto eol=lf
+
+# Preserve vendored PyYAML source without rewriting upstream whitespace.
+skills/samplesize200/vendor/** -whitespace

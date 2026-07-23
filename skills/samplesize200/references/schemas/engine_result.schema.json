@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SAMPLESIZE200 skill engine result",
+  "type": "object",
+  "required": [
+    "procedure_key", "public_id", "engine_id", "structured_inputs", "raw_result",
+    "final_result", "quantity", "unit", "stage", "warnings",
+    "provenance_reference", "validation_reference"
+  ],
+  "properties": {
+    "procedure_key": {"type": "string"},
+    "public_id": {"type": "string"},
+    "engine_id": {"type": "string"},
+    "structured_inputs": {"type": "object"},
+    "raw_result": {},
+    "final_result": {},
+    "group_or_cluster_allocation": {},
+    "quantity": {"type": ["string", "null"]},
+    "unit": {"type": ["string", "null"]},
+    "stage": {"type": ["string", "null"]},
+    "assumptions": {"type": "array"},
+    "rounding_trace": {},
+    "adjustment_trace": {},
+    "warnings": {"type": "array"},
+    "provenance_reference": {},
+    "validation_reference": {},
+    "engine_output": {"type": "object"}
+  },
+  "additionalProperties": true
+}

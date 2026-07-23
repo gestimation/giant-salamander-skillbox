@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://samplesize200.local/schemas/calculator-selection-constraint-v2.0.0.json",
+  "title": "SAMPLESIZE200 CalculatorSelectionConstraint",
+  "type": "object",
+  "required": ["schema_version", "calculator_id"],
+  "properties": {
+    "schema_version": {"const": "2.0.0"},
+    "calculator_id": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false
+}

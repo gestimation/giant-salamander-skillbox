@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://samplesize200.local/schemas/resolution-issue-v2.0.0.json",
+  "title": "SAMPLESIZE200 ResolutionIssue",
+  "type": "object",
+  "required": [
+    "code", "path", "reason", "blocking", "expected_type", "candidate_values"
+  ],
+  "properties": {
+    "code": {"type": "string", "minLength": 1},
+    "path": {"type": "string", "pattern": "^/"},
+    "reason": {"type": "string", "minLength": 1},
+    "blocking": {"type": "boolean"},
+    "expected_type": {"type": ["string", "array", "null"]},
+    "candidate_values": {"type": "array"},
+    "category": {"enum": ["missing", "uncertain", "conflict", "unsupported", "warning"]},
+    "details": {"type": "object"}
+  },
+  "additionalProperties": false
+}

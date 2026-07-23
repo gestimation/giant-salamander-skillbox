@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://samplesize200.local/schemas/study-spec-v2.0.0.json",
+  "title": "SAMPLESIZE200 StudySpec",
+  "description": "Known canonical research facts, values, provenance, and revision.",
+  "type": "object",
+  "required": ["schema_version", "revision", "study", "values", "provenance"],
+  "properties": {
+    "schema_version": {"const": "2.0.0"},
+    "revision": {"type": "integer", "minimum": 1},
+    "study": {"type": "object"},
+    "values": {"type": "object"},
+    "provenance": {
+      "type": "object",
+      "propertyNames": {"pattern": "^/(study|values)/"},
+      "additionalProperties": {
+        "type": "object",
+        "required": ["source"],
+        "properties": {
+          "source": {
+            "enum": ["user_explicit", "user_patch", "inferred", "policy_default", "derived", "imported_legacy"]
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}

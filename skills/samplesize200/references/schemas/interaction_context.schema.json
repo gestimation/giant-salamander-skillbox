@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://samplesize200.local/schemas/interaction-context-v2.0.0.json",
+  "title": "SAMPLESIZE200 InteractionContext",
+  "type": "object",
+  "required": ["schema_version", "presentation", "conversation", "compatibility"],
+  "properties": {
+    "schema_version": {"const": "2.0.0"},
+    "presentation": {"type": "object"},
+    "conversation": {"type": "object"},
+    "compatibility": {
+      "type": "object",
+      "required": ["source_schema"],
+      "properties": {
+        "source_schema": {"const": "StudySpec-v2"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

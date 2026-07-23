@@ -1,0 +1,132 @@
+schema_version: 2.0.0
+contract_revision: 6-4
+product_version: 1.0.0-rc.3
+stability: release_candidate
+public_api_frozen: true
+field_contract: references/study_field_contract.yaml
+
+terminal_status_contract:
+  unsupported:
+    questions_empty: true
+    error_required: true
+    canonical_and_compatibility_equivalent: true
+    batch_request_detail_preserved: true
+    codes:
+      NO_VALIDATED_PROCEDURE:
+        meaning: no validated public procedure satisfies the requested method
+      CALCULATOR_UNAVAILABLE:
+        meaning: CalculatorID is registered but unavailable in the bundled engine
+    required_context:
+      - reason_codes
+      - unsupported_reason
+      - missing_capability
+    closest_related_procedures_are_explanatory_only: true
+  capability_before_method_inputs: true
+
+ownership:
+  StudySpec:
+    owns: [known_research_facts, normalized_values, value_provenance, revision]
+    excludes: [unresolved_state, requested_output, calculator_identity, engine_routing, presentation, conversation, compatibility_aliases, results]
+  CalculationRequest:
+    owns: [request_id, requested_output, scenario_request]
+    excludes: [calculator_identity, procedure_identity, engine_routing, study_values, engine_inputs, results]
+  CalculatorSelectionConstraint:
+    owns: [optional_calculator_id_constraint]
+    excludes: [resolved_identity, procedure_identity, engine_routing, study_values, results]
+  ResolvedCalculationRequest:
+    owns: [request_id, requested_output, calculator_identity, procedure_identity, engine_routing, availability]
+    excludes: [study_values, unresolved_state, engine_inputs, results]
+  ResolutionState:
+    owns: [resolution_status, typed_resolution_issues]
+    excludes: [known_research_facts, calculator_identity, engine_routing, presentation, conversation, compatibility_aliases, results]
+  ExecutionSpec:
+    owns: [fingerprint_version, input_fingerprint, engine_procedure_id, engine_calculation_target, scenarios, study_spec_revision]
+    excludes: [conversation, presentation, compatibility_aliases, research_examples]
+  InteractionContext:
+    owns: [presentation, conversation, compatibility]
+    excludes: [study_values, engine_inputs, results]
+  CalculationResult:
+    owns: [request_id, calculator_id, requested_output, input_fingerprint, study_spec_revision, scenario_results, calculation_trace]
+    excludes: [conversation, presentation, mutable_study_state]
+
+provenance:
+  canonical_sources:
+    - user_explicit
+    - user_patch
+    - inferred
+    - policy_default
+    - derived
+    - imported_legacy
+  legacy_source_mapping:
+    explicit_current: user_explicit
+    user: user_explicit
+    normalized: imported_legacy
+    canonical: imported_legacy
+    default: policy_default
+    inferred: inferred
+    assumption: imported_legacy
+  unknown_source_policy: imported_legacy
+
+patch:
+  supported_operations: [add, replace, remove]
+  allowed_roots: [/study, /values]
+  base_revision_required: true
+  successful_patch_increments_revision: true
+  remove_value_removes_provenance: true
+  stale_revision_policy: reject
+  array_index_updates: true
+  array_add_semantics: insert_at_index_or_append_with_dash
+  array_replace_remove_semantics: existing_index_required
+
+calculation_requests:
+  single_request_object: CalculationRequest
+  multiple_request_field: calculation_requests
+  ordering: preserved
+  request_id: required_for_batch_and_unique_within_batch
+  generated_request_id_format: request-{one_based_three_digit_index}
+  execution: independent_with_configurable_parallelism
+  parallelism_range: [1, 8]
+  result_order: declared_request_order
+  failure_policy: retain_all_per_request_statuses
+
+fingerprint:
+  version: ss200-exec-v1
+  algorithm: sha256
+  canonicalization: sorted_compact_utf8_json
+  covers:
+    - calculator_id
+    - procedure_key
+    - engine_procedure_id
+    - requested_output
+    - engine_calculation_target
+    - scenarios
+  excludes:
+    - study_spec_revision
+    - presentation
+    - conversation
+    - compatibility_aliases
+  rationale: identical executable content has the same cache key across metadata-only revisions
+
+compatibility_boundary:
+  accepted_inputs: [StudySpec-v2]
+  removed_inputs: [StudySpec-v1, deprecated_field_aliases, compatibility_locations]
+  removed_input_behavior: structured_error
+  v2_native_planning_service: StudySpec-v2.native-planning.6-4
+  v1_entrypoint_retained: false
+  engine_receives_legacy_study_spec: false
+  native_v2_selection_and_defaults: true
+
+public_api:
+  frozen_objects: [StudySpec, CalculationRequest, CalculatorSelectionConstraint, ResolvedCalculationRequest, ResolutionState, ExecutionSpec, InteractionContext, CalculationResult]
+  canonical_input: [study_spec, calculation_request, calculator_selection_constraint, resolution_state, interaction_context]
+  canonical_batch_input: [study_spec, calculation_requests, interaction_context, execution_policy]
+  canonical_output_profile: canonical
+  deprecated_alias_output_profile: removed
+
+deprecation:
+  status: completed
+  aliases_removed_in: 1.0.0-rc.1
+  identifiers_renumbered: false
+  formulas_changed: false
+  results_changed: false
+  rounding_changed: false

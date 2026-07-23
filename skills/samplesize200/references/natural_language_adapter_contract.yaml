@@ -1,0 +1,67 @@
+schema_version: 1.0.0
+product_version: 1.0.0-rc.3
+scope: semantic normalization after language extraction and before authoritative planning
+principles:
+  - never select or store a CalculatorID
+  - never invent alpha, power, sidedness, allocation, or multiplicity strategy
+  - preserve user-explicit analysis methods
+  - remove only inferred or policy-default analysis methods when requested_output changes to achieved_power
+  - classify explicit intent language before authoritative planning; do not defer an explicit hypothesis request to a generic objective question
+rules:
+  canonical_design_language:
+    repeated_measures_two_group:
+      cues: [repeated_measures, longitudinal, multiple_measurement_times, slope_difference]
+      when: number_of_groups=2
+      canonical_fields:
+        design_type: repeated_measures_two_group
+        repeated_measures: true
+      continuous_outcome_type: repeated_continuous
+      forbidden_design_type_value: repeated_measures
+    paired_binary:
+      cues: [paired_binary, matched_binary, same_subject_binary]
+      canonical_fields:
+        design_type: paired_two_group
+        paired_or_independent: paired
+        outcome_type: paired_binary_ordinal_or_continuous
+      noncanonical_effect_placeholder_to_remove: matched_binary_difference
+      selection_behavior: expose_registered_discordant_pair_contract_then_ask_missing_facts
+  objective_language:
+    hypothesis_testing:
+      cues: [detect, show_greater_than, exceed_reference, test_against_null]
+      canonical_hypothesis_objective: superiority_hypothesis_test
+    precision_estimation:
+      cues: [confidence_interval_width, half_width, precision, margin_of_error]
+      canonical_hypothesis_objective: precision_estimation
+    precedence: explicit_precision_language_over_generic_estimate_language
+    kappa_behavior:
+      hypothesis_testing: return_structured_unsupported_without_requesting_null_kappa
+      precision_estimation: route_to_AGREE_N_001_then_request_precision_inputs
+  reference_interval:
+    clarification_batch:
+      - confidence_interval_method_or_distribution_assumption
+      - cutoff_confidence_level
+      - precision_ratio
+    ask_shared_missing_inputs_in_same_turn_as_method_discriminator: true
+  shared_control:
+    when:
+      number_of_groups: 3_or_more
+      comparison_scope: shared_control
+    infer:
+      multi_hypothesis_structure: multiple_confirmatory_comparisons
+      multiplicity_applicability: applicable
+    derive_from_treatment_proportions:
+      minimum_treatment_proportion: minimum
+      number_of_treatment_arms: length
+    do_not_infer: [multiplicity_strategy]
+  achieved_power:
+    when:
+      requested_output: achieved_power
+    remove_analysis_method_when_provenance_source: [inferred, policy_default]
+    preserve_analysis_method_when_provenance_source: [user_explicit, user_patch, imported_legacy]
+  requested_output:
+    canonical_requested_output_is_authoritative: true
+    accepted_values: [required_sample_size, required_events, required_cluster_size, attrition_adjusted_sample_size, achieved_power, detectable_effect]
+    removed_input_names_return_structured_error: true
+external_trial_regressions:
+  shared_control_cases: [SS2K-065, SS2K-066, SS2K-067, SS2K-068]
+  achieved_power_cases: [SS2K-179, SS2K-180]

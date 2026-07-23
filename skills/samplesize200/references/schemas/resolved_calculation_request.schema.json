@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://samplesize200.local/schemas/resolved-calculation-request-v2.0.0.json",
+  "title": "SAMPLESIZE200 ResolvedCalculationRequest",
+  "type": "object",
+  "required": [
+    "schema_version", "requested_output", "calculator_id",
+    "catalog_procedure_id", "procedure_key", "engine_procedure_id", "available"
+  ],
+  "properties": {
+    "schema_version": {"const": "2.0.0"},
+    "request_id": {"type": "string", "minLength": 1},
+    "requested_output": {
+      "enum": [
+        "required_sample_size", "required_events", "required_cluster_size",
+        "attrition_adjusted_sample_size", "achieved_power", "detectable_effect"
+      ]
+    },
+    "calculator_id": {"type": "string", "minLength": 1},
+    "catalog_procedure_id": {"type": "string", "minLength": 1},
+    "procedure_key": {"type": "string", "minLength": 1},
+    "engine_procedure_id": {"type": "string", "minLength": 1},
+    "engine_model_id": {"type": ["string", "null"]},
+    "available": {"type": "boolean"}
+  },
+  "additionalProperties": false
+}

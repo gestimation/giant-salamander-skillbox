@@ -1,0 +1,1225 @@
+{
+  "schema_version": "1.0.0",
+  "baseline_skill_version": "0.1.12",
+  "bundled_engine_version": "0.6.7",
+  "policy": {
+    "identifier_values_frozen": true,
+    "calculation_results_frozen": true,
+    "rounding_rules_frozen": true
+  },
+  "file_sha256": {
+    "product_manifest": {
+      "path": "unpacked-skill-source/PRODUCT_MANIFEST.yaml",
+      "sha256": "7dc5a8fc891f14ab0c198228e6bcfd5568c4d3f0b603ef82cbad3962901340dc"
+    },
+    "engine_manifest": {
+      "path": "unpacked-skill-source/engine/ENGINE_MANIFEST.yaml",
+      "sha256": "03abf0e59fe261eec3d03f5a99bb48655d2b13e304ec99d5910eae63e560895d"
+    },
+    "procedure_catalog": {
+      "path": "unpacked-skill-source/references/procedure_catalog.yaml",
+      "sha256": "6a824372dc730ce8714eaf32f82cad4c3fdb699584007fd30835da1f96c7ae6b"
+    },
+    "calculation_target_contracts": {
+      "path": "unpacked-skill-source/references/calculation_target_contracts.yaml",
+      "sha256": "f594f87f7a10eb754ed68d757b296bd38bb52e5085a37344b6b35c4b2dc201a0"
+    },
+    "study_spec_schema": {
+      "path": "unpacked-skill-source/references/schemas/study_spec.schema.json",
+      "sha256": "b1862dc6a630a7f8fd3aaf9ccc13440d999bc2df43cb65bcec9b6bd245656742"
+    },
+    "research_example_catalog": {
+      "path": "unpacked-skill-source/references/research_example_catalog.json",
+      "sha256": "954d5430892435076e777c78865dbc24c6cdeac77816f58bf552adea21c085ae"
+    },
+    "research_example_presence_index": {
+      "path": "unpacked-skill-source/references/research_example_presence_index.json",
+      "sha256": "bd5561217cf21a20c2d6590675021fb7c930c8fa09a0fe2b9de74ccad430a8f2"
+    },
+    "representative_cases_128": {
+      "path": "build/representative_cases_128.json",
+      "sha256": "6c52603cd323c6f7e73c8670b10afcd48e0a7ba16444e9807406332d89bbcfb9"
+    },
+    "fixed_cases_source": {
+      "path": "build/fixed_cases_source.json",
+      "sha256": "c8707c6791443eaa9bd35db2e7b36c7e0ef19d1c4db9d1644cc12fc85478d1a3"
+    }
+  },
+  "counts": {
+    "catalog_procedures": 128,
+    "research_calculation_records": 259,
+    "research_examples": 105
+  },
+  "engine_identity": {
+    "engine_version": "0.6.7",
+    "source_release_scoped_sha256": "74aba0836864e0e8383edc62d635e94e256d7bdec6c17289f6dae5308e7604bb",
+    "bundled_runtime_sha256": "6573ea6142fba5b11b5563612fe233c19d25de0e23b7e79fd6f172346939512b",
+    "bundled_files": 25,
+    "bundled_bytes": 517601
+  },
+  "procedure_identifiers": [
+    {
+      "procedure_key": "ss200-proc-3aae05b533fd149a",
+      "public_id": "ONE-S-001",
+      "engine_id": "ONE-S-001.SAMPLE_SIZE",
+      "legacy_ids": [
+        "ONE-S-001",
+        "ONE-S-001.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-5b6a8990cbc055f2",
+      "public_id": "AGREE-B-001",
+      "engine_id": "AGREE-001.SAMPLE_SIZE",
+      "legacy_ids": [
+        "AGREE-001",
+        "AGREE-001.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-0604c81b3b1957d4",
+      "public_id": "AGREE-B-002",
+      "engine_id": "AGREE-002.SAMPLE_SIZE",
+      "legacy_ids": [
+        "AGREE-002",
+        "AGREE-002.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-3b77f5e9ade75d96",
+      "public_id": "AGREE-B-003",
+      "engine_id": "AGREE-003.SAMPLE_SIZE",
+      "legacy_ids": [
+        "AGREE-003",
+        "AGREE-003.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-9ebfe1a3fd9c5962",
+      "public_id": "AGREE-B-004",
+      "engine_id": "AGREE-004.SAMPLE_SIZE",
+      "legacy_ids": [
+        "AGREE-004",
+        "AGREE-004.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-9320880d63df5ee7",
+      "public_id": "AGREE-B-005",
+      "engine_id": "AGREE-005.SAMPLE_SIZE",
+      "legacy_ids": [
+        "AGREE-005",
+        "AGREE-005.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-1275607ab02857f4",
+      "public_id": "AGREE-B-006",
+      "engine_id": "AGREE-006.SAMPLE_SIZE",
+      "legacy_ids": [
+        "AGREE-006",
+        "AGREE-006.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-ba3729c665b65fc6",
+      "public_id": "AGREE-C-001",
+      "engine_id": "AGREE-008.SAMPLE_SIZE",
+      "legacy_ids": [
+        "AGREE-008",
+        "AGREE-008.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-d801edcb79a75341",
+      "public_id": "AGREE-C-002",
+      "engine_id": "AGREE-009.SAMPLE_SIZE",
+      "legacy_ids": [
+        "AGREE-009",
+        "AGREE-009.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-17d46aa42a8e5de3",
+      "public_id": "AGREE-C-003",
+      "engine_id": "AGREE-010.SAMPLE_SIZE",
+      "legacy_ids": [
+        "AGREE-010",
+        "AGREE-010.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-a1d9cf789f0a5b2b",
+      "public_id": "AGREE-N-001",
+      "engine_id": "AGREE-007.SAMPLE_SIZE",
+      "legacy_ids": [
+        "AGREE-007",
+        "AGREE-007.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-ea91dbad32a2590f",
+      "public_id": "CI-B-001",
+      "engine_id": "CI-001.SAMPLE_SIZE",
+      "legacy_ids": [
+        "CI-001",
+        "CI-001.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-0a947858e7c15e90",
+      "public_id": "CI-B-002",
+      "engine_id": "CI-002.SAMPLE_SIZE",
+      "legacy_ids": [
+        "CI-002",
+        "CI-002.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-07e845696afa5f2e",
+      "public_id": "CI-B-003",
+      "engine_id": "CI-003.SAMPLE_SIZE",
+      "legacy_ids": [
+        "CI-003",
+        "CI-003.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-668b580fada85210",
+      "public_id": "CI-B-004",
+      "engine_id": "CI-004.SAMPLE_SIZE",
+      "legacy_ids": [
+        "CI-004",
+        "CI-004.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-3ebaf6b170c15612",
+      "public_id": "CI-B-005",
+      "engine_id": "CI-005.SAMPLE_SIZE",
+      "legacy_ids": [
+        "CI-005",
+        "CI-005.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-bfc4a29c98995da1",
+      "public_id": "CI-B-006",
+      "engine_id": "CI-006.SAMPLE_SIZE",
+      "legacy_ids": [
+        "CI-006",
+        "CI-006.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-07f5b6f33dd05758",
+      "public_id": "CI-B-007",
+      "engine_id": "CI-007.SAMPLE_SIZE",
+      "legacy_ids": [
+        "CI-007",
+        "CI-007.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-b543af877b475816",
+      "public_id": "CI-B-008",
+      "engine_id": "CI-008.SAMPLE_SIZE",
+      "legacy_ids": [
+        "CI-008",
+        "CI-008.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-6f73dc5cd9a551ad",
+      "public_id": "CI-C-001",
+      "engine_id": "CI-009.SAMPLE_SIZE",
+      "legacy_ids": [
+        "CI-009",
+        "CI-009.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-0b31871160625ea1",
+      "public_id": "CI-C-002",
+      "engine_id": "CI-010.SAMPLE_SIZE",
+      "legacy_ids": [
+        "CI-010",
+        "CI-010.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-b39b62576f16561f",
+      "public_id": "CI-C-003",
+      "engine_id": "CI-011.SAMPLE_SIZE",
+      "legacy_ids": [
+        "CI-011",
+        "CI-011.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-61fefa4fc7d65029",
+      "public_id": "CI-C-004",
+      "engine_id": "CI-012.SAMPLE_SIZE",
+      "legacy_ids": [
+        "CI-012",
+        "CI-012.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-62456ac6352958f3",
+      "public_id": "CORR-C-001",
+      "engine_id": "CORR-001.SAMPLE_SIZE",
+      "legacy_ids": [
+        "CORR-001",
+        "CORR-001.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-afb448977498578b",
+      "public_id": "CORR-C-002",
+      "engine_id": "CORR-002.SAMPLE_SIZE",
+      "legacy_ids": [
+        "CORR-002",
+        "CORR-002.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-2228693bb8d35b42",
+      "public_id": "CORR-C-003",
+      "engine_id": "CORR-003.SAMPLE_SIZE",
+      "legacy_ids": [
+        "CORR-003",
+        "CORR-003.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-e4a0b3c9691a51c4",
+      "public_id": "CORR-C-004",
+      "engine_id": "CORR-004.SAMPLE_SIZE",
+      "legacy_ids": [
+        "CORR-004",
+        "CORR-004.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-0dd35007c19559d6",
+      "public_id": "CORR-C-005",
+      "engine_id": "CORR-005.SAMPLE_SIZE",
+      "legacy_ids": [
+        "CORR-005",
+        "CORR-005.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-86c428241ff458aa",
+      "public_id": "DIAG-B-001",
+      "engine_id": "DIAG-003.SAMPLE_SIZE",
+      "legacy_ids": [
+        "DIAG-003",
+        "DIAG-003.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-555125657e565595",
+      "public_id": "DIAG-B-002",
+      "engine_id": "DIAG-004.SAMPLE_SIZE",
+      "legacy_ids": [
+        "DIAG-004",
+        "DIAG-004.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-3e3619c0ca7c5773",
+      "public_id": "DIAG-B-003",
+      "engine_id": "DIAG-005.SAMPLE_SIZE",
+      "legacy_ids": [
+        "DIAG-005",
+        "DIAG-005.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-e4e6269552415b30",
+      "public_id": "DIAG-B-004",
+      "engine_id": "DIAG-006.SAMPLE_SIZE",
+      "legacy_ids": [
+        "DIAG-006",
+        "DIAG-006.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-55b6d48fc7ba58f4",
+      "public_id": "DIAG-B-005",
+      "engine_id": "DIAG-007.SAMPLE_SIZE",
+      "legacy_ids": [
+        "DIAG-007",
+        "DIAG-007.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-995c5a09fda65f28",
+      "public_id": "DIAG-C-001",
+      "engine_id": "DIAG-001.SAMPLE_SIZE",
+      "legacy_ids": [
+        "DIAG-001",
+        "DIAG-001.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-bf9258a017d8551d",
+      "public_id": "DIAG-C-002",
+      "engine_id": "DIAG-002.SAMPLE_SIZE",
+      "legacy_ids": [
+        "DIAG-002",
+        "DIAG-002.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-ebcb904d1fcc51cd",
+      "public_id": "MARGIN-B-001",
+      "engine_id": "MARGIN-003.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MARGIN-003",
+        "MARGIN-003.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-906d158a1d435709",
+      "public_id": "MARGIN-B-002",
+      "engine_id": "MARGIN-004.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MARGIN-004",
+        "MARGIN-004.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-dd5849f5ccbb5d92",
+      "public_id": "MARGIN-B-003",
+      "engine_id": "MARGIN-005.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MARGIN-005",
+        "MARGIN-005.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-22652cbac0a85042",
+      "public_id": "MARGIN-B-004",
+      "engine_id": "MARGIN-009.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MARGIN-009",
+        "MARGIN-009.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-d88a03666bee5df5",
+      "public_id": "MARGIN-B-005",
+      "engine_id": "MARGIN-010.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MARGIN-010",
+        "MARGIN-010.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-ca8f05154c2257b1",
+      "public_id": "MARGIN-B-006",
+      "engine_id": "MARGIN-011.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MARGIN-011",
+        "MARGIN-011.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-79c1ef865f2b520f",
+      "public_id": "MARGIN-C-001",
+      "engine_id": "MARGIN-001.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MARGIN-001",
+        "MARGIN-001.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-48212143bb0e5129",
+      "public_id": "MARGIN-C-002",
+      "engine_id": "MARGIN-002.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MARGIN-002",
+        "MARGIN-002.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-ac5cdf5fcad7554e",
+      "public_id": "MARGIN-C-003",
+      "engine_id": "MARGIN-007.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MARGIN-007",
+        "MARGIN-007.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-294d62d0f28054a2",
+      "public_id": "MARGIN-C-004",
+      "engine_id": "MARGIN-008.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MARGIN-008",
+        "MARGIN-008.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-2685c46aeb6a56fa",
+      "public_id": "MARGIN-C-005",
+      "engine_id": "MARGIN-013.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MARGIN-013",
+        "MARGIN-013.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-dac727dc6b0451cb",
+      "public_id": "MARGIN-C-006",
+      "engine_id": "MARGIN-014.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MARGIN-014",
+        "MARGIN-014.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-f8224d56cc105ea4",
+      "public_id": "MARGIN-S-001",
+      "engine_id": "MARGIN-006.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MARGIN-006",
+        "MARGIN-006.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-6309f2d6609e5436",
+      "public_id": "MARGIN-S-002",
+      "engine_id": "MARGIN-012.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MARGIN-012",
+        "MARGIN-012.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-86d06d0b5fdf5a02",
+      "public_id": "MULTI-B-001",
+      "engine_id": "MULTI-001.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-001",
+        "MULTI-001.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-0a42b8fed0b15eae",
+      "public_id": "MULTI-B-002",
+      "engine_id": "MULTI-003.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-003",
+        "MULTI-003.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-e764f95e19465628",
+      "public_id": "MULTI-C-001",
+      "engine_id": "MULTI-002.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-002",
+        "MULTI-002.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-d03a658d72955e74",
+      "public_id": "MULTI-C-002",
+      "engine_id": "MULTI-004.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-004",
+        "MULTI-004.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-656e7e61ed475701",
+      "public_id": "MULTI-C-003",
+      "engine_id": "MULTI-005.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-005",
+        "MULTI-005.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-cd13743ae3785a50",
+      "public_id": "ONE-B-001",
+      "engine_id": "ONE-001.SAMPLE_SIZE",
+      "legacy_ids": [
+        "ONE-001",
+        "ONE-001.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-79b5108159df5041",
+      "public_id": "ONE-C-001",
+      "engine_id": "ONE-002.SAMPLE_SIZE",
+      "legacy_ids": [
+        "ONE-002",
+        "ONE-002.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-5535695aff315141",
+      "public_id": "ONE-R-001",
+      "engine_id": "ONE-003.SAMPLE_SIZE",
+      "legacy_ids": [
+        "ONE-003",
+        "ONE-003.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-447f7fb8a08b5821",
+      "public_id": "ONE-R-002",
+      "engine_id": "ONE-004.SAMPLE_SIZE",
+      "legacy_ids": [
+        "ONE-004",
+        "ONE-004.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-c284ddc8caa053c5",
+      "public_id": "TWO-B-001",
+      "engine_id": "CLUSTER-FIXED-BINARY.REQUIRED_CLUSTER_SIZE",
+      "legacy_ids": [
+        "CLUSTER-FIXED-BINARY",
+        "CLUSTER-FIXED-BINARY.M",
+        "TWO-048",
+        "TWO-048 binary candidate"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-b58b79f922b653c9",
+      "public_id": "TWO-B-002",
+      "engine_id": "TWO-001.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-001",
+        "TWO-001.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-797ac511546052a8",
+      "public_id": "TWO-B-003",
+      "engine_id": "TWO-002.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-002",
+        "TWO-002.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-95bbe952567556e7",
+      "public_id": "TWO-B-004",
+      "engine_id": "TWO-003.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-003",
+        "TWO-003.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-51e34974bac255f9",
+      "public_id": "TWO-B-005",
+      "engine_id": "TWO-023.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-023",
+        "TWO-023.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-797ddeed11a35e17",
+      "public_id": "TWO-B-006",
+      "engine_id": "TWO-024.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-024",
+        "TWO-024.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-0bcfe5f5f3935471",
+      "public_id": "TWO-B-007",
+      "engine_id": "TWO-025.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-025",
+        "TWO-025.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-b756613216e955d6",
+      "public_id": "TWO-B-008",
+      "engine_id": "TWO-036.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-036",
+        "TWO-036.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-c28f68253e3e5432",
+      "public_id": "TWO-B-009",
+      "engine_id": "TWO-037.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-037",
+        "TWO-037.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-5b73a0183da35f88",
+      "public_id": "TWO-C-001",
+      "engine_id": "CLUSTER-FIXED-CONTINUOUS.REQUIRED_CLUSTER_SIZE",
+      "legacy_ids": [
+        "CLUSTER-FIXED-CONTINUOUS",
+        "CLUSTER-FIXED-CONTINUOUS.M",
+        "TWO-048",
+        "TWO-048 continuous candidate"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-f4ac1daedd4f59fb",
+      "public_id": "TWO-C-002",
+      "engine_id": "TWO-008.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-008",
+        "TWO-008.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-e9bc08343584516d",
+      "public_id": "TWO-C-003",
+      "engine_id": "TWO-009.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-009",
+        "TWO-009.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-05e12273de535f41",
+      "public_id": "TWO-C-004",
+      "engine_id": "TWO-010.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-010",
+        "TWO-010.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-51675f911e19599f",
+      "public_id": "TWO-C-005",
+      "engine_id": "TWO-011.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-011",
+        "TWO-011.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-b5cea4a5dc2f5d03",
+      "public_id": "TWO-C-006",
+      "engine_id": "TWO-012.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-012",
+        "TWO-012.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-1ba778402281547a",
+      "public_id": "TWO-C-007",
+      "engine_id": "TWO-029.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-029",
+        "TWO-029.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-a26eceb857d05966",
+      "public_id": "TWO-C-008",
+      "engine_id": "TWO-030.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-030",
+        "TWO-030.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-1434c2c361845233",
+      "public_id": "TWO-C-009",
+      "engine_id": "TWO-031.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-031",
+        "TWO-031.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-5b6a81937826544e",
+      "public_id": "TWO-C-010",
+      "engine_id": "TWO-032.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-032",
+        "TWO-032.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-cacf634aa0255e47",
+      "public_id": "TWO-C-011",
+      "engine_id": "TWO-033.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-033",
+        "TWO-033.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-14fa4270ee73550f",
+      "public_id": "TWO-C-012",
+      "engine_id": "TWO-034.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-034",
+        "TWO-034.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-9ee8979aba8e5a3b",
+      "public_id": "TWO-C-013",
+      "engine_id": "TWO-035.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-035",
+        "TWO-035.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-8301257303ac5860",
+      "public_id": "TWO-C-014",
+      "engine_id": "TWO-041.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-041",
+        "TWO-041.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-1f1aee7d64055751",
+      "public_id": "TWO-C-015",
+      "engine_id": "TWO-042.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-042",
+        "TWO-042.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-cf0add3a04b15a3c",
+      "public_id": "TWO-O-001",
+      "engine_id": "TWO-004.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-004",
+        "TWO-004.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-c4fb9b7c87325cf7",
+      "public_id": "TWO-O-002",
+      "engine_id": "TWO-005.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-005",
+        "TWO-005.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-8df396b35f995c17",
+      "public_id": "TWO-O-003",
+      "engine_id": "TWO-006.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-006",
+        "TWO-006.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-cfde8aaeb7e555d4",
+      "public_id": "TWO-O-004",
+      "engine_id": "TWO-007.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-007",
+        "TWO-007.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-21afc92a96c95180",
+      "public_id": "TWO-O-005",
+      "engine_id": "TWO-026.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-026",
+        "TWO-026.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-c8fd73bd3cae5939",
+      "public_id": "TWO-O-006",
+      "engine_id": "TWO-027.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-027",
+        "TWO-027.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-baf5150add9b5401",
+      "public_id": "TWO-O-007",
+      "engine_id": "TWO-028.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-028",
+        "TWO-028.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-86b9e0384f8b56b1",
+      "public_id": "TWO-O-008",
+      "engine_id": "TWO-038.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-038",
+        "TWO-038.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-6f5b5df2162c5793",
+      "public_id": "TWO-R-001",
+      "engine_id": "TWO-013.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-013",
+        "TWO-013.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-eb95f69bd2a65ade",
+      "public_id": "TWO-R-002",
+      "engine_id": "TWO-014.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-014",
+        "TWO-014.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-da2ff56372c255a1",
+      "public_id": "TWO-R-003",
+      "engine_id": "TWO-015.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-015",
+        "TWO-015.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-85853e288e955ca7",
+      "public_id": "TWO-R-004",
+      "engine_id": "TWO-016.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-016",
+        "TWO-016.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-690d285387f85989",
+      "public_id": "TWO-R-005",
+      "engine_id": "TWO-039.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-039",
+        "TWO-039.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-1c9c1f0fd01355d6",
+      "public_id": "TWO-S-001",
+      "engine_id": "TWO-017.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-017",
+        "TWO-017.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-15dba87f6c935fc2",
+      "public_id": "TWO-S-002",
+      "engine_id": "TWO-018.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-018",
+        "TWO-018.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-89316f1b21615ea9",
+      "public_id": "TWO-S-003",
+      "engine_id": "TWO-020.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-020",
+        "TWO-020.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-57c5433d34475ecb",
+      "public_id": "TWO-S-004",
+      "engine_id": "TWO-021.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-021",
+        "TWO-021.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-fe7f027c00675029",
+      "public_id": "TWO-S-005",
+      "engine_id": "TWO-022.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-022",
+        "TWO-022.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-5195e24debe85ee3",
+      "public_id": "TWO-S-006",
+      "engine_id": "TWO-040.SAMPLE_SIZE",
+      "legacy_ids": [
+        "TWO-040",
+        "TWO-040.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-daf4c0b7816229b3",
+      "public_id": "MULTI-C-004",
+      "engine_id": "MULTI-007.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-007",
+        "MULTI-007.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-76d8d91301cb5f28",
+      "public_id": "MULTI-O-001",
+      "engine_id": "MULTI-008.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-008",
+        "MULTI-008.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-a24d67f86b9b513c",
+      "public_id": "MULTI-R-001",
+      "engine_id": "MULTI-009.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-009",
+        "MULTI-009.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-037f31a2b903f545",
+      "public_id": "MULTI-R-002",
+      "engine_id": "MULTI-010.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-010",
+        "MULTI-010.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-fb74aec2769cac0a",
+      "public_id": "MULTI-O-002",
+      "engine_id": "MULTI-011.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-011",
+        "MULTI-011.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-b716380d380da69e",
+      "public_id": "MULTI-R-003",
+      "engine_id": "MULTI-012.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-012",
+        "MULTI-012.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-f0668c49741c1c28",
+      "public_id": "MULTI-R-004",
+      "engine_id": "MULTI-013.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-013",
+        "MULTI-013.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-2e2b621a5ccfcf32",
+      "public_id": "MULTI-B-003",
+      "engine_id": "MULTI-014.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-014",
+        "MULTI-014.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-8e49a66064b1242f",
+      "public_id": "MULTI-B-004",
+      "engine_id": "MULTI-015.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-015",
+        "MULTI-015.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-42d24f85d8f1ded8",
+      "public_id": "MULTI-O-003",
+      "engine_id": "MULTI-016.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-016",
+        "MULTI-016.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-9e4e1cf70d63ff9d",
+      "public_id": "MULTI-R-005",
+      "engine_id": "MULTI-017.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-017",
+        "MULTI-017.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-a821e605bd6a55a1",
+      "public_id": "MULTI-R-006",
+      "engine_id": "MULTI-018.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-018",
+        "MULTI-018.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-b0aef1825c860823",
+      "public_id": "MULTI-S-001",
+      "engine_id": "MULTI-019.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-019",
+        "MULTI-019.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-003baf9d8ef1b2d5",
+      "public_id": "MULTI-S-002",
+      "engine_id": "MULTI-020.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-020",
+        "MULTI-020.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-21ac61dcf13478fa",
+      "public_id": "MULTI-S-003",
+      "engine_id": "MULTI-021.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-021",
+        "MULTI-021.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-0f803f270aad2833",
+      "public_id": "MULTI-S-004",
+      "engine_id": "MULTI-022.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-022",
+        "MULTI-022.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-311d7472d796b28d",
+      "public_id": "MULTI-S-005",
+      "engine_id": "MULTI-023.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-023",
+        "MULTI-023.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-133e734ccc2c078b",
+      "public_id": "MULTI-S-006",
+      "engine_id": "MULTI-024.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-024",
+        "MULTI-024.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-f245e2bec3b89bbc",
+      "public_id": "MULTI-S-007",
+      "engine_id": "MULTI-025.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-025",
+        "MULTI-025.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-7c5b0bc1affedd12",
+      "public_id": "MULTI-S-008",
+      "engine_id": "MULTI-026.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-026",
+        "MULTI-026.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-e3864dc5f61e5431",
+      "public_id": "MULTI-S-009",
+      "engine_id": "MULTI-027.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-027",
+        "MULTI-027.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-c23df603e034ab61",
+      "public_id": "MULTI-S-010",
+      "engine_id": "MULTI-028.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-028",
+        "MULTI-028.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-ca1a810c7b48631a",
+      "public_id": "MULTI-S-011",
+      "engine_id": "MULTI-029.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-029",
+        "MULTI-029.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-22a30639d6b529e4",
+      "public_id": "MULTI-S-012",
+      "engine_id": "MULTI-030.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-030",
+        "MULTI-030.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-0d3d064c7cc7ce6f",
+      "public_id": "MULTI-S-013",
+      "engine_id": "MULTI-031.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-031",
+        "MULTI-031.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-4268ea0a69b15870",
+      "public_id": "MULTI-S-014",
+      "engine_id": "MULTI-032.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-032",
+        "MULTI-032.N"
+      ]
+    },
+    {
+      "procedure_key": "ss200-proc-b8e7f6ab129ff50e",
+      "public_id": "MULTI-S-015",
+      "engine_id": "MULTI-033.SAMPLE_SIZE",
+      "legacy_ids": [
+        "MULTI-033",
+        "MULTI-033.N"
+      ]
+    }
+  ],
+  "baseline_test_run": {
+    "command": "python -m pytest -q",
+    "result": "469 passed, 1 failed",
+    "failure": "test_fast_longitudinal_worker_is_identical_to_frozen_public_engine",
+    "failure_class": "Windows stdout locale decode; frozen calculation comparison was not reached",
+    "calculation_failure_observed": false
+  }
+}

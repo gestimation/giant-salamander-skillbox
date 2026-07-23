@@ -1,0 +1,15 @@
+schema_version: 0.1.3
+rules:
+- rule_id: THREE_GROUP_ALL_PAIRWISE_REPEATED_BONFERRONI
+  status: VALIDATED_COMPOSITION_RULE
+  public_procedure_counted: false
+  conditions:
+    number_of_groups: 3
+    comparison_scope: all_pairwise
+    repeated_measures: true
+    multiplicity_strategy: bonferroni
+  parent_public_id: TWO-C-009
+  comparison_count: 3
+  alpha_transformation: per_comparison_alpha = familywise_alpha / 3
+  finalization: use the largest per-arm requirement from the three equal-condition pairwise designs for every arm
+  limitation: This is a Bonferroni composition of the validated two-group repeated-measures approximation, not a dedicated three-group MMRM procedure.
