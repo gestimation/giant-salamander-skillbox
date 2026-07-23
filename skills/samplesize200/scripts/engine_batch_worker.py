@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -40,9 +41,15 @@ def main() -> None:
         default="required_sample_size",
         choices=["power", "detectable_effect", "required_events", "required_sample_size", "attrition_adjusted_sample_size"],
     )
-    parser.add_argument("--input", required=True, type=Path)
+    parser.add_argument("--input", type=Path)
     args = parser.parse_args()
-    scenarios = json.loads(args.input.read_text(encoding="utf-8-sig"))
+    raw_input = (
+        args.input.read_text(encoding="utf-8-sig")
+        if args.input is not None else sys.stdin.read()
+    )
+    if not raw_input:
+        parser.error("batch input is required on stdin or with --input")
+    scenarios = json.loads(raw_input)
     if not isinstance(scenarios, list):
         parser.error("batch input must be an array")
     results = [

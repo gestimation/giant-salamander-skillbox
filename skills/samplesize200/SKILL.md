@@ -5,6 +5,10 @@ description: Plan, calculate, teach, and review study-size designs with SAMPLESI
 
 # SAMPLESIZE200
 
+**Product version 1.0.0-rc.4**
+
+**Bundled validated engine: SAMPLESIZE200 Alpha 0.6.8**
+
 SAMPLESIZE200 is part of the Giant Salamander Skillbox. It provides 293 solutions: 188 CalculatorIDs and 105 ExampleIDs. Always use the bundled SAMPLESIZE200 Alpha 0.6.8 engine through the supplied scripts. Never reproduce the final calculation yourself. Stop on an integrity mismatch, missing dependency, or unregistered capability.
 
 ## Public contract
@@ -35,6 +39,12 @@ The six canonical outputs are:
 
 Use `calculator_selection_constraint`, never an identity field inside `CalculationRequest`.
 
+Omit `calculator_selection_constraint` for an ordinary natural-language request.
+Populate it only when the user explicitly requests a registered CalculatorID or an
+application integration supplies one. Never copy a public procedure ID, engine
+procedure ID, engine model ID, procedure key, ExampleID, or a generated guess into
+`calculator_selection_constraint.calculator_id`.
+
 ## Modes
 
 - `CALCULATE`: ask only for unresolved required inputs and return a concise result.
@@ -53,6 +63,16 @@ Keep one StudySpec when the user changes modes.
 5. On `UNSUPPORTED`, stop and preserve `error`, `reason_codes`, `unsupported_reason`, `missing_capability`, and the bounded related-procedure list. Do not substitute a nearby method.
 6. On `CALCULATED`, show one `採用値：` line, then short `前提：` lines for defaults that matter, then the final result. Use the returned group or sequence allocation.
 7. Offer at most one relevant research example after a successful calculation. Load its details only if the user asks.
+
+Validate identifier constraints before the authoritative planner call. A
+wrong-namespace identifier is an `INVALID_REQUEST`, not permission to execute a
+mapped CalculatorID. Preserve the StudySpec, show the typed diagnostic, and never
+call the authoritative planner a second time for the same user request.
+
+Wrapper and environment failures preserve all confirmed StudySpec values. Do not
+ask the user to repeat unchanged scientific inputs merely to trigger execution.
+Distinguish pre-launch, child-process, and post-processing failures from a
+statistical calculation failure.
 
 Use `scripts/plan_request.py --study-spec <json-file> --execute --output-mode detailed|qc` only when the user explicitly requests detailed or QC output. Use `scripts/samplesize200_api.py` for the canonical Python API.
 

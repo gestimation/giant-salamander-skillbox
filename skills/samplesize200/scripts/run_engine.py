@@ -8,7 +8,6 @@ import os
 import re
 import subprocess
 import sys
-import tempfile
 from pathlib import Path
 from typing import Any
 
@@ -124,6 +123,85 @@ def _resolution_response(result: dict[str, Any], inputs: dict[str, Any]) -> dict
     return None
 
 
+def _invoke_worker(
+    item: dict[str, Any], scenarios: list[dict[str, Any]], *,
+    calculation_target: str, engine_root: Path,
+) -> list[dict[str, Any]]:
+    """Execute ordered scenarios in one child process using stdin JSON transport."""
+    env = os.environ.copy()
+    inherited_pythonpath = env.get("PYTHONPATH")
+    env["PYTHONPATH"] = os.pathsep.join(
+        [str(engine_root)] + ([inherited_pythonpath] if inherited_pythonpath else [])
+    )
+    env["PYTHONDONTWRITEBYTECODE"] = "1"
+    worker = Path(__file__).resolve().with_name("engine_batch_worker.py")
+    command = [
+        _python_executable(), str(worker), "--procedure", item["engine_id"],
+        "--target", calculation_target,
+    ]
+    payload = json.dumps(scenarios, ensure_ascii=False).encode("utf-8")
+    try:
+        completed = subprocess.run(
+            command, input=payload, capture_output=True, env=env, timeout=180,
+        )
+    except subprocess.TimeoutExpired as exc:
+        raise SkillContractError(
+            "ENGINE_TIMEOUT",
+            "engine child process exceeded the execution timeout",
+            execution_phase="child_process",
+            preserve_study_spec=True,
+            retryable_without_user_input=True,
+        ) from exc
+    except OSError as exc:
+        raise SkillContractError(
+            "ENGINE_PROCESS_LAUNCH_FAILED",
+            "engine child process could not be launched",
+            execution_phase="pre_launch",
+            exception_type=type(exc).__name__,
+            preserve_study_spec=True,
+            retryable_without_user_input=False,
+        ) from exc
+    if completed.returncode != 0:
+        raise SkillContractError(
+            "ENGINE_CHILD_FAILED",
+            "engine child process exited with a nonzero status",
+            execution_phase="child_process",
+            returncode=completed.returncode,
+            preserve_study_spec=True,
+            retryable_without_user_input=False,
+        )
+    try:
+        batch = json.loads(_decode(completed.stdout))
+    except json.JSONDecodeError as exc:
+        raise SkillContractError(
+            "ENGINE_OUTPUT_INVALID",
+            "engine child output is not valid JSON",
+            execution_phase="post_process",
+            preserve_study_spec=True,
+            retryable_without_user_input=False,
+        ) from exc
+    if not isinstance(batch, list) or len(batch) != len(scenarios):
+        raise SkillContractError(
+            "ENGINE_OUTPUT_INVALID",
+            "engine child output has an invalid scenario count",
+            execution_phase="post_process",
+            expected_scenarios=len(scenarios),
+            preserve_study_spec=True,
+            retryable_without_user_input=False,
+        )
+    for index, record in enumerate(batch):
+        if not isinstance(record, dict) or record.get("scenario_index") != index:
+            raise SkillContractError(
+                "ENGINE_OUTPUT_INVALID",
+                "engine child output has an invalid scenario record",
+                execution_phase="post_process",
+                scenario_index=index,
+                preserve_study_spec=True,
+                retryable_without_user_input=False,
+            )
+    return batch
+
+
 def run(identifier: str, inputs: object, *, calculation_target: str = "required_sample_size",
         output_mode: str = "concise", recompute_hash: bool = True,
         defaults_applied: list[dict[str, Any]] | None = None) -> dict[str, Any]:
@@ -138,26 +216,24 @@ def run(identifier: str, inputs: object, *, calculation_target: str = "required_
         dependency_error = _scipy_dependency_error()
         if dependency_error:
             return {"status": "ERROR", "error": dependency_error}
-        with tempfile.TemporaryDirectory(prefix="samplesize200-skill-") as temporary:
-            input_path = Path(temporary) / "input.json"
-            input_path.write_text(json.dumps(normalized_inputs, ensure_ascii=False), encoding="utf-8")
-            env = os.environ.copy()
-            env["PYTHONPATH"] = str(engine_root)
-            env["PYTHONDONTWRITEBYTECODE"] = "1"
-            completed = subprocess.run(
-                [_python_executable(), "-m", "samplesize200.cli", "--procedure", item["engine_id"],
-                 "--target", calculation_target, "--input", str(input_path)],
-                capture_output=True, env=env, timeout=180,
+        record = _invoke_worker(
+            item, [normalized_inputs], calculation_target=calculation_target,
+            engine_root=engine_root,
+        )[0]
+        if record.get("status") != "CALCULATED":
+            return {"status": "ERROR", "error": record.get("error", {
+                "code": "ENGINE_OUTPUT_INVALID",
+                "message": "engine child result omitted error details",
+            })}
+        result = record.get("result")
+        if not isinstance(result, dict):
+            raise SkillContractError(
+                "ENGINE_OUTPUT_INVALID",
+                "engine child result must be an object",
+                execution_phase="post_process",
+                preserve_study_spec=True,
+                retryable_without_user_input=False,
             )
-        stdout = _decode(completed.stdout)
-        stderr = _decode(completed.stderr)
-        if completed.returncode != 0:
-            try:
-                details = json.loads(stderr)
-            except json.JSONDecodeError:
-                details = {"stderr": stderr.strip()}
-            return {"status": "ERROR", "error": {"code": "ENGINE_EXECUTION_ERROR", "details": details}}
-        result = json.loads(stdout)
         resolution = _resolution_response(result, normalized_inputs)
         if resolution is not None:
             return resolution
@@ -169,8 +245,6 @@ def run(identifier: str, inputs: object, *, calculation_target: str = "required_
         return calculated
     except SkillContractError as exc:
         return {"status": "ERROR", "error": exc.payload}
-    except (subprocess.TimeoutExpired, json.JSONDecodeError) as exc:
-        return {"status": "ERROR", "error": {"code": "ENGINE_EXECUTION_ERROR", "message": str(exc)}}
 
 
 def run_many(identifier: str, scenarios: list[object], *,
@@ -209,33 +283,10 @@ def run_many(identifier: str, scenarios: list[object], *,
             return [result for result in results if result is not None]
 
         normalized = [validations[index]["normalized_inputs"] for index in valid_indices]
-        with tempfile.TemporaryDirectory(prefix="samplesize200-skill-") as temporary:
-            input_path = Path(temporary) / "batch-input.json"
-            input_path.write_text(json.dumps(normalized, ensure_ascii=False), encoding="utf-8")
-            env = os.environ.copy()
-            env["PYTHONPATH"] = str(engine_root)
-            env["PYTHONDONTWRITEBYTECODE"] = "1"
-            worker = Path(__file__).resolve().with_name("engine_batch_worker.py")
-            completed = subprocess.run(
-                [_python_executable(), str(worker), "--procedure", item["engine_id"],
-                 "--target", calculation_target, "--input", str(input_path)],
-                capture_output=True, env=env, timeout=180,
-            )
-        stdout = _decode(completed.stdout)
-        stderr = _decode(completed.stderr)
-        if completed.returncode != 0:
-            try:
-                details = json.loads(stderr)
-            except json.JSONDecodeError:
-                details = {"stderr": stderr.strip()}
-            error = {"status": "ERROR", "error": {"code": "ENGINE_EXECUTION_ERROR", "details": details}}
-            for index in valid_indices:
-                results[index] = error
-            return [result for result in results if result is not None]
-
-        batch = json.loads(stdout)
-        if not isinstance(batch, list) or len(batch) != len(valid_indices):
-            raise json.JSONDecodeError("batch result count mismatch", stdout, 0)
+        batch = _invoke_worker(
+            item, normalized, calculation_target=calculation_target,
+            engine_root=engine_root,
+        )
         for index, record in zip(valid_indices, batch):
             if record.get("status") != "CALCULATED":
                 results[index] = {"status": "ERROR", "error": record.get("error", {
@@ -266,12 +317,6 @@ def run_many(identifier: str, scenarios: list[object], *,
             results[index] = calculated
     except SkillContractError as exc:
         error = {"status": "ERROR", "error": exc.payload}
-        for index in valid_indices:
-            results[index] = error
-    except (subprocess.TimeoutExpired, json.JSONDecodeError) as exc:
-        error = {"status": "ERROR", "error": {
-            "code": "ENGINE_EXECUTION_ERROR", "message": str(exc),
-        }}
         for index in valid_indices:
             results[index] = error
     return [result for result in results if result is not None]

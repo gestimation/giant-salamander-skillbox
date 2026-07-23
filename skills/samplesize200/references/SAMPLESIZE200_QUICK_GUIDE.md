@@ -6,7 +6,7 @@ SAMPLESIZE200 is a Giant Salamander Skillbox skill that organizes study plans th
 
 ## Installation
 
-Upload `SAMPLESIZE200-1.0.0-rc.3.zip` from the skill installation screen without extracting it. The skill's machine name is `samplesize200`, and its display name is `SAMPLESIZE200`.
+Upload `SAMPLESIZE200-1.0.0-rc.4.zip` from the skill installation screen without extracting it. The skill's machine name is `samplesize200`, and its display name is `SAMPLESIZE200`.
 
 ## Try it
 
