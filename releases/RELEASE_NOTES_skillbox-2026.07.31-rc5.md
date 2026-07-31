@@ -82,7 +82,7 @@ plugin installation flow in ChatGPT Work or Codex.
 - `samplesize200-1.0.0-rc.6.zip`
   - 118 files
   - SHA-256:
-    `ec04aae11ecc311d71c9bc2a27e6ff1347dce1e5779dd72576b8570940389cbd`
+    `126f02f17c51dc041aaad58c3d040958722b1066bbdefd25be28fbb037a6348c`
 - `SHA256SUMS.txt`
 
 ## Runtime requirement
