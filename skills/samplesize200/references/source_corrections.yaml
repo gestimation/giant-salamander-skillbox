@@ -1,0 +1,20 @@
+version: 1.0.0-rc.6
+corrections:
+- correction_id: CIT-NAGASHIMA-ISSUE-001
+  engine_release_corrected: samplesize200 Alpha 0.6.9
+  affected_engine_evidence: validation/one_s_001_provenance.csv
+  affected_case_ids:
+  - ONE-S-001-T3-001
+  - ONE-S-001-T3-002
+  - ONE-S-001-T3-003
+  - ONE-S-001-T3-004
+  - ONE-S-001-T3-005
+  - ONE-S-001-T3-006
+  previous_value: Pharmaceutical Statistics 20(2)
+  corrected_value: Pharmaceutical Statistics 20(3)
+  canonical_citation: Nagashima K, Noma H, Sato Y, Gosho M. Sample size calculations for single-arm survival studies using transformations of the Kaplan–Meier estimator. Pharmaceutical Statistics 2021;20(3):499–511.
+  doi: 10.1002/pst.2090
+  implementation_overview: https://nshi.jp/contents/stat/onesurv/
+  achieved_power_tool: https://nshi.jp/contents/js/onesurvyrpow/
+  correction_scope: bibliographic_metadata_only
+  calculation_impact: none

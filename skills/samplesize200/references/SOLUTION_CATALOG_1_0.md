@@ -1,8 +1,8 @@
-# SAMPLESIZE200 1.0 Solution Catalog
+# samplesize200 1.0 Solution Catalog
 
 ## Naming
 
-SAMPLESIZE200 uses the term Solution for the complete set of capabilities that address research questions. CalculatorID identifies a calculation method, and ExampleID identifies a research example. The generic value `SolutionID` is reserved and is not issued in version 1.0. Version 1.0 therefore contains 293 solutions: 188 calculators and 105 research examples.
+samplesize200 uses the term Solution for the complete set of capabilities that address research questions. CalculatorID identifies a calculation method, and ExampleID identifies a research example. The generic value `SolutionID` is reserved and is not issued in version 1.0. Version 1.0 therefore contains 293 solutions: 188 calculators and 105 research examples.
 
 CalculatorID generally follows `<family>-<output>-<outcome>-<sequence>`. For example, `ONE-SS-C-001` denotes a one-group required-sample-size calculator for a continuous outcome. `ONE-PW-C-001` denotes achieved power for the same calculation method, and `ONE-ES-C-001` denotes detectable effect. Codes such as `B` and `C` indicate outcome types, not book chapters.
 

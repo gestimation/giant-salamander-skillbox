@@ -1,4 +1,4 @@
 interface:
-  display_name: "SAMPLESIZE200"
+  display_name: "samplesize200"
   short_description: "Plan study size with validated calculators and examples"
   default_prompt: "Use $samplesize200 to plan this study and calculate the requested study-size result."

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://samplesize200.local/schemas/study-field-contract-1.0.0.json",
-  "title": "SAMPLESIZE200 Study field contract",
+  "title": "samplesize200 Study field contract",
   "type": "object",
   "required": [
     "schema_version", "product_version", "status", "scope", "policy",

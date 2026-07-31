@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "SAMPLESIZE200 skill engine result",
+  "title": "samplesize200 skill engine result",
   "type": "object",
   "required": [
     "procedure_key", "public_id", "engine_id", "structured_inputs", "raw_result",

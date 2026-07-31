@@ -17,8 +17,8 @@ import yaml
 SKILL_ROOT = _SKILL_ROOT_FOR_VENDOR
 REFERENCES = SKILL_ROOT / "references"
 ENGINE_DIR = SKILL_ROOT / "engine"
-EXPECTED_ENGINE_VERSION = "0.6.8"
-EXPECTED_ENGINE_HASH = "ccbe5d0105f32aa812e40e8b445cf1b45b7fbea1db62f1691916b43125817d6b"
+EXPECTED_ENGINE_VERSION = "0.6.9"
+EXPECTED_ENGINE_HASH = "25b6f4da18b5d95594ad763bf64664491a487e98d7d1c702a3b9c0fd67d9ddc3"
 
 
 class SkillContractError(ValueError):
@@ -127,7 +127,7 @@ def procedure_input_contract(item: dict[str, Any], calculation_target: str) -> d
                 "name": name, "data_type": data_type, "required": required_input,
                 "default": default, "unit": "participant" if name.startswith("n") else "dimensionless",
                 "role": "realized_design", "allowed_range": None,
-                "source": f"SAMPLESIZE200 Alpha 0.6.8 {calculation_target} contract",
+                "source": f"samplesize200 Alpha 0.6.9 {calculation_target} contract",
             })
             if required_input:
                 required.append(name)

@@ -44,7 +44,7 @@ def _procedure_envelope(result: dict[str, Any], procedure_id: str,
     output = deepcopy(result)
     model_id = procedure_id.partition(".")[0]
     output.update({
-        "product": "SAMPLESIZE200 Alpha", "version": VERSION,
+        "product": "samplesize200 Alpha", "version": VERSION,
         "release_stage": "alpha", "model_id": model_id,
         "operation": "sample_size", "procedure_id": procedure_id,
         "schema_status": "preview", "final_public_api": False,
@@ -133,7 +133,7 @@ def _required_events_envelope(result: dict[str, Any], procedure_id: str) -> dict
         if isinstance(quantity, dict) and quantity.get("quantity") == "events":
             quantity["unit"] = "event"
     output.update({
-        "product": "SAMPLESIZE200 Alpha", "version": VERSION,
+        "product": "samplesize200 Alpha", "version": VERSION,
         "release_stage": "alpha", "model_id": procedure_id.partition(".")[0],
         "operation": "required_events", "calculation_target": "required_events",
         "procedure_id": procedure_id, "schema_status": "preview", "final_public_api": False,

@@ -254,7 +254,7 @@ def _detectable_result(
         if warning not in combined_warnings:
             combined_warnings.append(warning)
     result: dict[str, Any] = {
-        "product": "SAMPLESIZE200 Alpha",
+        "product": "samplesize200 Alpha",
         "version": VERSION,
         "release_stage": "alpha",
         "engine_id": model,

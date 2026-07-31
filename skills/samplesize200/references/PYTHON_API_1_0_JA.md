@@ -1,4 +1,4 @@
-# SAMPLESIZE200 canonical Python API 1.0
+# samplesize200 canonical Python API 1.0
 
 ## 公開API
 

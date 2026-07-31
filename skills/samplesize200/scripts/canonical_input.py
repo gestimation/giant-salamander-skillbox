@@ -37,7 +37,7 @@ def _removed_alias_issues(value: Any, path: str = "") -> list[dict[str, Any]]:
                     code="DEPRECATED_ALIAS_REMOVED",
                     path=pointer,
                     reason=(
-                        f"{key} was removed in SAMPLESIZE200 1.0; "
+                        f"{key} was removed in samplesize200 1.0; "
                         f"use {REMOVED_ALIASES[key]} in the canonical contract."
                     ),
                     blocking=True,
@@ -90,7 +90,7 @@ def validate_canonical_envelope(payload: dict[str, Any]) -> list[dict[str, Any]]
     if not isinstance(payload, dict):
         return [make_issue(
             code="CANONICAL_CONTRACT_REQUIRED", path="/",
-            reason="SAMPLESIZE200 1.0 requires a canonical StudySpec v2 request object.",
+            reason="samplesize200 1.0 requires a canonical StudySpec v2 request object.",
             blocking=True, expected_type="object", candidate_values=[], category="conflict",
         )]
     issues = _removed_alias_issues(payload)
@@ -103,7 +103,7 @@ def validate_canonical_envelope(payload: dict[str, Any]) -> list[dict[str, Any]]
         issues.append(make_issue(
             code="STUDYSPEC_V1_REMOVED", path="/",
             reason=(
-                "Flat StudySpec v1 input was removed in SAMPLESIZE200 1.0; "
+                "Flat StudySpec v1 input was removed in samplesize200 1.0; "
                 "provide study_spec and calculation_request objects."
             ),
             blocking=True,
@@ -115,7 +115,7 @@ def validate_canonical_envelope(payload: dict[str, Any]) -> list[dict[str, Any]]
     if study_spec.get("schema_version") != SCHEMA_VERSION:
         issues.append(make_issue(
             code="UNSUPPORTED_STUDY_SPEC_VERSION", path="/study_spec/schema_version",
-            reason="SAMPLESIZE200 1.0 accepts StudySpec schema_version 2.0.0 only.",
+            reason="samplesize200 1.0 accepts StudySpec schema_version 2.0.0 only.",
             blocking=True, expected_type="2.0.0", candidate_values=[SCHEMA_VERSION],
             category="conflict",
         ))

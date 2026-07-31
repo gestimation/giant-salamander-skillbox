@@ -1,5 +1,5 @@
 schema_version: 1.0.0
-product_version: 1.0.0-rc.4
+product_version: 1.0.0-rc.6
 target_release: 1.0.0
 status: active
 
@@ -56,7 +56,7 @@ release_sequence:
   rc_to_ga_code_changes_allowed: blocker_only
 
 release_gates:
-  - engine_0_6_8_integrity_verified
+  - engine_0_6_9_integrity_verified
   - registered_calculators_available_188_of_188
   - direct_consumer_contracts_pass_188_of_188
   - existing_numeric_regression_differences_zero

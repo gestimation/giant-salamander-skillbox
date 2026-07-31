@@ -1,4 +1,4 @@
-"""SAMPLESIZE200 Alpha 0.6.8; public interfaces remain provisional."""
+"""samplesize200 Alpha 0.6.9; public interfaces remain provisional."""
 
 from ._version import VERSION
 

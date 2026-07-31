@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://samplesize200.local/schemas/calculation-result-v2.0.0.json",
-  "title": "SAMPLESIZE200 CalculationResult",
+  "title": "samplesize200 CalculationResult",
   "type": "object",
   "required": [
     "schema_version", "status", "requested_output", "study_spec_revision",

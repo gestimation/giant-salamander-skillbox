@@ -1,4 +1,4 @@
-"""Canonical Python API for SAMPLESIZE200 1.0."""
+"""Canonical Python API for samplesize200 1.0."""
 
 from __future__ import annotations
 

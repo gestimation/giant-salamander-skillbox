@@ -1,6 +1,6 @@
 """Lazy adapter for frozen longitudinal kernels that do not execute SciPy.
 
-The bundled Alpha 0.6.8 package preserves these Alpha 0.6.7 kernels unchanged. Its public package initializer
+The bundled Alpha 0.6.9 package preserves these Alpha 0.6.7 kernels unchanged. Its public package initializer
 imports every engine family, including SciPy-backed methods.  These three
 Chapter 10 kernels use the frozen Guenther analytic formula only, so a clean
 child process can load their exact source modules without importing unused
@@ -69,7 +69,7 @@ def _procedure_envelope(result: dict[str, Any], procedure_id: str, version: str)
     output = deepcopy(result)
     model_id = procedure_id.partition(".")[0]
     output.update({
-        "product": "SAMPLESIZE200 Alpha", "version": version,
+        "product": "samplesize200 Alpha", "version": version,
         "release_stage": "alpha", "model_id": model_id,
         "operation": "sample_size", "procedure_id": procedure_id,
         "schema_status": "preview", "final_public_api": False,

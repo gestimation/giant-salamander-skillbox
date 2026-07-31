@@ -1,8 +1,8 @@
-# SAMPLESIZE200 1.0 Solution catalog
+# samplesize200 1.0 Solution catalog
 
 ## 命名
 
-SAMPLESIZE200では、研究課題を解決する機能全体をSolutionと捉えます。
+samplesize200では、研究課題を解決する機能全体をSolutionと捉えます。
 計算方法の識別子はCalculatorID、研究事例の識別子はExampleIDです。
 汎用的な`SolutionID`という値は予約語であり、1.0では発行しません。
 したがって、1.0のSolutionはCalculator 188件と研究事例105件の合計293件です。

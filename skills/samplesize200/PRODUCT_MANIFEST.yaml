@@ -1,7 +1,7 @@
-product: SAMPLESIZE200
+product: samplesize200
 series: Giant Salamander Skillbox
 edition: StudySpec v2 Canonical Contract
-version: 1.0.0-rc.4
+version: 1.0.0-rc.6
 release_status: release_candidate
 final_public_api: true
 license:
@@ -23,9 +23,9 @@ operations:
   REQUIRED_CLUSTER_SIZE: 2
   POWER: 30
 engine:
-  name: SAMPLESIZE200
-  version: 0.6.8
-  source_release_scoped_sha256: ccbe5d0105f32aa812e40e8b445cf1b45b7fbea1db62f1691916b43125817d6b
+  name: samplesize200
+  version: 0.6.9
+  source_release_scoped_sha256: 25b6f4da18b5d95594ad763bf64664491a487e98d7d1c702a3b9c0fd67d9ddc3
 requested_outputs:
 - required_events
 - required_sample_size
@@ -131,9 +131,9 @@ conversation_performance:
   lazy_adapter_changes_engine_source: false
   lazy_adapter_requires_full_output_equivalence: true
 help:
-  quick_guide: references/SAMPLESIZE200_QUICK_GUIDE_JA.md
-  quick_guide_en: references/SAMPLESIZE200_QUICK_GUIDE.md
-  quick_guide_ja: references/SAMPLESIZE200_QUICK_GUIDE_JA.md
+  quick_guide: references/samplesize200_quick_guide_ja.md
+  quick_guide_en: references/samplesize200_quick_guide.md
+  quick_guide_ja: references/samplesize200_quick_guide_ja.md
   python_api_1_0: references/PYTHON_API_1_0_JA.md
   python_api_1_0_en: references/PYTHON_API_1_0.md
   python_api_1_0_ja: references/PYTHON_API_1_0_JA.md
@@ -148,3 +148,7 @@ help:
   - workflow_confusion
   suppress_for:
   - single_missing_input
+citation_metadata:
+  corrections: 1
+  correction_registry: references/source_corrections.yaml
+  calculation_changes: false

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://samplesize200.local/schemas/study-spec-v2.0.0.json",
-  "title": "SAMPLESIZE200 StudySpec",
+  "title": "samplesize200 StudySpec",
   "description": "Known canonical research facts, values, provenance, and revision.",
   "type": "object",
   "required": ["schema_version", "revision", "study", "values", "provenance"],
