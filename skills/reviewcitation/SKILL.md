@@ -3,15 +3,15 @@ name: reviewcitation
 description: "Review citations in scientific documents for citation integrity: reconcile in-text and reference-list entries, apply Vancouver-style checks, perform required PubMed verification, and flag inconsistencies and publication-status signals. Externally verified claims must reflect current-review access and evidence."
 ---
 
-# REVIEWCITATION
+# reviewcitation
 
-**Version 0.3.3**
+**Version 0.3.4**
 
 Part of the **Giant Salamander Skillbox — Supporting Validated, Trustworthy Science with AI**
 
 ## 1. Purpose
 
-REVIEWCITATION performs a lightweight, evidence-based review of citations in scientific documents.
+reviewcitation performs a lightweight, evidence-based review of citations in scientific documents.
 
 The central question is:
 
@@ -29,15 +29,15 @@ Its primary output is a review report that identifies:
 - citations that cannot be assessed from the available evidence
 - user decisions or source materials required to complete the review
 
-REVIEWCITATION supports **Citation Integrity**: the completeness, traceability, bibliographic accuracy, and contextual consistency of citations.
+reviewcitation supports **Citation Integrity**: the completeness, traceability, bibliographic accuracy, and contextual consistency of citations.
 
-Unless the user explicitly requests otherwise, REVIEWCITATION verifies every reference expected to be indexed in PubMed against PubMed metadata within the requested scope. A reference is not considered externally verified unless the corresponding external source was actually accessed during the current review and the access is recorded in the execution-proof record.
+Unless the user explicitly requests otherwise, reviewcitation verifies every reference expected to be indexed in PubMed against PubMed metadata within the requested scope. A reference is not considered externally verified unless the corresponding external source was actually accessed during the current review and the access is recorded in the execution-proof record.
 
 It does not determine whether a scientific claim is true, whether a study is methodologically sound, whether the total evidence is sufficient, or whether a conclusion should be accepted.
 
 ## 2. Scope and boundaries
 
-Use REVIEWCITATION for:
+Use reviewcitation for:
 
 - journal manuscripts
 - review articles
@@ -51,19 +51,19 @@ Use REVIEWCITATION for:
 - research guidance documents
 - other scientific documents containing in-text citations and a reference list
 
-Use REVIEWCITATION when the primary task is to assess citation integrity.
+Use reviewcitation when the primary task is to assess citation integrity.
 
-REVIEWCITATION may review one citation, a selected section, or an entire document.
+reviewcitation may review one citation, a selected section, or an entire document.
 
 For a clinical-trial SAP review, use `REVIEWSAP`.
 
 For a general analysis-plan or coding-specification review, use `REVIEWAPLAN`.
 
-For reconstruction or semantic normalization of a visually complex table, use `READATABLE`.
+For reconstruction or semantic normalization of a visually complex table, use `readatable`.
 
-Use `SAMPLESIZE200` for sample-size, event, power, or detectable-effect calculations.
+Use `samplesize200` for sample-size, event, power, or detectable-effect calculations.
 
-REVIEWCITATION does not replace:
+reviewcitation does not replace:
 
 - formal editorial review
 - journal-specific reference-style review by the publisher
@@ -388,7 +388,7 @@ Report individual references only when they differ from the dominant pattern or 
 
 ### 4.7 Keep the review proportionate
 
-REVIEWCITATION is a focused citation review.
+reviewcitation is a focused citation review.
 
 Do not expand it into a manuscript-wide scientific review, systematic review, or methodological consultation unless the user explicitly requests another skill or task.
 
@@ -1092,14 +1092,14 @@ Do not combine metadata from different candidate records to create a complete-lo
 
 ## 8. Output
 
-The default output is a compact **REVIEWCITATION Report**. Use a full report when the user requests it, when a complete audit trail is needed, or when the number and complexity of findings cannot be represented safely in the compact report.
+The default output is a compact **reviewcitation Report**. Use a full report when the user requests it, when a complete audit trail is needed, or when the number and complexity of findings cannot be represented safely in the compact report.
 
 ### 8.1 Compact report
 
 Use this format by default:
 
 ```markdown
-# REVIEWCITATION Report
+# reviewcitation Report
 
 ## Review scope
 
@@ -1172,11 +1172,11 @@ The number of rows must equal the number of supplied references.
 Use this format when a full report is requested or justified:
 
 ```markdown
-# REVIEWCITATION Report
+# reviewcitation Report
 
 ## 1. Review scope
 
-- Skill: REVIEWCITATION
+- Skill: reviewcitation
 - Skill version:
 - Review profile:
 - Document reviewed:
@@ -1381,7 +1381,7 @@ Do not rewrite scientific claims merely to make them agree with a citation unles
 
 ## 9. Completion and stopping rules
 
-A REVIEWCITATION task is complete when:
+A reviewcitation task is complete when:
 
 1. the review profile, target, scope, requested modes, and output depth are identified
 2. the applicable citation policy is identified or the `general_nlm` policy is declared
@@ -1465,7 +1465,7 @@ It does not certify that:
 - the full text supports the statement when only the title or abstract was reviewed
 - no undisclosed correction, retraction, or indexing problem exists outside the reviewed sources
 
-REVIEWCITATION evaluates citation integrity.
+reviewcitation evaluates citation integrity.
 
 It does not by itself:
 
@@ -1519,7 +1519,7 @@ Create exactly one `PubMedAssessment` record for every supplied reference. Use o
 
 For title-and-abstract review, detect only material inconsistency. Absence of confirmation is not contradiction. Use `No inconsistency identified`, `Potential inconsistency`, `Inconsistent`, `Cannot assess`, or `Not reviewed`. Never describe `No inconsistency identified` as proof of support.
 
-Use the REVIEWCITATION Report format. Use `Pass within reviewed scope`, never an unqualified `Pass`. Do not use numeric scoring. State the supplied-reference denominator, include the complete reference-level PubMed assessment table, external-verification execution status, sources actually accessed, access method, evidence identifiers, mapping confidence, verification level, and every unresolved or not-searched reference. Consolidate systematic style findings and clarification questions. Do not claim full-text verification unless the full text was actually reviewed.
+Use the reviewcitation Report format. Use `Pass within reviewed scope`, never an unqualified `Pass`. Do not use numeric scoring. State the supplied-reference denominator, include the complete reference-level PubMed assessment table, external-verification execution status, sources actually accessed, access method, evidence identifiers, mapping confidence, verification level, and every unresolved or not-searched reference. Consolidate systematic style findings and clarification questions. Do not claim full-text verification unless the full text was actually reviewed.
 ```
 
 ## References

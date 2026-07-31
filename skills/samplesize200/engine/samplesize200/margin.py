@@ -105,7 +105,7 @@ def _base_result(method: str, equation: str, inputs: dict[str, Any], raw: float,
     rounded = ceil(raw)
     source, evidence = _evidence(method, equation)
     result: dict[str, Any] = {
-        "product": "SAMPLESIZE200 Alpha", "version": VERSION,
+        "product": "samplesize200 Alpha", "version": VERSION,
         "release_stage": "alpha", "model_id": method,
         "operation": "sample_size", "procedure_id": f"{method}.SAMPLE_SIZE",
         "method_id": method, "formula_reference": equation, "inputs": inputs,

@@ -1,12 +1,12 @@
-# SAMPLESIZE200クイックガイド
+# samplesize200クイックガイド
 
-## SAMPLESIZE200 — Chat with 200+ solutions to size your study
+## samplesize200 — Chat with 200+ solutions to size your study
 
-SAMPLESIZE200は、研究計画を会話で整理し、登録済みの方法を選んで研究規模を計算するGiant Salamander Skillboxのスキルです。188のCalculatorと105の研究事例、合計293のSolutionを収録しています。条件が不足している場合は、計算に必要な項目だけを確認します。
+samplesize200は、研究計画を会話で整理し、登録済みの方法を選んで研究規模を計算するGiant Salamander Skillboxのスキルです。188のCalculatorと105の研究事例、合計293のSolutionを収録しています。条件が不足している場合は、計算に必要な項目だけを確認します。
 
 ## インストール
 
-`SAMPLESIZE200-1.0.0-rc.4.zip`を解凍せず、スキル追加画面からアップロードします。スキルの機械名は`samplesize200`、画面表示名は`SAMPLESIZE200`です。
+`samplesize200-1.0.0-rc.6.zip`を解凍せず、スキル追加画面からアップロードします。スキルの機械名は`samplesize200`、画面表示名は`samplesize200`です。
 
 ## まず使ってみる
 
@@ -66,6 +66,6 @@ SAMPLESIZE200は、研究計画を会話で整理し、登録済みの方法を�
 
 ## 品質と出典
 
-同梱する検証済みSAMPLESIZE200 Alpha 0.6.8エンジンを使用します。計算方法の主要な出典は『医学のためのサンプルサイズ設計』（田中司朗ほか、2022）です。書籍の章番号や例番号はIDに埋め込まず、追跡用メタデータとして保持します。
+同梱する検証済みsamplesize200 Alpha 0.6.9エンジンを使用します。計算方法の主要な出典は『医学のためのサンプルサイズ設計』（田中司朗ほか、2022）です。書籍の章番号や例番号はIDに埋め込まず、追跡用メタデータとして保持します。
 
 本スキルのオリジナル部分はMIT Licenseで提供されます。Copyright (c) 2026 Shiro Tanaka。第三者ソフトウェアには、それぞれのライセンスが適用されます。

@@ -530,7 +530,7 @@ def _envelope(method: str, formula: str, inputs: dict[str, Any],
     source, evidence = _source(method, chapter, [formula], examples,
                                tables=tables, discrepancy_ids=discrepancies)
     result: dict[str, Any] = {
-        "product": "SAMPLESIZE200 Alpha",
+        "product": "samplesize200 Alpha",
         "version": VERSION,
         "release_stage": "alpha",
         "release_theme": "Fixed-Cluster Contract Patch",

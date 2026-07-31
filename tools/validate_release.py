@@ -4,19 +4,23 @@
 from __future__ import annotations
 
 import hashlib
+import json
 import re
+import stat
 import sys
+import unicodedata
 import zipfile
 from pathlib import Path, PurePosixPath
+
+from release_config import PLUGINS, plugin_manifest
 
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS_DIR = ROOT / "skills"
 DIST_DIR = ROOT / "dist"
 EXPECTED = {
-    "readatable": ("readatable", "readatable-0.4.1.zip"),
-    "reviewcitation": ("reviewcitation", "reviewcitation-0.3.3.zip"),
-    "samplesize200": ("samplesize200", "SAMPLESIZE200-1.0.0-rc.4.zip"),
+    name: (name, config["filename"])
+    for name, config in PLUGINS.items()
 }
 FORBIDDEN_PARTS = {".git", ".pytest_cache", "__pycache__", ".venv"}
 FORBIDDEN_NAMES = {".DS_Store", ".Rhistory", "Thumbs.db"}
@@ -28,7 +32,7 @@ REQUIRED_SAMPLE_PATHS = {
     "scripts",
     "vendor",
     "PRODUCT_MANIFEST.yaml",
-    "references/SAMPLESIZE200_QUICK_GUIDE.md",
+    "references/samplesize200_quick_guide.md",
     "references/PYTHON_API_1_0.md",
     "references/SOLUTION_CATALOG_1_0.md",
 }
@@ -55,6 +59,12 @@ TEXT_SUFFIXES = {
     ".yaml",
     ".yml",
 }
+SEMVER_RE = re.compile(
+    r"^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)"
+    r"(?:-(?:0|[1-9]\d*|\d*[A-Za-z-][0-9A-Za-z-]*)"
+    r"(?:\.(?:0|[1-9]\d*|\d*[A-Za-z-][0-9A-Za-z-]*))*)?"
+    r"(?:\+[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?$"
+)
 
 
 def fail(message: str) -> None:
@@ -83,10 +93,53 @@ def validate_skill_markdown(path: Path, expected_name: str) -> None:
     match = re.search(r"(?m)^name:\s*[\"']?([^\"'\n]+?)[\"']?\s*$", frontmatter)
     if not match:
         fail(f"{path.relative_to(ROOT)} has no frontmatter name")
-    if match.group(1).strip().lower() != expected_name:
+    actual_name = match.group(1).strip()
+    if actual_name != expected_name:
         fail(f"{path.relative_to(ROOT)} has unexpected skill name")
+    if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", actual_name):
+        fail(f"{path.relative_to(ROOT)} has a non-lowercase skill name")
     if not re.search(r"(?m)^description:\s*\S", frontmatter):
         fail(f"{path.relative_to(ROOT)} has no frontmatter description")
+
+
+def validate_plugin_manifest_values(
+    filename: str,
+    skill: str,
+    manifest: dict[str, object],
+) -> None:
+    if manifest.get("name") != skill or not re.fullmatch(
+        r"[a-z0-9]+(?:-[a-z0-9]+)*", skill
+    ):
+        fail(f"{filename} has an invalid lowercase plugin name")
+    version = manifest.get("version")
+    if not isinstance(version, str) or SEMVER_RE.fullmatch(version) is None:
+        fail(f"{filename} has an invalid semantic version")
+    if manifest.get("skills") != "./skills/":
+        fail(f"{filename} has an invalid skills path")
+    if "apps" in manifest or "mcpServers" in manifest:
+        fail(f"{filename} is not a skills-only plugin")
+    author = manifest.get("author")
+    interface = manifest.get("interface")
+    if not isinstance(author, dict) or not isinstance(interface, dict):
+        fail(f"{filename} is missing author or interface metadata")
+    if author.get("name") != interface.get("developerName"):
+        fail(f"{filename} author and developer names do not match")
+    display_name = interface.get("displayName")
+    short_description = interface.get("shortDescription")
+    long_description = interface.get("longDescription")
+    default_prompt = interface.get("defaultPrompt")
+    if not isinstance(display_name, str) or not 1 <= len(display_name) <= 30:
+        fail(f"{filename} display name exceeds directory-submission limits")
+    if not isinstance(short_description, str) or not 1 <= len(short_description) <= 30:
+        fail(f"{filename} short description exceeds directory-submission limits")
+    if not isinstance(long_description, str) or not 1 <= len(long_description) <= 4000:
+        fail(f"{filename} has an invalid long description")
+    prompts = default_prompt if isinstance(default_prompt, list) else [default_prompt]
+    if not 1 <= len(prompts) <= 3 or not all(
+        isinstance(prompt, str) and 1 <= len(prompt) <= 128 and "\n" not in prompt
+        for prompt in prompts
+    ):
+        fail(f"{filename} has invalid default prompts")
 
 
 def validate_tree() -> int:
@@ -125,7 +178,11 @@ def validate_tree() -> int:
     sample = SKILLS_DIR / "samplesize200"
     missing = [path for path in REQUIRED_SAMPLE_PATHS if not (sample / path).exists()]
     if missing:
-        fail(f"SAMPLESIZE200 is missing required paths: {missing}")
+        fail(f"samplesize200 is missing required paths: {missing}")
+    show_help = (sample / "scripts" / "show_help.py").read_text(encoding="utf-8")
+    expected_guide = 'ROOT / "references" / "samplesize200_quick_guide_ja.md"'
+    if expected_guide not in show_help:
+        fail("samplesize200 show_help.py does not use the lowercase quick-guide path")
     return file_count
 
 
@@ -156,22 +213,90 @@ def validate_archives() -> int:
             fail(f"Checksum mismatch: {filename}")
         with zipfile.ZipFile(archive_path) as archive:
             names = archive.namelist()
-            if "SKILL.md" not in names or "LICENSE" not in names:
-                fail(f"{filename} is not rooted at the skill directory")
-            for name in names:
+            required = {
+                ".codex-plugin/plugin.json",
+                "LICENSE",
+                f"skills/{skill}/SKILL.md",
+                f"skills/{skill}/LICENSE",
+            }
+            missing_root = sorted(required - set(names))
+            if missing_root:
+                fail(f"{filename} is missing plugin paths: {missing_root}")
+            if "SKILL.md" in names:
+                fail(f"{filename} still uses the standalone-skill ZIP layout")
+
+            try:
+                manifest = json.loads(
+                    archive.read(".codex-plugin/plugin.json").decode("utf-8")
+                )
+            except (KeyError, UnicodeDecodeError, json.JSONDecodeError):
+                fail(f"{filename} has an invalid plugin manifest")
+            if manifest != plugin_manifest(skill):
+                fail(f"{filename} plugin manifest does not match release metadata")
+            validate_plugin_manifest_values(filename, skill, manifest)
+
+            archived_skills = {
+                PurePosixPath(name).parts[1]
+                for name in names
+                if len(PurePosixPath(name).parts) >= 3
+                and PurePosixPath(name).parts[0] == "skills"
+            }
+            if archived_skills != {skill}:
+                fail(f"{filename} must contain exactly the {skill} skill")
+
+            normalized_names: set[str] = set()
+            total_uncompressed = 0
+            for info in archive.infolist():
+                name = info.filename
                 path = PurePosixPath(name)
-                if path.is_absolute() or ".." in path.parts:
+                if not name or name != name.strip() or "\\" in name:
+                    fail(f"Malformed archive path in {filename}: {name!r}")
+                if path.is_absolute() or ".." in path.parts or "" in path.parts:
                     fail(f"Unsafe archive path in {filename}")
+                if len(path.parts) > 20 or len(name) > 240:
+                    fail(f"Archive path limit exceeded in {filename}: {name}")
+                normalized = unicodedata.normalize("NFC", name).casefold()
+                if normalized in normalized_names:
+                    fail(f"Normalized archive path collision in {filename}: {name}")
+                normalized_names.add(normalized)
                 if any(part in FORBIDDEN_PARTS for part in path.parts):
                     fail(f"Forbidden directory in {filename}: {name}")
                 if path.name in FORBIDDEN_NAMES or path.suffix.lower() in FORBIDDEN_SUFFIXES:
                     fail(f"Forbidden file in {filename}: {name}")
+                if info.flag_bits & 0x1:
+                    fail(f"Encrypted archive member in {filename}: {name}")
+                member_type = stat.S_IFMT((info.external_attr >> 16) & 0xFFFF)
+                if member_type not in (0, stat.S_IFREG):
+                    fail(f"Unsupported archive member type in {filename}: {name}")
+                if info.file_size > 100 * 1024 * 1024:
+                    fail(f"Oversized archive member in {filename}: {name}")
+                total_uncompressed += info.file_size
+            if len(names) > 5000 or total_uncompressed > 512 * 1024 * 1024:
+                fail(f"Archive limits exceeded in {filename}")
+            if archive_path.stat().st_size > 100 * 1024 * 1024:
+                fail(f"Compressed archive exceeds 100 MB: {filename}")
+
+            source = SKILLS_DIR / skill
+            archived_source = {
+                name[len(f"skills/{skill}/"):]: archive.read(name)
+                for name in names
+                if name.startswith(f"skills/{skill}/")
+            }
+            expected_source = {
+                path.relative_to(source).as_posix(): path.read_bytes()
+                for path in source.rglob("*")
+                if path.is_file()
+            }
+            if archived_source != expected_source:
+                fail(f"{filename} does not contain an exact source snapshot")
             if skill == "samplesize200":
                 missing = [
                     path
                     for path in REQUIRED_SAMPLE_PATHS
-                    if path not in names
-                    and not any(name.startswith(f"{path}/") for name in names)
+                    if f"skills/{skill}/{path}" not in names
+                    and not any(
+                        name.startswith(f"skills/{skill}/{path}/") for name in names
+                    )
                 ]
                 if missing:
                     fail(f"{filename} is missing required paths: {missing}")

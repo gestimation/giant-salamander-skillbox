@@ -1,3 +1,3 @@
-"""Single runtime version source for SAMPLESIZE200."""
+"""Single runtime version source for samplesize200."""
 
-VERSION = "0.6.8"
+VERSION = "0.6.9"

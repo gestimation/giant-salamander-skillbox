@@ -12,7 +12,7 @@ from _common import emit
 
 
 ROOT = Path(__file__).resolve().parents[1]
-GUIDE_PATH = ROOT / "references" / "SAMPLESIZE200_QUICK_GUIDE_JA.md"
+GUIDE_PATH = ROOT / "references" / "samplesize200_quick_guide_ja.md"
 
 
 def build_help_response(reason: str) -> dict[str, object]:
@@ -23,7 +23,7 @@ def build_help_response(reason: str) -> dict[str, object]:
         "terminal_for_turn": True,
         "resume_previous_work": False,
         "research_example_offer": None,
-        "title": "SAMPLESIZE200 クイックガイド",
+        "title": "samplesize200 クイックガイド",
         "restart_options": [
             "必要サンプルサイズを計算する",
             "固定した人数で検出力を計算する",

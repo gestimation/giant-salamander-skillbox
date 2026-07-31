@@ -1,9 +1,9 @@
-product: SAMPLESIZE200 Skill Prototype 0.1.10 - Compact Conversation Performance
+product: samplesize200 1.0.0-rc.6
 schema_version: 0.1.10
 engine_contract:
-  product: SAMPLESIZE200
-  version: 0.6.8
-  release_scoped_sha256: ccbe5d0105f32aa812e40e8b445cf1b45b7fbea1db62f1691916b43125817d6b
+  product: samplesize200
+  version: 0.6.9
+  release_scoped_sha256: 25b6f4da18b5d95594ad763bf64664491a487e98d7d1c702a3b9c0fd67d9ddc3
   final_public_api: false
 count: 128
 public_id_policy:
@@ -171,9 +171,13 @@ procedures:
     chapter: null
     preferred_source: Nagashima et al. (2021), doi:10.1002/pst.2090
     equation_or_section: equation (2), Sections 2.2 and 2.4
+    canonical_citation: Nagashima K, Noma H, Sato Y, Gosho M. Sample size calculations for single-arm survival studies using transformations of the Kaplan–Meier estimator. Pharmaceutical Statistics 2021;20(3):499–511.
+    implementation_overview: https://nshi.jp/contents/stat/onesurv/
+    achieved_power_tool: https://nshi.jp/contents/js/onesurvyrpow/
+    correction_id: CIT-NAGASHIMA-ISSUE-001
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.3
+    engine_release: samplesize200 Alpha 0.6.3
     engine_procedure_id: ONE-S-001.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -277,7 +281,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: AGREE-001.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -384,7 +388,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: AGREE-002.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -491,7 +495,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: AGREE-003.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -618,7 +622,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: AGREE-004.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -736,7 +740,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: AGREE-005.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -874,7 +878,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: AGREE-006.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -988,7 +992,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: AGREE-008.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -1103,7 +1107,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: AGREE-009.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -1244,7 +1248,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: AGREE-010.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -1360,7 +1364,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: AGREE-007.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -1470,7 +1474,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: CI-001.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -1588,7 +1592,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: CI-002.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -1706,7 +1710,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: CI-003.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -1818,7 +1822,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: CI-004.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -1959,7 +1963,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: CI-005.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -2110,7 +2114,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: CI-006.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -2263,7 +2267,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: CI-007.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -2421,7 +2425,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: CI-008.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -2547,7 +2551,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: CI-009.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -2682,7 +2686,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: CI-010.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -2820,7 +2824,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: CI-011.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -2956,7 +2960,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: CI-012.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -3128,7 +3132,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: CORR-001.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -3233,7 +3237,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: CORR-002.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -3338,7 +3342,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: CORR-003.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -3443,7 +3447,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: CORR-004.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -3550,7 +3554,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: CORR-005.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -3704,7 +3708,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: DIAG-003.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -3866,7 +3870,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: DIAG-004.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -4030,7 +4034,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: DIAG-005.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -4192,7 +4196,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: DIAG-006.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -4317,7 +4321,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: DIAG-007.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -4442,7 +4446,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: DIAG-001.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -4557,7 +4561,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: DIAG-002.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -4714,7 +4718,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: MARGIN-003.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -4871,7 +4875,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: MARGIN-004.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -5048,7 +5052,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: MARGIN-005.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -5205,7 +5209,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: MARGIN-009.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -5362,7 +5366,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: MARGIN-010.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -5529,7 +5533,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: MARGIN-011.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -5692,7 +5696,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: MARGIN-001.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -5863,7 +5867,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: MARGIN-002.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -6026,7 +6030,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: MARGIN-007.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -6187,7 +6191,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: MARGIN-008.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -6354,7 +6358,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: MARGIN-013.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -6520,7 +6524,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: MARGIN-014.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -6702,7 +6706,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: MARGIN-006.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -6884,7 +6888,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: MARGIN-012.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -7019,7 +7023,7 @@ procedures:
     equation_or_section: 14.1-14.3; Table 14.1; Example 14.1
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: MULTI-001.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -7160,7 +7164,7 @@ procedures:
     equation_or_section: 14.5-14.7; Table 14.2
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: MULTI-003.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -7298,7 +7302,7 @@ procedures:
     equation_or_section: 14.4; Examples 14.2-14.3
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: MULTI-002.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -7436,7 +7440,7 @@ procedures:
     equation_or_section: 14.5; 14.8; Table 14.2
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: MULTI-004.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -7588,7 +7592,7 @@ procedures:
     equation_or_section: 14.9-14.11; Example 14.5
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: MULTI-005.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -7721,7 +7725,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: ONE-001.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -7858,7 +7862,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: ONE-002.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -7963,7 +7967,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: ONE-003.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -8104,7 +8108,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: ONE-004.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -8313,7 +8317,7 @@ procedures:
     - CH12-FIXED-CLUSTER-PUBLIC-WRAPPER
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: CLUSTER-FIXED-BINARY.REQUIRED_CLUSTER_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -8472,7 +8476,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-001.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -8615,7 +8619,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-002.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -8771,7 +8775,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-003.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -8920,7 +8924,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-023.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -9072,7 +9076,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-024.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -9213,7 +9217,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-025.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -9427,7 +9431,7 @@ procedures:
     equation_or_section: 12.10; 12.12-12.14; Example 12.4
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-036.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -9633,7 +9637,7 @@ procedures:
     equation_or_section: 12.15; Example 12.5
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-037.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -9842,7 +9846,7 @@ procedures:
     - CH12-FIXED-CLUSTER-PUBLIC-WRAPPER
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: CLUSTER-FIXED-CONTINUOUS.REQUIRED_CLUSTER_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -9988,7 +9992,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-008.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -10122,7 +10126,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-009.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -10285,7 +10289,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-010.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -10428,7 +10432,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-011.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -10575,7 +10579,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-012.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -10717,7 +10721,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-029.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -10869,7 +10873,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-030.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -11039,7 +11043,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-031.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -11200,7 +11204,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-032.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -11391,7 +11395,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-033.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -11602,7 +11606,7 @@ procedures:
     equation_or_section: 12.5; 12.7; 12.10; Examples 12.1-12.2
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-034.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -11806,7 +11810,7 @@ procedures:
     equation_or_section: 12.11; Example 12.3; Tables 12.1-12.2
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-035.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -11997,7 +12001,7 @@ procedures:
     equation_or_section: 12.22; Example 12.9
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-041.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -12195,7 +12199,7 @@ procedures:
     equation_or_section: 12.23-12.24; Example 12.10
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-042.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -12366,7 +12370,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-004.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -12510,7 +12514,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-005.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -12654,7 +12658,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-006.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -12801,7 +12805,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-007.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -12964,7 +12968,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-026.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -13124,7 +13128,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-027.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -13284,7 +13288,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-028.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -13497,7 +13501,7 @@ procedures:
     equation_or_section: 12.16-12.17; Example 12.6
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-038.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -13675,7 +13679,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-013.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -13846,7 +13850,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-014.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -13998,7 +14002,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-015.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -14149,7 +14153,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-016.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -14364,7 +14368,7 @@ procedures:
     equation_or_section: 12.19; Example 12.7
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-039.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -14524,7 +14528,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-017.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -14684,7 +14688,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-018.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -14877,7 +14881,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-020.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -15056,7 +15060,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-021.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -15241,7 +15245,7 @@ procedures:
     equation_or_section: registered by implementation
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-022.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -15458,7 +15462,7 @@ procedures:
     equation_or_section: 12.20-12.21; Example 12.8
   validation_evidence:
     evidence_scope: METHOD_LEVEL_ENGINE_VALIDATION_NOT_USER_INPUT_DERIVATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.1
+    engine_release: samplesize200 Alpha 0.6.1
     engine_procedure_id: TWO-040.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -15525,7 +15529,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: standard_deviation
     data_type: number
     required: true
@@ -15533,7 +15537,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: alpha
     data_type: number
     required: false
@@ -15541,7 +15545,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: power
     data_type: number
     required: false
@@ -15549,7 +15553,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: sides
     data_type: integer
     required: false
@@ -15557,7 +15561,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: multiplicity
     data_type: string
     required: false
@@ -15565,7 +15569,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   explicit_confirmation_inputs:
   - sides
   - multiplicity
@@ -15597,7 +15601,7 @@ procedures:
     equation_or_section: all_pair_maximum reconstruction over TWO-009
   validation_evidence:
     evidence_scope: WRAPPER_COMPOSITION_AND_INHERITED_PARENT_VALIDATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.4
+    engine_release: samplesize200 Alpha 0.6.4
     engine_procedure_id: MULTI-007.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -15658,7 +15662,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: alpha
     data_type: number
     required: false
@@ -15666,7 +15670,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: power
     data_type: number
     required: false
@@ -15674,7 +15678,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: sides
     data_type: integer
     required: false
@@ -15682,7 +15686,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: multiplicity
     data_type: string
     required: false
@@ -15690,7 +15694,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   explicit_confirmation_inputs:
   - sides
   - multiplicity
@@ -15722,7 +15726,7 @@ procedures:
     equation_or_section: all_pair_maximum reconstruction over TWO-007
   validation_evidence:
     evidence_scope: WRAPPER_COMPOSITION_AND_INHERITED_PARENT_VALIDATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.4
+    engine_release: samplesize200 Alpha 0.6.4
     engine_procedure_id: MULTI-008.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -15783,7 +15787,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: alpha
     data_type: number
     required: false
@@ -15791,7 +15795,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: power
     data_type: number
     required: false
@@ -15799,7 +15803,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: sides
     data_type: integer
     required: false
@@ -15807,7 +15811,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: multiplicity
     data_type: string
     required: false
@@ -15815,7 +15819,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   explicit_confirmation_inputs:
   - sides
   - multiplicity
@@ -15847,7 +15851,7 @@ procedures:
     equation_or_section: all_pair_maximum reconstruction over TWO-013
   validation_evidence:
     evidence_scope: WRAPPER_COMPOSITION_AND_INHERITED_PARENT_VALIDATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.4
+    engine_release: samplesize200 Alpha 0.6.4
     engine_procedure_id: MULTI-009.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -15910,7 +15914,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: overdispersion
     data_type: number
     required: true
@@ -15918,7 +15922,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: mean_exposure
     data_type: number
     required: true
@@ -15926,7 +15930,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: alpha
     data_type: number
     required: false
@@ -15934,7 +15938,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: power
     data_type: number
     required: false
@@ -15942,7 +15946,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: sides
     data_type: integer
     required: false
@@ -15950,7 +15954,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: multiplicity
     data_type: string
     required: false
@@ -15958,7 +15962,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   explicit_confirmation_inputs:
   - sides
   - multiplicity
@@ -15990,7 +15994,7 @@ procedures:
     equation_or_section: all_pair_maximum reconstruction over TWO-014
   validation_evidence:
     evidence_scope: WRAPPER_COMPOSITION_AND_INHERITED_PARENT_VALIDATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.4
+    engine_release: samplesize200 Alpha 0.6.4
     engine_procedure_id: MULTI-010.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -16051,7 +16055,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: least_favorable_odds_ratio
     data_type: number
     required: true
@@ -16059,7 +16063,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: number_of_treatment_arms
     data_type: integer
     required: true
@@ -16067,7 +16071,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: alpha
     data_type: number
     required: false
@@ -16075,7 +16079,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: power
     data_type: number
     required: false
@@ -16083,7 +16087,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: allocation_block
     data_type: array
     required: false
@@ -16091,7 +16095,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   explicit_confirmation_inputs: []
   primary_output:
     quantity: participants
@@ -16121,7 +16125,7 @@ procedures:
     equation_or_section: shared_reference reconstruction over TWO-004
   validation_evidence:
     evidence_scope: WRAPPER_COMPOSITION_AND_INHERITED_PARENT_VALIDATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.4
+    engine_release: samplesize200 Alpha 0.6.4
     engine_procedure_id: MULTI-011.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -16182,7 +16186,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: least_favorable_rate_ratio
     data_type: number
     required: true
@@ -16190,7 +16194,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: number_of_treatment_arms
     data_type: integer
     required: true
@@ -16198,7 +16202,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: alpha
     data_type: number
     required: false
@@ -16206,7 +16210,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: power
     data_type: number
     required: false
@@ -16214,7 +16218,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: allocation_block
     data_type: array
     required: false
@@ -16222,7 +16226,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   explicit_confirmation_inputs: []
   primary_output:
     quantity: participants
@@ -16252,7 +16256,7 @@ procedures:
     equation_or_section: shared_reference reconstruction over TWO-013
   validation_evidence:
     evidence_scope: WRAPPER_COMPOSITION_AND_INHERITED_PARENT_VALIDATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.4
+    engine_release: samplesize200 Alpha 0.6.4
     engine_procedure_id: MULTI-012.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -16315,7 +16319,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: least_favorable_treatment_rate
     data_type: number
     required: true
@@ -16323,7 +16327,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: number_of_treatment_arms
     data_type: integer
     required: true
@@ -16331,7 +16335,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: overdispersion
     data_type: number
     required: true
@@ -16339,7 +16343,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: mean_exposure
     data_type: number
     required: true
@@ -16347,7 +16351,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: alpha
     data_type: number
     required: false
@@ -16355,7 +16359,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: power
     data_type: number
     required: false
@@ -16363,7 +16367,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: allocation_block
     data_type: array
     required: false
@@ -16371,7 +16375,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   explicit_confirmation_inputs: []
   primary_output:
     quantity: participants
@@ -16401,7 +16405,7 @@ procedures:
     equation_or_section: shared_reference reconstruction over TWO-014
   validation_evidence:
     evidence_scope: WRAPPER_COMPOSITION_AND_INHERITED_PARENT_VALIDATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.4
+    engine_release: samplesize200 Alpha 0.6.4
     engine_procedure_id: MULTI-013.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -16467,7 +16471,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: factor_a_treatment_proportion
     data_type: number
     required: true
@@ -16475,7 +16479,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: factor_b_control_proportion
     data_type: number
     required: true
@@ -16483,7 +16487,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: factor_b_treatment_proportion
     data_type: number
     required: true
@@ -16491,7 +16495,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: alpha_a
     data_type: number
     required: false
@@ -16499,7 +16503,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: power_a
     data_type: number
     required: false
@@ -16507,7 +16511,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: alpha_b
     data_type: number
     required: false
@@ -16515,7 +16519,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: power_b
     data_type: number
     required: false
@@ -16523,7 +16527,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: sides
     data_type: integer
     required: false
@@ -16531,7 +16535,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   explicit_confirmation_inputs:
   - sides
   primary_output:
@@ -16562,7 +16566,7 @@ procedures:
     equation_or_section: factorial_2x2 reconstruction over TWO-001
   validation_evidence:
     evidence_scope: WRAPPER_COMPOSITION_AND_INHERITED_PARENT_VALIDATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.4
+    engine_release: samplesize200 Alpha 0.6.4
     engine_procedure_id: MULTI-014.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -16628,7 +16632,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: factor_a_odds_ratio
     data_type: number
     required: true
@@ -16636,7 +16640,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: factor_b_control_proportion
     data_type: number
     required: true
@@ -16644,7 +16648,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: factor_b_odds_ratio
     data_type: number
     required: true
@@ -16652,7 +16656,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: alpha_a
     data_type: number
     required: false
@@ -16660,7 +16664,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: power_a
     data_type: number
     required: false
@@ -16668,7 +16672,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: alpha_b
     data_type: number
     required: false
@@ -16676,7 +16680,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: power_b
     data_type: number
     required: false
@@ -16684,7 +16688,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: sides
     data_type: integer
     required: false
@@ -16692,7 +16696,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   explicit_confirmation_inputs:
   - sides
   primary_output:
@@ -16723,7 +16727,7 @@ procedures:
     equation_or_section: factorial_2x2 reconstruction over TWO-002
   validation_evidence:
     evidence_scope: WRAPPER_COMPOSITION_AND_INHERITED_PARENT_VALIDATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.4
+    engine_release: samplesize200 Alpha 0.6.4
     engine_procedure_id: MULTI-015.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -16789,7 +16793,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: factor_a_odds_ratio
     data_type: number
     required: true
@@ -16797,7 +16801,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: factor_b_control_proportions
     data_type: array
     required: true
@@ -16805,7 +16809,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: factor_b_odds_ratio
     data_type: number
     required: true
@@ -16813,7 +16817,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: alpha_a
     data_type: number
     required: false
@@ -16821,7 +16825,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: power_a
     data_type: number
     required: false
@@ -16829,7 +16833,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: alpha_b
     data_type: number
     required: false
@@ -16837,7 +16841,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: power_b
     data_type: number
     required: false
@@ -16845,7 +16849,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: sides
     data_type: integer
     required: false
@@ -16853,7 +16857,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   explicit_confirmation_inputs:
   - sides
   primary_output:
@@ -16884,7 +16888,7 @@ procedures:
     equation_or_section: factorial_2x2 reconstruction over TWO-004
   validation_evidence:
     evidence_scope: WRAPPER_COMPOSITION_AND_INHERITED_PARENT_VALIDATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.4
+    engine_release: samplesize200 Alpha 0.6.4
     engine_procedure_id: MULTI-016.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -16950,7 +16954,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: factor_a_treatment_rate
     data_type: number
     required: true
@@ -16958,7 +16962,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: factor_b_standard_rate
     data_type: number
     required: true
@@ -16966,7 +16970,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: factor_b_treatment_rate
     data_type: number
     required: true
@@ -16974,7 +16978,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: alpha_a
     data_type: number
     required: false
@@ -16982,7 +16986,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: power_a
     data_type: number
     required: false
@@ -16990,7 +16994,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: alpha_b
     data_type: number
     required: false
@@ -16998,7 +17002,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: power_b
     data_type: number
     required: false
@@ -17006,7 +17010,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: sides
     data_type: integer
     required: false
@@ -17014,7 +17018,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   explicit_confirmation_inputs:
   - sides
   primary_output:
@@ -17045,7 +17049,7 @@ procedures:
     equation_or_section: factorial_2x2 reconstruction over TWO-013
   validation_evidence:
     evidence_scope: WRAPPER_COMPOSITION_AND_INHERITED_PARENT_VALIDATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.4
+    engine_release: samplesize200 Alpha 0.6.4
     engine_procedure_id: MULTI-017.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -17113,7 +17117,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: factor_a_treatment_rate
     data_type: number
     required: true
@@ -17121,7 +17125,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: factor_b_standard_rate
     data_type: number
     required: true
@@ -17129,7 +17133,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: factor_b_treatment_rate
     data_type: number
     required: true
@@ -17137,7 +17141,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: overdispersion
     data_type: number
     required: true
@@ -17145,7 +17149,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: mean_exposure
     data_type: number
     required: true
@@ -17153,7 +17157,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: alpha_a
     data_type: number
     required: false
@@ -17161,7 +17165,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: power_a
     data_type: number
     required: false
@@ -17169,7 +17173,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: alpha_b
     data_type: number
     required: false
@@ -17177,7 +17181,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: power_b
     data_type: number
     required: false
@@ -17185,7 +17189,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   - name: sides
     data_type: integer
     required: false
@@ -17193,7 +17197,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.4 callable contract
+    source: samplesize200 Alpha 0.6.4 callable contract
   explicit_confirmation_inputs:
   - sides
   primary_output:
@@ -17224,7 +17228,7 @@ procedures:
     equation_or_section: factorial_2x2 reconstruction over TWO-014
   validation_evidence:
     evidence_scope: WRAPPER_COMPOSITION_AND_INHERITED_PARENT_VALIDATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.4
+    engine_release: samplesize200 Alpha 0.6.4
     engine_procedure_id: MULTI-018.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -17286,7 +17290,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: arm_event_probabilities
     data_type: array
     required: true
@@ -17294,7 +17298,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: alpha
     data_type: number
     required: false
@@ -17302,7 +17306,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: power
     data_type: number
     required: false
@@ -17310,7 +17314,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: sides
     data_type: integer
     required: false
@@ -17318,7 +17322,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: multiplicity
     data_type: string
     required: false
@@ -17326,7 +17330,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   explicit_confirmation_inputs:
   - sides
   - multiplicity
@@ -17362,7 +17366,7 @@ procedures:
     equation_or_section: all-pair maximum over TWO-017 and TWO-019
   validation_evidence:
     evidence_scope: WRAPPER_COMPOSITION_AND_INHERITED_PARENT_VALIDATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.5
+    engine_release: samplesize200 Alpha 0.6.5
     engine_procedure_id: MULTI-019.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -17423,7 +17427,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: arm_event_probabilities
     data_type: array
     required: true
@@ -17431,7 +17435,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: alpha
     data_type: number
     required: false
@@ -17439,7 +17443,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: power
     data_type: number
     required: false
@@ -17447,7 +17451,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: sides
     data_type: integer
     required: false
@@ -17455,7 +17459,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: multiplicity
     data_type: string
     required: false
@@ -17463,7 +17467,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   explicit_confirmation_inputs:
   - sides
   - multiplicity
@@ -17499,7 +17503,7 @@ procedures:
     equation_or_section: all-pair maximum over TWO-018 and TWO-019
   validation_evidence:
     evidence_scope: WRAPPER_COMPOSITION_AND_INHERITED_PARENT_VALIDATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.5
+    engine_release: samplesize200 Alpha 0.6.5
     engine_procedure_id: MULTI-020.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -17560,7 +17564,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: reference_event_probability
     data_type: number
     required: true
@@ -17568,7 +17572,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: least_favorable_treatment_event_probability
     data_type: number
     required: true
@@ -17576,7 +17580,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: number_of_treatment_arms
     data_type: integer
     required: true
@@ -17584,7 +17588,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: alpha
     data_type: number
     required: false
@@ -17592,7 +17596,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: power
     data_type: number
     required: false
@@ -17600,7 +17604,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: allocation_block
     data_type: array
     required: false
@@ -17608,7 +17612,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   explicit_confirmation_inputs: []
   primary_output:
     quantity: participants
@@ -17642,7 +17646,7 @@ procedures:
     equation_or_section: shared-reference reconstruction over TWO-017 and TWO-019
   validation_evidence:
     evidence_scope: WRAPPER_COMPOSITION_AND_INHERITED_PARENT_VALIDATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.5
+    engine_release: samplesize200 Alpha 0.6.5
     engine_procedure_id: MULTI-021.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -17703,7 +17707,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: reference_event_probability
     data_type: number
     required: true
@@ -17711,7 +17715,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: least_favorable_treatment_event_probability
     data_type: number
     required: true
@@ -17719,7 +17723,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: number_of_treatment_arms
     data_type: integer
     required: true
@@ -17727,7 +17731,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: alpha
     data_type: number
     required: false
@@ -17735,7 +17739,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: power
     data_type: number
     required: false
@@ -17743,7 +17747,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: allocation_block
     data_type: array
     required: false
@@ -17751,7 +17755,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   explicit_confirmation_inputs: []
   primary_output:
     quantity: participants
@@ -17785,7 +17789,7 @@ procedures:
     equation_or_section: shared-reference reconstruction over TWO-018 and TWO-019
   validation_evidence:
     evidence_scope: WRAPPER_COMPOSITION_AND_INHERITED_PARENT_VALIDATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.5
+    engine_release: samplesize200 Alpha 0.6.5
     engine_procedure_id: MULTI-022.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -17852,7 +17856,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: factor_a_standard_event_probability
     data_type: number
     required: true
@@ -17860,7 +17864,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: factor_a_treatment_event_probability
     data_type: number
     required: true
@@ -17868,7 +17872,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: factor_b_hazard_ratio
     data_type: number
     required: true
@@ -17876,7 +17880,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: factor_b_standard_event_probability
     data_type: number
     required: true
@@ -17884,7 +17888,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: factor_b_treatment_event_probability
     data_type: number
     required: true
@@ -17892,7 +17896,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: alpha_a
     data_type: number
     required: false
@@ -17900,7 +17904,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: power_a
     data_type: number
     required: false
@@ -17908,7 +17912,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: alpha_b
     data_type: number
     required: false
@@ -17916,7 +17920,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: power_b
     data_type: number
     required: false
@@ -17924,7 +17928,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: sides
     data_type: integer
     required: false
@@ -17932,7 +17936,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   explicit_confirmation_inputs:
   - sides
   primary_output:
@@ -17967,7 +17971,7 @@ procedures:
     equation_or_section: balanced 2x2 reconstruction over TWO-017 and TWO-019
   validation_evidence:
     evidence_scope: WRAPPER_COMPOSITION_AND_INHERITED_PARENT_VALIDATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.5
+    engine_release: samplesize200 Alpha 0.6.5
     engine_procedure_id: MULTI-023.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -18034,7 +18038,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: factor_a_standard_event_probability
     data_type: number
     required: true
@@ -18042,7 +18046,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: factor_a_treatment_event_probability
     data_type: number
     required: true
@@ -18050,7 +18054,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: factor_b_hazard_ratio
     data_type: number
     required: true
@@ -18058,7 +18062,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: factor_b_standard_event_probability
     data_type: number
     required: true
@@ -18066,7 +18070,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: factor_b_treatment_event_probability
     data_type: number
     required: true
@@ -18074,7 +18078,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: alpha_a
     data_type: number
     required: false
@@ -18082,7 +18086,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: power_a
     data_type: number
     required: false
@@ -18090,7 +18094,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: alpha_b
     data_type: number
     required: false
@@ -18098,7 +18102,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: power_b
     data_type: number
     required: false
@@ -18106,7 +18110,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   - name: sides
     data_type: integer
     required: false
@@ -18114,7 +18118,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.5 callable contract
+    source: samplesize200 Alpha 0.6.5 callable contract
   explicit_confirmation_inputs:
   - sides
   primary_output:
@@ -18149,7 +18153,7 @@ procedures:
     equation_or_section: balanced 2x2 reconstruction over TWO-018 and TWO-019
   validation_evidence:
     evidence_scope: WRAPPER_COMPOSITION_AND_INHERITED_PARENT_VALIDATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.5
+    engine_release: samplesize200 Alpha 0.6.5
     engine_procedure_id: MULTI-024.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -18212,7 +18216,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: arm_competing_hazards
     data_type: array
     required: true
@@ -18220,7 +18224,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: accrual_duration
     data_type: number
     required: true
@@ -18228,7 +18232,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: additional_followup
     data_type: number
     required: true
@@ -18236,7 +18240,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: alpha
     data_type: number
     required: false
@@ -18244,7 +18248,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: power
     data_type: number
     required: false
@@ -18252,7 +18256,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: sides
     data_type: integer
     required: false
@@ -18260,7 +18264,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: multiplicity
     data_type: string
     required: false
@@ -18268,7 +18272,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   explicit_confirmation_inputs:
   - sides
   - multiplicity
@@ -18303,7 +18307,7 @@ procedures:
     equation_or_section: all-pair maximum over TWO-020
   validation_evidence:
     evidence_scope: WRAPPER_COMPOSITION_AND_INHERITED_PARENT_VALIDATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.6
+    engine_release: samplesize200 Alpha 0.6.6
     engine_procedure_id: MULTI-025.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -18364,7 +18368,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: arm_censoring_probabilities
     data_type: array
     required: true
@@ -18372,7 +18376,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: alpha
     data_type: number
     required: false
@@ -18380,7 +18384,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: power
     data_type: number
     required: false
@@ -18388,7 +18392,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: sides
     data_type: integer
     required: false
@@ -18396,7 +18400,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: multiplicity
     data_type: string
     required: false
@@ -18404,7 +18408,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   explicit_confirmation_inputs:
   - sides
   - multiplicity
@@ -18439,7 +18443,7 @@ procedures:
     equation_or_section: all-pair maximum over TWO-021
   validation_evidence:
     evidence_scope: WRAPPER_COMPOSITION_AND_INHERITED_PARENT_VALIDATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.6
+    engine_release: samplesize200 Alpha 0.6.6
     engine_procedure_id: MULTI-026.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -18502,7 +18506,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: reference_time
     data_type: number
     required: true
@@ -18510,7 +18514,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: accrual_duration
     data_type: number
     required: true
@@ -18518,7 +18522,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: additional_followup
     data_type: number
     required: true
@@ -18526,7 +18530,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: alpha
     data_type: number
     required: false
@@ -18534,7 +18538,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: power
     data_type: number
     required: false
@@ -18542,7 +18546,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: sides
     data_type: integer
     required: false
@@ -18550,7 +18554,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: multiplicity
     data_type: string
     required: false
@@ -18558,7 +18562,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   explicit_confirmation_inputs:
   - sides
   - multiplicity
@@ -18593,7 +18597,7 @@ procedures:
     equation_or_section: all-pair maximum over TWO-022
   validation_evidence:
     evidence_scope: WRAPPER_COMPOSITION_AND_INHERITED_PARENT_VALIDATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.6
+    engine_release: samplesize200 Alpha 0.6.6
     engine_procedure_id: MULTI-027.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -18657,7 +18661,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: reference_competing_hazards
     data_type: array
     required: true
@@ -18665,7 +18669,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: least_favorable_treatment_interest_hazard
     data_type: number
     required: true
@@ -18673,7 +18677,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: least_favorable_treatment_competing_hazards
     data_type: array
     required: true
@@ -18681,7 +18685,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: accrual_duration
     data_type: number
     required: true
@@ -18689,7 +18693,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: additional_followup
     data_type: number
     required: true
@@ -18697,7 +18701,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: number_of_treatment_arms
     data_type: integer
     required: true
@@ -18705,7 +18709,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: alpha
     data_type: number
     required: false
@@ -18713,7 +18717,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: power
     data_type: number
     required: false
@@ -18721,7 +18725,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: allocation_block
     data_type: array
     required: false
@@ -18729,7 +18733,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   explicit_confirmation_inputs: []
   primary_output:
     quantity: participants
@@ -18762,7 +18766,7 @@ procedures:
     equation_or_section: shared-reference reconstruction over TWO-020
   validation_evidence:
     evidence_scope: WRAPPER_COMPOSITION_AND_INHERITED_PARENT_VALIDATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.6
+    engine_release: samplesize200 Alpha 0.6.6
     engine_procedure_id: MULTI-028.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -18824,7 +18828,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: least_favorable_treatment_interest_cif
     data_type: number
     required: true
@@ -18832,7 +18836,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: reference_censoring_probability
     data_type: number
     required: true
@@ -18840,7 +18844,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: least_favorable_treatment_censoring_probability
     data_type: number
     required: true
@@ -18848,7 +18852,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: number_of_treatment_arms
     data_type: integer
     required: true
@@ -18856,7 +18860,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: alpha
     data_type: number
     required: false
@@ -18864,7 +18868,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: power
     data_type: number
     required: false
@@ -18872,7 +18876,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: allocation_block
     data_type: array
     required: false
@@ -18880,7 +18884,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   explicit_confirmation_inputs: []
   primary_output:
     quantity: participants
@@ -18913,7 +18917,7 @@ procedures:
     equation_or_section: shared-reference reconstruction over TWO-021
   validation_evidence:
     evidence_scope: WRAPPER_COMPOSITION_AND_INHERITED_PARENT_VALIDATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.6
+    engine_release: samplesize200 Alpha 0.6.6
     engine_procedure_id: MULTI-029.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -18976,7 +18980,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: least_favorable_treatment_interest_cif
     data_type: number
     required: true
@@ -18984,7 +18988,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: reference_time
     data_type: number
     required: true
@@ -18992,7 +18996,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: accrual_duration
     data_type: number
     required: true
@@ -19000,7 +19004,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: additional_followup
     data_type: number
     required: true
@@ -19008,7 +19012,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: number_of_treatment_arms
     data_type: integer
     required: true
@@ -19016,7 +19020,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: alpha
     data_type: number
     required: false
@@ -19024,7 +19028,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: power
     data_type: number
     required: false
@@ -19032,7 +19036,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: allocation_block
     data_type: array
     required: false
@@ -19040,7 +19044,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   explicit_confirmation_inputs: []
   primary_output:
     quantity: participants
@@ -19073,7 +19077,7 @@ procedures:
     equation_or_section: shared-reference reconstruction over TWO-022
   validation_evidence:
     evidence_scope: WRAPPER_COMPOSITION_AND_INHERITED_PARENT_VALIDATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.6
+    engine_release: samplesize200 Alpha 0.6.6
     engine_procedure_id: MULTI-030.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -19144,7 +19148,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: factor_a_standard_competing_hazards
     data_type: array
     required: true
@@ -19152,7 +19156,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: factor_a_treatment_interest_hazard
     data_type: number
     required: true
@@ -19160,7 +19164,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: factor_a_treatment_competing_hazards
     data_type: array
     required: true
@@ -19168,7 +19172,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: factor_b_standard_interest_hazard
     data_type: number
     required: true
@@ -19176,7 +19180,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: factor_b_standard_competing_hazards
     data_type: array
     required: true
@@ -19184,7 +19188,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: factor_b_treatment_interest_hazard
     data_type: number
     required: true
@@ -19192,7 +19196,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: factor_b_treatment_competing_hazards
     data_type: array
     required: true
@@ -19200,7 +19204,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: accrual_duration
     data_type: number
     required: true
@@ -19208,7 +19212,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: additional_followup
     data_type: number
     required: true
@@ -19216,7 +19220,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: alpha_a
     data_type: number
     required: false
@@ -19224,7 +19228,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: power_a
     data_type: number
     required: false
@@ -19232,7 +19236,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: alpha_b
     data_type: number
     required: false
@@ -19240,7 +19244,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: power_b
     data_type: number
     required: false
@@ -19248,7 +19252,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: sides
     data_type: integer
     required: false
@@ -19256,7 +19260,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   explicit_confirmation_inputs:
   - sides
   primary_output:
@@ -19290,7 +19294,7 @@ procedures:
     equation_or_section: balanced 2x2 reconstruction over TWO-020
   validation_evidence:
     evidence_scope: WRAPPER_COMPOSITION_AND_INHERITED_PARENT_VALIDATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.6
+    engine_release: samplesize200 Alpha 0.6.6
     engine_procedure_id: MULTI-031.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -19359,7 +19363,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: factor_a_treatment_interest_cif
     data_type: number
     required: true
@@ -19367,7 +19371,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: factor_a_standard_censoring_probability
     data_type: number
     required: true
@@ -19375,7 +19379,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: factor_a_treatment_censoring_probability
     data_type: number
     required: true
@@ -19383,7 +19387,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: factor_b_standard_interest_cif
     data_type: number
     required: true
@@ -19391,7 +19395,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: factor_b_treatment_interest_cif
     data_type: number
     required: true
@@ -19399,7 +19403,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: factor_b_standard_censoring_probability
     data_type: number
     required: true
@@ -19407,7 +19411,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: factor_b_treatment_censoring_probability
     data_type: number
     required: true
@@ -19415,7 +19419,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: alpha_a
     data_type: number
     required: false
@@ -19423,7 +19427,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: power_a
     data_type: number
     required: false
@@ -19431,7 +19435,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: alpha_b
     data_type: number
     required: false
@@ -19439,7 +19443,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: power_b
     data_type: number
     required: false
@@ -19447,7 +19451,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: sides
     data_type: integer
     required: false
@@ -19455,7 +19459,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   explicit_confirmation_inputs:
   - sides
   primary_output:
@@ -19489,7 +19493,7 @@ procedures:
     equation_or_section: balanced 2x2 reconstruction over TWO-021
   validation_evidence:
     evidence_scope: WRAPPER_COMPOSITION_AND_INHERITED_PARENT_VALIDATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.6
+    engine_release: samplesize200 Alpha 0.6.6
     engine_procedure_id: MULTI-032.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md
@@ -19557,7 +19561,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: factor_a_treatment_interest_cif
     data_type: number
     required: true
@@ -19565,7 +19569,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: factor_b_standard_interest_cif
     data_type: number
     required: true
@@ -19573,7 +19577,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: factor_b_treatment_interest_cif
     data_type: number
     required: true
@@ -19581,7 +19585,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: reference_time
     data_type: number
     required: true
@@ -19589,7 +19593,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: accrual_duration
     data_type: number
     required: true
@@ -19597,7 +19601,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: additional_followup
     data_type: number
     required: true
@@ -19605,7 +19609,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: alpha_a
     data_type: number
     required: false
@@ -19613,7 +19617,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: power_a
     data_type: number
     required: false
@@ -19621,7 +19625,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: alpha_b
     data_type: number
     required: false
@@ -19629,7 +19633,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: power_b
     data_type: number
     required: false
@@ -19637,7 +19641,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   - name: sides
     data_type: integer
     required: false
@@ -19645,7 +19649,7 @@ procedures:
     unit: dimensionless
     role: study_design
     allowed_range: null
-    source: SAMPLESIZE200 Alpha 0.6.6 callable contract
+    source: samplesize200 Alpha 0.6.6 callable contract
   explicit_confirmation_inputs:
   - sides
   primary_output:
@@ -19679,7 +19683,7 @@ procedures:
     equation_or_section: balanced 2x2 reconstruction over TWO-022
   validation_evidence:
     evidence_scope: WRAPPER_COMPOSITION_AND_INHERITED_PARENT_VALIDATION
-    engine_release: SAMPLESIZE200 Alpha 0.6.6
+    engine_release: samplesize200 Alpha 0.6.6
     engine_procedure_id: MULTI-033.SAMPLE_SIZE
     release_reports:
     - VALIDATION_REPORT.md

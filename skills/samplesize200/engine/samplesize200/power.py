@@ -259,7 +259,7 @@ def _power_result(
 ) -> dict[str, Any]:
     model = _canonical_model_id(engine_id)
     result: dict[str, Any] = {
-        "product": "SAMPLESIZE200 Alpha",
+        "product": "samplesize200 Alpha",
         "version": VERSION,
         "release_stage": "alpha",
         "engine_id": model,

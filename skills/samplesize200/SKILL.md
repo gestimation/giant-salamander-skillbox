@@ -1,15 +1,15 @@
 ---
 name: samplesize200
-description: Plan, calculate, teach, and review study-size designs with SAMPLESIZE200, a Giant Salamander Skillbox skill containing 188 validated calculators and 105 research examples. Use for required sample size, required events, fixed-cluster size, attrition adjustment, achieved power, detectable effect, method selection, research-example comparison, or protocol calculation review. Use only registered procedures; never replace an unsupported method with an unvalidated approximation.
+description: Plan, calculate, teach, and review study-size designs with samplesize200, a Giant Salamander Skillbox skill containing 188 validated calculators and 105 research examples. Use for required sample size, required events, fixed-cluster size, attrition adjustment, achieved power, detectable effect, method selection, research-example comparison, or protocol calculation review. Use only registered procedures; never replace an unsupported method with an unvalidated approximation.
 ---
 
-# SAMPLESIZE200
+# samplesize200
 
-**Product version 1.0.0-rc.4**
+**Product version 1.0.0-rc.6**
 
-**Bundled validated engine: SAMPLESIZE200 Alpha 0.6.8**
+**Bundled validated engine: samplesize200 Alpha 0.6.9**
 
-SAMPLESIZE200 is part of the Giant Salamander Skillbox. It provides 293 solutions: 188 CalculatorIDs and 105 ExampleIDs. Always use the bundled SAMPLESIZE200 Alpha 0.6.8 engine through the supplied scripts. Never reproduce the final calculation yourself. Stop on an integrity mismatch, missing dependency, or unregistered capability.
+samplesize200 is part of the Giant Salamander Skillbox. It provides 293 solutions: 188 CalculatorIDs and 105 ExampleIDs. Always use the bundled samplesize200 Alpha 0.6.9 engine through the supplied scripts. Never reproduce the final calculation yourself. Stop on an integrity mismatch, missing dependency, or unregistered capability.
 
 ## Public contract
 
@@ -137,3 +137,7 @@ Authoritative contracts and catalogs:
 - `references/PYTHON_API_1_0_JA.md`
 
 Formulas, calculated values, and rounding rules are unchanged from the bundled validated engine. Trial reports are conversation-local and must not contain unnecessary personal information.
+
+For source traceability, treat `references/source_corrections.yaml` as
+authoritative over superseded bibliographic metadata. Never emit the corrected
+Nagashima et al. citation as *Pharmaceutical Statistics* 20(2).

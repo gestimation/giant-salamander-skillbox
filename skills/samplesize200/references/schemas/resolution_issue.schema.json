@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://samplesize200.local/schemas/resolution-issue-v2.0.0.json",
-  "title": "SAMPLESIZE200 ResolutionIssue",
+  "title": "samplesize200 ResolutionIssue",
   "type": "object",
   "required": [
     "code", "path", "reason", "blocking", "expected_type", "candidate_values"

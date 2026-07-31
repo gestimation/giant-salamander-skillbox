@@ -1,12 +1,12 @@
-# SAMPLESIZE200 Quick Guide
+# samplesize200 Quick Guide
 
-## SAMPLESIZE200 — Chat with 200+ solutions to size your study
+## samplesize200 — Chat with 200+ solutions to size your study
 
-SAMPLESIZE200 is a Giant Salamander Skillbox skill that organizes study plans through conversation, selects a registered method, and calculates the required study size. It contains 188 calculators and 105 research examples, for a total of 293 solutions. When information is missing, it asks only for the items required for the calculation.
+samplesize200 is a Giant Salamander Skillbox skill that organizes study plans through conversation, selects a registered method, and calculates the required study size. It contains 188 calculators and 105 research examples, for a total of 293 solutions. When information is missing, it asks only for the items required for the calculation.
 
 ## Installation
 
-Upload `SAMPLESIZE200-1.0.0-rc.4.zip` from the skill installation screen without extracting it. The skill's machine name is `samplesize200`, and its display name is `SAMPLESIZE200`.
+Upload `samplesize200-1.0.0-rc.6.zip` from the skill installation screen without extracting it. The skill's machine name is `samplesize200`, and its display name is `samplesize200`.
 
 ## Try it
 
@@ -18,7 +18,7 @@ Describe what you want to know in ordinary language.
 
 > Measurements are taken at years 0, 1, and 3, with 100 participants per group, correlation 0.4, and 80% power. Calculate the detectable annual slope difference.
 
-You do not need to choose the method yourself. SAMPLESIZE200 never substitutes a nearby formula for an unsupported method.
+You do not need to choose the method yourself. samplesize200 never substitutes a nearby formula for an unsupported method.
 
 ## Standard defaults
 
@@ -32,7 +32,7 @@ The following defaults are used only when conditions are omitted for an ordinary
 | Ordinary two-group superiority comparison | Two-sided |
 | Ordinary two-group sample-size design | 1:1 allocation |
 
-These defaults are not applied automatically to noninferiority, equivalence, multiplicity-adjusted, confidence-interval precision, or Bayesian designs. SAMPLESIZE200 asks about conditions that can change the conclusion, including margins, equivalence limits, precision targets, event rates, variances, correlations, and attrition rates.
+These defaults are not applied automatically to noninferiority, equivalence, multiplicity-adjusted, confidence-interval precision, or Bayesian designs. samplesize200 asks about conditions that can change the conclusion, including margins, equivalence limits, precision targets, event rates, variances, correlations, and attrition rates.
 
 ## Main coverage
 
@@ -45,7 +45,7 @@ These defaults are not applied automatically to noninferiority, equivalence, mul
 - Attrition-adjusted sample size
 - Comparison with research examples and review of calculation conditions
 
-SAMPLESIZE200 asks for clarification when the calculation depends on whether a number is total or per group, the direction of an allocation ratio, the direction of a hypothesis, or a similar distinction.
+samplesize200 asks for clarification when the calculation depends on whether a number is total or per group, the direction of an allocation ratio, the direction of a hypothesis, or a similar distinction.
 
 ## Four modes
 
@@ -66,6 +66,6 @@ After a calculation, ask to see an example to retrieve one research example usin
 
 ## Quality and sources
 
-SAMPLESIZE200 uses the bundled, validated SAMPLESIZE200 Alpha 0.6.8 engine. The primary source for its calculation methods is *Sample Size Design for Medicine* (Shiro Tanaka et al., 2022). Book chapter and example numbers are not embedded in identifiers; they are retained as traceability metadata.
+samplesize200 uses the bundled, validated samplesize200 Alpha 0.6.9 engine. The primary source for its calculation methods is *Sample Size Design for Medicine* (Shiro Tanaka et al., 2022). Book chapter and example numbers are not embedded in identifiers; they are retained as traceability metadata.
 
 The original components of this skill are provided under the MIT License. Copyright (c) 2026 Shiro Tanaka. Third-party software remains subject to its respective license.
