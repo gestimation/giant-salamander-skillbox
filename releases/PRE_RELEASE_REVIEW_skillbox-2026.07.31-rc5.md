@@ -101,7 +101,7 @@ Windowsでは大文字小文字を区別しないため既存テストを通過�
 | --- | ---: | ---: | --- |
 | `readatable-0.7.1.zip` | 4 | 10,159 | `cc6621ccf896bef7814ee5f9fc8ea7b60d58997ede17e8f427d150b3bffd5a0a` |
 | `reviewcitation-0.3.4.zip` | 4 | 20,820 | `8475b87ac2730e099043073d1d055e1c16fd2909020c96a7c1299e1aa585aaad` |
-| `samplesize200-1.0.0-rc.6.zip` | 118 | 420,763 | `ec04aae11ecc311d71c9bc2a27e6ff1347dce1e5779dd72576b8570940389cbd` |
+| `samplesize200-1.0.0-rc.6.zip` | 118 | 420,296 | `126f02f17c51dc041aaad58c3d040958722b1066bbdefd25be28fbb037a6348c` |
 
 ## ChatGPT実インストール確認
 
