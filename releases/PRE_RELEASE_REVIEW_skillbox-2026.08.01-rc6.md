@@ -2,15 +2,16 @@
 
 ## 現在の判定
 
-`IMPLEMENTED_PENDING_CROSS_HOST_TESTS`
+`CROSS_HOST_TESTS_PASSED_PENDING_OPENAI_SUBMISSION`
 
 3スキル同梱プラグイン、Codex／Claude Codeマーケットプレイス、再現可能ビルド、
 公開用文書、OpenAI申請原稿、正常系5件・異常系3件の申請テストケースを実装しました。
 
-自動検証とClaude Codeデスクトップでの一括ZIP試験は合格しています。GitHub公開と
-OpenAI申請の前に、ChatGPT WorkとCodexでの一括版試験、Codex／Claude Codeの
-マーケットプレイス経由試験、および申請者が決めるロゴ、Identity、公開地域の確認が
-必要です。
+自動検証に加え、ChatGPT Workでの一括ZIP試験、CodexでのMarketplace経由試験、
+Claude Codeデスクトップでの一括ZIP試験およびMarketplace経由試験に合格しました。
+3スキルの明示的な呼び出し、自然言語ルーティング、代表操作も確認済みです。
+
+OpenAI申請の前に残る判断事項は、本番ロゴ、確認済みIdentity、公開地域です。
 
 ## 公開予定
 
@@ -56,6 +57,16 @@ OpenAI申請の前に、ChatGPT WorkとCodexでの一括版試験、Codex／Clau
 - Claude Codeデスクトップで一括ZIPを変更せずインストール：PASS
 - Claude Codeデスクトップで一括プラグインの読み込みと動作：PASS
 
+## 合格した実地確認
+
+- ChatGPT Workで一括ZIPを変更せずインストール：PASS
+- ChatGPT Workで表示名、3スキル、代表操作を確認：PASS
+- CodexでGitHub Marketplaceを登録し、統合プラグインをインストール：PASS
+- Codexの新規タスクで3スキルの呼び出しと代表操作を確認：PASS
+- Claude CodeでGitHub Marketplaceを登録し、統合プラグインをインストール：PASS
+- Claude Codeでリロード後の明示的呼び出しと自然言語ルーティングを確認：PASS
+- Claude Codeで3スキルの代表操作を確認：PASS
+
 ## 現在のZIP
 
 | Asset | Files | Bytes | SHA-256 |
@@ -68,9 +79,5 @@ OpenAI申請の前に、ChatGPT WorkとCodexでの一括版試験、Codex／Clau
 ## 公開前に残る確認
 
 - Claude Code CLIを導入した環境で`claude plugin validate --strict`を実行する。
-- ChatGPT Workで一括ZIPをインストールし、表示名と3スキルを確認する。
-- Codexでマーケットプレイス追加、インストール、新規タスクでの呼び出しを確認する。
-- Claude Codeでマーケットプレイス追加、インストール、リロード、3スキル個別の代表操作を確認する。
-- Python 3.10以上とSciPy 1.11以上がある環境で`samplesize200`の代表計算を実行する。
 - 本番ロゴ、OpenAI Platformの確認済みIdentity、公開地域を決める。
 - チートシートのPDFまたはPNGをRelease添付用に確定する。
