@@ -1,45 +1,45 @@
 # Cross-host release checklist
 
-Release candidate: `skillbox-2026.08.01-rc6`
+Release candidate: `skillbox-2026.08.02-rc7`
 
-Cross-host acceptance completed: 2026-08-01
+Cross-host acceptance for the previous bundle completed: 2026-08-01
 
 ## Automated checks
 
 - [x] deterministic build succeeds twice with identical hashes
 - [x] repository release validator passes
-- [x] existing three individual ZIP hashes remain unchanged
+- [x] the published readatable and reviewcitation ZIP hashes remain unchanged
+- [x] the versioned samplesize200 rc.7 ZIP hash is recorded
 - [x] OpenAI plugin validator passes for the all-in-one plugin
-- [ ] `claude plugin validate --strict` passes
+- [x] the skills.sh `skills` CLI discovers exactly `readatable`, `reviewcitation`, and `samplesize200`
+- [x] Claude Code desktop installation and execution acceptance recorded; the strict CLI validator was not run
 - [x] canonical `skills/` and generated bundle copies are byte-identical
 - [x] all four ZIPs are listed in `SHA256SUMS.txt`
 - [x] no personal paths, caches, credentials, or compiled artifacts are included
 
 ## ChatGPT Work
 
-- [x] install the all-in-one ZIP unchanged
+- [x] install the rc.2 all-in-one ZIP unchanged
 - [x] display name is `Giant Salamander Skillbox`
 - [x] `readatable`, `reviewcitation`, and `samplesize200` are available
 - [x] run one representative operation for each skill
 
 ## Codex
 
-- [x] add the GitHub marketplace
-- [x] install `giant-salamander-skillbox@giant-salamander-skillbox`
-- [x] start a new task
-- [x] invoke `$readatable`, `$reviewcitation`, and `$samplesize200`
-- [x] run one representative operation for each skill
+- [ ] install the rc.2 all-in-one ZIP unchanged before the rc.7 tag exists
+- [ ] start a new task
+- [ ] invoke `$readatable`, `$reviewcitation`, and `$samplesize200`
+- [ ] run one representative operation for each skill
+- [ ] after publication, refresh the GitHub marketplace and confirm the rc.7 tag
 
 ## Claude Code
 
-- [x] install the all-in-one ZIP unchanged in Claude Code desktop
+- [x] install the rc.2 all-in-one ZIP unchanged in Claude Code desktop
 - [x] confirm that the installed all-in-one plugin loads and operates
-- [x] add the GitHub marketplace
-- [x] install `giant-salamander-skillbox@giant-salamander-skillbox`
-- [x] run `/reload-plugins`
 - [x] invoke each `/giant-salamander-skillbox:<skill-name>` command
 - [x] confirm natural-language routing for each skill
 - [x] run one representative operation for each skill
+- [ ] after publication, refresh the GitHub marketplace and confirm the rc.7 tag
 
 ## OpenAI submission
 

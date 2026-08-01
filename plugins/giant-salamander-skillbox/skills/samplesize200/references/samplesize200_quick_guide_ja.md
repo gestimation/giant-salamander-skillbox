@@ -6,7 +6,26 @@ samplesize200は、研究計画を会話で整理し、登録済みの方法を�
 
 ## インストール
 
-`samplesize200-1.0.0-rc.6.zip`を解凍せず、スキル追加画面からアップロードします。スキルの機械名は`samplesize200`、画面表示名は`samplesize200`です。
+正式な配布元は[GitHub Releases](https://github.com/gestimation/giant-salamander-skillbox/releases)です。初めて使う場合は、`readatable`、`reviewcitation`、`samplesize200`をまとめた統合プラグイン`giant-salamander-skillbox-1.0.0-rc.2.zip`を推奨します。ZIPは展開・再圧縮せず、ChatGPT Work、CodexまたはClaude Codeのプラグイン画面からそのままインストールします。
+
+samplesize200だけを使用する場合は、個別プラグイン`samplesize200-1.0.0-rc.7.zip`をChatGPT WorkまたはCodexへインストールできます。統合プラグインと個別プラグインは重複してインストールしません。
+
+CodexでMarketplaceを使用する場合は、次のコマンドを実行します。
+
+```text
+codex plugin marketplace add gestimation/giant-salamander-skillbox
+codex plugin add giant-salamander-skillbox@giant-salamander-skillbox
+```
+
+Claude Code DesktopでMarketplaceを使用する場合は、チャット入力欄から次のスラッシュコマンドを実行します。
+
+```text
+/plugin marketplace add gestimation/giant-salamander-skillbox
+/plugin install giant-salamander-skillbox@giant-salamander-skillbox
+/reload-plugins
+```
+
+スキルの機械名と画面表示名は、いずれも`samplesize200`です。
 
 ## まず使ってみる
 
@@ -32,7 +51,7 @@ samplesize200は、研究計画を会話で整理し、登録済みの方法を�
 | 通常の2群優越性比較 | 両側 |
 | 通常の2群サンプルサイズ設計 | 1:1割付 |
 
-非劣性、同等性、多重性を伴う設計、信頼区間精度、ベイズ流設計などには、この標準設定を自動適用しません。マージン、同等性限界、許容誤差、イベント率、分散、相関、脱落率など、結論を変える条件は確認します。
+非劣性、同等性、多重性を伴う設計、信頼区間精度、Bayes流設計などには、この標準設定を自動適用しません。マージン、同等性限界、許容誤差、イベント率、分散、相関、脱落率など、結論を変える条件は確認します。
 
 ## 主な対応範囲
 

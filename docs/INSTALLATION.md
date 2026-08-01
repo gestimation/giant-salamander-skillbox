@@ -16,7 +16,7 @@
 ## ZIPによる手動インストール
 
 1. [GitHub Releases](https://github.com/gestimation/giant-salamander-skillbox/releases)を開く。
-2. 3スキルを収録した`giant-salamander-skillbox-1.0.0-rc.1.zip`、または必要な
+2. 3スキルを収録した`giant-salamander-skillbox-1.0.0-rc.2.zip`、または必要な
    スキルだけを収録した個別プラグインZIPをダウンロードする。
 3. ChatGPT Work、CodexまたはClaude Codeのプラグイン画面で、ZIPを展開・再圧縮
    せず、そのまま指定してインストールする。

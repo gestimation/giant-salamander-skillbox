@@ -2,13 +2,13 @@
 
 この文書は`Giant Salamander Skillbox`をSkills-onlyプラグインとして申請する際の
 入力原稿です。申請対象はGitHub Releaseと同一内容の
-`giant-salamander-skillbox-1.0.0-rc.1.zip`です。
+`giant-salamander-skillbox-1.0.0-rc.2.zip`です。
 
 ## 申請区分
 
 - Submission type：Skills only
 - Plugin ID：`giant-salamander-skillbox`
-- Version：`1.0.0-rc.1`
+- Version：`1.0.0-rc.2`
 - Developer：`gestimation`
 - Category：Productivity
 - Authentication：なし
@@ -42,7 +42,7 @@
 
 Initial public submission of Giant Salamander Skillbox, a skills-only plugin
 containing readatable 0.7.1, reviewcitation 0.3.4, and samplesize200
-1.0.0-rc.6. The submitted bundle is reproducibly built from the public GitHub
+1.0.0-rc.7. The submitted bundle is reproducibly built from the public GitHub
 release sources and contains no MCP server, authentication, telemetry, or
 external write action.
 
@@ -50,7 +50,7 @@ external write action.
 
 - OpenAI Platformで確認済みの個人または事業者Identityを選択する。
 - `Apps Management: Write`権限を持つ組織から申請する。
-- 本番用ロゴをアップロードする。
+- 本番用ロゴ`branding/openai-submission/final/giant-salamander-skillbox-logo-1024-background.png`をアップロードする。
 - 公開対象の国・地域を選択する。
 - [申請テストケース](OPENAI_TEST_CASES.md)の正常系5件、異常系3件を登録する。
 - 最終ZIPをローカル実機試験後にアップロードする。

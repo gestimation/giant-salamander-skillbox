@@ -13,10 +13,10 @@
         "source": "git-subdir",
         "url": "https://github.com/gestimation/giant-salamander-skillbox.git",
         "path": "plugins/giant-salamander-skillbox",
-        "ref": "skillbox-2026.08.01-rc6"
+        "ref": "skillbox-2026.08.02-rc7"
       },
       "description": "Review statistical tables and citations, and plan validated study sizes.",
-      "version": "1.0.0-rc.1",
+      "version": "1.0.0-rc.2",
       "author": {
         "name": "gestimation",
         "url": "https://github.com/gestimation/giant-salamander-skillbox"

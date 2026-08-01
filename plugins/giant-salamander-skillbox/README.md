@@ -1,6 +1,6 @@
 # Giant Salamander Skillbox
 
-This skills-only plugin contains `readatable` 0.7.1, `reviewcitation` 0.3.4, `samplesize200` 1.0.0-rc.6.
+This skills-only plugin contains `readatable` 0.7.1, `reviewcitation` 0.3.4, `samplesize200` 1.0.0-rc.7.
 
 - `readatable` reconstructs and normalizes statistical tables.
 - `reviewcitation` reviews scientific citations and reference lists.

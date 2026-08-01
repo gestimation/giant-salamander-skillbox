@@ -6,7 +6,26 @@ samplesize200 is a Giant Salamander Skillbox skill that organizes study plans th
 
 ## Installation
 
-Upload `samplesize200-1.0.0-rc.6.zip` from the skill installation screen without extracting it. The skill's machine name is `samplesize200`, and its display name is `samplesize200`.
+The official distribution source is [GitHub Releases](https://github.com/gestimation/giant-salamander-skillbox/releases). For a first installation, use the all-in-one plugin `giant-salamander-skillbox-1.0.0-rc.2.zip`, which contains `readatable`, `reviewcitation`, and `samplesize200`. Install the ZIP unchanged from the plugin screen in ChatGPT Work, Codex, or Claude Code; do not extract or repackage it.
+
+To install only samplesize200, install the single-skill plugin `samplesize200-1.0.0-rc.7.zip` in ChatGPT Work or Codex. Do not install both the all-in-one plugin and the single-skill plugin.
+
+For Codex marketplace installation, run:
+
+```text
+codex plugin marketplace add gestimation/giant-salamander-skillbox
+codex plugin add giant-salamander-skillbox@giant-salamander-skillbox
+```
+
+For Claude Code Desktop marketplace installation, enter these slash commands in the chat input:
+
+```text
+/plugin marketplace add gestimation/giant-salamander-skillbox
+/plugin install giant-salamander-skillbox@giant-salamander-skillbox
+/reload-plugins
+```
+
+The skill's machine name and display name are both `samplesize200`.
 
 ## Try it
 
@@ -66,6 +85,6 @@ After a calculation, ask to see an example to retrieve one research example usin
 
 ## Quality and sources
 
-samplesize200 uses the bundled, validated samplesize200 Alpha 0.6.9 engine. The primary source for its calculation methods is *Sample Size Design for Medicine* (Shiro Tanaka et al., 2022). Book chapter and example numbers are not embedded in identifiers; they are retained as traceability metadata.
+samplesize200 uses the bundled, validated samplesize200 Alpha 0.6.9 engine. The primary source for its calculation methods is: Machin D, Campbell MJ, Tan SB, Tan SH. Sample size tables for clinical studies. 3rd ed. Chichester (UK): Wiley-Blackwell; 2009. doi:10.1002/9781444300710. Book chapter and example numbers are not embedded in identifiers; they are retained as traceability metadata.
 
 The original components of this skill are provided under the MIT License. Copyright (c) 2026 Shiro Tanaka. Third-party software remains subject to its respective license.
