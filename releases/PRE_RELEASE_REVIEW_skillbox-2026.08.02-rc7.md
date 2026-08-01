@@ -22,6 +22,7 @@
 - 同じソースからの2回連続ビルドで全ZIPのSHA-256が一致
 - GitHub公開用バリデーター：PASS
 - OpenAI/Codexプラグイン構造バリデーター：PASS
+- skills.shの`skills` CLIによるローカルRC7検出：PASS（3スキルを過不足なく検出）
 - 正本`skills/`と統合プラグイン内コピー：バイト単位で一致
 - samplesize200のヘルプ経路から更新済み日本語クイックガイドを取得：PASS
 - readatable 0.7.1とreviewcitation 0.3.4の公開済みハッシュ：不変
@@ -44,5 +45,6 @@
 - Codexでrc.2統合ZIPを変更せずインストールし、3スキルの表示と代表操作を確認する。
 - PRをマージ後、`skillbox-2026.08.02-rc7`タグとGitHub prereleaseを作成する。
 - 公開後にCodexとClaude CodeのMarketplaceを更新し、rc7タグを参照することを確認する。
+- 公開後に`npx skills add gestimation/giant-salamander-skillbox --list`でGitHub経由の検出を再確認する。
 - GitHub Releasesから全アセットを再取得し、SHA-256を照合する。
 - 最終ZIPをOpenAI申請ポータルへアップロードする。

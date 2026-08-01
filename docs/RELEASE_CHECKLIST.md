@@ -11,6 +11,7 @@ Cross-host acceptance for the previous bundle completed: 2026-08-01
 - [x] the published readatable and reviewcitation ZIP hashes remain unchanged
 - [x] the versioned samplesize200 rc.7 ZIP hash is recorded
 - [x] OpenAI plugin validator passes for the all-in-one plugin
+- [x] the skills.sh `skills` CLI discovers exactly `readatable`, `reviewcitation`, and `samplesize200`
 - [x] Claude Code desktop installation and execution acceptance recorded; the strict CLI validator was not run
 - [x] canonical `skills/` and generated bundle copies are byte-identical
 - [x] all four ZIPs are listed in `SHA256SUMS.txt`

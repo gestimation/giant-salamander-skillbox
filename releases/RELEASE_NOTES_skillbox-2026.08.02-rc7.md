@@ -40,6 +40,7 @@ results changed in this release candidate.
 - deterministic two-build comparison: PASS
 - repository release validator: PASS
 - OpenAI/Codex plugin validator: PASS
+- skills.sh `skills` CLI local discovery of all three skills: PASS
 - samplesize200 quick-guide help-path smoke test: PASS
 - ChatGPT installation and execution test of the new rc.2 ZIP: PASS
 - Claude Code installation and execution test of the new rc.2 ZIP: PASS
