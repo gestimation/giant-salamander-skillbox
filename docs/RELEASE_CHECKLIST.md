@@ -2,6 +2,8 @@
 
 Release candidate: `skillbox-2026.08.01-rc6`
 
+Cross-host acceptance completed: 2026-08-01
+
 ## Automated checks
 
 - [x] deterministic build succeeds twice with identical hashes
@@ -15,29 +17,29 @@ Release candidate: `skillbox-2026.08.01-rc6`
 
 ## ChatGPT Work
 
-- [ ] install the all-in-one ZIP unchanged
-- [ ] display name is `Giant Salamander Skillbox`
-- [ ] `readatable`, `reviewcitation`, and `samplesize200` are available
-- [ ] run one representative operation for each skill
+- [x] install the all-in-one ZIP unchanged
+- [x] display name is `Giant Salamander Skillbox`
+- [x] `readatable`, `reviewcitation`, and `samplesize200` are available
+- [x] run one representative operation for each skill
 
 ## Codex
 
-- [ ] add the GitHub marketplace
-- [ ] install `giant-salamander-skillbox@giant-salamander-skillbox`
-- [ ] start a new task
-- [ ] invoke `$readatable`, `$reviewcitation`, and `$samplesize200`
-- [ ] run one representative operation for each skill
+- [x] add the GitHub marketplace
+- [x] install `giant-salamander-skillbox@giant-salamander-skillbox`
+- [x] start a new task
+- [x] invoke `$readatable`, `$reviewcitation`, and `$samplesize200`
+- [x] run one representative operation for each skill
 
 ## Claude Code
 
 - [x] install the all-in-one ZIP unchanged in Claude Code desktop
 - [x] confirm that the installed all-in-one plugin loads and operates
-- [ ] add the GitHub marketplace
-- [ ] install `giant-salamander-skillbox@giant-salamander-skillbox`
-- [ ] run `/reload-plugins`
-- [ ] invoke each `/giant-salamander-skillbox:<skill-name>` command
-- [ ] confirm natural-language routing for each skill
-- [ ] run one representative operation for each skill
+- [x] add the GitHub marketplace
+- [x] install `giant-salamander-skillbox@giant-salamander-skillbox`
+- [x] run `/reload-plugins`
+- [x] invoke each `/giant-salamander-skillbox:<skill-name>` command
+- [x] confirm natural-language routing for each skill
+- [x] run one representative operation for each skill
 
 ## OpenAI submission
 

@@ -17,7 +17,7 @@ Installable research-support skills for ChatGPT Work, Codex, and Claude Code.
 Open the repository's
 [Releases](https://github.com/gestimation/giant-salamander-skillbox/releases)
 page and download `giant-salamander-skillbox-1.0.0-rc.1.zip`. Install the ZIP
-unchanged in ChatGPT Work or Codex.
+unchanged in ChatGPT Work, Codex, or Claude Code.
 
 For Codex marketplace installation:
 
@@ -26,14 +26,15 @@ codex plugin marketplace add gestimation/giant-salamander-skillbox
 codex plugin add giant-salamander-skillbox@giant-salamander-skillbox
 ```
 
-For Claude Code marketplace installation:
+For Claude Code Desktop marketplace installation, run these slash commands in
+the chat input:
 
 ```text
-claude plugin marketplace add gestimation/giant-salamander-skillbox
-claude plugin install giant-salamander-skillbox@giant-salamander-skillbox
+/plugin marketplace add gestimation/giant-salamander-skillbox
+/plugin install giant-salamander-skillbox@giant-salamander-skillbox
+/reload-plugins
 ```
 
-Run `/reload-plugins` in an existing Claude Code session after installation.
 Claude Code namespaces the skills as
 `/giant-salamander-skillbox:readatable`,
 `/giant-salamander-skillbox:reviewcitation`, and

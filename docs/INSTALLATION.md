@@ -13,16 +13,23 @@
 - `reviewcitation`：引用と参考文献を点検する
 - `samplesize200`：研究に必要なサンプルサイズを設計する
 
-## ChatGPT Work／CodexでZIPを使う
+## ZIPによる手動インストール
 
 1. [GitHub Releases](https://github.com/gestimation/giant-salamander-skillbox/releases)を開く。
-2. `giant-salamander-skillbox-1.0.0-rc.1.zip`をダウンロードする。
-3. ZIPを展開せず、そのままプラグインとしてインストールする。
-4. 新しいタスクでスキル名を指定して試す。
+2. 3スキルを収録した`giant-salamander-skillbox-1.0.0-rc.1.zip`、または必要な
+   スキルだけを収録した個別プラグインZIPをダウンロードする。
+3. ChatGPT Work、CodexまたはClaude Codeのプラグイン画面で、ZIPを展開・再圧縮
+   せず、そのまま指定してインストールする。
+4. 新しいチャットまたはタスクで、インストールしたスキル名が表示され、使用できる
+   ことを確認する。
 
-必要なスキルだけを使う場合は、個別のZIPも選べます。
+統合ZIPと個別ZIPは重複してインストールしません。個別ZIPを複数使用する場合は、
+1つずつ指定します。必要に応じてアプリを再起動するか、プラグインを再読み込みします。
 
-## Codexでマーケットプレイスを使う
+## CodexでMarketplaceを使う
+
+GitHub Marketplaceとして`gestimation/giant-salamander-skillbox`を登録し、統合
+プラグインをインストールします。
 
 ```text
 codex plugin marketplace add gestimation/giant-salamander-skillbox
@@ -32,15 +39,17 @@ codex plugin add giant-salamander-skillbox@giant-salamander-skillbox
 インストール後は新しいタスクを開始し、`$readatable`、`$reviewcitation`、
 `$samplesize200`を指定して動作を確認します。
 
-## Claude Codeでマーケットプレイスを使う
+## Claude CodeでMarketplaceを使う
+
+Claude Code Desktopでは、チャット入力欄から次のスラッシュコマンドを実行します。
 
 ```text
-claude plugin marketplace add gestimation/giant-salamander-skillbox
-claude plugin install giant-salamander-skillbox@giant-salamander-skillbox
+/plugin marketplace add gestimation/giant-salamander-skillbox
+/plugin install giant-salamander-skillbox@giant-salamander-skillbox
+/reload-plugins
 ```
 
-開いているセッションでは`/reload-plugins`を実行します。明示的に呼び出す場合は
-次の名前を使用します。
+明示的に呼び出す場合は次の名前を使用します。
 
 ```text
 /giant-salamander-skillbox:readatable
