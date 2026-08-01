@@ -1,6 +1,6 @@
 # Giant Salamander Skillbox
 
-Downloadable, single-skill plugins for ChatGPT Work and Codex.
+Installable research-support skills for ChatGPT Work, Codex, and Claude Code.
 
 ## Skills
 
@@ -12,18 +12,49 @@ Downloadable, single-skill plugins for ChatGPT Work and Codex.
 
 ## Installation
 
-1. Open the repository's [Releases](https://github.com/gestimation/giant-salamander-skillbox/releases) page.
-2. Download the plugin ZIP for the skill you want.
-3. Install the ZIP unchanged through the supported plugin installation flow in
-   ChatGPT Work or Codex.
+### Recommended: install all three skills
 
-Do not extract or repackage the ZIP. Each asset is a skills-only plugin with a
-`.codex-plugin/plugin.json` manifest and exactly one skill under
-`skills/<skill-name>/`.
+Open the repository's
+[Releases](https://github.com/gestimation/giant-salamander-skillbox/releases)
+page and download `giant-salamander-skillbox-1.0.0-rc.1.zip`. Install the ZIP
+unchanged in ChatGPT Work or Codex.
+
+For Codex marketplace installation:
+
+```text
+codex plugin marketplace add gestimation/giant-salamander-skillbox
+codex plugin add giant-salamander-skillbox@giant-salamander-skillbox
+```
+
+For Claude Code marketplace installation:
+
+```text
+claude plugin marketplace add gestimation/giant-salamander-skillbox
+claude plugin install giant-salamander-skillbox@giant-salamander-skillbox
+```
+
+Run `/reload-plugins` in an existing Claude Code session after installation.
+Claude Code namespaces the skills as
+`/giant-salamander-skillbox:readatable`,
+`/giant-salamander-skillbox:reviewcitation`, and
+`/giant-salamander-skillbox:samplesize200`.
+
+### Install one skill only
+
+Download the corresponding single-skill ZIP from the Releases page and install
+it unchanged in ChatGPT Work or Codex.
+
+Do not extract or repackage a ZIP. The all-in-one plugin contains both
+`.codex-plugin/plugin.json` and `.claude-plugin/plugin.json`, plus all three
+skills. The individual ZIPs remain one-skill plugins for ChatGPT Work and Codex.
 
 The directories under `skills/` are the canonical skill sources. The release
-builder wraps each source in the plugin structure without changing the skill
-contents.
+builder copies them unchanged into individual ZIPs and the generated all-in-one
+plugin under `plugins/giant-salamander-skillbox/`.
+
+See [Installation](docs/INSTALLATION.md) for beginner-oriented steps. The
+user-facing cheat sheet is distributed as a separate release asset and is not
+included in the plugin runtime package.
 
 ## Runtime requirements
 
@@ -39,10 +70,12 @@ lowercase names.
 
 ## Release integrity
 
-Release assets are built from the directories under `skills/`. Plugin metadata
-is defined once in `tools/release_config.py`. Every release includes
-`SHA256SUMS.txt` so downloaded ZIP files can be verified. A published asset is
-never replaced without a version change.
+Release assets are built from the directories under `skills/`. Plugin and
+marketplace metadata is defined once in `tools/release_config.py`. Marketplace
+entries point to the immutable Git tag associated with the release rather than
+to a mutable branch. Every release includes `SHA256SUMS.txt` so downloaded ZIP
+files can be verified. A published asset is never replaced without a version
+change.
 
 Maintainers can build and validate local release assets with:
 

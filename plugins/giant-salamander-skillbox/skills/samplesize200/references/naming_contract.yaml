@@ -1,0 +1,79 @@
+schema_version: 1.0.0
+product_version: 1.0.0-rc.6
+policy:
+  existing_identifier_values_frozen: true
+  deprecated_names_removed: true
+  reader_accepts_canonical_only: true
+  removed_input_behavior: structured_error
+  writer_mode: canonical_only
+  calculation_formulas_changed: false
+  rounding_rules_changed: false
+
+canonical_fields:
+  requested_output:
+    note: Product-level requested result.
+  calculator_id:
+    note: Stable CalculatorID.
+  catalog_procedure_id:
+    note: Stable catalog procedure identifier.
+  engine_procedure_id:
+    note: Stable engine procedure identifier.
+  procedure_key:
+    note: Stable internal procedure key.
+  engine_model_id:
+    note: Stable engine model identifier when applicable.
+
+requested_outputs:
+  required_sample_size:
+    output_code: SS
+    engine_operation: SAMPLE_SIZE
+    engine_calculation_target: required_sample_size
+    bundled_skill_available: true
+  required_events:
+    output_code: EV
+    engine_operation: SAMPLE_SIZE
+    engine_calculation_target: required_events
+    bundled_skill_available: true
+  required_cluster_size:
+    output_code: CS
+    engine_operation: REQUIRED_CLUSTER_SIZE
+    engine_calculation_target: required_sample_size
+    bundled_skill_available: true
+  attrition_adjusted_sample_size:
+    output_code: AS
+    engine_operation: procedure_specific
+    default_engine_operation: SAMPLE_SIZE
+    engine_calculation_target: attrition_adjusted_sample_size
+    bundled_skill_available: true
+  achieved_power:
+    output_code: PW
+    engine_operation: POWER
+    engine_calculation_target: power
+    bundled_skill_available: true
+  detectable_effect:
+    output_code: ES
+    engine_operation: SAMPLE_SIZE
+    engine_calculation_target: detectable_effect
+    bundled_skill_available: true
+    available_engine_version: 0.6.9
+
+identifier_formats:
+  calculator_id: "{Family}-{OutputCode}-{OutcomeCode}-{existing_public_sequence}"
+  example_id: "{Family}-EX-{OutcomeCode}-{independent_frozen_sequence}"
+  solution_id: reserved
+  book_location_encoded_in_example_id: false
+
+registry: references/solution_identifier_registry.json
+
+phase4_contracts:
+  StudySpec: known_research_facts_and_values
+  CalculationRequest: requested_output_and_scenario_intent
+  ResolvedCalculationRequest: selected_calculator_procedure_and_engine_identity
+  ResolutionState: typed_missing_uncertain_conflicting_or_unsupported_state
+  ExecutionSpec: minimal_engine_payload
+  InteractionContext: presentation_conversation_and_compatibility
+  CalculationResult: immutable_result_linked_by_input_fingerprint
+  deprecated_alias_policy: removed_in_1_0
+  calculator_selection_constraint: optional_calculator_id_input_constraint
+  contract_decisions: references/study_contract_v2.yaml
+  contract_revision: 6-4

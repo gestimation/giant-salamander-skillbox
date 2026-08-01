@@ -6,9 +6,56 @@ from copy import deepcopy
 
 
 REPOSITORY_URL = "https://github.com/gestimation/giant-salamander-skillbox"
+RELEASE_REF = "skillbox-2026.08.01-rc6"
 AUTHOR = {
     "name": "gestimation",
     "url": REPOSITORY_URL,
+}
+
+BUNDLE_NAME = "giant-salamander-skillbox"
+BUNDLE_VERSION = "1.0.0-rc.1"
+BUNDLE_FILENAME = f"{BUNDLE_NAME}-{BUNDLE_VERSION}.zip"
+BUNDLE_DESCRIPTION = (
+    "Review statistical tables and citations, and plan validated study sizes."
+)
+BUNDLE_KEYWORDS = [
+    "statistics",
+    "tables",
+    "citations",
+    "sample-size",
+    "research",
+]
+BUNDLE_INTERFACE = {
+    "displayName": "Giant Salamander Skillbox",
+    "shortDescription": "研究の表・引用・標本サイズを検証します。",
+    "longDescription": (
+        "統計表を読みやすく再構成するreadatable、科学文書の引用と参考文献を"
+        "点検するreviewcitation、検証済み計算方法で研究規模を設計する"
+        "samplesize200をまとめた研究支援プラグインです。"
+    ),
+    "developerName": "gestimation",
+    "category": "Productivity",
+    "capabilities": ["Interactive"],
+    "websiteURL": REPOSITORY_URL,
+    "privacyPolicyURL": f"{REPOSITORY_URL}/blob/main/docs/PRIVACY.md",
+    "termsOfServiceURL": f"{REPOSITORY_URL}/blob/main/docs/TERMS.md",
+    "defaultPrompt": [
+        "この統計表を読みやすいMarkdown表に再構成して",
+        "この文書の引用と参考文献を標準レビューして",
+        "この研究計画に必要なサンプルサイズを計算して",
+    ],
+}
+
+PUBLISHED_ASSET_SHA256 = {
+    "readatable-0.7.1.zip": (
+        "cc6621ccf896bef7814ee5f9fc8ea7b60d58997ede17e8f427d150b3bffd5a0a"
+    ),
+    "reviewcitation-0.3.4.zip": (
+        "8475b87ac2730e099043073d1d055e1c16fd2909020c96a7c1299e1aa585aaad"
+    ),
+    "samplesize200-1.0.0-rc.6.zip": (
+        "126f02f17c51dc041aaad58c3d040958722b1066bbdefd25be28fbb037a6348c"
+    ),
 }
 
 PLUGINS = {
@@ -73,4 +120,86 @@ def plugin_manifest(name: str) -> dict[str, object]:
         "keywords": list(config["keywords"]),
         "skills": "./skills/",
         "interface": deepcopy(config["interface"]),
+    }
+
+
+def codex_bundle_manifest() -> dict[str, object]:
+    return {
+        "name": BUNDLE_NAME,
+        "version": BUNDLE_VERSION,
+        "description": BUNDLE_DESCRIPTION,
+        "author": deepcopy(AUTHOR),
+        "homepage": REPOSITORY_URL,
+        "repository": REPOSITORY_URL,
+        "license": "MIT",
+        "keywords": list(BUNDLE_KEYWORDS),
+        "skills": "./skills/",
+        "interface": deepcopy(BUNDLE_INTERFACE),
+    }
+
+
+def claude_bundle_manifest() -> dict[str, object]:
+    return {
+        "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+        "name": BUNDLE_NAME,
+        "displayName": BUNDLE_INTERFACE["displayName"],
+        "version": BUNDLE_VERSION,
+        "description": BUNDLE_DESCRIPTION,
+        "author": deepcopy(AUTHOR),
+        "homepage": REPOSITORY_URL,
+        "repository": REPOSITORY_URL,
+        "license": "MIT",
+        "keywords": list(BUNDLE_KEYWORDS),
+        "skills": "./skills/",
+    }
+
+
+def codex_marketplace() -> dict[str, object]:
+    return {
+        "name": BUNDLE_NAME,
+        "interface": {"displayName": BUNDLE_INTERFACE["displayName"]},
+        "plugins": [
+            {
+                "name": BUNDLE_NAME,
+                "source": {
+                    "source": "git-subdir",
+                    "url": f"{REPOSITORY_URL}.git",
+                    "path": f"./plugins/{BUNDLE_NAME}",
+                    "ref": RELEASE_REF,
+                },
+                "policy": {
+                    "installation": "AVAILABLE",
+                    "authentication": "ON_INSTALL",
+                },
+                "category": "Productivity",
+            }
+        ],
+    }
+
+
+def claude_marketplace() -> dict[str, object]:
+    return {
+        "name": BUNDLE_NAME,
+        "owner": deepcopy(AUTHOR),
+        "description": BUNDLE_DESCRIPTION,
+        "plugins": [
+            {
+                "name": BUNDLE_NAME,
+                "displayName": BUNDLE_INTERFACE["displayName"],
+                "source": {
+                    "source": "git-subdir",
+                    "url": f"{REPOSITORY_URL}.git",
+                    "path": f"plugins/{BUNDLE_NAME}",
+                    "ref": RELEASE_REF,
+                },
+                "description": BUNDLE_DESCRIPTION,
+                "version": BUNDLE_VERSION,
+                "author": deepcopy(AUTHOR),
+                "homepage": REPOSITORY_URL,
+                "repository": REPOSITORY_URL,
+                "license": "MIT",
+                "keywords": list(BUNDLE_KEYWORDS),
+                "category": "Research",
+            }
+        ],
     }

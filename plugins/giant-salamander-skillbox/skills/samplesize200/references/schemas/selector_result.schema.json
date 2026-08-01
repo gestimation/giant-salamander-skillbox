@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "samplesize200 selector result",
+  "type": "object",
+  "required": ["status"],
+  "properties": {
+    "status": {"enum": ["SELECTED", "NEEDS_CLARIFICATION", "UNSUPPORTED", "LEGACY_MAPPING_AMBIGUOUS"]},
+    "selected_procedure_key": {"type": "string"},
+    "selected_public_id": {"type": "string"},
+    "engine_id": {"type": "string"},
+    "selection_reasons": {"type": "array", "items": {"type": "string"}},
+    "missing_calculation_inputs": {"type": "array", "items": {"type": "string"}},
+    "candidate_procedures": {"type": "array", "items": {"type": "object"}},
+    "differing_fields": {"type": "array", "items": {"type": "string"}},
+    "clarification_questions": {"type": "array", "items": {"type": "string"}},
+    "reason_codes": {"type": "array", "items": {"type": "string"}},
+    "unsupported_reason": {"type": "string"},
+    "closest_related_procedures": {"type": "array", "items": {"type": "object"}},
+    "missing_capability": {"type": "array", "items": {"type": "string"}},
+    "legacy_id": {"type": "string"},
+    "candidates": {"type": "array", "items": {"type": "object"}},
+    "disambiguating_fields": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

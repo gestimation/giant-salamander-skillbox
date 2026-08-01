@@ -1,0 +1,38 @@
+{
+  "name": "giant-salamander-skillbox",
+  "version": "1.0.0-rc.1",
+  "description": "Review statistical tables and citations, and plan validated study sizes.",
+  "author": {
+    "name": "gestimation",
+    "url": "https://github.com/gestimation/giant-salamander-skillbox"
+  },
+  "homepage": "https://github.com/gestimation/giant-salamander-skillbox",
+  "repository": "https://github.com/gestimation/giant-salamander-skillbox",
+  "license": "MIT",
+  "keywords": [
+    "statistics",
+    "tables",
+    "citations",
+    "sample-size",
+    "research"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Giant Salamander Skillbox",
+    "shortDescription": "研究の表・引用・標本サイズを検証します。",
+    "longDescription": "統計表を読みやすく再構成するreadatable、科学文書の引用と参考文献を点検するreviewcitation、検証済み計算方法で研究規模を設計するsamplesize200をまとめた研究支援プラグインです。",
+    "developerName": "gestimation",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive"
+    ],
+    "websiteURL": "https://github.com/gestimation/giant-salamander-skillbox",
+    "privacyPolicyURL": "https://github.com/gestimation/giant-salamander-skillbox/blob/main/docs/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/gestimation/giant-salamander-skillbox/blob/main/docs/TERMS.md",
+    "defaultPrompt": [
+      "この統計表を読みやすいMarkdown表に再構成して",
+      "この文書の引用と参考文献を標準レビューして",
+      "この研究計画に必要なサンプルサイズを計算して"
+    ]
+  }
+}

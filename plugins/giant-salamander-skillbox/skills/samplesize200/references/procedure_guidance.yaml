@@ -1,0 +1,2509 @@
+schema_version: 0.1.10
+count: 128
+curated_count: 51
+guidance:
+- procedure_key: ss200-proc-3aae05b533fd149a
+  use_when:
+  - A single cohort is planned and the primary hypothesis concerns its Kaplan-Meier
+    survival probability at one fixed analysis time versus a prespecified value.
+  do_not_use_when:
+  - The primary question compares two survival curves or hazards.
+  - Exponential survival and uniform accrual are not defensible and no sensitivity
+    analysis is planned.
+  required_questions:
+  - What are the null and planned survival probabilities at the analysis time?
+  - What are the accrual duration and minimum follow-up duration, in the same time
+    unit?
+  - Is the test one-sided or two-sided?
+  recommended_questions:
+  - Is an attrition allowance required after the model-based sample size?
+  assumptions:
+  - Exponential survival
+  - Uniform accrual
+  - Pointwise Kaplan-Meier normal approximation after arcsine square-root transformation
+  competing_procedures:
+  - TWO-S-001
+  - TWO-S-002
+  selection_differences:
+  - ONE-S-001 tests one cohort against a fixed survival probability; TWO-S methods
+    compare groups using hazard-ratio models.
+  sensitivity_parameters:
+  - alternative_survival_probability
+  - accrual_time
+  - followup_time
+  - attrition_rate
+  common_misuses:
+  - Treating a hazard ratio as though it were a pointwise survival probability.
+  - Mixing time units across analysis, accrual, and follow-up durations.
+  review_checks:
+  - Confirm that the analysis time is before the end of accrual plus follow-up when
+    type-I censoring is present.
+  - Confirm the direction and clinical basis of the null and planned survival probabilities.
+  explanation_points:
+  - The transformation stabilizes the pointwise survival-probability variance when
+    censoring is absent.
+  - Administrative censoring is incorporated through the Kaplan-Meier asymptotic variance
+    integral.
+  guidance_status: HUMAN_REVIEWED_FOR_0_1_2
+- procedure_key: ss200-proc-5b6a8990cbc055f2
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-0604c81b3b1957d4
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-3b77f5e9ade75d96
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-9ebfe1a3fd9c5962
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-9320880d63df5ee7
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-1275607ab02857f4
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-a1d9cf789f0a5b2b
+  use_when:
+  - Use when the study matches agreement_reliability, agreement_or_reliability, and
+    precision_estimation.
+  do_not_use_when:
+  - Do not use when pairing, clustering, outcome scale, or hypothesis objective differs.
+  required_questions:
+  - Provide planned_kappa.
+  - Provide disagreement_probability.
+  - Provide width.
+  recommended_questions:
+  - What source supports the effect and nuisance assumptions?
+  - Is a sensitivity analysis required?
+  assumptions:
+  - Use only the assumptions and approximation recorded in the procedure catalog and
+    source provenance.
+  competing_procedures: []
+  selection_differences:
+  - Resolve differences in analysis method, effect measure, pairing, and approximation
+    before selection.
+  sensitivity_parameters: []
+  common_misuses:
+  - Using an Example value as an unstated default.
+  - Changing sidedness or allocation without recording it.
+  review_checks:
+  - Confirm outcome scale and group roles.
+  - Confirm raw, final, quantity, unit, and stage.
+  explanation_points:
+  - Explain why this method, its assumptions, its rounding, and its final design constraints
+    apply.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-ba3729c665b65fc6
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-d801edcb79a75341
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-17d46aa42a8e5de3
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-ea91dbad32a2590f
+  use_when:
+  - Use when the study matches one_group, proportion_or_mean, and precision_estimation.
+  do_not_use_when:
+  - Do not use when pairing, clustering, outcome scale, or hypothesis objective differs.
+  required_questions:
+  - Provide planned_proportion.
+  - Provide width.
+  recommended_questions:
+  - What source supports the effect and nuisance assumptions?
+  - Is a sensitivity analysis required?
+  assumptions:
+  - Use only the assumptions and approximation recorded in the procedure catalog and
+    source provenance.
+  competing_procedures:
+  - ss200-proc-0a947858e7c15e90
+  - ss200-proc-07e845696afa5f2e
+  - ss200-proc-668b580fada85210
+  selection_differences:
+  - Resolve differences in analysis method, effect measure, pairing, and approximation
+    before selection.
+  sensitivity_parameters: []
+  common_misuses:
+  - Using an Example value as an unstated default.
+  - Changing sidedness or allocation without recording it.
+  review_checks:
+  - Confirm outcome scale and group roles.
+  - Confirm raw, final, quantity, unit, and stage.
+  explanation_points:
+  - Explain why this method, its assumptions, its rounding, and its final design constraints
+    apply.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-0a947858e7c15e90
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-07e845696afa5f2e
+  use_when:
+  - Use when the study matches one_group, proportion_or_mean, and precision_estimation.
+  do_not_use_when:
+  - Do not use when pairing, clustering, outcome scale, or hypothesis objective differs.
+  required_questions:
+  - Provide planned_proportion.
+  - Provide width.
+  recommended_questions:
+  - What source supports the effect and nuisance assumptions?
+  - Is a sensitivity analysis required?
+  assumptions:
+  - Use only the assumptions and approximation recorded in the procedure catalog and
+    source provenance.
+  competing_procedures:
+  - ss200-proc-ea91dbad32a2590f
+  - ss200-proc-0a947858e7c15e90
+  - ss200-proc-668b580fada85210
+  selection_differences:
+  - Resolve differences in analysis method, effect measure, pairing, and approximation
+    before selection.
+  sensitivity_parameters: []
+  common_misuses:
+  - Using an Example value as an unstated default.
+  - Changing sidedness or allocation without recording it.
+  review_checks:
+  - Confirm outcome scale and group roles.
+  - Confirm raw, final, quantity, unit, and stage.
+  explanation_points:
+  - Explain why this method, its assumptions, its rounding, and its final design constraints
+    apply.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-668b580fada85210
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-3ebaf6b170c15612
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-bfc4a29c98995da1
+  use_when:
+  - Use when the study matches independent_two_group, proportion_or_mean, and precision_estimation.
+  do_not_use_when:
+  - Do not use when pairing, clustering, outcome scale, or hypothesis objective differs.
+  required_questions:
+  - Provide control_proportion.
+  - Provide treatment_proportion.
+  - Provide width.
+  recommended_questions:
+  - What source supports the effect and nuisance assumptions?
+  - Is a sensitivity analysis required?
+  assumptions:
+  - Use only the assumptions and approximation recorded in the procedure catalog and
+    source provenance.
+  competing_procedures:
+  - ss200-proc-3ebaf6b170c15612
+  - ss200-proc-07f5b6f33dd05758
+  selection_differences:
+  - Resolve differences in analysis method, effect measure, pairing, and approximation
+    before selection.
+  sensitivity_parameters:
+  - control_proportion
+  common_misuses:
+  - Using an Example value as an unstated default.
+  - Changing sidedness or allocation without recording it.
+  review_checks:
+  - Confirm outcome scale and group roles.
+  - Confirm raw, final, quantity, unit, and stage.
+  explanation_points:
+  - Explain why this method, its assumptions, its rounding, and its final design constraints
+    apply.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-07f5b6f33dd05758
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-b543af877b475816
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-6f73dc5cd9a551ad
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-0b31871160625ea1
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-b39b62576f16561f
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-61fefa4fc7d65029
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-c284ddc8caa053c5
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-5b73a0183da35f88
+  use_when:
+  - Use when the study matches parallel_cluster_fixed_analyzable_cluster_count, continuous,
+    and required cluster size for a fixed number of clusters.
+  do_not_use_when:
+  - Do not use when pairing, clustering, outcome scale, or hypothesis objective differs.
+  required_questions:
+  - Provide planned_difference.
+  - Provide standard_deviation.
+  - Provide icc.
+  - Provide fixed_analyzable_clusters.
+  recommended_questions:
+  - What source supports the effect and nuisance assumptions?
+  - Is a sensitivity analysis required?
+  assumptions:
+  - Use only the assumptions and approximation recorded in the procedure catalog and
+    source provenance.
+  competing_procedures: []
+  selection_differences:
+  - Resolve differences in analysis method, effect measure, pairing, and approximation
+    before selection.
+  sensitivity_parameters:
+  - standard_deviation
+  - icc
+  common_misuses:
+  - Using an Example value as an unstated default.
+  - Changing sidedness or allocation without recording it.
+  review_checks:
+  - Confirm outcome scale and group roles.
+  - Confirm raw, final, quantity, unit, and stage.
+  explanation_points:
+  - Explain why this method, its assumptions, its rounding, and its final design constraints
+    apply.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-62456ac6352958f3
+  use_when:
+  - Use when the study matches one_group_correlation, correlation, and superiority_hypothesis_test.
+  do_not_use_when:
+  - Do not use when pairing, clustering, outcome scale, or hypothesis objective differs.
+  required_questions:
+  - Provide planned_correlation.
+  recommended_questions:
+  - What source supports the effect and nuisance assumptions?
+  - Is a sensitivity analysis required?
+  assumptions:
+  - Use only the assumptions and approximation recorded in the procedure catalog and
+    source provenance.
+  competing_procedures: []
+  selection_differences:
+  - Resolve differences in analysis method, effect measure, pairing, and approximation
+    before selection.
+  sensitivity_parameters: []
+  common_misuses:
+  - Using an Example value as an unstated default.
+  - Changing sidedness or allocation without recording it.
+  review_checks:
+  - Confirm outcome scale and group roles.
+  - Confirm raw, final, quantity, unit, and stage.
+  explanation_points:
+  - Explain why this method, its assumptions, its rounding, and its final design constraints
+    apply.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-afb448977498578b
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-2228693bb8d35b42
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-e4a0b3c9691a51c4
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-0dd35007c19559d6
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-995c5a09fda65f28
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-bf9258a017d8551d
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-86c428241ff458aa
+  use_when:
+  - Use when the study matches diagnostic_accuracy, diagnostic_accuracy_or_reference_limit,
+    and superiority_hypothesis_test.
+  do_not_use_when:
+  - Do not use when pairing, clustering, outcome scale, or hypothesis objective differs.
+  required_questions:
+  - Provide target_metric.
+  - Provide known_accuracy.
+  - Provide planned_accuracy.
+  - Provide prevalence.
+  recommended_questions:
+  - What source supports the effect and nuisance assumptions?
+  - Is a sensitivity analysis required?
+  assumptions:
+  - Use only the assumptions and approximation recorded in the procedure catalog and
+    source provenance.
+  competing_procedures:
+  - ss200-proc-555125657e565595
+  - ss200-proc-3e3619c0ca7c5773
+  - ss200-proc-e4e6269552415b30
+  selection_differences:
+  - Resolve differences in analysis method, effect measure, pairing, and approximation
+    before selection.
+  sensitivity_parameters: []
+  common_misuses:
+  - Using an Example value as an unstated default.
+  - Changing sidedness or allocation without recording it.
+  review_checks:
+  - Confirm outcome scale and group roles.
+  - Confirm raw, final, quantity, unit, and stage.
+  explanation_points:
+  - Explain why this method, its assumptions, its rounding, and its final design constraints
+    apply.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-555125657e565595
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-3e3619c0ca7c5773
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-e4e6269552415b30
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-55b6d48fc7ba58f4
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-79c1ef865f2b520f
+  use_when:
+  - Use when the study matches independent_two_group, procedure-specific, and noninferiority.
+  do_not_use_when:
+  - Do not use when pairing, clustering, outcome scale, or hypothesis objective differs.
+  required_questions:
+  - Provide planned_standard.
+  - Provide planned_test.
+  - Provide standard_deviation.
+  - Provide positive_margin.
+  recommended_questions:
+  - What source supports the effect and nuisance assumptions?
+  - Is a sensitivity analysis required?
+  assumptions:
+  - Use only the assumptions and approximation recorded in the procedure catalog and
+    source provenance.
+  competing_procedures: []
+  selection_differences:
+  - Resolve differences in analysis method, effect measure, pairing, and approximation
+    before selection.
+  sensitivity_parameters:
+  - standard_deviation
+  common_misuses:
+  - Using an Example value as an unstated default.
+  - Changing sidedness or allocation without recording it.
+  review_checks:
+  - Confirm outcome scale and group roles.
+  - Confirm raw, final, quantity, unit, and stage.
+  explanation_points:
+  - Explain why this method, its assumptions, its rounding, and its final design constraints
+    apply.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-48212143bb0e5129
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-ebcb904d1fcc51cd
+  use_when:
+  - Use when the study matches independent_two_group, procedure-specific, and noninferiority.
+  do_not_use_when:
+  - Do not use when pairing, clustering, outcome scale, or hypothesis objective differs.
+  required_questions:
+  - Provide standard_proportion.
+  - Provide test_proportion.
+  - Provide positive_margin.
+  recommended_questions:
+  - What source supports the effect and nuisance assumptions?
+  - Is a sensitivity analysis required?
+  assumptions:
+  - Use only the assumptions and approximation recorded in the procedure catalog and
+    source provenance.
+  competing_procedures:
+  - ss200-proc-906d158a1d435709
+  selection_differences:
+  - Resolve differences in analysis method, effect measure, pairing, and approximation
+    before selection.
+  sensitivity_parameters: []
+  common_misuses:
+  - Using an Example value as an unstated default.
+  - Changing sidedness or allocation without recording it.
+  review_checks:
+  - Confirm outcome scale and group roles.
+  - Confirm raw, final, quantity, unit, and stage.
+  explanation_points:
+  - Explain why this method, its assumptions, its rounding, and its final design constraints
+    apply.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-906d158a1d435709
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-dd5849f5ccbb5d92
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-f8224d56cc105ea4
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-ac5cdf5fcad7554e
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-294d62d0f28054a2
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-22652cbac0a85042
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-d88a03666bee5df5
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-ca8f05154c2257b1
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-6309f2d6609e5436
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-2685c46aeb6a56fa
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-dac727dc6b0451cb
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-86d06d0b5fdf5a02
+  use_when:
+  - Use when the study matches multiple_group, binary, and maximum pairwise comparison.
+  do_not_use_when:
+  - Do not use when pairing, clustering, outcome scale, or hypothesis objective differs.
+  required_questions:
+  - Provide arm_proportions.
+  recommended_questions:
+  - What source supports the effect and nuisance assumptions?
+  - Is a sensitivity analysis required?
+  assumptions:
+  - Use only the assumptions and approximation recorded in the procedure catalog and
+    source provenance.
+  competing_procedures: []
+  selection_differences:
+  - Resolve differences in analysis method, effect measure, pairing, and approximation
+    before selection.
+  sensitivity_parameters: []
+  common_misuses:
+  - Using an Example value as an unstated default.
+  - Changing sidedness or allocation without recording it.
+  review_checks:
+  - Confirm outcome scale and group roles.
+  - Confirm raw, final, quantity, unit, and stage.
+  explanation_points:
+  - Explain why this method, its assumptions, its rounding, and its final design constraints
+    apply.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-e764f95e19465628
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-0a42b8fed0b15eae
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-d03a658d72955e74
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-656e7e61ed475701
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-cd13743ae3785a50
+  use_when:
+  - Use when the study matches one_group, binary, and superiority_hypothesis_test.
+  do_not_use_when:
+  - Do not use when pairing, clustering, outcome scale, or hypothesis objective differs.
+  required_questions:
+  - Provide planned_proportion.
+  - Provide known_proportion.
+  recommended_questions:
+  - What source supports the effect and nuisance assumptions?
+  - Is a sensitivity analysis required?
+  assumptions:
+  - Use only the assumptions and approximation recorded in the procedure catalog and
+    source provenance.
+  competing_procedures: []
+  selection_differences:
+  - Resolve differences in analysis method, effect measure, pairing, and approximation
+    before selection.
+  sensitivity_parameters: []
+  common_misuses:
+  - Using an Example value as an unstated default.
+  - Changing sidedness or allocation without recording it.
+  review_checks:
+  - Confirm outcome scale and group roles.
+  - Confirm raw, final, quantity, unit, and stage.
+  explanation_points:
+  - Explain why this method, its assumptions, its rounding, and its final design constraints
+    apply.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-79b5108159df5041
+  use_when:
+  - Use when the study matches one_group, continuous, and superiority_hypothesis_test.
+  do_not_use_when:
+  - Do not use when pairing, clustering, outcome scale, or hypothesis objective differs.
+  required_questions:
+  - Provide known_mean.
+  - Provide planned_mean.
+  - Provide planned_sd.
+  recommended_questions:
+  - What source supports the effect and nuisance assumptions?
+  - Is a sensitivity analysis required?
+  assumptions:
+  - Use only the assumptions and approximation recorded in the procedure catalog and
+    source provenance.
+  competing_procedures: []
+  selection_differences:
+  - Resolve differences in analysis method, effect measure, pairing, and approximation
+    before selection.
+  sensitivity_parameters: []
+  common_misuses:
+  - Using an Example value as an unstated default.
+  - Changing sidedness or allocation without recording it.
+  review_checks:
+  - Confirm outcome scale and group roles.
+  - Confirm raw, final, quantity, unit, and stage.
+  explanation_points:
+  - Explain why this method, its assumptions, its rounding, and its final design constraints
+    apply.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-5535695aff315141
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-447f7fb8a08b5821
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-b58b79f922b653c9
+  use_when:
+  - Use when the study matches independent_two_group, binary, and superiority_hypothesis_test.
+  do_not_use_when:
+  - Do not use when pairing, clustering, outcome scale, or hypothesis objective differs.
+  required_questions:
+  - Provide control_proportion.
+  - Provide treatment_proportion.
+  recommended_questions:
+  - What source supports the effect and nuisance assumptions?
+  - Is a sensitivity analysis required?
+  assumptions:
+  - Use only the assumptions and approximation recorded in the procedure catalog and
+    source provenance.
+  competing_procedures:
+  - ss200-proc-797ac511546052a8
+  selection_differences:
+  - Resolve differences in analysis method, effect measure, pairing, and approximation
+    before selection.
+  sensitivity_parameters:
+  - control_proportion
+  common_misuses:
+  - Using an Example value as an unstated default.
+  - Changing sidedness or allocation without recording it.
+  review_checks:
+  - Confirm outcome scale and group roles.
+  - Confirm raw, final, quantity, unit, and stage.
+  explanation_points:
+  - Explain why this method, its assumptions, its rounding, and its final design constraints
+    apply.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-797ac511546052a8
+  use_when:
+  - Use when the study matches independent_two_group, binary, and superiority_hypothesis_test.
+  do_not_use_when:
+  - Do not use when pairing, clustering, outcome scale, or hypothesis objective differs.
+  required_questions:
+  - Provide control_proportion.
+  - Provide odds_ratio.
+  recommended_questions:
+  - What source supports the effect and nuisance assumptions?
+  - Is a sensitivity analysis required?
+  assumptions:
+  - Use only the assumptions and approximation recorded in the procedure catalog and
+    source provenance.
+  competing_procedures:
+  - ss200-proc-b58b79f922b653c9
+  selection_differences:
+  - Resolve differences in analysis method, effect measure, pairing, and approximation
+    before selection.
+  sensitivity_parameters:
+  - control_proportion
+  common_misuses:
+  - Using an Example value as an unstated default.
+  - Changing sidedness or allocation without recording it.
+  review_checks:
+  - Confirm outcome scale and group roles.
+  - Confirm raw, final, quantity, unit, and stage.
+  explanation_points:
+  - Explain why this method, its assumptions, its rounding, and its final design constraints
+    apply.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-95bbe952567556e7
+  use_when:
+  - Use when the study matches independent_two_group, binary, and correction.
+  do_not_use_when:
+  - Do not use when pairing, clustering, outcome scale, or hypothesis objective differs.
+  required_questions:
+  - Provide control_proportion.
+  recommended_questions:
+  - What source supports the effect and nuisance assumptions?
+  - Is a sensitivity analysis required?
+  assumptions:
+  - Use only the assumptions and approximation recorded in the procedure catalog and
+    source provenance.
+  competing_procedures: []
+  selection_differences:
+  - Resolve differences in analysis method, effect measure, pairing, and approximation
+    before selection.
+  sensitivity_parameters:
+  - control_proportion
+  common_misuses:
+  - Using an Example value as an unstated default.
+  - Changing sidedness or allocation without recording it.
+  review_checks:
+  - Confirm outcome scale and group roles.
+  - Confirm raw, final, quantity, unit, and stage.
+  explanation_points:
+  - Explain why this method, its assumptions, its rounding, and its final design constraints
+    apply.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-cf0add3a04b15a3c
+  use_when:
+  - Use when the study matches independent_two_group, ordinal, and superiority_hypothesis_test.
+  do_not_use_when:
+  - Do not use when pairing, clustering, outcome scale, or hypothesis objective differs.
+  required_questions:
+  - Provide control_proportions.
+  - Provide odds_ratio.
+  recommended_questions:
+  - What source supports the effect and nuisance assumptions?
+  - Is a sensitivity analysis required?
+  assumptions:
+  - Use only the assumptions and approximation recorded in the procedure catalog and
+    source provenance.
+  competing_procedures:
+  - ss200-proc-c4fb9b7c87325cf7
+  - ss200-proc-8df396b35f995c17
+  - ss200-proc-cfde8aaeb7e555d4
+  selection_differences:
+  - Resolve differences in analysis method, effect measure, pairing, and approximation
+    before selection.
+  sensitivity_parameters: []
+  common_misuses:
+  - Using an Example value as an unstated default.
+  - Changing sidedness or allocation without recording it.
+  review_checks:
+  - Confirm outcome scale and group roles.
+  - Confirm raw, final, quantity, unit, and stage.
+  explanation_points:
+  - Explain why this method, its assumptions, its rounding, and its final design constraints
+    apply.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-c4fb9b7c87325cf7
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-8df396b35f995c17
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-cfde8aaeb7e555d4
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-f4ac1daedd4f59fb
+  use_when:
+  - Use when the study matches independent_two_group, continuous, and superiority_hypothesis_test.
+  do_not_use_when:
+  - Do not use when pairing, clustering, outcome scale, or hypothesis objective differs.
+  required_questions:
+  - Provide standardized_effect.
+  recommended_questions:
+  - What source supports the effect and nuisance assumptions?
+  - Is a sensitivity analysis required?
+  assumptions:
+  - Use only the assumptions and approximation recorded in the procedure catalog and
+    source provenance.
+  competing_procedures:
+  - ss200-proc-e9bc08343584516d
+  - ss200-proc-05e12273de535f41
+  - ss200-proc-51675f911e19599f
+  - ss200-proc-b5cea4a5dc2f5d03
+  selection_differences:
+  - Resolve differences in analysis method, effect measure, pairing, and approximation
+    before selection.
+  sensitivity_parameters: []
+  common_misuses:
+  - Using an Example value as an unstated default.
+  - Changing sidedness or allocation without recording it.
+  review_checks:
+  - Confirm outcome scale and group roles.
+  - Confirm raw, final, quantity, unit, and stage.
+  explanation_points:
+  - Explain why this method, its assumptions, its rounding, and its final design constraints
+    apply.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-e9bc08343584516d
+  use_when:
+  - Use when the study matches independent_two_group, continuous, and superiority_hypothesis_test.
+  do_not_use_when:
+  - Do not use when pairing, clustering, outcome scale, or hypothesis objective differs.
+  required_questions:
+  - Provide standardized_effect.
+  recommended_questions:
+  - What source supports the effect and nuisance assumptions?
+  - Is a sensitivity analysis required?
+  assumptions:
+  - Use only the assumptions and approximation recorded in the procedure catalog and
+    source provenance.
+  competing_procedures:
+  - ss200-proc-f4ac1daedd4f59fb
+  - ss200-proc-05e12273de535f41
+  - ss200-proc-51675f911e19599f
+  - ss200-proc-b5cea4a5dc2f5d03
+  selection_differences:
+  - Resolve differences in analysis method, effect measure, pairing, and approximation
+    before selection.
+  sensitivity_parameters: []
+  common_misuses:
+  - Using an Example value as an unstated default.
+  - Changing sidedness or allocation without recording it.
+  review_checks:
+  - Confirm outcome scale and group roles.
+  - Confirm raw, final, quantity, unit, and stage.
+  explanation_points:
+  - Explain why this method, its assumptions, its rounding, and its final design constraints
+    apply.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-05e12273de535f41
+  use_when:
+  - Use when the study matches independent_two_group, continuous, and superiority_hypothesis_test.
+  do_not_use_when:
+  - Do not use when pairing, clustering, outcome scale, or hypothesis objective differs.
+  required_questions:
+  - Provide planned_mean_difference.
+  - Provide control_sd.
+  - Provide treatment_sd.
+  recommended_questions:
+  - What source supports the effect and nuisance assumptions?
+  - Is a sensitivity analysis required?
+  assumptions:
+  - Use only the assumptions and approximation recorded in the procedure catalog and
+    source provenance.
+  competing_procedures:
+  - ss200-proc-f4ac1daedd4f59fb
+  - ss200-proc-e9bc08343584516d
+  - ss200-proc-51675f911e19599f
+  - ss200-proc-b5cea4a5dc2f5d03
+  selection_differences:
+  - Resolve differences in analysis method, effect measure, pairing, and approximation
+    before selection.
+  sensitivity_parameters: []
+  common_misuses:
+  - Using an Example value as an unstated default.
+  - Changing sidedness or allocation without recording it.
+  review_checks:
+  - Confirm outcome scale and group roles.
+  - Confirm raw, final, quantity, unit, and stage.
+  explanation_points:
+  - Explain why this method, its assumptions, its rounding, and its final design constraints
+    apply.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-51675f911e19599f
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-b5cea4a5dc2f5d03
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-6f5b5df2162c5793
+  use_when:
+  - Use when the study matches independent_two_group, count_or_rate, and superiority_hypothesis_test.
+  do_not_use_when:
+  - Do not use when pairing, clustering, outcome scale, or hypothesis objective differs.
+  required_questions:
+  - Provide standard_rate.
+  recommended_questions:
+  - What source supports the effect and nuisance assumptions?
+  - Is a sensitivity analysis required?
+  assumptions:
+  - Use only the assumptions and approximation recorded in the procedure catalog and
+    source provenance.
+  competing_procedures:
+  - ss200-proc-eb95f69bd2a65ade
+  - ss200-proc-da2ff56372c255a1
+  - ss200-proc-85853e288e955ca7
+  selection_differences:
+  - Resolve differences in analysis method, effect measure, pairing, and approximation
+    before selection.
+  sensitivity_parameters: []
+  common_misuses:
+  - Using an Example value as an unstated default.
+  - Changing sidedness or allocation without recording it.
+  review_checks:
+  - Confirm outcome scale and group roles.
+  - Confirm raw, final, quantity, unit, and stage.
+  explanation_points:
+  - Explain why this method, its assumptions, its rounding, and its final design constraints
+    apply.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-eb95f69bd2a65ade
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-da2ff56372c255a1
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-85853e288e955ca7
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-1c9c1f0fd01355d6
+  use_when:
+  - Use when the study matches independent_two_group, time_to_event, and superiority_hypothesis_test.
+  do_not_use_when:
+  - Do not use when pairing, clustering, outcome scale, or hypothesis objective differs.
+  required_questions:
+  - Provide hazard_ratio.
+  - Provide standard_event_probability.
+  - Provide treatment_event_probability.
+  recommended_questions:
+  - What source supports the effect and nuisance assumptions?
+  - Is a sensitivity analysis required?
+  assumptions:
+  - Use only the assumptions and approximation recorded in the procedure catalog and
+    source provenance.
+  competing_procedures:
+  - ss200-proc-15dba87f6c935fc2
+  selection_differences:
+  - Resolve differences in analysis method, effect measure, pairing, and approximation
+    before selection.
+  sensitivity_parameters: []
+  common_misuses:
+  - Using an Example value as an unstated default.
+  - Changing sidedness or allocation without recording it.
+  review_checks:
+  - Confirm outcome scale and group roles.
+  - Confirm raw, final, quantity, unit, and stage.
+  explanation_points:
+  - Explain why this method, its assumptions, its rounding, and its final design constraints
+    apply.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-15dba87f6c935fc2
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-89316f1b21615ea9
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-57c5433d34475ecb
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-fe7f027c00675029
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-51e34974bac255f9
+  use_when:
+  - Use when the study matches paired_two_group, paired_binary_ordinal_or_continuous,
+    and superiority_hypothesis_test.
+  do_not_use_when:
+  - Do not use when pairing, clustering, outcome scale, or hypothesis objective differs.
+  required_questions:
+  - Provide discordant_odds_ratio.
+  - Provide discordant_fraction.
+  recommended_questions:
+  - What source supports the effect and nuisance assumptions?
+  - Is a sensitivity analysis required?
+  assumptions:
+  - Use only the assumptions and approximation recorded in the procedure catalog and
+    source provenance.
+  competing_procedures: []
+  selection_differences:
+  - Resolve differences in analysis method, effect measure, pairing, and approximation
+    before selection.
+  sensitivity_parameters: []
+  common_misuses:
+  - Using an Example value as an unstated default.
+  - Changing sidedness or allocation without recording it.
+  review_checks:
+  - Confirm outcome scale and group roles.
+  - Confirm raw, final, quantity, unit, and stage.
+  explanation_points:
+  - Explain why this method, its assumptions, its rounding, and its final design constraints
+    apply.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-797ddeed11a35e17
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-0bcfe5f5f3935471
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-21afc92a96c95180
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-c8fd73bd3cae5939
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-baf5150add9b5401
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-1ba778402281547a
+  use_when:
+  - Use when the study matches paired_two_group, paired_binary_ordinal_or_continuous,
+    and superiority_hypothesis_test.
+  do_not_use_when:
+  - Do not use when pairing, clustering, outcome scale, or hypothesis objective differs.
+  required_questions:
+  - Provide standardized_effect.
+  recommended_questions:
+  - What source supports the effect and nuisance assumptions?
+  - Is a sensitivity analysis required?
+  assumptions:
+  - Use only the assumptions and approximation recorded in the procedure catalog and
+    source provenance.
+  competing_procedures:
+  - ss200-proc-a26eceb857d05966
+  selection_differences:
+  - Resolve differences in analysis method, effect measure, pairing, and approximation
+    before selection.
+  sensitivity_parameters: []
+  common_misuses:
+  - Using an Example value as an unstated default.
+  - Changing sidedness or allocation without recording it.
+  review_checks:
+  - Confirm outcome scale and group roles.
+  - Confirm raw, final, quantity, unit, and stage.
+  explanation_points:
+  - Explain why this method, its assumptions, its rounding, and its final design constraints
+    apply.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-a26eceb857d05966
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-1434c2c361845233
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-5b6a81937826544e
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-cacf634aa0255e47
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-14fa4270ee73550f
+  use_when:
+  - Use when the study matches parallel_cluster, continuous, and two-arm continuous
+    difference.
+  do_not_use_when:
+  - Do not use when pairing, clustering, outcome scale, or hypothesis objective differs.
+  required_questions:
+  - Provide planned_difference.
+  - Provide standard_deviation.
+  - Provide analysis_cluster_size.
+  - Provide icc.
+  recommended_questions:
+  - What source supports the effect and nuisance assumptions?
+  - Is a sensitivity analysis required?
+  assumptions:
+  - Use only the assumptions and approximation recorded in the procedure catalog and
+    source provenance.
+  competing_procedures:
+  - ss200-proc-9ee8979aba8e5a3b
+  selection_differences:
+  - Resolve differences in analysis method, effect measure, pairing, and approximation
+    before selection.
+  sensitivity_parameters:
+  - standard_deviation
+  - icc
+  common_misuses:
+  - Using an Example value as an unstated default.
+  - Changing sidedness or allocation without recording it.
+  review_checks:
+  - Confirm outcome scale and group roles.
+  - Confirm raw, final, quantity, unit, and stage.
+  explanation_points:
+  - Explain why this method, its assumptions, its rounding, and its final design constraints
+    apply.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-9ee8979aba8e5a3b
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-b756613216e955d6
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-c28f68253e3e5432
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-86b9e0384f8b56b1
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-690d285387f85989
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-5195e24debe85ee3
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-8301257303ac5860
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-1f1aee7d64055751
+  use_when: []
+  do_not_use_when: []
+  required_questions: []
+  recommended_questions: []
+  assumptions: []
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses: []
+  review_checks: []
+  explanation_points: []
+  guidance_status: NOT_HUMAN_REVIEWED
+- procedure_key: ss200-proc-daf4c0b7816229b3
+  use_when:
+  - Use for all prespecified pairwise comparisons with continuous outcomes under the
+    registered all_pair_maximum design.
+  do_not_use_when:
+  - Do not use for an omnibus hypothesis or interaction effect.
+  required_questions:
+  - Provide arm_means.
+  - Provide standard_deviation.
+  recommended_questions:
+  - What source supports the planned effects and nuisance parameters?
+  assumptions:
+  - All wrapper-specific balance, compatibility, and least-favorable-comparison assumptions
+    must hold.
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses:
+  - Treating the wrapper as an omnibus or interaction test.
+  review_checks:
+  - Confirm the executed parent-engine lineage and final divisibility constraints.
+  explanation_points:
+  - Explain the parent two-group calculation and the multi-arm reconstruction separately.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-76d8d91301cb5f28
+  use_when:
+  - Use for all prespecified pairwise comparisons with ordinal outcomes under the
+    registered all_pair_maximum design.
+  do_not_use_when:
+  - Do not use for an omnibus hypothesis or interaction effect.
+  required_questions:
+  - Provide arm_category_proportions.
+  recommended_questions:
+  - What source supports the planned effects and nuisance parameters?
+  assumptions:
+  - All wrapper-specific balance, compatibility, and least-favorable-comparison assumptions
+    must hold.
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses:
+  - Treating the wrapper as an omnibus or interaction test.
+  review_checks:
+  - Confirm the executed parent-engine lineage and final divisibility constraints.
+  explanation_points:
+  - Explain the parent two-group calculation and the multi-arm reconstruction separately.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-a24d67f86b9b513c
+  use_when:
+  - Use for all prespecified pairwise comparisons with rate outcomes under the registered
+    all_pair_maximum design.
+  do_not_use_when:
+  - Do not use for an omnibus hypothesis or interaction effect.
+  required_questions:
+  - Provide arm_rates.
+  recommended_questions:
+  - What source supports the planned effects and nuisance parameters?
+  assumptions:
+  - All wrapper-specific balance, compatibility, and least-favorable-comparison assumptions
+    must hold.
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses:
+  - Treating the wrapper as an omnibus or interaction test.
+  review_checks:
+  - Confirm the executed parent-engine lineage and final divisibility constraints.
+  explanation_points:
+  - Explain the parent two-group calculation and the multi-arm reconstruction separately.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-037f31a2b903f545
+  use_when:
+  - Use for all prespecified pairwise comparisons with rate outcomes under the registered
+    all_pair_maximum design.
+  do_not_use_when:
+  - Do not use for an omnibus hypothesis or interaction effect.
+  required_questions:
+  - Provide arm_rates.
+  - Provide overdispersion.
+  - Provide mean_exposure.
+  recommended_questions:
+  - What source supports the planned effects and nuisance parameters?
+  assumptions:
+  - All wrapper-specific balance, compatibility, and least-favorable-comparison assumptions
+    must hold.
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses:
+  - Treating the wrapper as an omnibus or interaction test.
+  review_checks:
+  - Confirm the executed parent-engine lineage and final divisibility constraints.
+  explanation_points:
+  - Explain the parent two-group calculation and the multi-arm reconstruction separately.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-fb74aec2769cac0a
+  use_when:
+  - Use for multiple treatments versus shared reference with ordinal outcomes under
+    the registered shared_reference design.
+  do_not_use_when:
+  - Do not use for an omnibus hypothesis or interaction effect.
+  required_questions:
+  - Provide reference_proportions.
+  - Provide least_favorable_odds_ratio.
+  - Provide number_of_treatment_arms.
+  recommended_questions:
+  - What source supports the planned effects and nuisance parameters?
+  assumptions:
+  - All wrapper-specific balance, compatibility, and least-favorable-comparison assumptions
+    must hold.
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses:
+  - Treating the wrapper as an omnibus or interaction test.
+  review_checks:
+  - Confirm the executed parent-engine lineage and final divisibility constraints.
+  explanation_points:
+  - Explain the parent two-group calculation and the multi-arm reconstruction separately.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-b716380d380da69e
+  use_when:
+  - Use for multiple treatments versus shared reference with rate outcomes under the
+    registered shared_reference design.
+  do_not_use_when:
+  - Do not use for an omnibus hypothesis or interaction effect.
+  required_questions:
+  - Provide reference_rate.
+  - Provide least_favorable_rate_ratio.
+  - Provide number_of_treatment_arms.
+  recommended_questions:
+  - What source supports the planned effects and nuisance parameters?
+  assumptions:
+  - All wrapper-specific balance, compatibility, and least-favorable-comparison assumptions
+    must hold.
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses:
+  - Treating the wrapper as an omnibus or interaction test.
+  review_checks:
+  - Confirm the executed parent-engine lineage and final divisibility constraints.
+  explanation_points:
+  - Explain the parent two-group calculation and the multi-arm reconstruction separately.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-f0668c49741c1c28
+  use_when:
+  - Use for multiple treatments versus shared reference with rate outcomes under the
+    registered shared_reference design.
+  do_not_use_when:
+  - Do not use for an omnibus hypothesis or interaction effect.
+  required_questions:
+  - Provide reference_rate.
+  - Provide least_favorable_treatment_rate.
+  - Provide number_of_treatment_arms.
+  - Provide overdispersion.
+  - Provide mean_exposure.
+  recommended_questions:
+  - What source supports the planned effects and nuisance parameters?
+  assumptions:
+  - All wrapper-specific balance, compatibility, and least-favorable-comparison assumptions
+    must hold.
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses:
+  - Treating the wrapper as an omnibus or interaction test.
+  review_checks:
+  - Confirm the executed parent-engine lineage and final divisibility constraints.
+  explanation_points:
+  - Explain the parent two-group calculation and the multi-arm reconstruction separately.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-2e2b621a5ccfcf32
+  use_when:
+  - Use for two factorial main effects with binary outcomes under the registered factorial_2x2
+    design.
+  do_not_use_when:
+  - Do not use for an omnibus hypothesis or interaction effect.
+  required_questions:
+  - Provide factor_a_control_proportion.
+  - Provide factor_a_treatment_proportion.
+  - Provide factor_b_control_proportion.
+  - Provide factor_b_treatment_proportion.
+  recommended_questions:
+  - What source supports the planned effects and nuisance parameters?
+  assumptions:
+  - All wrapper-specific balance, compatibility, and least-favorable-comparison assumptions
+    must hold.
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses:
+  - Treating the wrapper as an omnibus or interaction test.
+  review_checks:
+  - Confirm the executed parent-engine lineage and final divisibility constraints.
+  explanation_points:
+  - Explain the parent two-group calculation and the multi-arm reconstruction separately.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-8e49a66064b1242f
+  use_when:
+  - Use for two factorial main effects with binary outcomes under the registered factorial_2x2
+    design.
+  do_not_use_when:
+  - Do not use for an omnibus hypothesis or interaction effect.
+  required_questions:
+  - Provide factor_a_control_proportion.
+  - Provide factor_a_odds_ratio.
+  - Provide factor_b_control_proportion.
+  - Provide factor_b_odds_ratio.
+  recommended_questions:
+  - What source supports the planned effects and nuisance parameters?
+  assumptions:
+  - All wrapper-specific balance, compatibility, and least-favorable-comparison assumptions
+    must hold.
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses:
+  - Treating the wrapper as an omnibus or interaction test.
+  review_checks:
+  - Confirm the executed parent-engine lineage and final divisibility constraints.
+  explanation_points:
+  - Explain the parent two-group calculation and the multi-arm reconstruction separately.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-42d24f85d8f1ded8
+  use_when:
+  - Use for two factorial main effects with ordinal outcomes under the registered
+    factorial_2x2 design.
+  do_not_use_when:
+  - Do not use for an omnibus hypothesis or interaction effect.
+  required_questions:
+  - Provide factor_a_control_proportions.
+  - Provide factor_a_odds_ratio.
+  - Provide factor_b_control_proportions.
+  - Provide factor_b_odds_ratio.
+  recommended_questions:
+  - What source supports the planned effects and nuisance parameters?
+  assumptions:
+  - All wrapper-specific balance, compatibility, and least-favorable-comparison assumptions
+    must hold.
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses:
+  - Treating the wrapper as an omnibus or interaction test.
+  review_checks:
+  - Confirm the executed parent-engine lineage and final divisibility constraints.
+  explanation_points:
+  - Explain the parent two-group calculation and the multi-arm reconstruction separately.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-9e4e1cf70d63ff9d
+  use_when:
+  - Use for two factorial main effects with rate outcomes under the registered factorial_2x2
+    design.
+  do_not_use_when:
+  - Do not use for an omnibus hypothesis or interaction effect.
+  required_questions:
+  - Provide factor_a_standard_rate.
+  - Provide factor_a_treatment_rate.
+  - Provide factor_b_standard_rate.
+  - Provide factor_b_treatment_rate.
+  recommended_questions:
+  - What source supports the planned effects and nuisance parameters?
+  assumptions:
+  - All wrapper-specific balance, compatibility, and least-favorable-comparison assumptions
+    must hold.
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses:
+  - Treating the wrapper as an omnibus or interaction test.
+  review_checks:
+  - Confirm the executed parent-engine lineage and final divisibility constraints.
+  explanation_points:
+  - Explain the parent two-group calculation and the multi-arm reconstruction separately.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-a821e605bd6a55a1
+  use_when:
+  - Use for two factorial main effects with rate outcomes under the registered factorial_2x2
+    design.
+  do_not_use_when:
+  - Do not use for an omnibus hypothesis or interaction effect.
+  required_questions:
+  - Provide factor_a_standard_rate.
+  - Provide factor_a_treatment_rate.
+  - Provide factor_b_standard_rate.
+  - Provide factor_b_treatment_rate.
+  - Provide overdispersion.
+  - Provide mean_exposure.
+  recommended_questions:
+  - What source supports the planned effects and nuisance parameters?
+  assumptions:
+  - All wrapper-specific balance, compatibility, and least-favorable-comparison assumptions
+    must hold.
+  competing_procedures: []
+  selection_differences: []
+  sensitivity_parameters: []
+  common_misuses:
+  - Treating the wrapper as an omnibus or interaction test.
+  review_checks:
+  - Confirm the executed parent-engine lineage and final divisibility constraints.
+  explanation_points:
+  - Explain the parent two-group calculation and the multi-arm reconstruction separately.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-b0aef1825c860823
+  use_when:
+  - Use for all prespecified pairwise comparisons with time_to_event outcomes and
+    schoenfeld.
+  do_not_use_when:
+  - Do not use for an omnibus hypothesis or interaction effect.
+  - Do not use when the parent event model is unknown.
+  required_questions:
+  - Provide arm_hazard_multipliers.
+  - Provide arm_event_probabilities.
+  recommended_questions:
+  - Which event model supports the analysis and planning assumptions?
+  assumptions:
+  - The registered parent model and reconstruction assumptions must hold.
+  competing_procedures: []
+  selection_differences:
+  - 'Parent analysis method: schoenfeld.'
+  sensitivity_parameters: []
+  common_misuses:
+  - Treating the wrapper as an omnibus or interaction test.
+  review_checks:
+  - Confirm parent-engine lineage, event model, and final divisibility.
+  explanation_points:
+  - Explain the parent calculation and multi-arm reconstruction separately.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-003baf9d8ef1b2d5
+  use_when:
+  - Use for all prespecified pairwise comparisons with time_to_event outcomes and
+    freedman.
+  do_not_use_when:
+  - Do not use for an omnibus hypothesis or interaction effect.
+  - Do not use when the parent event model is unknown.
+  required_questions:
+  - Provide arm_hazard_multipliers.
+  - Provide arm_event_probabilities.
+  recommended_questions:
+  - Which event model supports the analysis and planning assumptions?
+  assumptions:
+  - The registered parent model and reconstruction assumptions must hold.
+  competing_procedures: []
+  selection_differences:
+  - 'Parent analysis method: freedman.'
+  sensitivity_parameters: []
+  common_misuses:
+  - Treating the wrapper as an omnibus or interaction test.
+  review_checks:
+  - Confirm parent-engine lineage, event model, and final divisibility.
+  explanation_points:
+  - Explain the parent calculation and multi-arm reconstruction separately.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-21ac61dcf13478fa
+  use_when:
+  - Use for multiple treatments versus shared reference with time_to_event outcomes
+    and schoenfeld.
+  do_not_use_when:
+  - Do not use for an omnibus hypothesis or interaction effect.
+  - Do not use when the parent event model is unknown.
+  required_questions:
+  - Provide least_favorable_hazard_ratio.
+  - Provide reference_event_probability.
+  - Provide least_favorable_treatment_event_probability.
+  - Provide number_of_treatment_arms.
+  recommended_questions:
+  - Which event model supports the analysis and planning assumptions?
+  assumptions:
+  - The registered parent model and reconstruction assumptions must hold.
+  competing_procedures: []
+  selection_differences:
+  - 'Parent analysis method: schoenfeld.'
+  sensitivity_parameters: []
+  common_misuses:
+  - Treating the wrapper as an omnibus or interaction test.
+  review_checks:
+  - Confirm parent-engine lineage, event model, and final divisibility.
+  explanation_points:
+  - Explain the parent calculation and multi-arm reconstruction separately.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-0f803f270aad2833
+  use_when:
+  - Use for multiple treatments versus shared reference with time_to_event outcomes
+    and freedman.
+  do_not_use_when:
+  - Do not use for an omnibus hypothesis or interaction effect.
+  - Do not use when the parent event model is unknown.
+  required_questions:
+  - Provide least_favorable_hazard_ratio.
+  - Provide reference_event_probability.
+  - Provide least_favorable_treatment_event_probability.
+  - Provide number_of_treatment_arms.
+  recommended_questions:
+  - Which event model supports the analysis and planning assumptions?
+  assumptions:
+  - The registered parent model and reconstruction assumptions must hold.
+  competing_procedures: []
+  selection_differences:
+  - 'Parent analysis method: freedman.'
+  sensitivity_parameters: []
+  common_misuses:
+  - Treating the wrapper as an omnibus or interaction test.
+  review_checks:
+  - Confirm parent-engine lineage, event model, and final divisibility.
+  explanation_points:
+  - Explain the parent calculation and multi-arm reconstruction separately.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-311d7472d796b28d
+  use_when:
+  - Use for two factorial main effects with time_to_event outcomes and schoenfeld.
+  do_not_use_when:
+  - Do not use for an omnibus hypothesis or interaction effect.
+  - Do not use when the parent event model is unknown.
+  required_questions:
+  - Provide factor_a_hazard_ratio.
+  - Provide factor_a_standard_event_probability.
+  - Provide factor_a_treatment_event_probability.
+  - Provide factor_b_hazard_ratio.
+  - Provide factor_b_standard_event_probability.
+  - Provide factor_b_treatment_event_probability.
+  recommended_questions:
+  - Which event model supports the analysis and planning assumptions?
+  assumptions:
+  - The registered parent model and reconstruction assumptions must hold.
+  competing_procedures: []
+  selection_differences:
+  - 'Parent analysis method: schoenfeld.'
+  sensitivity_parameters: []
+  common_misuses:
+  - Treating the wrapper as an omnibus or interaction test.
+  review_checks:
+  - Confirm parent-engine lineage, event model, and final divisibility.
+  explanation_points:
+  - Explain the parent calculation and multi-arm reconstruction separately.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-133e734ccc2c078b
+  use_when:
+  - Use for two factorial main effects with time_to_event outcomes and freedman.
+  do_not_use_when:
+  - Do not use for an omnibus hypothesis or interaction effect.
+  - Do not use when the parent event model is unknown.
+  required_questions:
+  - Provide factor_a_hazard_ratio.
+  - Provide factor_a_standard_event_probability.
+  - Provide factor_a_treatment_event_probability.
+  - Provide factor_b_hazard_ratio.
+  - Provide factor_b_standard_event_probability.
+  - Provide factor_b_treatment_event_probability.
+  recommended_questions:
+  - Which event model supports the analysis and planning assumptions?
+  assumptions:
+  - The registered parent model and reconstruction assumptions must hold.
+  competing_procedures: []
+  selection_differences:
+  - 'Parent analysis method: freedman.'
+  sensitivity_parameters: []
+  common_misuses:
+  - Treating the wrapper as an omnibus or interaction test.
+  review_checks:
+  - Confirm parent-engine lineage, event model, and final divisibility.
+  explanation_points:
+  - Explain the parent calculation and multi-arm reconstruction separately.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-f245e2bec3b89bbc
+  use_when:
+  - Use for all prespecified pairwise comparisons with competing_risk outcomes and
+    cause_specific_hazard.
+  do_not_use_when:
+  - Do not use for an omnibus hypothesis or interaction effect.
+  - Do not use when the parent event model is unknown.
+  required_questions:
+  - Provide arm_interest_hazards.
+  - Provide arm_competing_hazards.
+  - Provide accrual_duration.
+  - Provide additional_followup.
+  recommended_questions:
+  - Which event model supports the analysis and planning assumptions?
+  assumptions:
+  - The registered parent model and reconstruction assumptions must hold.
+  competing_procedures: []
+  selection_differences:
+  - 'Parent analysis method: cause_specific_hazard.'
+  sensitivity_parameters: []
+  common_misuses:
+  - Treating the wrapper as an omnibus or interaction test.
+  review_checks:
+  - Confirm parent-engine lineage, event model, and final divisibility.
+  explanation_points:
+  - Explain the parent calculation and multi-arm reconstruction separately.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-7c5b0bc1affedd12
+  use_when:
+  - Use for all prespecified pairwise comparisons with competing_risk outcomes and
+    subdistribution_fixed_censoring.
+  do_not_use_when:
+  - Do not use for an omnibus hypothesis or interaction effect.
+  - Do not use when the parent event model is unknown.
+  required_questions:
+  - Provide arm_interest_cifs.
+  - Provide arm_censoring_probabilities.
+  recommended_questions:
+  - Which event model supports the analysis and planning assumptions?
+  assumptions:
+  - The registered parent model and reconstruction assumptions must hold.
+  competing_procedures: []
+  selection_differences:
+  - 'Parent analysis method: subdistribution_fixed_censoring.'
+  sensitivity_parameters: []
+  common_misuses:
+  - Treating the wrapper as an omnibus or interaction test.
+  review_checks:
+  - Confirm parent-engine lineage, event model, and final divisibility.
+  explanation_points:
+  - Explain the parent calculation and multi-arm reconstruction separately.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-e3864dc5f61e5431
+  use_when:
+  - Use for all prespecified pairwise comparisons with competing_risk outcomes and
+    subdistribution_accrual_integration.
+  do_not_use_when:
+  - Do not use for an omnibus hypothesis or interaction effect.
+  - Do not use when the parent event model is unknown.
+  required_questions:
+  - Provide arm_interest_cifs.
+  - Provide reference_time.
+  - Provide accrual_duration.
+  - Provide additional_followup.
+  recommended_questions:
+  - Which event model supports the analysis and planning assumptions?
+  assumptions:
+  - The registered parent model and reconstruction assumptions must hold.
+  competing_procedures: []
+  selection_differences:
+  - 'Parent analysis method: subdistribution_accrual_integration.'
+  sensitivity_parameters: []
+  common_misuses:
+  - Treating the wrapper as an omnibus or interaction test.
+  review_checks:
+  - Confirm parent-engine lineage, event model, and final divisibility.
+  explanation_points:
+  - Explain the parent calculation and multi-arm reconstruction separately.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-c23df603e034ab61
+  use_when:
+  - Use for multiple treatments versus shared reference with competing_risk outcomes
+    and cause_specific_hazard.
+  do_not_use_when:
+  - Do not use for an omnibus hypothesis or interaction effect.
+  - Do not use when the parent event model is unknown.
+  required_questions:
+  - Provide reference_interest_hazard.
+  - Provide reference_competing_hazards.
+  - Provide least_favorable_treatment_interest_hazard.
+  - Provide least_favorable_treatment_competing_hazards.
+  - Provide accrual_duration.
+  - Provide additional_followup.
+  - Provide number_of_treatment_arms.
+  recommended_questions:
+  - Which event model supports the analysis and planning assumptions?
+  assumptions:
+  - The registered parent model and reconstruction assumptions must hold.
+  competing_procedures: []
+  selection_differences:
+  - 'Parent analysis method: cause_specific_hazard.'
+  sensitivity_parameters: []
+  common_misuses:
+  - Treating the wrapper as an omnibus or interaction test.
+  review_checks:
+  - Confirm parent-engine lineage, event model, and final divisibility.
+  explanation_points:
+  - Explain the parent calculation and multi-arm reconstruction separately.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-ca1a810c7b48631a
+  use_when:
+  - Use for multiple treatments versus shared reference with competing_risk outcomes
+    and subdistribution_fixed_censoring.
+  do_not_use_when:
+  - Do not use for an omnibus hypothesis or interaction effect.
+  - Do not use when the parent event model is unknown.
+  required_questions:
+  - Provide reference_interest_cif.
+  - Provide least_favorable_treatment_interest_cif.
+  - Provide reference_censoring_probability.
+  - Provide least_favorable_treatment_censoring_probability.
+  - Provide number_of_treatment_arms.
+  recommended_questions:
+  - Which event model supports the analysis and planning assumptions?
+  assumptions:
+  - The registered parent model and reconstruction assumptions must hold.
+  competing_procedures: []
+  selection_differences:
+  - 'Parent analysis method: subdistribution_fixed_censoring.'
+  sensitivity_parameters: []
+  common_misuses:
+  - Treating the wrapper as an omnibus or interaction test.
+  review_checks:
+  - Confirm parent-engine lineage, event model, and final divisibility.
+  explanation_points:
+  - Explain the parent calculation and multi-arm reconstruction separately.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-22a30639d6b529e4
+  use_when:
+  - Use for multiple treatments versus shared reference with competing_risk outcomes
+    and subdistribution_accrual_integration.
+  do_not_use_when:
+  - Do not use for an omnibus hypothesis or interaction effect.
+  - Do not use when the parent event model is unknown.
+  required_questions:
+  - Provide reference_interest_cif.
+  - Provide least_favorable_treatment_interest_cif.
+  - Provide reference_time.
+  - Provide accrual_duration.
+  - Provide additional_followup.
+  - Provide number_of_treatment_arms.
+  recommended_questions:
+  - Which event model supports the analysis and planning assumptions?
+  assumptions:
+  - The registered parent model and reconstruction assumptions must hold.
+  competing_procedures: []
+  selection_differences:
+  - 'Parent analysis method: subdistribution_accrual_integration.'
+  sensitivity_parameters: []
+  common_misuses:
+  - Treating the wrapper as an omnibus or interaction test.
+  review_checks:
+  - Confirm parent-engine lineage, event model, and final divisibility.
+  explanation_points:
+  - Explain the parent calculation and multi-arm reconstruction separately.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-0d3d064c7cc7ce6f
+  use_when:
+  - Use for two factorial main effects with competing_risk outcomes and cause_specific_hazard.
+  do_not_use_when:
+  - Do not use for an omnibus hypothesis or interaction effect.
+  - Do not use when the parent event model is unknown.
+  required_questions:
+  - Provide factor_a_standard_interest_hazard.
+  - Provide factor_a_standard_competing_hazards.
+  - Provide factor_a_treatment_interest_hazard.
+  - Provide factor_a_treatment_competing_hazards.
+  - Provide factor_b_standard_interest_hazard.
+  - Provide factor_b_standard_competing_hazards.
+  - Provide factor_b_treatment_interest_hazard.
+  - Provide factor_b_treatment_competing_hazards.
+  - Provide accrual_duration.
+  - Provide additional_followup.
+  recommended_questions:
+  - Which event model supports the analysis and planning assumptions?
+  assumptions:
+  - The registered parent model and reconstruction assumptions must hold.
+  competing_procedures: []
+  selection_differences:
+  - 'Parent analysis method: cause_specific_hazard.'
+  sensitivity_parameters: []
+  common_misuses:
+  - Treating the wrapper as an omnibus or interaction test.
+  review_checks:
+  - Confirm parent-engine lineage, event model, and final divisibility.
+  explanation_points:
+  - Explain the parent calculation and multi-arm reconstruction separately.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-4268ea0a69b15870
+  use_when:
+  - Use for two factorial main effects with competing_risk outcomes and subdistribution_fixed_censoring.
+  do_not_use_when:
+  - Do not use for an omnibus hypothesis or interaction effect.
+  - Do not use when the parent event model is unknown.
+  required_questions:
+  - Provide factor_a_standard_interest_cif.
+  - Provide factor_a_treatment_interest_cif.
+  - Provide factor_a_standard_censoring_probability.
+  - Provide factor_a_treatment_censoring_probability.
+  - Provide factor_b_standard_interest_cif.
+  - Provide factor_b_treatment_interest_cif.
+  - Provide factor_b_standard_censoring_probability.
+  - Provide factor_b_treatment_censoring_probability.
+  recommended_questions:
+  - Which event model supports the analysis and planning assumptions?
+  assumptions:
+  - The registered parent model and reconstruction assumptions must hold.
+  competing_procedures: []
+  selection_differences:
+  - 'Parent analysis method: subdistribution_fixed_censoring.'
+  sensitivity_parameters: []
+  common_misuses:
+  - Treating the wrapper as an omnibus or interaction test.
+  review_checks:
+  - Confirm parent-engine lineage, event model, and final divisibility.
+  explanation_points:
+  - Explain the parent calculation and multi-arm reconstruction separately.
+  guidance_status: CURATED_PROTOTYPE
+- procedure_key: ss200-proc-b8e7f6ab129ff50e
+  use_when:
+  - Use for two factorial main effects with competing_risk outcomes and subdistribution_accrual_integration.
+  do_not_use_when:
+  - Do not use for an omnibus hypothesis or interaction effect.
+  - Do not use when the parent event model is unknown.
+  required_questions:
+  - Provide factor_a_standard_interest_cif.
+  - Provide factor_a_treatment_interest_cif.
+  - Provide factor_b_standard_interest_cif.
+  - Provide factor_b_treatment_interest_cif.
+  - Provide reference_time.
+  - Provide accrual_duration.
+  - Provide additional_followup.
+  recommended_questions:
+  - Which event model supports the analysis and planning assumptions?
+  assumptions:
+  - The registered parent model and reconstruction assumptions must hold.
+  competing_procedures: []
+  selection_differences:
+  - 'Parent analysis method: subdistribution_accrual_integration.'
+  sensitivity_parameters: []
+  common_misuses:
+  - Treating the wrapper as an omnibus or interaction test.
+  review_checks:
+  - Confirm parent-engine lineage, event model, and final divisibility.
+  explanation_points:
+  - Explain the parent calculation and multi-arm reconstruction separately.
+  guidance_status: CURATED_PROTOTYPE

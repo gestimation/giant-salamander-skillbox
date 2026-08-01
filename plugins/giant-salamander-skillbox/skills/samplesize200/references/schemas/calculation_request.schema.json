@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://samplesize200.local/schemas/calculation-request-v2.0.0.json",
+  "title": "samplesize200 CalculationRequest",
+  "type": "object",
+  "required": ["schema_version", "requested_output"],
+  "properties": {
+    "schema_version": {"const": "2.0.0"},
+    "request_id": {"type": "string", "minLength": 1},
+    "requested_output": {
+      "enum": [
+        "required_sample_size", "required_events", "required_cluster_size",
+        "attrition_adjusted_sample_size", "achieved_power", "detectable_effect"
+      ]
+    },
+    "power_scenarios": {"type": "array", "items": {"type": "number"}},
+    "calculation_grid": {"type": "object"}
+  },
+  "additionalProperties": false
+}

@@ -2,3 +2,4 @@
 
 # Preserve vendored PyYAML source without rewriting upstream whitespace.
 skills/samplesize200/vendor/** -whitespace
+plugins/giant-salamander-skillbox/skills/samplesize200/vendor/** -whitespace

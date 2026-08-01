@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://samplesize200.local/schemas/study-field-contract-1.0.0.json",
+  "title": "samplesize200 Study field contract",
+  "type": "object",
+  "required": [
+    "schema_version", "product_version", "status", "scope", "policy",
+    "top_level_fields", "study_fields", "values_namespace",
+    "semantic_rules", "compatibility"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "product_version": {"type": "string", "minLength": 1},
+    "status": {
+      "enum": ["design_review", "active", "deprecated"]
+    },
+    "scope": {"type": "object"},
+    "policy": {"type": "object"},
+    "top_level_fields": {
+      "type": "object",
+      "additionalProperties": {"$ref": "#/$defs/fieldContract"}
+    },
+    "study_fields": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"$ref": "#/$defs/fieldContract"}
+    },
+    "values_namespace": {
+      "type": "object",
+      "required": ["definition_source", "duplication_policy", "common_fields"],
+      "properties": {
+        "definition_source": {"type": "string", "minLength": 1},
+        "duplication_policy": {"type": "string", "minLength": 1},
+        "common_fields": {
+          "type": "object",
+          "additionalProperties": {"$ref": "#/$defs/fieldContract"}
+        }
+      },
+      "additionalProperties": true
+    },
+    "semantic_rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "when", "assert", "message"],
+        "properties": {
+          "code": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]+$"},
+          "severity": {"enum": ["error", "warning", "normalization"]},
+          "when": {"type": "object"},
+          "assert": {"type": "object"},
+          "message": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": true
+      }
+    },
+    "compatibility": {"type": "object"}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "fieldContract": {
+      "type": "object",
+      "required": [
+        "owner", "path", "kind", "data_type", "unit", "authorability",
+        "allowed_values", "constraints", "derived_from", "conflict_policy",
+        "selector_use", "engine_use", "status", "canonical_location",
+        "compatibility_locations", "notes"
+      ],
+      "properties": {
+        "owner": {
+          "enum": [
+            "StudySpec", "CalculationRequest", "ResolvedCalculationRequest", "ResolutionState", "ExecutionSpec",
+            "InteractionContext", "CalculationResult", "procedure_catalog"
+          ]
+        },
+        "path": {"type": "string", "pattern": "^/"},
+        "kind": {
+          "enum": [
+            "contract_metadata", "revision", "container", "discriminator",
+            "design_qualifier", "descriptive_metadata", "analysis_constraint",
+            "estimand_descriptor", "catalog_projection", "compatibility_alias",
+            "study_value", "value_provenance", "resolution_state"
+          ]
+        },
+        "data_type": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": ["string", "integer", "number", "boolean", "object", "array", "null"]
+          }
+        },
+        "unit": {"type": ["string", "null"]},
+        "authorability": {
+          "enum": [
+            "system_only", "user_or_inferred", "inferred_or_derived",
+            "compatibility_only", "user_patchable"
+          ]
+        },
+        "allowed_values": {
+          "type": ["array", "null"],
+          "items": {"type": ["string", "integer", "number", "boolean", "null"]}
+        },
+        "constraints": {"type": "object"},
+        "derived_from": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true
+        },
+        "conflict_policy": {
+          "enum": [
+            "reject", "reject_after_resolution", "canonical_wins_with_notice",
+            "not_applicable"
+          ]
+        },
+        "selector_use": {"type": "boolean"},
+        "engine_use": {"type": "boolean"},
+        "status": {
+          "enum": [
+            "canonical", "canonical_transitional", "derived_projection",
+            "misplaced_legacy", "deprecated_umbrella"
+          ]
+        },
+        "canonical_location": {"type": "string", "pattern": "^/"},
+        "compatibility_locations": {
+          "type": "array",
+          "items": {"type": "string", "pattern": "^/"},
+          "uniqueItems": true
+        },
+        "normalization_aliases": {"type": "object"},
+        "notes": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

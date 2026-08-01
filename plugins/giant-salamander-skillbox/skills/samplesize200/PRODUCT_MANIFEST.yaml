@@ -1,0 +1,154 @@
+product: samplesize200
+series: Giant Salamander Skillbox
+edition: StudySpec v2 Canonical Contract
+version: 1.0.0-rc.6
+release_status: release_candidate
+final_public_api: true
+license:
+  spdx_identifier: MIT
+  file: LICENSE
+  copyright: Copyright (c) 2026 Shiro Tanaka
+third_party_licenses:
+- component: PyYAML
+  bundled: true
+  license: MIT
+  file: vendor/PYYAML_LICENSE.txt
+- component: SciPy
+  bundled: false
+  license: BSD-3-Clause
+  note: runtime dependency supplied by the execution environment
+validated_public_procedures: 128
+operations:
+  SAMPLE_SIZE: 126
+  REQUIRED_CLUSTER_SIZE: 2
+  POWER: 30
+engine:
+  name: samplesize200
+  version: 0.6.9
+  source_release_scoped_sha256: 25b6f4da18b5d95594ad763bf64664491a487e98d7d1c702a3b9c0fd67d9ddc3
+requested_outputs:
+- required_events
+- required_sample_size
+- required_cluster_size
+- attrition_adjusted_sample_size
+- achieved_power
+- detectable_effect
+release_scope:
+  contract: references/release_scope_1_0.yaml
+  target_release: 1.0.0
+  registered_calculators_required_available: 188
+  unregistered_capabilities_are_release_blocking: false
+naming_contract:
+  version: 1.0.0
+  reader_mode: canonical_only
+  removed_input_behavior: structured_error
+  writer_mode: canonical_only
+  calculator_ids: 188
+  example_ids: 105
+  example_links: 258
+  solutions: 293
+  existing_identifier_values_renumbered: false
+study_spec:
+  external_compatibility_schema: removed_in_1_0
+  canonical_schema: 2.0.0
+  contract_objects:
+  - StudySpec
+  - CalculationRequest
+  - CalculatorSelectionConstraint
+  - ResolvedCalculationRequest
+  - ResolutionState
+  - ExecutionSpec
+  - InteractionContext
+  - CalculationResult
+  execution_payload_is_minimal: true
+  interaction_state_outside_study_spec: true
+  compatibility_state_outside_study_spec: true
+  deterministic_input_fingerprint: true
+  fingerprint_version: ss200-exec-v1
+  revision_checked_patch_updates: true
+  patch_operations: [add, replace, remove]
+  provenance_vocabulary: canonical_six_sources
+  multiple_calculation_requests: ordered_parallel_capable
+  contract_revision: 6-4
+  legacy_execution_bridge: removed
+  selector_defaults_adapter: removed
+  native_v2_planning_service: StudySpec-v2.native-planning.6-4
+  array_patch_updates: true
+migration:
+  completed_phases: [0, 1, 2, 3, 4, 5, 6]
+  phase_4b_contract_review: complete
+  phase_5_native_services: complete
+  phase_6_deprecation_period: complete
+  deprecated_alias_removal: complete
+deprecation:
+  status: completed
+  removed_in: 1.0.0-rc.1
+  legacy_reader: removed
+  legacy_export: removed
+  removed_input_behavior: structured_error
+  calculation_formulas_changed: false
+  calculation_results_changed: false
+  rounding_rules_changed: false
+output_profiles:
+  cli_default: canonical
+  assistant_default: canonical
+  python_api_default: canonical
+  compatibility_profile: removed
+public_python_api:
+  module: scripts/samplesize200_api.py
+  functions: [plan, calculate]
+  output_profile: canonical
+  deprecated_alias_output: false
+  detailed_qc_cli: scripts/plan_request.py
+output_modes:
+- concise
+- detailed
+- qc
+validated_composition_rules:
+- THREE_GROUP_ALL_PAIRWISE_REPEATED_BONFERRONI
+research_examples:
+  research_studies: 105
+  calculation_records: 259
+  procedures_with_candidates: 99
+  counted_as_solution: true
+  solution_count: 105
+  ordinary_calculation_loads_details: false
+  offer_requires_calculated: true
+  offer_failure_policy: fail_open
+  exact_requires_formula_reference: true
+  source_inconsistency_excluded_from_offer: false
+conversation_performance:
+  ordinary_calculation_script: scripts/assistant_calculate.py
+  research_example_script: scripts/assistant_example.py
+  full_audit_output_preserved: true
+  calculation_payload_budget_bytes: 5000
+  research_example_payload_budget_bytes: 6000
+  help_only_terminal_for_turn: true
+  lazy_frozen_longitudinal_models:
+  - TWO-031
+  - TWO-032
+  - TWO-033
+  lazy_adapter_changes_engine_source: false
+  lazy_adapter_requires_full_output_equivalence: true
+help:
+  quick_guide: references/samplesize200_quick_guide_ja.md
+  quick_guide_en: references/samplesize200_quick_guide.md
+  quick_guide_ja: references/samplesize200_quick_guide_ja.md
+  python_api_1_0: references/PYTHON_API_1_0_JA.md
+  python_api_1_0_en: references/PYTHON_API_1_0.md
+  python_api_1_0_ja: references/PYTHON_API_1_0_JA.md
+  solution_catalog_1_0: references/SOLUTION_CATALOG_1_0_JA.md
+  solution_catalog_1_0_en: references/SOLUTION_CATALOG_1_0.md
+  solution_catalog_1_0_ja: references/SOLUTION_CATALOG_1_0_JA.md
+  calculator_table_1_0: references/CALCULATORS_1_0.csv
+  example_table_1_0: references/EXAMPLES_1_0.csv
+  script: scripts/show_help.py
+  show_for:
+  - explicit_help_request
+  - workflow_confusion
+  suppress_for:
+  - single_missing_input
+citation_metadata:
+  corrections: 1
+  correction_registry: references/source_corrections.yaml
+  calculation_changes: false

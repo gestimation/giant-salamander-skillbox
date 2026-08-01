@@ -12,12 +12,27 @@ import unicodedata
 import zipfile
 from pathlib import Path, PurePosixPath
 
-from release_config import PLUGINS, plugin_manifest
+from release_config import (
+    BUNDLE_FILENAME,
+    BUNDLE_NAME,
+    BUNDLE_VERSION,
+    PLUGINS,
+    PUBLISHED_ASSET_SHA256,
+    RELEASE_REF,
+    claude_bundle_manifest,
+    claude_marketplace,
+    codex_bundle_manifest,
+    codex_marketplace,
+    plugin_manifest,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS_DIR = ROOT / "skills"
 DIST_DIR = ROOT / "dist"
+BUNDLE_DIR = ROOT / "plugins" / BUNDLE_NAME
+CODEX_MARKETPLACE_PATH = ROOT / ".agents" / "plugins" / "marketplace.json"
+CLAUDE_MARKETPLACE_PATH = ROOT / ".claude-plugin" / "marketplace.json"
 EXPECTED = {
     name: (name, config["filename"])
     for name, config in PLUGINS.items()
@@ -77,6 +92,18 @@ def sha256(path: Path) -> str:
     with path.open("rb") as stream:
         for chunk in iter(lambda: stream.read(1024 * 1024), b""):
             digest.update(chunk)
+    return digest.hexdigest()
+
+
+def skill_tree_sha256(source: Path) -> str:
+    digest = hashlib.sha256()
+    for path in sorted(source.rglob("*"), key=lambda item: item.as_posix()):
+        if not path.is_file():
+            continue
+        digest.update(path.relative_to(source).as_posix().encode("utf-8"))
+        digest.update(b"\0")
+        digest.update(path.read_bytes())
+        digest.update(b"\0")
     return digest.hexdigest()
 
 
@@ -186,6 +213,105 @@ def validate_tree() -> int:
     return file_count
 
 
+def validate_bundle_tree() -> int:
+    if not BUNDLE_DIR.is_dir():
+        fail("Missing generated three-skill plugin directory")
+
+    expected_top_level = {
+        ".codex-plugin",
+        ".claude-plugin",
+        "skills",
+        "BUNDLE_MANIFEST.json",
+        "README.md",
+        "LICENSE",
+    }
+    actual_top_level = {
+        path.name
+        for path in BUNDLE_DIR.iterdir()
+        if path.is_file() or any(candidate.is_file() for candidate in path.rglob("*"))
+    }
+    if actual_top_level != expected_top_level:
+        fail(f"Unexpected bundle top-level paths: {sorted(actual_top_level)}")
+
+    manifest_pairs = (
+        (BUNDLE_DIR / ".codex-plugin" / "plugin.json", codex_bundle_manifest()),
+        (BUNDLE_DIR / ".claude-plugin" / "plugin.json", claude_bundle_manifest()),
+    )
+    for path, expected in manifest_pairs:
+        try:
+            actual = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+            fail(f"Invalid generated manifest: {path.relative_to(ROOT)}")
+        if actual != expected:
+            fail(f"Generated manifest differs from release metadata: {path.relative_to(ROOT)}")
+
+    validate_plugin_manifest_values(
+        BUNDLE_FILENAME, BUNDLE_NAME, codex_bundle_manifest()
+    )
+
+    actual_skills = {
+        path.name for path in (BUNDLE_DIR / "skills").iterdir() if path.is_dir()
+    }
+    if actual_skills != set(PLUGINS):
+        fail(f"Bundle has unexpected skills: {sorted(actual_skills)}")
+
+    for skill in PLUGINS:
+        source = SKILLS_DIR / skill
+        bundled = BUNDLE_DIR / "skills" / skill
+        expected_files = {
+            path.relative_to(source).as_posix(): path.read_bytes()
+            for path in source.rglob("*")
+            if path.is_file()
+        }
+        actual_files = {
+            path.relative_to(bundled).as_posix(): path.read_bytes()
+            for path in bundled.rglob("*")
+            if path.is_file()
+        }
+        if actual_files != expected_files:
+            fail(f"Generated bundle does not exactly match skills/{skill}")
+
+    try:
+        component_manifest = json.loads(
+            (BUNDLE_DIR / "BUNDLE_MANIFEST.json").read_text(encoding="utf-8")
+        )
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+        fail("Invalid BUNDLE_MANIFEST.json")
+    if (
+        component_manifest.get("name") != BUNDLE_NAME
+        or component_manifest.get("version") != BUNDLE_VERSION
+        or component_manifest.get("releaseRef") != RELEASE_REF
+        or component_manifest.get("canonicalSource") != "skills/"
+    ):
+        fail("BUNDLE_MANIFEST.json metadata mismatch")
+    expected_components = [
+        {
+            "name": name,
+            "version": config["version"],
+            "treeSha256": skill_tree_sha256(SKILLS_DIR / name),
+        }
+        for name, config in PLUGINS.items()
+    ]
+    if component_manifest.get("skills") != expected_components:
+        fail("BUNDLE_MANIFEST.json component list mismatch")
+
+    for path, expected in (
+        (CODEX_MARKETPLACE_PATH, codex_marketplace()),
+        (CLAUDE_MARKETPLACE_PATH, claude_marketplace()),
+    ):
+        try:
+            actual = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+            fail(f"Invalid marketplace: {path.relative_to(ROOT)}")
+        if actual != expected:
+            fail(f"Marketplace differs from release metadata: {path.relative_to(ROOT)}")
+        source = actual["plugins"][0]["source"]
+        if source.get("ref") != RELEASE_REF or source.get("ref") == "main":
+            fail(f"Marketplace source is not pinned to {RELEASE_REF}")
+
+    return sum(1 for path in BUNDLE_DIR.rglob("*") if path.is_file())
+
+
 def validate_archives() -> int:
     if not DIST_DIR.exists():
         fail("dist does not exist; run tools/build_release.py first")
@@ -200,7 +326,7 @@ def validate_archives() -> int:
             fail("Malformed SHA256SUMS.txt")
         checksums[filename] = digest
 
-    expected_assets = {data[1] for data in EXPECTED.values()}
+    expected_assets = {data[1] for data in EXPECTED.values()} | {BUNDLE_FILENAME}
     actual_assets = {path.name for path in DIST_DIR.glob("*.zip")}
     if actual_assets != expected_assets:
         fail(f"Unexpected ZIP assets: {sorted(actual_assets)}")
@@ -211,6 +337,8 @@ def validate_archives() -> int:
         archive_path = DIST_DIR / filename
         if sha256(archive_path) != checksums[filename]:
             fail(f"Checksum mismatch: {filename}")
+        if sha256(archive_path) != PUBLISHED_ASSET_SHA256[filename]:
+            fail(f"Published individual asset changed without a version bump: {filename}")
         with zipfile.ZipFile(archive_path) as archive:
             names = archive.namelist()
             required = {
@@ -300,13 +428,77 @@ def validate_archives() -> int:
                 ]
                 if missing:
                     fail(f"{filename} is missing required paths: {missing}")
+
+    bundle_path = DIST_DIR / BUNDLE_FILENAME
+    if sha256(bundle_path) != checksums[BUNDLE_FILENAME]:
+        fail(f"Checksum mismatch: {BUNDLE_FILENAME}")
+    with zipfile.ZipFile(bundle_path) as archive:
+        names = archive.namelist()
+        required = {
+            ".codex-plugin/plugin.json",
+            ".claude-plugin/plugin.json",
+            "BUNDLE_MANIFEST.json",
+            "README.md",
+            "LICENSE",
+        }
+        required.update(f"skills/{skill}/SKILL.md" for skill in PLUGINS)
+        required.update(f"skills/{skill}/LICENSE" for skill in PLUGINS)
+        missing = sorted(required - set(names))
+        if missing:
+            fail(f"{BUNDLE_FILENAME} is missing plugin paths: {missing}")
+
+        codex_manifest = json.loads(
+            archive.read(".codex-plugin/plugin.json").decode("utf-8")
+        )
+        claude_manifest = json.loads(
+            archive.read(".claude-plugin/plugin.json").decode("utf-8")
+        )
+        if codex_manifest != codex_bundle_manifest():
+            fail(f"{BUNDLE_FILENAME} has an unexpected Codex manifest")
+        if claude_manifest != claude_bundle_manifest():
+            fail(f"{BUNDLE_FILENAME} has an unexpected Claude Code manifest")
+        validate_plugin_manifest_values(BUNDLE_FILENAME, BUNDLE_NAME, codex_manifest)
+
+        archived_skills = {
+            PurePosixPath(name).parts[1]
+            for name in names
+            if len(PurePosixPath(name).parts) >= 3
+            and PurePosixPath(name).parts[0] == "skills"
+        }
+        if archived_skills != set(PLUGINS):
+            fail(f"{BUNDLE_FILENAME} must contain exactly the three public skills")
+
+        archived_files = {name: archive.read(name) for name in names}
+        expected_files = {
+            path.relative_to(BUNDLE_DIR).as_posix(): path.read_bytes()
+            for path in BUNDLE_DIR.rglob("*")
+            if path.is_file()
+        }
+        if archived_files != expected_files:
+            fail(f"{BUNDLE_FILENAME} does not match the generated plugin directory")
+
+        for info in archive.infolist():
+            name = info.filename
+            path = PurePosixPath(name)
+            if not name or name != name.strip() or "\\" in name:
+                fail(f"Malformed archive path in {BUNDLE_FILENAME}: {name!r}")
+            if path.is_absolute() or ".." in path.parts or "" in path.parts:
+                fail(f"Unsafe archive path in {BUNDLE_FILENAME}")
+            if any(part in FORBIDDEN_PARTS for part in path.parts):
+                fail(f"Forbidden directory in {BUNDLE_FILENAME}: {name}")
+            if path.name in FORBIDDEN_NAMES or path.suffix.lower() in FORBIDDEN_SUFFIXES:
+                fail(f"Forbidden file in {BUNDLE_FILENAME}: {name}")
     return len(expected_assets)
 
 
 def main() -> None:
     files = validate_tree()
+    bundle_files = validate_bundle_tree()
     archives = validate_archives()
-    print(f"PASS: {len(EXPECTED)} skills, {files} source files, {archives} release ZIPs, checksums verified")
+    print(
+        f"PASS: {len(EXPECTED)} skills, {files} source files, "
+        f"{bundle_files} bundle files, {archives} release ZIPs, checksums verified"
+    )
 
 
 if __name__ == "__main__":

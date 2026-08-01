@@ -1,0 +1,67 @@
+schema_version: 1.0.0
+product_version: 1.0.0-rc.6
+target_release: 1.0.0
+status: active
+
+solution_taxonomy:
+  solution: product_level_concept
+  calculator_solution_identifier: CalculatorID
+  research_example_solution_identifier: ExampleID
+  generic_solution_id: reserved
+  generic_solution_id_values_published: false
+  calculator_solutions: 188
+  research_example_solutions: 105
+  total_solutions: 293
+
+guaranteed_scope:
+  registered_calculators: 188
+  calculators_required_available_before_rc: 188
+  registered_research_examples: 105
+  registered_example_links: 258
+  requested_outputs:
+    required_sample_size: 126
+    required_events: 2
+    required_cluster_size: 2
+    attrition_adjusted_sample_size: 12
+    achieved_power: 30
+    detectable_effect: 16
+
+identifier_policy:
+  existing_calculator_ids_renumbered: false
+  existing_example_ids_renumbered: false
+  existing_public_ids_renumbered: false
+  existing_engine_ids_redefined: false
+  book_location_encoded_in_example_id: false
+
+numeric_compatibility:
+  existing_formulas_changed: false
+  existing_results_changed: false
+  existing_rounding_rules_changed: false
+  detectable_effect_basis: analytic_inverse_of_existing_power
+  existing_172_calculators_require_zero_regression_differences: true
+
+known_unregistered_capabilities:
+  release_blocking: false
+  behavior: structured_unsupported
+  examples:
+    - factorial_interaction_outside_registered_main_effect_calculators
+    - kappa_hypothesis_test
+    - unsupported_multiple_comparison_methods
+
+release_sequence:
+  compatibility_completion_release: 0.1.24
+  natural_language_routing_correction_release: 0.1.25
+  alias_removal_release_candidate: 1.0.0-rc.1
+  general_availability_release: 1.0.0
+  rc_to_ga_code_changes_allowed: blocker_only
+
+release_gates:
+  - engine_0_6_9_integrity_verified
+  - registered_calculators_available_188_of_188
+  - direct_consumer_contracts_pass_188_of_188
+  - existing_numeric_regression_differences_zero
+  - identifier_registry_differences_zero
+  - canonical_public_api_frozen_after_detectable_effect_integration
+  - alias_usage_review_completed_before_removal
+  - deprecated_aliases_removed_with_structured_migration_error
+  - clean_distribution_and_external_trial_pass

@@ -1,0 +1,189 @@
+﻿calculator_id,requested_output,catalog_procedure_id,engine_procedure_id,engine_model_id,engine_calculation_target,procedure_key,available,example_ids,book_chapters,book_example_numbers
+AGREE-SS-B-001,required_sample_size,AGREE-B-001,AGREE-001.SAMPLE_SIZE,AGREE-001,required_sample_size,ss200-proc-5b6a8990cbc055f2,true,AGREE-EX-B-001,20,20.1
+AGREE-SS-B-002,required_sample_size,AGREE-B-002,AGREE-002.SAMPLE_SIZE,AGREE-002,required_sample_size,ss200-proc-0604c81b3b1957d4,true,AGREE-EX-B-001,20,20.1
+AGREE-SS-B-003,required_sample_size,AGREE-B-003,AGREE-003.SAMPLE_SIZE,AGREE-003,required_sample_size,ss200-proc-3b77f5e9ade75d96,true,AGREE-EX-B-002; AGREE-EX-B-003,20,20.2; 20.3
+AGREE-SS-B-004,required_sample_size,AGREE-B-004,AGREE-004.SAMPLE_SIZE,AGREE-004,required_sample_size,ss200-proc-9ebfe1a3fd9c5962,true,AGREE-EX-B-003,20,20.3
+AGREE-SS-B-005,required_sample_size,AGREE-B-005,AGREE-005.SAMPLE_SIZE,AGREE-005,required_sample_size,ss200-proc-9320880d63df5ee7,true,AGREE-EX-B-003,20,20.3
+AGREE-SS-B-006,required_sample_size,AGREE-B-006,AGREE-006.SAMPLE_SIZE,AGREE-006,required_sample_size,ss200-proc-1275607ab02857f4,true,AGREE-EX-B-003,20,20.3
+AGREE-SS-C-001,required_sample_size,AGREE-C-001,AGREE-008.SAMPLE_SIZE,AGREE-008,required_sample_size,ss200-proc-ba3729c665b65fc6,true,AGREE-EX-C-002,20,20.6
+AGREE-SS-C-002,required_sample_size,AGREE-C-002,AGREE-009.SAMPLE_SIZE,AGREE-009,required_sample_size,ss200-proc-d801edcb79a75341,true,AGREE-EX-C-001,20,20.5
+AGREE-SS-C-003,required_sample_size,AGREE-C-003,AGREE-010.SAMPLE_SIZE,AGREE-010,required_sample_size,ss200-proc-17d46aa42a8e5de3,true,AGREE-EX-C-003; AGREE-EX-C-004,20,20.7; 20.8
+AGREE-SS-N-001,required_sample_size,AGREE-N-001,AGREE-007.SAMPLE_SIZE,AGREE-007,required_sample_size,ss200-proc-a1d9cf789f0a5b2b,true,AGREE-EX-N-001,20,20.4
+CI-SS-B-001,required_sample_size,CI-B-001,CI-001.SAMPLE_SIZE,CI-001,required_sample_size,ss200-proc-ea91dbad32a2590f,true,CI-EX-B-001,9,9.1
+CI-SS-B-002,required_sample_size,CI-B-002,CI-002.SAMPLE_SIZE,CI-002,required_sample_size,ss200-proc-0a947858e7c15e90,true,CI-EX-B-002; CI-EX-B-004,9,9.2; 9.4
+CI-SS-B-003,required_sample_size,CI-B-003,CI-003.SAMPLE_SIZE,CI-003,required_sample_size,ss200-proc-07e845696afa5f2e,true,CI-EX-B-001; CI-EX-B-002; CI-EX-B-003,9,9.1; 9.2; 9.3
+CI-SS-B-004,required_sample_size,CI-B-004,CI-004.SAMPLE_SIZE,CI-004,required_sample_size,ss200-proc-668b580fada85210,true,CI-EX-B-004,9,9.4
+CI-SS-B-005,required_sample_size,CI-B-005,CI-005.SAMPLE_SIZE,CI-005,required_sample_size,ss200-proc-3ebaf6b170c15612,true,CI-EX-B-005,9,9.5
+CI-SS-B-006,required_sample_size,CI-B-006,CI-006.SAMPLE_SIZE,CI-006,required_sample_size,ss200-proc-bfc4a29c98995da1,true,CI-EX-B-005,9,9.5
+CI-SS-B-007,required_sample_size,CI-B-007,CI-007.SAMPLE_SIZE,CI-007,required_sample_size,ss200-proc-07f5b6f33dd05758,true,CI-EX-B-006,9,9.6
+CI-SS-B-008,required_sample_size,CI-B-008,CI-008.SAMPLE_SIZE,CI-008,required_sample_size,ss200-proc-b543af877b475816,true,CI-EX-B-007,9,9.7
+CI-SS-C-001,required_sample_size,CI-C-001,CI-009.SAMPLE_SIZE,CI-009,required_sample_size,ss200-proc-6f73dc5cd9a551ad,true,CI-EX-C-001,9,9.8
+CI-SS-C-002,required_sample_size,CI-C-002,CI-010.SAMPLE_SIZE,CI-010,required_sample_size,ss200-proc-0b31871160625ea1,true,CI-EX-C-001,9,9.8
+CI-SS-C-003,required_sample_size,CI-C-003,CI-011.SAMPLE_SIZE,CI-011,required_sample_size,ss200-proc-b39b62576f16561f,true,CI-EX-C-002,9,9.9
+CI-SS-C-004,required_sample_size,CI-C-004,CI-012.SAMPLE_SIZE,CI-012,required_sample_size,ss200-proc-61fefa4fc7d65029,true,CI-EX-C-003,9,9.10
+CORR-SS-C-001,required_sample_size,CORR-C-001,CORR-001.SAMPLE_SIZE,CORR-001,required_sample_size,ss200-proc-62456ac6352958f3,true,CORR-EX-C-001; CORR-EX-C-002; CORR-EX-C-003; CORR-EX-C-004,19,19.1; 19.2; 19.3; 19.4
+CORR-SS-C-002,required_sample_size,CORR-C-002,CORR-002.SAMPLE_SIZE,CORR-002,required_sample_size,ss200-proc-afb448977498578b,true,CORR-EX-C-005,19,19.5
+CORR-SS-C-003,required_sample_size,CORR-C-003,CORR-003.SAMPLE_SIZE,CORR-003,required_sample_size,ss200-proc-2228693bb8d35b42,true,CORR-EX-C-005,19,19.5
+CORR-SS-C-004,required_sample_size,CORR-C-004,CORR-004.SAMPLE_SIZE,CORR-004,required_sample_size,ss200-proc-e4a0b3c9691a51c4,true,CORR-EX-C-006,19,19.6
+CORR-SS-C-005,required_sample_size,CORR-C-005,CORR-005.SAMPLE_SIZE,CORR-005,required_sample_size,ss200-proc-0dd35007c19559d6,true,CORR-EX-C-006,19,19.6
+DIAG-SS-B-001,required_sample_size,DIAG-B-001,DIAG-003.SAMPLE_SIZE,DIAG-003,required_sample_size,ss200-proc-86c428241ff458aa,true,DIAG-EX-B-001,21,21.3
+DIAG-SS-B-002,required_sample_size,DIAG-B-002,DIAG-004.SAMPLE_SIZE,DIAG-004,required_sample_size,ss200-proc-555125657e565595,true,DIAG-EX-B-001,21,21.3
+DIAG-SS-B-003,required_sample_size,DIAG-B-003,DIAG-005.SAMPLE_SIZE,DIAG-005,required_sample_size,ss200-proc-3e3619c0ca7c5773,true,DIAG-EX-B-002,21,21.4
+DIAG-SS-B-004,required_sample_size,DIAG-B-004,DIAG-006.SAMPLE_SIZE,DIAG-006,required_sample_size,ss200-proc-e4e6269552415b30,true,DIAG-EX-B-002,21,21.4
+DIAG-SS-B-005,required_sample_size,DIAG-B-005,DIAG-007.SAMPLE_SIZE,DIAG-007,required_sample_size,ss200-proc-55b6d48fc7ba58f4,true,DIAG-EX-B-003,21,21.5
+DIAG-SS-C-001,required_sample_size,DIAG-C-001,DIAG-001.SAMPLE_SIZE,DIAG-001,required_sample_size,ss200-proc-995c5a09fda65f28,true,DIAG-EX-C-001,21,21.1
+DIAG-SS-C-002,required_sample_size,DIAG-C-002,DIAG-002.SAMPLE_SIZE,DIAG-002,required_sample_size,ss200-proc-bf9258a017d8551d,true,DIAG-EX-C-002,21,21.2
+MARGIN-PW-B-002,achieved_power,MARGIN-B-002,MARGIN-004.SAMPLE_SIZE,MARGIN-004,power,ss200-proc-906d158a1d435709,true,,,
+MARGIN-PW-B-003,achieved_power,MARGIN-B-003,MARGIN-005.SAMPLE_SIZE,MARGIN-005,power,ss200-proc-dd5849f5ccbb5d92,true,,,
+MARGIN-PW-C-001,achieved_power,MARGIN-C-001,MARGIN-001.SAMPLE_SIZE,MARGIN-001,power,ss200-proc-79c1ef865f2b520f,true,,,
+MARGIN-PW-C-002,achieved_power,MARGIN-C-002,MARGIN-002.SAMPLE_SIZE,MARGIN-002,power,ss200-proc-48212143bb0e5129,true,,,
+MARGIN-PW-S-001,achieved_power,MARGIN-S-001,MARGIN-006.SAMPLE_SIZE,MARGIN-006,power,ss200-proc-f8224d56cc105ea4,true,,,
+MARGIN-SS-B-001,required_sample_size,MARGIN-B-001,MARGIN-003.SAMPLE_SIZE,MARGIN-003,required_sample_size,ss200-proc-ebcb904d1fcc51cd,true,MARGIN-EX-B-001; MARGIN-EX-B-002,11,11.3; 11.4
+MARGIN-SS-B-002,required_sample_size,MARGIN-B-002,MARGIN-004.SAMPLE_SIZE,MARGIN-004,required_sample_size,ss200-proc-906d158a1d435709,true,MARGIN-EX-B-001; MARGIN-EX-B-002,11,11.3; 11.4
+MARGIN-SS-B-003,required_sample_size,MARGIN-B-003,MARGIN-005.SAMPLE_SIZE,MARGIN-005,required_sample_size,ss200-proc-dd5849f5ccbb5d92,true,MARGIN-EX-B-003,11,11.5
+MARGIN-SS-B-004,required_sample_size,MARGIN-B-004,MARGIN-009.SAMPLE_SIZE,MARGIN-009,required_sample_size,ss200-proc-22652cbac0a85042,true,MARGIN-EX-B-004,11,11.8
+MARGIN-SS-B-005,required_sample_size,MARGIN-B-005,MARGIN-010.SAMPLE_SIZE,MARGIN-010,required_sample_size,ss200-proc-d88a03666bee5df5,true,MARGIN-EX-B-004,11,11.8
+MARGIN-SS-B-006,required_sample_size,MARGIN-B-006,MARGIN-011.SAMPLE_SIZE,MARGIN-011,required_sample_size,ss200-proc-ca8f05154c2257b1,true,,,
+MARGIN-SS-C-001,required_sample_size,MARGIN-C-001,MARGIN-001.SAMPLE_SIZE,MARGIN-001,required_sample_size,ss200-proc-79c1ef865f2b520f,true,MARGIN-EX-C-001,11,11.1
+MARGIN-SS-C-002,required_sample_size,MARGIN-C-002,MARGIN-002.SAMPLE_SIZE,MARGIN-002,required_sample_size,ss200-proc-48212143bb0e5129,true,MARGIN-EX-C-002,11,11.2
+MARGIN-SS-C-003,required_sample_size,MARGIN-C-003,MARGIN-007.SAMPLE_SIZE,MARGIN-007,required_sample_size,ss200-proc-ac5cdf5fcad7554e,true,,,
+MARGIN-SS-C-004,required_sample_size,MARGIN-C-004,MARGIN-008.SAMPLE_SIZE,MARGIN-008,required_sample_size,ss200-proc-294d62d0f28054a2,true,,,
+MARGIN-SS-C-005,required_sample_size,MARGIN-C-005,MARGIN-013.SAMPLE_SIZE,MARGIN-013,required_sample_size,ss200-proc-2685c46aeb6a56fa,true,MARGIN-EX-C-003,11,11.9
+MARGIN-SS-C-006,required_sample_size,MARGIN-C-006,MARGIN-014.SAMPLE_SIZE,MARGIN-014,required_sample_size,ss200-proc-dac727dc6b0451cb,true,MARGIN-EX-C-003,11,11.9
+MARGIN-SS-S-001,required_sample_size,MARGIN-S-001,MARGIN-006.SAMPLE_SIZE,MARGIN-006,required_sample_size,ss200-proc-f8224d56cc105ea4,true,MARGIN-EX-S-001; MARGIN-EX-S-002,11,11.6; 11.7
+MARGIN-SS-S-002,required_sample_size,MARGIN-S-002,MARGIN-012.SAMPLE_SIZE,MARGIN-012,required_sample_size,ss200-proc-6309f2d6609e5436,true,,,
+MULTI-SS-B-001,required_sample_size,MULTI-B-001,MULTI-001.SAMPLE_SIZE,MULTI-001,required_sample_size,ss200-proc-86d06d0b5fdf5a02,true,MULTI-EX-B-001,14,14.1
+MULTI-SS-B-002,required_sample_size,MULTI-B-002,MULTI-003.SAMPLE_SIZE,MULTI-003,required_sample_size,ss200-proc-0a42b8fed0b15eae,true,MULTI-EX-B-002,14,14.5
+MULTI-SS-B-003,required_sample_size,MULTI-B-003,MULTI-014.SAMPLE_SIZE,MULTI-014,required_sample_size,ss200-proc-2e2b621a5ccfcf32,true,,,
+MULTI-SS-B-004,required_sample_size,MULTI-B-004,MULTI-015.SAMPLE_SIZE,MULTI-015,required_sample_size,ss200-proc-8e49a66064b1242f,true,,,
+MULTI-SS-C-001,required_sample_size,MULTI-C-001,MULTI-002.SAMPLE_SIZE,MULTI-002,required_sample_size,ss200-proc-e764f95e19465628,true,MULTI-EX-C-001; MULTI-EX-C-002,14,14.2; 14.3
+MULTI-SS-C-002,required_sample_size,MULTI-C-002,MULTI-004.SAMPLE_SIZE,MULTI-004,required_sample_size,ss200-proc-d03a658d72955e74,true,MULTI-EX-C-003,14,14.5
+MULTI-SS-C-003,required_sample_size,MULTI-C-003,MULTI-005.SAMPLE_SIZE,MULTI-005,required_sample_size,ss200-proc-656e7e61ed475701,true,MULTI-EX-C-004,14,14.6
+MULTI-SS-C-004,required_sample_size,MULTI-C-004,MULTI-007.SAMPLE_SIZE,MULTI-007,required_sample_size,ss200-proc-daf4c0b7816229b3,true,,,
+MULTI-SS-O-001,required_sample_size,MULTI-O-001,MULTI-008.SAMPLE_SIZE,MULTI-008,required_sample_size,ss200-proc-76d8d91301cb5f28,true,,,
+MULTI-SS-O-002,required_sample_size,MULTI-O-002,MULTI-011.SAMPLE_SIZE,MULTI-011,required_sample_size,ss200-proc-fb74aec2769cac0a,true,,,
+MULTI-SS-O-003,required_sample_size,MULTI-O-003,MULTI-016.SAMPLE_SIZE,MULTI-016,required_sample_size,ss200-proc-42d24f85d8f1ded8,true,,,
+MULTI-SS-R-001,required_sample_size,MULTI-R-001,MULTI-009.SAMPLE_SIZE,MULTI-009,required_sample_size,ss200-proc-a24d67f86b9b513c,true,,,
+MULTI-SS-R-002,required_sample_size,MULTI-R-002,MULTI-010.SAMPLE_SIZE,MULTI-010,required_sample_size,ss200-proc-037f31a2b903f545,true,,,
+MULTI-SS-R-003,required_sample_size,MULTI-R-003,MULTI-012.SAMPLE_SIZE,MULTI-012,required_sample_size,ss200-proc-b716380d380da69e,true,,,
+MULTI-SS-R-004,required_sample_size,MULTI-R-004,MULTI-013.SAMPLE_SIZE,MULTI-013,required_sample_size,ss200-proc-f0668c49741c1c28,true,,,
+MULTI-SS-R-005,required_sample_size,MULTI-R-005,MULTI-017.SAMPLE_SIZE,MULTI-017,required_sample_size,ss200-proc-9e4e1cf70d63ff9d,true,,,
+MULTI-SS-R-006,required_sample_size,MULTI-R-006,MULTI-018.SAMPLE_SIZE,MULTI-018,required_sample_size,ss200-proc-a821e605bd6a55a1,true,,,
+MULTI-SS-S-001,required_sample_size,MULTI-S-001,MULTI-019.SAMPLE_SIZE,MULTI-019,required_sample_size,ss200-proc-b0aef1825c860823,true,,,
+MULTI-SS-S-002,required_sample_size,MULTI-S-002,MULTI-020.SAMPLE_SIZE,MULTI-020,required_sample_size,ss200-proc-003baf9d8ef1b2d5,true,,,
+MULTI-SS-S-003,required_sample_size,MULTI-S-003,MULTI-021.SAMPLE_SIZE,MULTI-021,required_sample_size,ss200-proc-21ac61dcf13478fa,true,,,
+MULTI-SS-S-004,required_sample_size,MULTI-S-004,MULTI-022.SAMPLE_SIZE,MULTI-022,required_sample_size,ss200-proc-0f803f270aad2833,true,,,
+MULTI-SS-S-005,required_sample_size,MULTI-S-005,MULTI-023.SAMPLE_SIZE,MULTI-023,required_sample_size,ss200-proc-311d7472d796b28d,true,,,
+MULTI-SS-S-006,required_sample_size,MULTI-S-006,MULTI-024.SAMPLE_SIZE,MULTI-024,required_sample_size,ss200-proc-133e734ccc2c078b,true,,,
+MULTI-SS-S-007,required_sample_size,MULTI-S-007,MULTI-025.SAMPLE_SIZE,MULTI-025,required_sample_size,ss200-proc-f245e2bec3b89bbc,true,,,
+MULTI-SS-S-008,required_sample_size,MULTI-S-008,MULTI-026.SAMPLE_SIZE,MULTI-026,required_sample_size,ss200-proc-7c5b0bc1affedd12,true,,,
+MULTI-SS-S-009,required_sample_size,MULTI-S-009,MULTI-027.SAMPLE_SIZE,MULTI-027,required_sample_size,ss200-proc-e3864dc5f61e5431,true,,,
+MULTI-SS-S-010,required_sample_size,MULTI-S-010,MULTI-028.SAMPLE_SIZE,MULTI-028,required_sample_size,ss200-proc-c23df603e034ab61,true,,,
+MULTI-SS-S-011,required_sample_size,MULTI-S-011,MULTI-029.SAMPLE_SIZE,MULTI-029,required_sample_size,ss200-proc-ca1a810c7b48631a,true,,,
+MULTI-SS-S-012,required_sample_size,MULTI-S-012,MULTI-030.SAMPLE_SIZE,MULTI-030,required_sample_size,ss200-proc-22a30639d6b529e4,true,,,
+MULTI-SS-S-013,required_sample_size,MULTI-S-013,MULTI-031.SAMPLE_SIZE,MULTI-031,required_sample_size,ss200-proc-0d3d064c7cc7ce6f,true,,,
+MULTI-SS-S-014,required_sample_size,MULTI-S-014,MULTI-032.SAMPLE_SIZE,MULTI-032,required_sample_size,ss200-proc-4268ea0a69b15870,true,,,
+MULTI-SS-S-015,required_sample_size,MULTI-S-015,MULTI-033.SAMPLE_SIZE,MULTI-033,required_sample_size,ss200-proc-b8e7f6ab129ff50e,true,,,
+ONE-AS-S-001,attrition_adjusted_sample_size,ONE-S-001,ONE-S-001.SAMPLE_SIZE,ONE-S-001,attrition_adjusted_sample_size,ss200-proc-3aae05b533fd149a,true,,,
+ONE-ES-B-001,detectable_effect,ONE-B-001,ONE-001.SAMPLE_SIZE,ONE-001,detectable_effect,ss200-proc-cd13743ae3785a50,true,,,
+ONE-ES-C-001,detectable_effect,ONE-C-001,ONE-002.SAMPLE_SIZE,ONE-002,detectable_effect,ss200-proc-79b5108159df5041,true,,,
+ONE-ES-R-002,detectable_effect,ONE-R-002,ONE-004.SAMPLE_SIZE,ONE-004,detectable_effect,ss200-proc-447f7fb8a08b5821,true,,,
+ONE-PW-B-001,achieved_power,ONE-B-001,ONE-001.SAMPLE_SIZE,ONE-001,power,ss200-proc-cd13743ae3785a50,true,,,
+ONE-PW-C-001,achieved_power,ONE-C-001,ONE-002.SAMPLE_SIZE,ONE-002,power,ss200-proc-79b5108159df5041,true,,,
+ONE-PW-R-002,achieved_power,ONE-R-002,ONE-004.SAMPLE_SIZE,ONE-004,power,ss200-proc-447f7fb8a08b5821,true,,,
+ONE-SS-B-001,required_sample_size,ONE-B-001,ONE-001.SAMPLE_SIZE,ONE-001,required_sample_size,ss200-proc-cd13743ae3785a50,true,ONE-EX-B-001; ONE-EX-B-002,3,3.7; 3.8
+ONE-SS-C-001,required_sample_size,ONE-C-001,ONE-002.SAMPLE_SIZE,ONE-002,required_sample_size,ss200-proc-79b5108159df5041,true,ONE-EX-C-001,5,5.8
+ONE-SS-R-001,required_sample_size,ONE-R-001,ONE-003.SAMPLE_SIZE,ONE-003,required_sample_size,ss200-proc-5535695aff315141,true,ONE-EX-R-001; ONE-EX-R-002,6,6.4; 6.5
+ONE-SS-R-002,required_sample_size,ONE-R-002,ONE-004.SAMPLE_SIZE,ONE-004,required_sample_size,ss200-proc-447f7fb8a08b5821,true,ONE-EX-R-003,6,6.6
+ONE-SS-S-001,required_sample_size,ONE-S-001,ONE-S-001.SAMPLE_SIZE,ONE-S-001,required_sample_size,ss200-proc-3aae05b533fd149a,true,,,
+TWO-AS-B-001,attrition_adjusted_sample_size,TWO-B-001,CLUSTER-FIXED-BINARY.REQUIRED_CLUSTER_SIZE,CLUSTER-FIXED-BINARY,attrition_adjusted_sample_size,ss200-proc-c284ddc8caa053c5,true,,,
+TWO-AS-B-008,attrition_adjusted_sample_size,TWO-B-008,TWO-036.SAMPLE_SIZE,TWO-036,attrition_adjusted_sample_size,ss200-proc-b756613216e955d6,true,,,
+TWO-AS-B-009,attrition_adjusted_sample_size,TWO-B-009,TWO-037.SAMPLE_SIZE,TWO-037,attrition_adjusted_sample_size,ss200-proc-c28f68253e3e5432,true,,,
+TWO-AS-C-001,attrition_adjusted_sample_size,TWO-C-001,CLUSTER-FIXED-CONTINUOUS.REQUIRED_CLUSTER_SIZE,CLUSTER-FIXED-CONTINUOUS,attrition_adjusted_sample_size,ss200-proc-5b73a0183da35f88,true,,,
+TWO-AS-C-012,attrition_adjusted_sample_size,TWO-C-012,TWO-034.SAMPLE_SIZE,TWO-034,attrition_adjusted_sample_size,ss200-proc-14fa4270ee73550f,true,,,
+TWO-AS-C-013,attrition_adjusted_sample_size,TWO-C-013,TWO-035.SAMPLE_SIZE,TWO-035,attrition_adjusted_sample_size,ss200-proc-9ee8979aba8e5a3b,true,,,
+TWO-AS-C-014,attrition_adjusted_sample_size,TWO-C-014,TWO-041.SAMPLE_SIZE,TWO-041,attrition_adjusted_sample_size,ss200-proc-8301257303ac5860,true,,,
+TWO-AS-C-015,attrition_adjusted_sample_size,TWO-C-015,TWO-042.SAMPLE_SIZE,TWO-042,attrition_adjusted_sample_size,ss200-proc-1f1aee7d64055751,true,,,
+TWO-AS-O-008,attrition_adjusted_sample_size,TWO-O-008,TWO-038.SAMPLE_SIZE,TWO-038,attrition_adjusted_sample_size,ss200-proc-86b9e0384f8b56b1,true,,,
+TWO-AS-R-005,attrition_adjusted_sample_size,TWO-R-005,TWO-039.SAMPLE_SIZE,TWO-039,attrition_adjusted_sample_size,ss200-proc-690d285387f85989,true,,,
+TWO-AS-S-006,attrition_adjusted_sample_size,TWO-S-006,TWO-040.SAMPLE_SIZE,TWO-040,attrition_adjusted_sample_size,ss200-proc-5195e24debe85ee3,true,,,
+TWO-CS-B-001,required_cluster_size,TWO-B-001,CLUSTER-FIXED-BINARY.REQUIRED_CLUSTER_SIZE,CLUSTER-FIXED-BINARY,required_sample_size,ss200-proc-c284ddc8caa053c5,true,,,
+TWO-CS-C-001,required_cluster_size,TWO-C-001,CLUSTER-FIXED-CONTINUOUS.REQUIRED_CLUSTER_SIZE,CLUSTER-FIXED-CONTINUOUS,required_sample_size,ss200-proc-5b73a0183da35f88,true,,,
+TWO-ES-B-005,detectable_effect,TWO-B-005,TWO-023.SAMPLE_SIZE,TWO-023,detectable_effect,ss200-proc-51e34974bac255f9,true,,,
+TWO-ES-C-003,detectable_effect,TWO-C-003,TWO-009.SAMPLE_SIZE,TWO-009,detectable_effect,ss200-proc-e9bc08343584516d,true,,,
+TWO-ES-C-004,detectable_effect,TWO-C-004,TWO-010.SAMPLE_SIZE,TWO-010,detectable_effect,ss200-proc-05e12273de535f41,true,,,
+TWO-ES-C-005,detectable_effect,TWO-C-005,TWO-011.SAMPLE_SIZE,TWO-011,detectable_effect,ss200-proc-51675f911e19599f,true,,,
+TWO-ES-C-006,detectable_effect,TWO-C-006,TWO-012.SAMPLE_SIZE,TWO-012,detectable_effect,ss200-proc-b5cea4a5dc2f5d03,true,,,
+TWO-ES-C-007,detectable_effect,TWO-C-007,TWO-029.SAMPLE_SIZE,TWO-029,detectable_effect,ss200-proc-1ba778402281547a,true,,,
+TWO-ES-C-009,detectable_effect,TWO-C-009,TWO-031.SAMPLE_SIZE,TWO-031,detectable_effect,ss200-proc-1434c2c361845233,true,,,
+TWO-ES-C-010,detectable_effect,TWO-C-010,TWO-032.SAMPLE_SIZE,TWO-032,detectable_effect,ss200-proc-5b6a81937826544e,true,,,
+TWO-ES-C-011,detectable_effect,TWO-C-011,TWO-033.SAMPLE_SIZE,TWO-033,detectable_effect,ss200-proc-cacf634aa0255e47,true,,,
+TWO-ES-O-002,detectable_effect,TWO-O-002,TWO-005.SAMPLE_SIZE,TWO-005,detectable_effect,ss200-proc-c4fb9b7c87325cf7,true,,,
+TWO-ES-O-003,detectable_effect,TWO-O-003,TWO-006.SAMPLE_SIZE,TWO-006,detectable_effect,ss200-proc-8df396b35f995c17,true,,,
+TWO-ES-O-005,detectable_effect,TWO-O-005,TWO-026.SAMPLE_SIZE,TWO-026,detectable_effect,ss200-proc-21afc92a96c95180,true,,,
+TWO-ES-R-001,detectable_effect,TWO-R-001,TWO-013.SAMPLE_SIZE,TWO-013,detectable_effect,ss200-proc-6f5b5df2162c5793,true,,,
+TWO-EV-S-001,required_events,TWO-S-001,TWO-017.SAMPLE_SIZE,TWO-017,required_events,ss200-proc-1c9c1f0fd01355d6,true,,,
+TWO-EV-S-002,required_events,TWO-S-002,TWO-018.SAMPLE_SIZE,TWO-018,required_events,ss200-proc-15dba87f6c935fc2,true,TWO-EX-S-001; TWO-EX-S-002; TWO-EX-S-003; TWO-EX-S-004,7,7.1; 7.2; 7.4; 7.5
+TWO-PW-B-002,achieved_power,TWO-B-002,TWO-001.SAMPLE_SIZE,TWO-001,power,ss200-proc-b58b79f922b653c9,true,,,
+TWO-PW-B-003,achieved_power,TWO-B-003,TWO-002.SAMPLE_SIZE,TWO-002,power,ss200-proc-797ac511546052a8,true,,,
+TWO-PW-B-005,achieved_power,TWO-B-005,TWO-023.SAMPLE_SIZE,TWO-023,power,ss200-proc-51e34974bac255f9,true,,,
+TWO-PW-C-002,achieved_power,TWO-C-002,TWO-008.SAMPLE_SIZE,TWO-008,power,ss200-proc-f4ac1daedd4f59fb,true,,,
+TWO-PW-C-003,achieved_power,TWO-C-003,TWO-009.SAMPLE_SIZE,TWO-009,power,ss200-proc-e9bc08343584516d,true,,,
+TWO-PW-C-004,achieved_power,TWO-C-004,TWO-010.SAMPLE_SIZE,TWO-010,power,ss200-proc-05e12273de535f41,true,,,
+TWO-PW-C-005,achieved_power,TWO-C-005,TWO-011.SAMPLE_SIZE,TWO-011,power,ss200-proc-51675f911e19599f,true,,,
+TWO-PW-C-006,achieved_power,TWO-C-006,TWO-012.SAMPLE_SIZE,TWO-012,power,ss200-proc-b5cea4a5dc2f5d03,true,,,
+TWO-PW-C-007,achieved_power,TWO-C-007,TWO-029.SAMPLE_SIZE,TWO-029,power,ss200-proc-1ba778402281547a,true,,,
+TWO-PW-C-008,achieved_power,TWO-C-008,TWO-030.SAMPLE_SIZE,TWO-030,power,ss200-proc-a26eceb857d05966,true,,,
+TWO-PW-C-009,achieved_power,TWO-C-009,TWO-031.SAMPLE_SIZE,TWO-031,power,ss200-proc-1434c2c361845233,true,,,
+TWO-PW-C-010,achieved_power,TWO-C-010,TWO-032.SAMPLE_SIZE,TWO-032,power,ss200-proc-5b6a81937826544e,true,,,
+TWO-PW-C-011,achieved_power,TWO-C-011,TWO-033.SAMPLE_SIZE,TWO-033,power,ss200-proc-cacf634aa0255e47,true,,,
+TWO-PW-O-001,achieved_power,TWO-O-001,TWO-004.SAMPLE_SIZE,TWO-004,power,ss200-proc-cf0add3a04b15a3c,true,,,
+TWO-PW-O-002,achieved_power,TWO-O-002,TWO-005.SAMPLE_SIZE,TWO-005,power,ss200-proc-c4fb9b7c87325cf7,true,,,
+TWO-PW-O-003,achieved_power,TWO-O-003,TWO-006.SAMPLE_SIZE,TWO-006,power,ss200-proc-8df396b35f995c17,true,,,
+TWO-PW-O-004,achieved_power,TWO-O-004,TWO-007.SAMPLE_SIZE,TWO-007,power,ss200-proc-cfde8aaeb7e555d4,true,,,
+TWO-PW-O-005,achieved_power,TWO-O-005,TWO-026.SAMPLE_SIZE,TWO-026,power,ss200-proc-21afc92a96c95180,true,,,
+TWO-PW-R-001,achieved_power,TWO-R-001,TWO-013.SAMPLE_SIZE,TWO-013,power,ss200-proc-6f5b5df2162c5793,true,,,
+TWO-PW-R-002,achieved_power,TWO-R-002,TWO-014.SAMPLE_SIZE,TWO-014,power,ss200-proc-eb95f69bd2a65ade,true,,,
+TWO-PW-R-003,achieved_power,TWO-R-003,TWO-015.SAMPLE_SIZE,TWO-015,power,ss200-proc-da2ff56372c255a1,true,,,
+TWO-PW-R-004,achieved_power,TWO-R-004,TWO-016.SAMPLE_SIZE,TWO-016,power,ss200-proc-85853e288e955ca7,true,,,
+TWO-SS-B-002,required_sample_size,TWO-B-002,TWO-001.SAMPLE_SIZE,TWO-001,required_sample_size,ss200-proc-b58b79f922b653c9,true,TWO-EX-B-001; TWO-EX-B-002; TWO-EX-B-004; TWO-EX-B-006,3,3.1; 3.2; 3.4; 3.6
+TWO-SS-B-003,required_sample_size,TWO-B-003,TWO-002.SAMPLE_SIZE,TWO-002,required_sample_size,ss200-proc-797ac511546052a8,true,TWO-EX-B-004; TWO-EX-B-005; TWO-EX-B-006,3,3.4; 3.5; 3.6
+TWO-SS-B-004,required_sample_size,TWO-B-004,TWO-003.SAMPLE_SIZE,TWO-003,required_sample_size,ss200-proc-95bbe952567556e7,true,TWO-EX-B-002; TWO-EX-B-003,3,3.2; 3.3
+TWO-SS-B-005,required_sample_size,TWO-B-005,TWO-023.SAMPLE_SIZE,TWO-023,required_sample_size,ss200-proc-51e34974bac255f9,true,TWO-EX-B-007; TWO-EX-B-008; TWO-EX-B-009,8,8.1; 8.2; 8.3
+TWO-SS-B-006,required_sample_size,TWO-B-006,TWO-024.SAMPLE_SIZE,TWO-024,required_sample_size,ss200-proc-797ddeed11a35e17,true,TWO-EX-B-008,8,8.2
+TWO-SS-B-007,required_sample_size,TWO-B-007,TWO-025.SAMPLE_SIZE,TWO-025,required_sample_size,ss200-proc-0bcfe5f5f3935471,true,TWO-EX-B-010,8,8.4
+TWO-SS-B-008,required_sample_size,TWO-B-008,TWO-036.SAMPLE_SIZE,TWO-036,required_sample_size,ss200-proc-b756613216e955d6,true,TWO-EX-B-011,12,12.4
+TWO-SS-B-009,required_sample_size,TWO-B-009,TWO-037.SAMPLE_SIZE,TWO-037,required_sample_size,ss200-proc-c28f68253e3e5432,true,TWO-EX-B-012,12,12.5
+TWO-SS-C-002,required_sample_size,TWO-C-002,TWO-008.SAMPLE_SIZE,TWO-008,required_sample_size,ss200-proc-f4ac1daedd4f59fb,true,,,
+TWO-SS-C-003,required_sample_size,TWO-C-003,TWO-009.SAMPLE_SIZE,TWO-009,required_sample_size,ss200-proc-e9bc08343584516d,true,TWO-EX-C-001; TWO-EX-C-002; TWO-EX-C-003; TWO-EX-C-004,5,5.1; 5.2; 5.3; 5.4
+TWO-SS-C-004,required_sample_size,TWO-C-004,TWO-010.SAMPLE_SIZE,TWO-010,required_sample_size,ss200-proc-05e12273de535f41,true,TWO-EX-C-005,5,5.5
+TWO-SS-C-005,required_sample_size,TWO-C-005,TWO-011.SAMPLE_SIZE,TWO-011,required_sample_size,ss200-proc-51675f911e19599f,true,TWO-EX-C-006,5,5.6
+TWO-SS-C-006,required_sample_size,TWO-C-006,TWO-012.SAMPLE_SIZE,TWO-012,required_sample_size,ss200-proc-b5cea4a5dc2f5d03,true,TWO-EX-C-006; TWO-EX-C-007,5,5.6; 5.7
+TWO-SS-C-007,required_sample_size,TWO-C-007,TWO-029.SAMPLE_SIZE,TWO-029,required_sample_size,ss200-proc-1ba778402281547a,true,TWO-EX-C-008; TWO-EX-C-009; TWO-EX-C-010; TWO-EX-C-011,8,8.6; 8.7; 8.8; 8.9
+TWO-SS-C-008,required_sample_size,TWO-C-008,TWO-030.SAMPLE_SIZE,TWO-030,required_sample_size,ss200-proc-a26eceb857d05966,true,,,
+TWO-SS-C-009,required_sample_size,TWO-C-009,TWO-031.SAMPLE_SIZE,TWO-031,required_sample_size,ss200-proc-1434c2c361845233,true,TWO-EX-C-012; TWO-EX-C-013; TWO-EX-C-014,10,10.1; 10.2; 10.3
+TWO-SS-C-010,required_sample_size,TWO-C-010,TWO-032.SAMPLE_SIZE,TWO-032,required_sample_size,ss200-proc-5b6a81937826544e,true,TWO-EX-C-015,10,10.4
+TWO-SS-C-011,required_sample_size,TWO-C-011,TWO-033.SAMPLE_SIZE,TWO-033,required_sample_size,ss200-proc-cacf634aa0255e47,true,TWO-EX-C-016,10,10.5
+TWO-SS-C-012,required_sample_size,TWO-C-012,TWO-034.SAMPLE_SIZE,TWO-034,required_sample_size,ss200-proc-14fa4270ee73550f,true,TWO-EX-C-017; TWO-EX-C-018,12,12.1; 12.2
+TWO-SS-C-013,required_sample_size,TWO-C-013,TWO-035.SAMPLE_SIZE,TWO-035,required_sample_size,ss200-proc-9ee8979aba8e5a3b,true,TWO-EX-C-019,12,12.3
+TWO-SS-C-014,required_sample_size,TWO-C-014,TWO-041.SAMPLE_SIZE,TWO-041,required_sample_size,ss200-proc-8301257303ac5860,true,TWO-EX-C-020,12,12.9
+TWO-SS-C-015,required_sample_size,TWO-C-015,TWO-042.SAMPLE_SIZE,TWO-042,required_sample_size,ss200-proc-1f1aee7d64055751,true,TWO-EX-C-021,12,12.10
+TWO-SS-O-001,required_sample_size,TWO-O-001,TWO-004.SAMPLE_SIZE,TWO-004,required_sample_size,ss200-proc-cf0add3a04b15a3c,true,TWO-EX-O-001; TWO-EX-O-002; TWO-EX-O-003; TWO-EX-O-004,4,4.1; 4.2; 4.3; 4.4
+TWO-SS-O-002,required_sample_size,TWO-O-002,TWO-005.SAMPLE_SIZE,TWO-005,required_sample_size,ss200-proc-c4fb9b7c87325cf7,true,TWO-EX-O-001; TWO-EX-O-005,4,4.1; 4.5
+TWO-SS-O-003,required_sample_size,TWO-O-003,TWO-006.SAMPLE_SIZE,TWO-006,required_sample_size,ss200-proc-8df396b35f995c17,true,,,
+TWO-SS-O-004,required_sample_size,TWO-O-004,TWO-007.SAMPLE_SIZE,TWO-007,required_sample_size,ss200-proc-cfde8aaeb7e555d4,true,TWO-EX-O-006,4,4.6
+TWO-SS-O-005,required_sample_size,TWO-O-005,TWO-026.SAMPLE_SIZE,TWO-026,required_sample_size,ss200-proc-21afc92a96c95180,true,TWO-EX-O-007,8,8.5
+TWO-SS-O-006,required_sample_size,TWO-O-006,TWO-027.SAMPLE_SIZE,TWO-027,required_sample_size,ss200-proc-c8fd73bd3cae5939,true,TWO-EX-O-007,8,8.5
+TWO-SS-O-007,required_sample_size,TWO-O-007,TWO-028.SAMPLE_SIZE,TWO-028,required_sample_size,ss200-proc-baf5150add9b5401,true,TWO-EX-O-007,8,8.5
+TWO-SS-O-008,required_sample_size,TWO-O-008,TWO-038.SAMPLE_SIZE,TWO-038,required_sample_size,ss200-proc-86b9e0384f8b56b1,true,TWO-EX-O-008,12,12.6
+TWO-SS-R-001,required_sample_size,TWO-R-001,TWO-013.SAMPLE_SIZE,TWO-013,required_sample_size,ss200-proc-6f5b5df2162c5793,true,TWO-EX-R-001; TWO-EX-R-002; TWO-EX-R-004,6,6.1; 6.2; 6.7
+TWO-SS-R-002,required_sample_size,TWO-R-002,TWO-014.SAMPLE_SIZE,TWO-014,required_sample_size,ss200-proc-eb95f69bd2a65ade,true,TWO-EX-R-003,6,6.3
+TWO-SS-R-003,required_sample_size,TWO-R-003,TWO-015.SAMPLE_SIZE,TWO-015,required_sample_size,ss200-proc-da2ff56372c255a1,true,TWO-EX-R-004; TWO-EX-R-005,6,6.7; 6.8
+TWO-SS-R-004,required_sample_size,TWO-R-004,TWO-016.SAMPLE_SIZE,TWO-016,required_sample_size,ss200-proc-85853e288e955ca7,true,TWO-EX-R-006,6,6.9
+TWO-SS-R-005,required_sample_size,TWO-R-005,TWO-039.SAMPLE_SIZE,TWO-039,required_sample_size,ss200-proc-690d285387f85989,true,TWO-EX-R-007,12,12.7
+TWO-SS-S-001,required_sample_size,TWO-S-001,TWO-017.SAMPLE_SIZE,TWO-017,required_sample_size,ss200-proc-1c9c1f0fd01355d6,true,,,
+TWO-SS-S-002,required_sample_size,TWO-S-002,TWO-018.SAMPLE_SIZE,TWO-018,required_sample_size,ss200-proc-15dba87f6c935fc2,true,TWO-EX-S-002; TWO-EX-S-003; TWO-EX-S-004,7,7.2; 7.4; 7.5
+TWO-SS-S-003,required_sample_size,TWO-S-003,TWO-020.SAMPLE_SIZE,TWO-020,required_sample_size,ss200-proc-89316f1b21615ea9,true,TWO-EX-S-005; TWO-EX-S-006,7,7.6; 7.7
+TWO-SS-S-004,required_sample_size,TWO-S-004,TWO-021.SAMPLE_SIZE,TWO-021,required_sample_size,ss200-proc-57c5433d34475ecb,true,TWO-EX-S-005; TWO-EX-S-006,7,7.6; 7.7
+TWO-SS-S-005,required_sample_size,TWO-S-005,TWO-022.SAMPLE_SIZE,TWO-022,required_sample_size,ss200-proc-fe7f027c00675029,true,TWO-EX-S-005,7,7.6
+TWO-SS-S-006,required_sample_size,TWO-S-006,TWO-040.SAMPLE_SIZE,TWO-040,required_sample_size,ss200-proc-5195e24debe85ee3,true,TWO-EX-S-007,12,12.8

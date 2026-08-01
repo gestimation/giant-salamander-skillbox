@@ -1,0 +1,22 @@
+{
+  "name": "giant-salamander-skillbox",
+  "interface": {
+    "displayName": "Giant Salamander Skillbox"
+  },
+  "plugins": [
+    {
+      "name": "giant-salamander-skillbox",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/gestimation/giant-salamander-skillbox.git",
+        "path": "./plugins/giant-salamander-skillbox",
+        "ref": "skillbox-2026.08.01-rc6"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

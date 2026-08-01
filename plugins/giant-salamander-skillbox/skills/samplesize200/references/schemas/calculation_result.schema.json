@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://samplesize200.local/schemas/calculation-result-v2.0.0.json",
+  "title": "samplesize200 CalculationResult",
+  "type": "object",
+  "required": [
+    "schema_version", "status", "requested_output", "study_spec_revision",
+    "fingerprint_version", "input_fingerprint", "trace", "scenario_results"
+  ],
+  "properties": {
+    "schema_version": {"const": "2.0.0"},
+    "status": {"type": "string"},
+    "request_id": {"type": "string", "minLength": 1},
+    "calculator_id": {"type": ["string", "null"]},
+    "requested_output": {"type": "string"},
+    "study_spec_revision": {"type": "integer", "minimum": 1},
+    "fingerprint_version": {"const": "ss200-exec-v1"},
+    "input_fingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "engine_version": {"type": ["string", "null"]},
+    "trace": {
+      "type": "object",
+      "properties": {
+        "formula_reference": {"type": ["string", "null"]},
+        "rounding_rule": {}
+      },
+      "additionalProperties": false
+    },
+    "scenario_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["scenario_index", "status", "final_result", "group_or_cluster_allocation", "warnings"]
+      }
+    }
+  },
+  "additionalProperties": false
+}
