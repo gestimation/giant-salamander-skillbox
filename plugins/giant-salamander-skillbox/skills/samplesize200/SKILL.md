@@ -5,7 +5,7 @@ description: Plan, calculate, teach, and review study-size designs with samplesi
 
 # samplesize200
 
-**Product version 1.0.0-rc.6**
+**Product version 1.0.0-rc.7**
 
 **Bundled validated engine: samplesize200 Alpha 0.6.9**
 
