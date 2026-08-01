@@ -1,0 +1,195 @@
+schema_version: 0.1.7
+targets:
+  power:
+    quantity: achieved_power
+    unit: probability
+    stage: final
+    completion_rule: Use only the existing Phase 1 POWER adapter with a realized integer design.
+    supported_model_ids:
+    - ONE-001
+    - ONE-002
+    - ONE-004
+    - TWO-001
+    - TWO-002
+    - TWO-004
+    - TWO-005
+    - TWO-006
+    - TWO-007
+    - TWO-008
+    - TWO-009
+    - TWO-010
+    - TWO-011
+    - TWO-012
+    - TWO-013
+    - TWO-014
+    - TWO-015
+    - TWO-016
+    - TWO-023
+    - TWO-026
+    - TWO-029
+    - TWO-030
+    - TWO-031
+    - TWO-032
+    - TWO-033
+    - MARGIN-001
+    - MARGIN-002
+    - MARGIN-004
+    - MARGIN-005
+    - MARGIN-006
+    independent_two_group_model_ids:
+    - TWO-001
+    - TWO-002
+    - TWO-004
+    - TWO-005
+    - TWO-006
+    - TWO-007
+    - TWO-008
+    - TWO-009
+    - TWO-010
+    - TWO-011
+    - TWO-012
+    - TWO-013
+    - TWO-014
+    - TWO-015
+    - TWO-031
+    - TWO-032
+    - TWO-033
+    - MARGIN-001
+    - MARGIN-004
+    - MARGIN-006
+    design_inputs:
+      ONE-001: [n]
+      ONE-002: [n]
+      ONE-004: [n]
+      TWO-016: [n_cases, n_controls]
+      TWO-023: [n_pairs]
+      TWO-026: [n_pairs]
+      TWO-029: [n_pairs]
+      TWO-030: [n_pairs]
+      MARGIN-002: [n_pairs]
+      MARGIN-005: [n_pairs]
+    group_count_inputs:
+      control_treatment: [n_control, n_treatment]
+      standard_treatment: [n_standard, n_treatment]
+      standard_test: [n_standard, n_test]
+    standard_treatment_model_ids: [TWO-007, TWO-013, TWO-014]
+    standard_test_model_ids: [MARGIN-001, MARGIN-004, MARGIN-006]
+  detectable_effect:
+    quantity: effect_size
+    unit: procedure_specific
+    stage: final
+    completion_rule: Invert only the existing validated POWER equation at a realized integer design and validate the result by round trip.
+    supported_model_ids:
+    - ONE-001
+    - ONE-002
+    - ONE-004
+    - TWO-005
+    - TWO-006
+    - TWO-009
+    - TWO-010
+    - TWO-011
+    - TWO-012
+    - TWO-013
+    - TWO-023
+    - TWO-026
+    - TWO-029
+    - TWO-031
+    - TWO-032
+    - TWO-033
+    independent_two_group_model_ids:
+    - TWO-005
+    - TWO-006
+    - TWO-009
+    - TWO-010
+    - TWO-011
+    - TWO-012
+    - TWO-013
+    - TWO-031
+    - TWO-032
+    - TWO-033
+    design_inputs:
+      ONE-001: [n]
+      ONE-002: [n]
+      ONE-004: [n]
+      TWO-023: [n_pairs]
+      TWO-026: [n_pairs]
+      TWO-029: [n_pairs]
+    group_count_inputs:
+      control_treatment: [n_control, n_treatment]
+      standard_treatment: [n_standard, n_treatment]
+      standard_test: [n_standard, n_test]
+    standard_treatment_model_ids: [TWO-013]
+    standard_test_model_ids: []
+    effect_inputs_by_model:
+      ONE-001: [planned_proportion]
+      ONE-002: [planned_mean]
+      ONE-004: [additional_rate]
+      TWO-005: [odds_ratio]
+      TWO-006: [odds_ratio]
+      TWO-009: [standardized_effect]
+      TWO-010: [planned_mean_difference]
+      TWO-011: [standardized_effect]
+      TWO-012: [superiority_probability]
+      TWO-013: [rate_ratio]
+      TWO-023: [discordant_odds_ratio]
+      TWO-026: [standardized_effect]
+      TWO-029: [standardized_effect]
+      TWO-031: [planned_mean_difference]
+      TWO-032: [planned_slope_difference]
+      TWO-033: [planned_contrast_difference]
+    direction_required_model_ids:
+    - ONE-001
+    - TWO-005
+    - TWO-006
+    - TWO-010
+    - TWO-012
+    - TWO-013
+    - TWO-023
+    - TWO-031
+    - TWO-032
+    - TWO-033
+    direction_optional_model_ids: [ONE-002]
+  required_events:
+    quantity: events
+    unit: event
+    stage: final
+    completion_rule: Stop after the event kernel; participant conversion is an optional next step.
+    procedures:
+      TWO-S-001:
+        engine_method_id: TWO-017
+        required_inputs: [hazard_ratio]
+        optional_inputs:
+        - {name: allocation_ratio, default: 1.0}
+        - {name: alpha, default: 0.05}
+        - {name: power, default: 0.8}
+        - {name: sides, default: 2}
+      TWO-S-002:
+        engine_method_id: TWO-018
+        required_inputs: [hazard_ratio]
+        optional_inputs:
+        - {name: allocation_ratio, default: 1.0}
+        - {name: alpha, default: 0.05}
+        - {name: power, default: 0.8}
+        - {name: sides, default: 2}
+  required_sample_size:
+    quantity: procedure_specific_final_research_size
+    stage: final
+    completion_rule: Use the ordinary validated end-to-end public procedure contract.
+  attrition_adjusted_sample_size:
+    quantity: participants
+    unit: person
+    stage: final
+    completion_rule: Require only an attrition field already supported by the selected validated procedure.
+    procedures:
+      ONE-S-001: [attrition_rate]
+      TWO-B-001: [individual_attrition_rate, cluster_attrition_rate]
+      TWO-B-008: [individual_attrition, cluster_attrition]
+      TWO-B-009: [individual_attrition, cluster_attrition]
+      TWO-C-001: [individual_attrition_rate, cluster_attrition_rate]
+      TWO-C-012: [individual_attrition, cluster_attrition]
+      TWO-C-013: [individual_attrition, cluster_attrition]
+      TWO-C-014: [individual_attrition, cluster_attrition]
+      TWO-C-015: [individual_attrition, cluster_attrition]
+      TWO-O-008: [individual_attrition, cluster_attrition]
+      TWO-R-005: [individual_attrition, cluster_attrition]
+      TWO-S-006: [individual_attrition, cluster_attrition]

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "giant-salamander-skillbox",
+  "displayName": "Giant Salamander Skillbox",
+  "version": "1.0.0-rc.1",
+  "description": "Review statistical tables and citations, and plan validated study sizes.",
+  "author": {
+    "name": "gestimation",
+    "url": "https://github.com/gestimation/giant-salamander-skillbox"
+  },
+  "homepage": "https://github.com/gestimation/giant-salamander-skillbox",
+  "repository": "https://github.com/gestimation/giant-salamander-skillbox",
+  "license": "MIT",
+  "keywords": [
+    "statistics",
+    "tables",
+    "citations",
+    "sample-size",
+    "research"
+  ],
+  "skills": "./skills/"
+}

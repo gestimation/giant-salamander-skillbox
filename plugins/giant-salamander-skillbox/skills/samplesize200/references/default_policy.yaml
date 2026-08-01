@@ -1,0 +1,30 @@
+schema_version: 0.1.8
+defaults:
+  alpha: 0.05
+  power_values: [0.80, 0.90, 0.95]
+  two_group_allocation_ratio: 1.0
+  one_group_directional:
+    alpha: 0.05
+    sides: 1
+    power_values: [0.80, 0.90, 0.95]
+  one_group_nondirectional:
+    alpha: 0.05
+    sides: 2
+    power_values: [0.80, 0.90, 0.95]
+  two_group_superiority:
+    alpha: 0.05
+    sides: 2
+    allocation_ratio: 1.0
+    power_values: [0.80, 0.90, 0.95]
+  one_group_proportion_ci_width:
+    method_public_id: CI-B-003
+    method: Wilson
+    width_definition: full_width
+exceptions:
+  objective_tokens: [noninferiority, non-inferiority, equivalence, group_sequential, bayesian]
+  other: [multiple_confirmatory_comparisons, precision_estimation, power_not_meaningful]
+scenario_limits:
+  power_scenarios: 20
+  total_calculations: 100
+directional_terms_ja: [超える, 高い, 上回る, 下回る, 低い, 改善する, 減少する, 少なくとも]
+nondirectional_terms_ja: [異なるか, 差があるか, 等しくないか]

@@ -1,0 +1,1531 @@
+schema_version: 0.1.3
+engine_version: 0.6.6
+count: 17
+discrepancy_counts:
+  ROUNDING_DIFFERENCE: 4
+  MATCH: 12
+  SOURCE_INCONSISTENCY: 1
+policy:
+  long_book_text_copied: false
+  published_and_engine_results_separated: true
+  example_values_are_defaults: false
+examples:
+- example_id: article-table3-arcsine-s01-s02-followup12
+  procedure_key: ss200-proc-3aae05b533fd149a
+  source:
+    fixture: validation/one_s_001_tables.csv
+    location: Nagashima et al. (2021), Table 3, follow-up 12 months, arcsine-square-root column
+    case_id: ONE-S-001-T3-001
+  scenario_summary: A single-arm study tests 12-month survival of 0.20 against 0.10 with 24 months of uniform accrual and 12 months minimum follow-up.
+  study_objective: superiority_hypothesis_test
+  outcome: time_to_event
+  design: one_sample_survival_probability
+  structured_inputs:
+    analysis_time: 12
+    null_survival_probability: 0.1
+    alternative_survival_probability: 0.2
+    accrual_time: 24
+    followup_time: 12
+    alpha: 0.05
+    power: 0.8
+    sides: 1
+  published_result:
+    final_total: 77
+    quantity: participants
+    unit: person
+  engine_result:
+    raw_fields: {raw_total: 76.76467090809044}
+    final_fields: {rounded_total: 77, final_total: 77}
+  discrepancy_status: MATCH
+  calculation_trace:
+    quantities:
+    - {key: raw_total, value: 76.76467090809044, quantity: participants, unit: person, stage: raw}
+    - {key: final_total, value: 77, quantity: participants, unit: person, stage: final}
+    lineage:
+    - role: calculation_specification
+      method_id: ONE-S-001
+  explanation_points:
+  - The published integer and engine ceiling agree; the noninteger result is retained separately.
+  - This example validates the procedure and must not supply defaults for a new study.
+  limitations:
+  - Do not use this example without confirming the exponential-survival and uniform-accrual assumptions.
+  provenance:
+    source_file: Nagashima_et_al_2021
+    source_location: Table 3
+    fixture_case_id: ONE-S-001-T3-001
+  match_type: EXACT_PROCEDURE_MATCH
+- example_id: book-example-4.1-formal
+  procedure_key: ss200-proc-cf0add3a04b15a3c
+  source:
+    fixture: validation/chapter04_examples.yaml
+    location: Chapter 4, Example 4.1, PDF pages 56-57 (book pages 94-95)
+    case_id: example-4.1-formal
+  scenario_summary: Four-level ordinal outcome planned with a proportional-odds treatment effect.
+  study_objective: superiority_hypothesis_test
+  outcome: ordinal
+  design: independent_two_group
+  structured_inputs:
+    allocation_ratio: 1
+    alpha: 0.05
+    power: 0.8
+    sides: 2
+    gamma_from_control_only: false
+    control_proportions:
+    - 0.14
+    - 0.24
+    - 0.24
+    - 0.38
+    odds_ratio: 3.65
+  published_result:
+    published_raw: 60.09
+    published_final: 60
+  engine_result:
+    primary_result:
+      key: final_total
+      value: 62
+      quantity: participants
+      unit: person
+      stage: final
+    raw_fields:
+      raw_total: 60.08499808651094
+      raw_group_control: 30.04249904325547
+      raw_group_treatment: 30.04249904325547
+    final_fields:
+      rounded_total: 61
+      rounded_group_control: 31
+      rounded_group_treatment: 31
+      final_group_control: 31
+      final_group_treatment: 31
+      final_total: 62
+      final_public_api: false
+  discrepancy_status: ROUNDING_DIFFERENCE
+  calculation_trace:
+    quantities:
+    - key: raw_total
+      value: 60.08499808651094
+      quantity: participants
+      unit: participants
+      stage: raw
+    - key: rounded_total
+      value: 61
+      quantity: participants
+      unit: participants
+      stage: rounded
+    - key: rounded_group_control
+      value: 31
+      quantity: participants
+      unit: participants
+      stage: rounded
+    - key: rounded_group_treatment
+      value: 31
+      quantity: participants
+      unit: participants
+      stage: rounded
+    - key: raw_group_control
+      value: 30.04249904325547
+      quantity: participants
+      unit: participants
+      stage: raw
+    - key: raw_group_treatment
+      value: 30.04249904325547
+      quantity: participants
+      unit: participants
+      stage: raw
+    - key: final_group_control
+      value: 31
+      quantity: participants
+      unit: participants
+      stage: allocation_adjusted
+    - key: final_group_treatment
+      value: 31
+      quantity: participants
+      unit: participants
+      stage: allocation_adjusted
+    - key: final_total
+      value: 62
+      quantity: participants
+      unit: participants
+      stage: final
+    lineage: []
+  explanation_points:
+  - Use the recorded inputs only for reproducing this example.
+  - Distinguish the book's published result from the frozen engine result.
+  - Preserve raw, rounding, and finalization stages.
+  limitations:
+  - This summarized example is validation evidence and must not supply defaults for a new study.
+  provenance:
+    source_file: 医学研究のためのサンプルサイズ設計_20220330.pdf
+    source_location: Chapter 4, Example 4.1, PDF pages 56-57 (book pages 94-95)
+    fixture_case_id: example-4.1-formal
+  match_type: EXACT_PROCEDURE_MATCH
+- example_id: book-example-4.1-equal-categories
+  procedure_key: ss200-proc-c4fb9b7c87325cf7
+  source:
+    fixture: validation/chapter04_examples.yaml
+    location: Chapter 4, Example 4.1, PDF page 57 (book page 95)
+    case_id: example-4.1-equal-categories
+  scenario_summary: The same ordinal setting evaluated with the equal-category approximation.
+  study_objective: superiority_hypothesis_test
+  outcome: ordinal
+  design: independent_two_group
+  structured_inputs:
+    allocation_ratio: 1
+    alpha: 0.05
+    power: 0.8
+    sides: 2
+    category_count: 4
+    odds_ratio: 3.65
+  published_result:
+    published_raw: 59.93
+    published_final: 60
+  engine_result:
+    primary_result:
+      key: final_total
+      value: 60
+      quantity: participants
+      unit: person
+      stage: final
+    raw_fields:
+      raw_total: 59.932324486716375
+      raw_group_control: 29.966162243358188
+      raw_group_treatment: 29.966162243358188
+    final_fields:
+      rounded_total: 60
+      rounded_group_control: 30
+      rounded_group_treatment: 30
+      final_group_control: 30
+      final_group_treatment: 30
+      final_total: 60
+      final_public_api: false
+  discrepancy_status: MATCH
+  calculation_trace:
+    quantities:
+    - key: raw_total
+      value: 59.932324486716375
+      quantity: participants
+      unit: participants
+      stage: raw
+    - key: rounded_total
+      value: 60
+      quantity: participants
+      unit: participants
+      stage: rounded
+    - key: rounded_group_control
+      value: 30
+      quantity: participants
+      unit: participants
+      stage: rounded
+    - key: rounded_group_treatment
+      value: 30
+      quantity: participants
+      unit: participants
+      stage: rounded
+    - key: raw_group_control
+      value: 29.966162243358188
+      quantity: participants
+      unit: participants
+      stage: raw
+    - key: raw_group_treatment
+      value: 29.966162243358188
+      quantity: participants
+      unit: participants
+      stage: raw
+    - key: final_group_control
+      value: 30
+      quantity: participants
+      unit: participants
+      stage: allocation_adjusted
+    - key: final_group_treatment
+      value: 30
+      quantity: participants
+      unit: participants
+      stage: allocation_adjusted
+    - key: final_total
+      value: 60
+      quantity: participants
+      unit: participants
+      stage: final
+    lineage: []
+  explanation_points:
+  - Use the recorded inputs only for reproducing this example.
+  - Distinguish the book's published result from the frozen engine result.
+  - Preserve raw, rounding, and finalization stages.
+  limitations:
+  - This summarized example is validation evidence and must not supply defaults for a new study.
+  provenance:
+    source_file: 医学研究のためのサンプルサイズ設計_20220330.pdf
+    source_location: Chapter 4, Example 4.1, PDF page 57 (book page 95)
+    fixture_case_id: example-4.1-equal-categories
+  match_type: EXACT_PROCEDURE_MATCH
+- example_id: book-example-4.6-exact-proportions
+  procedure_key: ss200-proc-cfde8aaeb7e555d4
+  source:
+    fixture: validation/chapter04_examples.yaml
+    location: Chapter 4, Example 4.6 and Figure 4.6, PDF page 60 (book page 101)
+    case_id: example-4.6-exact-proportions
+  scenario_summary: A non-proportional ordinal comparison evaluated by the Mann–Whitney approach.
+  study_objective: superiority_hypothesis_test
+  outcome: ordinal
+  design: independent_two_group
+  structured_inputs:
+    allocation_ratio: 1
+    alpha: 0.05
+    power: 0.8
+    sides: 2
+    standard_proportions:
+    - 0.6632
+    - 0.1458
+    - 0.191
+    treatment_proportions:
+    - 0.6062
+    - 0.2338
+    - 0.16
+  published_result:
+    published_raw: null
+    published_final: 6022
+  engine_result:
+    primary_result:
+      key: final_total
+      value: 6022
+      quantity: participants
+      unit: person
+      stage: final
+    raw_fields:
+      raw_total: 6020.6093458547575
+      raw_group_control: 3010.3046729273788
+      raw_group_treatment: 3010.3046729273788
+    final_fields:
+      rounded_total: 6021
+      rounded_group_control: 3011
+      rounded_group_treatment: 3011
+      final_group_control: 3011
+      final_group_treatment: 3011
+      final_total: 6022
+      final_public_api: false
+  discrepancy_status: MATCH
+  calculation_trace:
+    quantities:
+    - key: raw_total
+      value: 6020.6093458547575
+      quantity: participants
+      unit: participants
+      stage: raw
+    - key: rounded_total
+      value: 6021
+      quantity: participants
+      unit: participants
+      stage: rounded
+    - key: rounded_group_control
+      value: 3011
+      quantity: participants
+      unit: participants
+      stage: rounded
+    - key: rounded_group_treatment
+      value: 3011
+      quantity: participants
+      unit: participants
+      stage: rounded
+    - key: raw_group_control
+      value: 3010.3046729273788
+      quantity: participants
+      unit: participants
+      stage: raw
+    - key: raw_group_treatment
+      value: 3010.3046729273788
+      quantity: participants
+      unit: participants
+      stage: raw
+    - key: final_group_control
+      value: 3011
+      quantity: participants
+      unit: participants
+      stage: allocation_adjusted
+    - key: final_group_treatment
+      value: 3011
+      quantity: participants
+      unit: participants
+      stage: allocation_adjusted
+    - key: final_total
+      value: 6022
+      quantity: participants
+      unit: participants
+      stage: final
+    lineage: []
+  explanation_points:
+  - Use the recorded inputs only for reproducing this example.
+  - Distinguish the book's published result from the frozen engine result.
+  - Preserve raw, rounding, and finalization stages.
+  limitations:
+  - This summarized example is validation evidence and must not supply defaults for a new study.
+  provenance:
+    source_file: 医学研究のためのサンプルサイズ設計_20220330.pdf
+    source_location: Chapter 4, Example 4.6 and Figure 4.6, PDF page 60 (book page 101)
+    fixture_case_id: example-4.6-exact-proportions
+  match_type: EXACT_PROCEDURE_MATCH
+- example_id: book-example-8.1-plan-p80
+  procedure_key: ss200-proc-51e34974bac255f9
+  source:
+    fixture: validation/chapter08_examples.yaml
+    location: Chapter 8, Example 8.1 and Table 8.1
+    case_id: example-8.1-plan-p80
+  scenario_summary: A paired binary comparison planned from discordance assumptions at 80% power.
+  study_objective: superiority_hypothesis_test
+  outcome: paired_binary_ordinal_or_continuous
+  design: paired_two_group
+  structured_inputs:
+    alpha: 0.05
+    power: 0.8
+    sides: 2
+    subjects_per_pair: 1
+    even_sequence: false
+    discordant_odds_ratio: 3
+    discordant_fraction: 0.3
+  published_result:
+    published_raw: null
+    published_pairs: 103
+    published_total: 103
+  engine_result:
+    primary_result:
+      key: final_total
+      value: 103
+      quantity: participants
+      unit: person
+      stage: final
+    raw_fields:
+      raw_total: 102.26170994182536
+      raw_pairs: 102.26170994182536
+      raw_group_control: null
+      raw_group_treatment: null
+    final_fields:
+      rounded_pairs: 103
+      final_pairs: 103
+      rounded_total: 103
+      rounded_group_control: null
+      rounded_group_treatment: null
+      final_group_control: null
+      final_group_treatment: null
+      final_cases: null
+      final_controls: null
+      final_total: 103
+      final_public_api: false
+  discrepancy_status: MATCH
+  calculation_trace:
+    quantities:
+    - key: raw_pairs
+      value: 102.26170994182536
+      quantity: pairs
+      unit: pairs
+      stage: raw
+    - key: rounded_pairs
+      value: 103
+      quantity: pairs
+      unit: pairs
+      stage: rounded
+    - key: constraint_adjusted_pairs
+      value: 103
+      quantity: pairs
+      unit: pairs
+      stage: design_constrained
+    - key: final_pairs
+      value: 103
+      quantity: pairs
+      unit: pairs
+      stage: final
+    - key: raw_total
+      value: 102.26170994182536
+      quantity: participants
+      unit: participants
+      stage: raw
+    - key: rounded_total
+      value: 103
+      quantity: participants
+      unit: participants
+      stage: rounded
+    - key: final_total
+      value: 103
+      quantity: participants
+      unit: participants
+      stage: final
+    lineage: []
+  explanation_points:
+  - Use the recorded inputs only for reproducing this example.
+  - Distinguish the book's published result from the frozen engine result.
+  - Preserve raw, rounding, and finalization stages.
+  limitations:
+  - This summarized example is validation evidence and must not supply defaults for a new study.
+  provenance:
+    source_file: 医学研究のためのサンプルサイズ設計_20220330.pdf
+    source_location: Chapter 8, Example 8.1 and Table 8.1
+    fixture_case_id: example-8.1-plan-p80
+  match_type: EXACT_PROCEDURE_MATCH
+- example_id: book-example-8.5-signed-rank
+  procedure_key: ss200-proc-21afc92a96c95180
+  source:
+    fixture: validation/chapter08_examples.yaml
+    location: Chapter 8, Example 8.5; English PDF pages 137-138 (printed 129-130)
+    case_id: example-8.5-signed-rank
+  scenario_summary: A paired ordinal outcome planned with the signed-rank approximation.
+  study_objective: superiority_hypothesis_test
+  outcome: paired_binary_ordinal_or_continuous
+  design: paired_two_group
+  structured_inputs:
+    alpha: 0.05
+    power: 0.8
+    sides: 2
+    subjects_per_pair: 2
+    even_sequence: false
+    standardized_effect: 0.743
+  published_result:
+    published_raw: 30.36
+    published_pairs: 31
+    published_total: 62
+  engine_result:
+    primary_result:
+      key: final_total
+      value: 62
+      quantity: participants
+      unit: person
+      stage: final
+    raw_fields:
+      raw_total: 60.71235060275757
+      raw_pairs: 30.356175301378784
+      raw_group_control: null
+      raw_group_treatment: null
+    final_fields:
+      rounded_pairs: 31
+      final_pairs: 31
+      rounded_total: 62
+      rounded_group_control: null
+      rounded_group_treatment: null
+      final_group_control: null
+      final_group_treatment: null
+      final_cases: null
+      final_controls: null
+      final_total: 62
+      final_public_api: false
+  discrepancy_status: MATCH
+  calculation_trace:
+    quantities:
+    - key: raw_pairs
+      value: 30.356175301378784
+      quantity: pairs
+      unit: pairs
+      stage: raw
+    - key: rounded_pairs
+      value: 31
+      quantity: pairs
+      unit: pairs
+      stage: rounded
+    - key: constraint_adjusted_pairs
+      value: 31
+      quantity: pairs
+      unit: pairs
+      stage: design_constrained
+    - key: final_pairs
+      value: 31
+      quantity: pairs
+      unit: pairs
+      stage: final
+    - key: raw_total
+      value: 60.71235060275757
+      quantity: participants
+      unit: participants
+      stage: raw
+    - key: rounded_total
+      value: 62
+      quantity: participants
+      unit: participants
+      stage: rounded
+    - key: final_total
+      value: 62
+      quantity: participants
+      unit: participants
+      stage: final
+    lineage: []
+  explanation_points:
+  - Use the recorded inputs only for reproducing this example.
+  - Distinguish the book's published result from the frozen engine result.
+  - Preserve raw, rounding, and finalization stages.
+  limitations:
+  - This summarized example is validation evidence and must not supply defaults for a new study.
+  provenance:
+    source_file: 医学研究のためのサンプルサイズ設計_20220330.pdf
+    source_location: Chapter 8, Example 8.5; English PDF pages 137-138 (printed 129-130)
+    fixture_case_id: example-8.5-signed-rank
+  match_type: EXACT_PROCEDURE_MATCH
+- example_id: book-example-8.6-effect-025
+  procedure_key: ss200-proc-1ba778402281547a
+  source:
+    fixture: validation/chapter08_examples.yaml
+    location: Chapter 8, Example 8.6; English PDF page 139 (printed 131)
+    case_id: example-8.6-effect-025
+  scenario_summary: A paired continuous outcome planned from the within-pair change distribution.
+  study_objective: superiority_hypothesis_test
+  outcome: paired_binary_ordinal_or_continuous
+  design: paired_two_group
+  structured_inputs:
+    alpha: 0.05
+    power: 0.8
+    sides: 2
+    subjects_per_pair: 1
+    even_sequence: false
+    standardized_effect: 0.25
+  published_result:
+    published_raw: 253.08
+    published_pairs: 254
+    published_total: 254
+  engine_result:
+    primary_result:
+      key: final_total
+      value: 254
+      quantity: participants
+      unit: person
+      stage: final
+    raw_fields:
+      raw_total: 253.0848809095178
+      raw_pairs: 253.0848809095178
+      raw_group_control: null
+      raw_group_treatment: null
+    final_fields:
+      rounded_pairs: 254
+      final_pairs: 254
+      rounded_total: 254
+      rounded_group_control: null
+      rounded_group_treatment: null
+      final_group_control: null
+      final_group_treatment: null
+      final_cases: null
+      final_controls: null
+      final_total: 254
+      final_public_api: false
+  discrepancy_status: MATCH
+  calculation_trace:
+    quantities:
+    - key: raw_pairs
+      value: 253.0848809095178
+      quantity: pairs
+      unit: pairs
+      stage: raw
+    - key: rounded_pairs
+      value: 254
+      quantity: pairs
+      unit: pairs
+      stage: rounded
+    - key: constraint_adjusted_pairs
+      value: 254
+      quantity: pairs
+      unit: pairs
+      stage: design_constrained
+    - key: final_pairs
+      value: 254
+      quantity: pairs
+      unit: pairs
+      stage: final
+    - key: raw_total
+      value: 253.0848809095178
+      quantity: participants
+      unit: participants
+      stage: raw
+    - key: rounded_total
+      value: 254
+      quantity: participants
+      unit: participants
+      stage: rounded
+    - key: final_total
+      value: 254
+      quantity: participants
+      unit: participants
+      stage: final
+    lineage: []
+  explanation_points:
+  - Use the recorded inputs only for reproducing this example.
+  - Distinguish the book's published result from the frozen engine result.
+  - Preserve raw, rounding, and finalization stages.
+  limitations:
+  - This summarized example is validation evidence and must not supply defaults for a new study.
+  provenance:
+    source_file: 医学研究のためのサンプルサイズ設計_20220330.pdf
+    source_location: Chapter 8, Example 8.6; English PDF page 139 (printed 131)
+    fixture_case_id: example-8.6-effect-025
+  match_type: EXACT_PROCEDURE_MATCH
+- example_id: book-example-9.1-normal-p005
+  procedure_key: ss200-proc-ea91dbad32a2590f
+  source:
+    fixture: validation/chapter09_examples.yaml
+    location: Chapter 9, Example 9.1; English PDF page 153 (printed 145)
+    case_id: example-9.1-normal-p005
+  scenario_summary: Precision planning for a single low prevalence using a normal interval approximation.
+  study_objective: precision_estimation
+  outcome: proportion_or_mean
+  design: one_group
+  structured_inputs:
+    alpha: 0.05
+    planned_proportion: 0.05
+    width: 0.1
+  published_result:
+    published_raw: 72.99
+    published_final: 73
+  engine_result:
+    primary_result:
+      key: final_total
+      value: 73
+      quantity: participants
+      unit: person
+      stage: final
+    raw_fields:
+      raw_total: 72.98771759318834
+      raw_group_control: null
+      raw_group_treatment: null
+    final_fields:
+      rounded_total: 73
+      rounded_group_control: null
+      rounded_group_treatment: null
+      final_group_control: null
+      final_group_treatment: null
+      final_total: 73
+      final_public_api: false
+  discrepancy_status: MATCH
+  calculation_trace:
+    quantities:
+    - key: raw_total
+      value: 72.98771759318834
+      quantity: participants
+      unit: participants
+      stage: raw
+    - key: rounded_total
+      value: 73
+      quantity: participants
+      unit: participants
+      stage: rounded
+    - key: final_total
+      value: 73
+      quantity: participants
+      unit: participants
+      stage: final
+    lineage: []
+  explanation_points:
+  - Use the recorded inputs only for reproducing this example.
+  - Distinguish the book's published result from the frozen engine result.
+  - Preserve raw, rounding, and finalization stages.
+  limitations:
+  - This summarized example is validation evidence and must not supply defaults for a new study.
+  provenance:
+    source_file: 医学研究のためのサンプルサイズ設計_20220330.pdf
+    source_location: Chapter 9, Example 9.1; English PDF page 153 (printed 145)
+    fixture_case_id: example-9.1-normal-p005
+  match_type: EXACT_PROCEDURE_MATCH
+- example_id: book-example-9.2-wilson-90
+  procedure_key: ss200-proc-07e845696afa5f2e
+  source:
+    fixture: validation/chapter09_examples.yaml
+    location: Chapter 9, Example 9.2
+    case_id: example-9.2-wilson-90
+  scenario_summary: Single-proportion precision planning with a Wilson-type interval at 90% confidence.
+  study_objective: precision_estimation
+  outcome: proportion_or_mean
+  design: one_group
+  structured_inputs:
+    alpha: 0.1
+    planned_proportion: 0.3
+    width: 0.08
+  published_result:
+    published_raw: null
+    published_final: 356
+  engine_result:
+    primary_result:
+      key: final_total
+      value: 353
+      quantity: participants
+      unit: person
+      stage: final
+    raw_fields:
+      raw_total: 352.9116307810769
+      raw_group_control: null
+      raw_group_treatment: null
+    final_fields:
+      rounded_total: 353
+      rounded_group_control: null
+      rounded_group_treatment: null
+      final_group_control: null
+      final_group_treatment: null
+      final_total: 353
+      final_public_api: false
+  discrepancy_status: SOURCE_INCONSISTENCY
+  calculation_trace:
+    quantities:
+    - key: raw_total
+      value: 352.9116307810769
+      quantity: participants
+      unit: participants
+      stage: raw
+    - key: rounded_total
+      value: 353
+      quantity: participants
+      unit: participants
+      stage: rounded
+    - key: final_total
+      value: 353
+      quantity: participants
+      unit: participants
+      stage: final
+    lineage: []
+  explanation_points:
+  - Use the recorded inputs only for reproducing this example.
+  - Distinguish the book's published result from the frozen engine result.
+  - Preserve raw, rounding, and finalization stages.
+  limitations:
+  - This summarized example is validation evidence and must not supply defaults for a new study.
+  provenance:
+    source_file: 医学研究のためのサンプルサイズ設計_20220330.pdf
+    source_location: Chapter 9, Example 9.2
+    fixture_case_id: example-9.2-wilson-90
+  match_type: EXACT_PROCEDURE_MATCH
+- example_id: book-example-9.5-wilson-equal
+  procedure_key: ss200-proc-bfc4a29c98995da1
+  source:
+    fixture: validation/chapter09_examples.yaml
+    location: Chapter 9, Example 9.5 and Table 9.2
+    case_id: example-9.5-wilson-equal
+  scenario_summary: Precision planning for the difference of two independent proportions.
+  study_objective: precision_estimation
+  outcome: proportion_or_mean
+  design: independent_two_group
+  structured_inputs:
+    allocation_ratio: 1
+    alpha: 0.05
+    search_limit: 1000000000
+    control_proportion: 0.1
+    treatment_proportion: 0.2
+    width: 0.15
+  published_result:
+    published_raw: null
+    published_final: 350
+  engine_result:
+    primary_result:
+      key: final_total
+      value: 350
+      quantity: participants
+      unit: person
+      stage: final
+    raw_fields:
+      raw_total: 348.51020790436985
+      raw_group_control: 174.25510395218492
+      raw_group_treatment: 174.25510395218492
+    final_fields:
+      rounded_total: 349
+      rounded_group_control: 175
+      rounded_group_treatment: 175
+      final_group_control: 175
+      final_group_treatment: 175
+      final_total: 350
+      final_public_api: false
+  discrepancy_status: MATCH
+  calculation_trace:
+    quantities:
+    - key: raw_total
+      value: 348.51020790436985
+      quantity: participants
+      unit: participants
+      stage: raw
+    - key: rounded_total
+      value: 349
+      quantity: participants
+      unit: participants
+      stage: rounded
+    - key: rounded_group_control
+      value: 175
+      quantity: participants
+      unit: participants
+      stage: rounded
+    - key: rounded_group_treatment
+      value: 175
+      quantity: participants
+      unit: participants
+      stage: rounded
+    - key: raw_group_control
+      value: 174.25510395218492
+      quantity: participants
+      unit: participants
+      stage: raw
+    - key: raw_group_treatment
+      value: 174.25510395218492
+      quantity: participants
+      unit: participants
+      stage: raw
+    - key: final_group_control
+      value: 175
+      quantity: participants
+      unit: participants
+      stage: allocation_adjusted
+    - key: final_group_treatment
+      value: 175
+      quantity: participants
+      unit: participants
+      stage: allocation_adjusted
+    - key: final_total
+      value: 350
+      quantity: participants
+      unit: participants
+      stage: final
+    lineage: []
+  explanation_points:
+  - Use the recorded inputs only for reproducing this example.
+  - Distinguish the book's published result from the frozen engine result.
+  - Preserve raw, rounding, and finalization stages.
+  limitations:
+  - This summarized example is validation evidence and must not supply defaults for a new study.
+  provenance:
+    source_file: 医学研究のためのサンプルサイズ設計_20220330.pdf
+    source_location: Chapter 9, Example 9.5 and Table 9.2
+    fixture_case_id: example-9.5-wilson-equal
+  match_type: EXACT_PROCEDURE_MATCH
+- example_id: book-example-9.6-or-relative
+  procedure_key: ss200-proc-07f5b6f33dd05758
+  source:
+    fixture: validation/chapter09_examples.yaml
+    location: Chapter 9, Example 9.6; English PDF page 155 (printed 147)
+    case_id: example-9.6-or-relative
+  scenario_summary: Precision planning for an odds ratio from two independent proportions.
+  study_objective: precision_estimation
+  outcome: proportion_or_mean
+  design: independent_two_group
+  structured_inputs:
+    allocation_ratio: 1
+    alpha: 0.05
+    control_proportion: 0.1
+    odds_ratio: 2.25
+    relative_precision: 0.25
+  published_result:
+    published_raw: 1611.68
+    published_final: 1612
+  engine_result:
+    primary_result:
+      key: final_total
+      value: 1612
+      quantity: participants
+      unit: person
+      stage: final
+    raw_fields:
+      raw_total: 1611.6773290265276
+      raw_group_control: 805.8386645132638
+      raw_group_treatment: 805.8386645132638
+    final_fields:
+      rounded_total: 1612
+      rounded_group_control: 806
+      rounded_group_treatment: 806
+      final_group_control: 806
+      final_group_treatment: 806
+      final_total: 1612
+      final_public_api: false
+  discrepancy_status: MATCH
+  calculation_trace:
+    quantities:
+    - key: raw_total
+      value: 1611.6773290265276
+      quantity: participants
+      unit: participants
+      stage: raw
+    - key: rounded_total
+      value: 1612
+      quantity: participants
+      unit: participants
+      stage: rounded
+    - key: rounded_group_control
+      value: 806
+      quantity: participants
+      unit: participants
+      stage: rounded
+    - key: rounded_group_treatment
+      value: 806
+      quantity: participants
+      unit: participants
+      stage: rounded
+    - key: raw_group_control
+      value: 805.8386645132638
+      quantity: participants
+      unit: participants
+      stage: raw
+    - key: raw_group_treatment
+      value: 805.8386645132638
+      quantity: participants
+      unit: participants
+      stage: raw
+    - key: final_group_control
+      value: 806
+      quantity: participants
+      unit: participants
+      stage: allocation_adjusted
+    - key: final_group_treatment
+      value: 806
+      quantity: participants
+      unit: participants
+      stage: allocation_adjusted
+    - key: final_total
+      value: 1612
+      quantity: participants
+      unit: participants
+      stage: final
+    lineage: []
+  explanation_points:
+  - Use the recorded inputs only for reproducing this example.
+  - Distinguish the book's published result from the frozen engine result.
+  - Preserve raw, rounding, and finalization stages.
+  limitations:
+  - This summarized example is validation evidence and must not supply defaults for a new study.
+  provenance:
+    source_file: 医学研究のためのサンプルサイズ設計_20220330.pdf
+    source_location: Chapter 9, Example 9.6; English PDF page 155 (printed 147)
+    fixture_case_id: example-9.6-or-relative
+  match_type: EXACT_PROCEDURE_MATCH
+- example_id: book-CH11-EX11.1-EQUAL
+  procedure_key: ss200-proc-79c1ef865f2b520f
+  source:
+    fixture: validation/chapter11_examples.yaml
+    location: Example 11.1 lines 310-314
+    case_id: CH11-EX11.1-EQUAL
+  scenario_summary: A two-group continuous noninferiority/equivalence-margin calculation with equal allocation.
+  study_objective: noninferiority
+  outcome: procedure-specific
+  design: independent_two_group
+  structured_inputs:
+    allocation_ratio: 1.0
+    alpha: 0.1
+    power: 0.8
+    favorable_direction: smaller
+    planned_standard: 10
+    planned_test: 10
+    standard_deviation: 9
+    positive_margin: 5
+  published_result:
+    published_raw: 58.3
+    published_final: 60
+  engine_result:
+    primary_result:
+      key: final_total
+      value: 60
+      quantity: participants
+      unit: person
+      stage: final
+    raw_fields:
+      raw_total: 58.42190104446606
+      raw_group_control: 29.21095052223303
+      raw_group_treatment: 29.21095052223303
+    final_fields:
+      rounded_total: 59
+      final_total: 60
+      rounded_group_control: 30
+      rounded_group_treatment: 30
+      final_group_control: 30
+      final_group_treatment: 30
+  discrepancy_status: MATCH
+  calculation_trace:
+    quantities:
+    - key: raw_total
+      value: 58.42190104446606
+      quantity: participants
+      unit: person
+      stage: raw
+    - key: rounded_total
+      value: 59
+      quantity: participants
+      unit: person
+      stage: rounded
+    - key: raw_group_standard
+      value: 29.21095052223303
+      quantity: participants
+      unit: person
+      stage: raw
+    - key: raw_group_test
+      value: 29.21095052223303
+      quantity: participants
+      unit: person
+      stage: raw
+    - key: rounded_group_standard
+      value: 30
+      quantity: participants
+      unit: person
+      stage: rounded
+    - key: rounded_group_test
+      value: 30
+      quantity: participants
+      unit: person
+      stage: rounded
+    - key: final_group_standard
+      value: 30
+      quantity: participants
+      unit: person
+      stage: allocation_adjusted
+    - key: final_group_test
+      value: 30
+      quantity: participants
+      unit: person
+      stage: allocation_adjusted
+    - key: final_total
+      value: 60
+      quantity: participants
+      unit: person
+      stage: final
+    lineage: []
+  explanation_points:
+  - Use the recorded inputs only for reproducing this example.
+  - Distinguish the book's published result from the frozen engine result.
+  - Preserve raw, rounding, and finalization stages.
+  limitations:
+  - This summarized example is validation evidence and must not supply defaults for a new study.
+  provenance:
+    source_file: null
+    source_location: Example 11.1 lines 310-314
+    fixture_case_id: CH11-EX11.1-EQUAL
+  match_type: EXACT_PROCEDURE_MATCH
+- example_id: book-CH11-EX11.2-PAIRED-MEAN
+  procedure_key: ss200-proc-48212143bb0e5129
+  source:
+    fixture: validation/chapter11_examples.yaml
+    location: Example 11.2 lines 316-318
+    case_id: CH11-EX11.2-PAIRED-MEAN
+  scenario_summary: A paired continuous margin design based on the standard deviation of paired differences.
+  study_objective: noninferiority
+  outcome: procedure-specific
+  design: paired_two_group
+  structured_inputs:
+    alpha: 0.05
+    power: 0.8
+    favorable_direction: smaller
+    subjects_per_pair: 1
+    even_sequence: true
+    planned_standard: 130
+    planned_test: 130
+    paired_standard_deviation: 20
+    positive_margin: 5
+  published_result:
+    published_raw: 197.9
+    published_final: 200
+  engine_result:
+    primary_result:
+      key: final_total
+      value: 198
+      quantity: participants
+      unit: person
+      stage: final
+    raw_fields:
+      raw_total: 197.84183142463243
+      raw_group_control: null
+      raw_group_treatment: null
+      raw_pairs: 197.84183142463243
+    final_fields:
+      rounded_total: 198
+      final_total: 198
+      rounded_group_control: null
+      rounded_group_treatment: null
+      final_group_control: null
+      final_group_treatment: null
+      rounded_pairs: 198
+      final_pairs: 198
+  discrepancy_status: ROUNDING_DIFFERENCE
+  calculation_trace:
+    quantities:
+    - key: raw_pairs
+      value: 197.84183142463243
+      quantity: pairs
+      unit: pairs
+      stage: raw
+    - key: rounded_pairs
+      value: 198
+      quantity: pairs
+      unit: pairs
+      stage: rounded
+    - key: final_pairs
+      value: 198
+      quantity: pairs
+      unit: pairs
+      stage: final
+    - key: final_total
+      value: 198
+      quantity: participants
+      unit: person
+      stage: final
+    lineage: []
+  explanation_points:
+  - Use the recorded inputs only for reproducing this example.
+  - Distinguish the book's published result from the frozen engine result.
+  - Preserve raw, rounding, and finalization stages.
+  limitations:
+  - This summarized example is validation evidence and must not supply defaults for a new study.
+  provenance:
+    source_file: null
+    source_location: Example 11.2 lines 316-318
+    fixture_case_id: CH11-EX11.2-PAIRED-MEAN
+  match_type: EXACT_PROCEDURE_MATCH
+- example_id: book-EX12.1-CONT-IND
+  procedure_key: ss200-proc-14fa4270ee73550f
+  source:
+    fixture: validation/chapter12_examples.yaml
+    location: Chapter 12, Example 12.1
+    case_id: EX12.1-CONT-IND
+  scenario_summary: A parallel cluster design with a continuous outcome and individual-level analysis adjustment.
+  study_objective: two-arm continuous difference
+  outcome: continuous
+  design: parallel_cluster
+  structured_inputs:
+    cluster_size_cv: 0.0
+    allocation_ratio: 1.0
+    alpha: 0.05
+    power: 0.9
+    sides: 2
+    individual_attrition: 0.0
+    cluster_attrition: 0.0
+    planned_difference: 3.5
+    standard_deviation: 6.94
+    analysis_cluster_size: 2
+    icc: 0.025
+  published_result:
+    published_raw: 171.35
+    published_final: 172
+    published_primary_quantity: participants
+  engine_result:
+    primary_result:
+      key: final_total_clusters
+      value: 86
+      quantity: clusters
+      unit: cluster
+      stage: final
+    raw_fields:
+      raw_total: 171.34905928513274
+      raw_required_participants: 171.34905928513274
+      raw_required_clusters: 85.67452964256637
+      raw_clusters: 85.67452964256637
+    final_fields:
+      final_public_api: false
+      rounded_total: 172
+      final_total: 172
+      final_standard_clusters: 43
+      final_treatment_clusters: 43
+      final_total_clusters: 86
+      final_total_participants: 172
+  discrepancy_status: MATCH
+  calculation_trace:
+    quantities:
+    - key: raw_required_participants
+      value: 171.34905928513274
+      quantity: participants
+      unit: participant
+      stage: raw
+    - key: raw_required_clusters
+      value: 85.67452964256637
+      quantity: clusters
+      unit: cluster
+      stage: raw
+    - key: cluster_attrition_adjusted_raw_clusters
+      value: 85.67452964256637
+      quantity: clusters
+      unit: cluster
+      stage: design_constrained
+    - key: final_standard_clusters
+      value: 43
+      quantity: clusters
+      unit: cluster_per_arm
+      stage: allocation_adjusted
+    - key: final_treatment_clusters
+      value: 43
+      quantity: clusters
+      unit: cluster_per_arm
+      stage: allocation_adjusted
+    - key: final_total_clusters
+      value: 86
+      quantity: clusters
+      unit: cluster
+      stage: final
+    - key: final_participants_per_cluster
+      value: 2
+      quantity: participants
+      unit: participant_per_cluster
+      stage: design_constrained
+    - key: final_total_participants
+      value: 172
+      quantity: participants
+      unit: participant
+      stage: final
+    lineage: []
+  explanation_points:
+  - Use the recorded inputs only for reproducing this example.
+  - Distinguish the book's published result from the frozen engine result.
+  - Preserve raw, rounding, and finalization stages.
+  limitations:
+  - This summarized example is validation evidence and must not supply defaults for a new study.
+  provenance:
+    source_file: 医学研究のためのサンプルサイズ設計_20220330.pdf
+    source_location: Chapter 12, Example 12.1
+    fixture_case_id: EX12.1-CONT-IND
+  match_type: EXACT_PROCEDURE_MATCH
+- example_id: book-EX12.4-BINARY-IND
+  procedure_key: ss200-proc-b756613216e955d6
+  source:
+    fixture: validation/chapter12_examples.yaml
+    location: Chapter 12, Example 12.4
+    case_id: EX12.4-BINARY-IND
+  scenario_summary: A parallel cluster design with a binary outcome and individual-level analysis adjustment.
+  study_objective: two-arm binary difference
+  outcome: binary
+  design: parallel_cluster
+  structured_inputs:
+    cluster_size_cv: 0.0
+    allocation_ratio: 1.0
+    alpha: 0.05
+    power: 0.8
+    sides: 2
+    individual_attrition: 0.0
+    cluster_attrition: 0.0
+    standard_proportion: 0.4
+    treatment_proportion: 0.52
+    analysis_cluster_size: 50
+    icc: 0.071
+  published_result:
+    published_raw: 2434.33
+    published_final: 2436
+    published_primary_quantity: participants
+  engine_result:
+    primary_result:
+      key: final_total_clusters
+      value: 50
+      quantity: clusters
+      unit: cluster
+      stage: final
+    raw_fields:
+      raw_total: 2434.307077809264
+      raw_required_participants: 2434.307077809264
+      raw_required_clusters: 48.68614155618528
+      raw_clusters: 48.68614155618528
+    final_fields:
+      final_public_api: false
+      rounded_total: 2435
+      final_total: 2500
+      final_standard_clusters: 25
+      final_treatment_clusters: 25
+      final_total_clusters: 50
+      final_total_participants: 2500
+  discrepancy_status: ROUNDING_DIFFERENCE
+  calculation_trace:
+    quantities:
+    - key: raw_required_participants
+      value: 2434.307077809264
+      quantity: participants
+      unit: participant
+      stage: raw
+    - key: raw_required_clusters
+      value: 48.68614155618528
+      quantity: clusters
+      unit: cluster
+      stage: raw
+    - key: cluster_attrition_adjusted_raw_clusters
+      value: 48.68614155618528
+      quantity: clusters
+      unit: cluster
+      stage: design_constrained
+    - key: final_standard_clusters
+      value: 25
+      quantity: clusters
+      unit: cluster_per_arm
+      stage: allocation_adjusted
+    - key: final_treatment_clusters
+      value: 25
+      quantity: clusters
+      unit: cluster_per_arm
+      stage: allocation_adjusted
+    - key: final_total_clusters
+      value: 50
+      quantity: clusters
+      unit: cluster
+      stage: final
+    - key: final_participants_per_cluster
+      value: 50
+      quantity: participants
+      unit: participant_per_cluster
+      stage: design_constrained
+    - key: final_total_participants
+      value: 2500
+      quantity: participants
+      unit: participant
+      stage: final
+    lineage: []
+  explanation_points:
+  - Use the recorded inputs only for reproducing this example.
+  - Distinguish the book's published result from the frozen engine result.
+  - Preserve raw, rounding, and finalization stages.
+  limitations:
+  - This summarized example is validation evidence and must not supply defaults for a new study.
+  provenance:
+    source_file: 医学研究のためのサンプルサイズ設計_20220330.pdf
+    source_location: Chapter 12, Example 12.4
+    fixture_case_id: EX12.4-BINARY-IND
+  match_type: EXACT_PROCEDURE_MATCH
+- example_id: book-EX14.1-BONFERRONI
+  procedure_key: ss200-proc-86d06d0b5fdf5a02
+  source:
+    fixture: validation/chapter14_examples.yaml
+    location: Chapter 14, Example 14.1, Bonferroni panel
+    case_id: EX14.1-BONFERRONI
+  scenario_summary: A multi-arm binary pairwise-maximum design with Bonferroni multiplicity control.
+  study_objective: maximum pairwise comparison
+  outcome: binary
+  design: multiple_group
+  structured_inputs:
+    alpha: 0.05
+    power: 0.8
+    sides: 2
+    multiplicity: bonferroni
+    arm_proportions:
+    - 0.5
+    - 0.45
+    - 0.25
+  published_result:
+    published_raw: 4174
+    published_final: 6261
+    published_primary_quantity: participants
+  engine_result:
+    primary_result:
+      key: final_total_participants
+      value: 6264
+      quantity: participants
+      unit: participant
+      stage: final
+    raw_fields:
+      raw_total: 6261.678135491171
+    final_fields:
+      final_public_api: false
+      rounded_total: 6262
+      final_total: 6264
+      final_group_sizes:
+      - 2088
+      - 2088
+      - 2088
+  discrepancy_status: ROUNDING_DIFFERENCE
+  calculation_trace:
+    quantities:
+    - key: raw_total_participants
+      value: 6261.678135491171
+      quantity: participants
+      unit: participant
+      stage: raw
+    - key: rounded_total_participants
+      value: 6262
+      quantity: participants
+      unit: participant
+      stage: rounded
+    - key: final_arm_1_participants
+      value: 2088
+      quantity: participants
+      unit: participant_per_arm
+      stage: allocation_adjusted
+    - key: final_arm_2_participants
+      value: 2088
+      quantity: participants
+      unit: participant_per_arm
+      stage: allocation_adjusted
+    - key: final_arm_3_participants
+      value: 2088
+      quantity: participants
+      unit: participant_per_arm
+      stage: allocation_adjusted
+    - key: final_total_participants
+      value: 6264
+      quantity: participants
+      unit: participant
+      stage: final
+    lineage: []
+  explanation_points:
+  - Use the recorded inputs only for reproducing this example.
+  - Distinguish the book's published result from the frozen engine result.
+  - Preserve raw, rounding, and finalization stages.
+  limitations:
+  - This summarized example is validation evidence and must not supply defaults for a new study.
+  provenance:
+    source_file: 医学研究のためのサンプルサイズ設計_20220330.pdf
+    source_location: Chapter 14, Example 14.1, Bonferroni panel
+    fixture_case_id: EX14.1-BONFERRONI
+  match_type: EXACT_PROCEDURE_MATCH
+- example_id: book-EX14.2-DOSE-EQUAL
+  procedure_key: ss200-proc-e764f95e19465628
+  source:
+    fixture: validation/chapter14_examples.yaml
+    location: Chapter 14, Example 14.2
+    case_id: EX14.2-DOSE-EQUAL
+  scenario_summary: A multi-arm continuous linear dose-trend design with equal allocation.
+  study_objective: linear dose-response trend
+  outcome: continuous
+  design: multiple_group
+  structured_inputs:
+    alpha: 0.05
+    power: 0.9
+    sides: 2
+    doses:
+    - 0
+    - 1
+    - 2
+    planned_slope: 0.45
+    standard_deviation: 1
+  published_result:
+    published_raw: 77.83
+    published_final: 78
+    published_primary_quantity: participants
+  engine_result:
+    primary_result:
+      key: final_total_participants
+      value: 78
+      quantity: participants
+      unit: participant
+      stage: final
+    raw_fields:
+      raw_total: 77.83276341807866
+    final_fields:
+      final_public_api: false
+      rounded_total: 78
+      final_total: 78
+      final_group_sizes:
+      - 26
+      - 26
+      - 26
+  discrepancy_status: MATCH
+  calculation_trace:
+    quantities:
+    - key: raw_total_participants
+      value: 77.83276341807866
+      quantity: participants
+      unit: participant
+      stage: raw
+    - key: rounded_total_participants
+      value: 78
+      quantity: participants
+      unit: participant
+      stage: rounded
+    - key: final_arm_1_participants
+      value: 26
+      quantity: participants
+      unit: participant_per_arm
+      stage: allocation_adjusted
+    - key: final_arm_2_participants
+      value: 26
+      quantity: participants
+      unit: participant_per_arm
+      stage: allocation_adjusted
+    - key: final_arm_3_participants
+      value: 26
+      quantity: participants
+      unit: participant_per_arm
+      stage: allocation_adjusted
+    - key: final_total_participants
+      value: 78
+      quantity: participants
+      unit: participant
+      stage: final
+    lineage: []
+  explanation_points:
+  - Use the recorded inputs only for reproducing this example.
+  - Distinguish the book's published result from the frozen engine result.
+  - Preserve raw, rounding, and finalization stages.
+  limitations:
+  - This summarized example is validation evidence and must not supply defaults for a new study.
+  provenance:
+    source_file: 医学研究のためのサンプルサイズ設計_20220330.pdf
+    source_location: Chapter 14, Example 14.2
+    fixture_case_id: EX14.2-DOSE-EQUAL
+  match_type: EXACT_PROCEDURE_MATCH

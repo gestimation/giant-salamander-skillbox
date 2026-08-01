@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://samplesize200.local/schemas/resolution-state-v2.0.0.json",
+  "title": "samplesize200 ResolutionState",
+  "type": "object",
+  "required": ["schema_version", "status", "issues"],
+  "properties": {
+    "schema_version": {"const": "2.0.0"},
+    "status": {"enum": ["RESOLVED", "NEEDS_CLARIFICATION", "UNSUPPORTED"]},
+    "issues": {
+      "type": "array",
+      "items": {"$ref": "resolution_issue.schema.json"}
+    }
+  },
+  "additionalProperties": false
+}

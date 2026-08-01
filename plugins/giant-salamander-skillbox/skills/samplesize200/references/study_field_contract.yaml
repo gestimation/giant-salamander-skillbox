@@ -1,0 +1,832 @@
+schema_version: 1.0.0
+product_version: 1.0.0-rc.6
+status: active
+
+scope:
+  purpose: Define ownership, canonical location, authorability, and semantic use of StudySpec fields.
+  governs:
+    - StudySpec top-level structure
+    - StudySpec.study discriminators and qualifiers
+    - common StudySpec.values fields shared across procedure families
+    - semantic conflicts that must be detected before selection
+  does_not_duplicate:
+    - procedure-specific input types and ranges
+    - calculator identity mappings
+    - engine routing
+    - output rendering
+  external_sources:
+    procedure_value_contracts: references/procedure_catalog.yaml#procedures[*].input_contracts
+    identifier_contracts: references/solution_identifier_registry.json
+    object_ownership: references/study_contract_v2.yaml
+
+policy:
+  canonical_writer_preference: canonical_location
+  reader_accepts_compatibility_locations: false
+  conflicting_canonical_and_compatibility_values: removed_input_error
+  unknown_study_field_policy: semantic_error
+  unknown_value_field_policy: validate_after_procedure_binding
+  procedure_specific_value_definitions_are_not_copied_here: true
+  formulas_changed: false
+  results_changed: false
+  rounding_changed: false
+  identifier_values_changed: false
+
+top_level_fields:
+  schema_version:
+    owner: StudySpec
+    path: /schema_version
+    kind: contract_metadata
+    data_type: [string]
+    unit: null
+    authorability: system_only
+    allowed_values: [2.0.0]
+    constraints: {}
+    derived_from: []
+    conflict_policy: reject
+    selector_use: false
+    engine_use: false
+    status: canonical
+    canonical_location: /schema_version
+    compatibility_locations: []
+    notes: []
+  revision:
+    owner: StudySpec
+    path: /revision
+    kind: revision
+    data_type: [integer]
+    unit: revision
+    authorability: system_only
+    allowed_values: null
+    constraints: {minimum: 1}
+    derived_from: []
+    conflict_policy: reject
+    selector_use: false
+    engine_use: false
+    status: canonical
+    canonical_location: /revision
+    compatibility_locations: []
+    notes: [Increment exactly once after a successful atomic StudySpec patch.]
+  study:
+    owner: StudySpec
+    path: /study
+    kind: container
+    data_type: [object]
+    unit: null
+    authorability: user_patchable
+    allowed_values: null
+    constraints: {}
+    derived_from: []
+    conflict_policy: reject
+    selector_use: true
+    engine_use: false
+    status: canonical
+    canonical_location: /study
+    compatibility_locations: []
+    notes: [Contains durable research design only; no calculation identity or engine routing.]
+  values:
+    owner: StudySpec
+    path: /values
+    kind: container
+    data_type: [object]
+    unit: null
+    authorability: user_patchable
+    allowed_values: null
+    constraints: {}
+    derived_from: []
+    conflict_policy: reject
+    selector_use: true
+    engine_use: true
+    status: canonical
+    canonical_location: /values
+    compatibility_locations: []
+    notes: [Procedure-specific definitions come from procedure_catalog input_contracts.]
+  provenance:
+    owner: StudySpec
+    path: /provenance
+    kind: value_provenance
+    data_type: [object]
+    unit: null
+    authorability: system_only
+    allowed_values: null
+    constraints: {property_path_prefix: /values/}
+    derived_from: [/values]
+    conflict_policy: reject
+    selector_use: true
+    engine_use: false
+    status: canonical
+    canonical_location: /provenance
+    compatibility_locations: []
+    notes: [Every value written canonically must have one canonical provenance source.]
+study_fields:
+  number_of_groups:
+    owner: StudySpec
+    path: /study/number_of_groups
+    kind: discriminator
+    data_type: [integer, string]
+    unit: group
+    authorability: user_or_inferred
+    allowed_values: [1, 2, 3_or_more]
+    constraints: {target_canonical_type: integer, target_minimum: 1}
+    derived_from: []
+    conflict_policy: reject
+    selector_use: true
+    engine_use: false
+    status: canonical_transitional
+    canonical_location: /study/number_of_groups
+    compatibility_locations: []
+    notes:
+      - The current catalog bucket 3_or_more remains readable.
+      - The target canonical representation is an exact positive integer when known; catalog bucketing is derived for selection.
+  outcome_type:
+    owner: StudySpec
+    path: /study/outcome_type
+    kind: discriminator
+    data_type: [string]
+    unit: null
+    authorability: user_or_inferred
+    allowed_values:
+      - agreement_or_reliability
+      - binary
+      - competing_risk
+      - continuous
+      - correlation
+      - count_or_rate
+      - diagnostic_accuracy
+      - ordinal
+      - procedure_specific
+      - reference_interval
+      - time_to_event
+    constraints: {}
+    derived_from: []
+    conflict_policy: reject
+    selector_use: true
+    engine_use: false
+    status: canonical_transitional
+    canonical_location: /study/outcome_type
+    compatibility_locations: []
+    normalization_aliases:
+      time-to-event: time_to_event
+      survival: time_to_event
+      rate: count_or_rate
+      repeated_continuous: continuous
+      procedure-specific: procedure_specific
+    notes:
+      - Broad catalog labels that combine multiple outcomes require design-aware normalization.
+  outcome_code:
+    owner: StudySpec
+    path: /study/outcome_code
+    kind: catalog_projection
+    data_type: [string]
+    unit: null
+    authorability: compatibility_only
+    allowed_values: [B, C, N, O, R, S]
+    constraints: {}
+    derived_from: [selected procedure catalog outcome_code]
+    conflict_policy: reject_after_resolution
+    selector_use: true
+    engine_use: false
+    status: derived_projection
+    canonical_location: /study/outcome_code
+    compatibility_locations: []
+    notes:
+      - It is not derivable from outcome_type alone for agreement, diagnostic, or procedure-specific families.
+      - It may be read as a preselection hint but becomes authoritative only after procedure binding.
+  design_type:
+    owner: StudySpec
+    path: /study/design_type
+    kind: discriminator
+    data_type: [string]
+    unit: null
+    authorability: user_or_inferred
+    allowed_values:
+      - agreement_reliability
+      - all_pair_maximum
+      - cluster_crossover
+      - diagnostic_accuracy
+      - factorial
+      - factorial_2x2
+      - independent_two_group
+      - matched_cluster
+      - multiple_group
+      - one_group
+      - one_group_correlation
+      - one_sample_survival_probability
+      - paired_two_group
+      - parallel_cluster
+      - parallel_cluster_fixed_analyzable_cluster_count
+      - reference_interval
+      - repeated_measures_two_group
+      - shared_reference
+      - two_period_crossover
+    constraints: {}
+    derived_from: []
+    conflict_policy: reject
+    selector_use: true
+    engine_use: false
+    status: canonical
+    canonical_location: /study/design_type
+    compatibility_locations: []
+    normalization_aliases:
+      factorial_2x3: factorial
+      factorial_2_by_3: factorial
+    notes: []
+  factor_levels:
+    owner: StudySpec
+    path: /study/factor_levels
+    kind: design_qualifier
+    data_type: [array]
+    unit: level
+    authorability: user_or_inferred
+    allowed_values: null
+    constraints: {item_type: integer, item_minimum: 2, minimum_items: 2}
+    derived_from: [/values/factor_a_levels, /values/factor_b_levels]
+    conflict_policy: reject
+    selector_use: true
+    engine_use: false
+    status: canonical
+    canonical_location: /study/factor_levels
+    compatibility_locations: []
+    notes:
+      - Records the level count for each factor without implying a validated interaction calculator.
+  design_description:
+    owner: StudySpec
+    path: /study/design_description
+    kind: descriptive_metadata
+    data_type: [string]
+    unit: null
+    authorability: user_or_inferred
+    allowed_values: null
+    constraints: {}
+    derived_from: []
+    conflict_policy: not_applicable
+    selector_use: false
+    engine_use: false
+    status: canonical
+    canonical_location: /study/design_description
+    compatibility_locations: []
+    notes: [Native v2 selection must not parse this free text as a substitute for normalized design fields.]
+  paired_or_independent:
+    owner: StudySpec
+    path: /study/paired_or_independent
+    kind: design_qualifier
+    data_type: [string]
+    unit: null
+    authorability: user_or_inferred
+    allowed_values: [paired, independent, not_applicable_or_method_specific]
+    constraints: {}
+    derived_from: [/study/design_type]
+    conflict_policy: reject
+    selector_use: true
+    engine_use: false
+    status: canonical
+    canonical_location: /study/paired_or_independent
+    compatibility_locations: []
+    notes: [Derive only when design_type has one unambiguous pairing; diagnostic accuracy may require an explicit qualifier.]
+  clustered:
+    owner: StudySpec
+    path: /study/clustered
+    kind: design_qualifier
+    data_type: [boolean]
+    unit: null
+    authorability: inferred_or_derived
+    allowed_values: [true, false]
+    constraints: {}
+    derived_from: [/study/design_type]
+    conflict_policy: reject
+    selector_use: true
+    engine_use: false
+    status: canonical_transitional
+    canonical_location: /study/clustered
+    compatibility_locations: []
+    notes: [May be supplied as an early routing hint while design_type is unresolved; once design_type is known they must agree.]
+  repeated_measures:
+    owner: StudySpec
+    path: /study/repeated_measures
+    kind: design_qualifier
+    data_type: [boolean]
+    unit: null
+    authorability: inferred_or_derived
+    allowed_values: [true, false]
+    constraints: {}
+    derived_from: [/study/design_type]
+    conflict_policy: reject
+    selector_use: true
+    engine_use: false
+    status: canonical_transitional
+    canonical_location: /study/repeated_measures
+    compatibility_locations: []
+    notes: [May be supplied as an early routing hint while design_type is unresolved; once design_type is known they must agree.]
+  hypothesis_objective:
+    owner: StudySpec
+    path: /study/hypothesis_objective
+    kind: discriminator
+    data_type: [string]
+    unit: null
+    authorability: user_or_inferred
+    allowed_values:
+      - bioequivalence
+      - correction
+      - equivalence
+      - interaction_effect
+      - noninferiority
+      - precision_estimation
+      - quantity_conversion
+      - superiority_hypothesis_test
+    constraints: {procedure_specific_objectives_require_normalization: true}
+    derived_from: []
+    conflict_policy: reject
+    selector_use: true
+    engine_use: false
+    status: canonical_transitional
+    canonical_location: /study/hypothesis_objective
+    compatibility_locations: []
+    normalization_aliases:
+      factorial_interaction: interaction_effect
+    notes:
+      - Comparison scope, multiplicity, conversion, and fixed-cluster details must not be encoded as prose-like objective values.
+  directionality:
+    owner: StudySpec
+    path: /study/directionality
+    kind: design_qualifier
+    data_type: [string]
+    unit: null
+    authorability: user_or_inferred
+    allowed_values: [directional, nondirectional, unknown]
+    constraints: {}
+    derived_from: []
+    conflict_policy: reject
+    selector_use: true
+    engine_use: false
+    status: canonical
+    canonical_location: /study/directionality
+    compatibility_locations: []
+    notes: [Sidedness is a numeric study value; directionality records research intent used by default policy.]
+  effect_measure:
+    owner: StudySpec
+    path: /study/effect_measure
+    kind: discriminator
+    data_type: [string]
+    unit: null
+    authorability: user_or_inferred
+    allowed_values: null
+    constraints: {vocabulary_source: study_field_contract}
+    derived_from: []
+    conflict_policy: reject
+    selector_use: true
+    engine_use: false
+    status: canonical_transitional
+    canonical_location: /study/effect_measure
+    compatibility_locations: []
+    normalization_aliases:
+      mean difference: mean_difference
+      risk difference: risk_difference
+      procedure-specific: procedure_specific
+    notes: [The complete canonical vocabulary will be frozen after catalog aliases are mapped without changing procedure IDs.]
+  analysis_method:
+    owner: StudySpec
+    path: /study/analysis_method
+    kind: analysis_constraint
+    data_type: [string]
+    unit: null
+    authorability: user_or_inferred
+    allowed_values: null
+    constraints: {}
+    derived_from: []
+    conflict_policy: reject_after_resolution
+    selector_use: true
+    engine_use: false
+    status: canonical_transitional
+    canonical_location: /study/analysis_method
+    compatibility_locations: []
+    notes:
+      - Means a requested or accepted analysis method before selection.
+      - The selected engine method belongs to ResolvedCalculationRequest or ExecutionSpec and must not overwrite this field.
+  margin:
+    owner: StudySpec
+    path: /study/margin
+    kind: study_value
+    data_type: [number, object]
+    unit: method_specific
+    authorability: compatibility_only
+    allowed_values: null
+    constraints: {}
+    derived_from: []
+    conflict_policy: reject
+    selector_use: true
+    engine_use: true
+    status: misplaced_legacy
+    canonical_location: /values/margin
+    compatibility_locations: [/study/margin]
+    notes: [The numeric or structured margin is a value; objective and effect scale remain study descriptors.]
+  multiplicity:
+    owner: StudySpec
+    path: /study/multiplicity
+    kind: compatibility_alias
+    data_type: [string, object]
+    unit: null
+    authorability: compatibility_only
+    allowed_values: null
+    constraints: {}
+    derived_from: []
+    conflict_policy: reject
+    selector_use: true
+    engine_use: false
+    status: deprecated_umbrella
+    canonical_location: /study/multiplicity_strategy
+    compatibility_locations: [/study/multiplicity]
+    notes: [Do not mechanically map an object; split strategy, scope, applicability, and numeric values by meaning.]
+  multi_hypothesis_structure:
+    owner: StudySpec
+    path: /study/multi_hypothesis_structure
+    kind: estimand_descriptor
+    data_type: [string]
+    unit: null
+    authorability: user_or_inferred
+    allowed_values: [single_omnibus_hypothesis, multiple_confirmatory_comparisons, exploratory_comparisons, unknown]
+    constraints: {}
+    derived_from: []
+    conflict_policy: reject
+    selector_use: true
+    engine_use: false
+    status: canonical
+    canonical_location: /study/multi_hypothesis_structure
+    compatibility_locations: []
+    notes: []
+  multiplicity_applicability:
+    owner: StudySpec
+    path: /study/multiplicity_applicability
+    kind: estimand_descriptor
+    data_type: [string]
+    unit: null
+    authorability: user_or_inferred
+    allowed_values: [applicable, not_applicable, unknown]
+    constraints: {}
+    derived_from: [/study/multi_hypothesis_structure, /study/comparison_scope]
+    conflict_policy: reject
+    selector_use: true
+    engine_use: false
+    status: canonical
+    canonical_location: /study/multiplicity_applicability
+    compatibility_locations: []
+    notes: []
+  multiplicity_strategy:
+    owner: StudySpec
+    path: /study/multiplicity_strategy
+    kind: analysis_constraint
+    data_type: [string, object]
+    unit: null
+    authorability: user_or_inferred
+    allowed_values: null
+    constraints: {}
+    derived_from: []
+    conflict_policy: reject
+    selector_use: true
+    engine_use: false
+    status: canonical
+    canonical_location: /study/multiplicity_strategy
+    compatibility_locations: []
+    notes: [Numeric alpha allocation or weights belong under values.]
+  comparison_scope:
+    owner: StudySpec
+    path: /study/comparison_scope
+    kind: estimand_descriptor
+    data_type: [string]
+    unit: null
+    authorability: user_or_inferred
+    allowed_values: [all_pairs, shared_control, omnibus, prespecified_contrasts, unknown]
+    constraints: {}
+    derived_from: []
+    conflict_policy: reject
+    selector_use: true
+    engine_use: false
+    status: canonical_transitional
+    canonical_location: /study/comparison_scope
+    compatibility_locations: []
+    notes: [Catalog phrases must normalize to this compact vocabulary.]
+  confidence_level:
+    owner: StudySpec
+    path: /study/confidence_level
+    kind: study_value
+    data_type: [number]
+    unit: probability
+    authorability: compatibility_only
+    allowed_values: null
+    constraints: {exclusive_minimum: 0, exclusive_maximum: 1}
+    derived_from: []
+    conflict_policy: reject
+    selector_use: true
+    engine_use: true
+    status: misplaced_legacy
+    canonical_location: /values/confidence_level
+    compatibility_locations: [/study/confidence_level]
+    notes: []
+  confidence_interval_method:
+    owner: StudySpec
+    path: /study/confidence_interval_method
+    kind: analysis_constraint
+    data_type: [string]
+    unit: null
+    authorability: user_or_inferred
+    allowed_values: null
+    constraints: {}
+    derived_from: []
+    conflict_policy: reject_after_resolution
+    selector_use: true
+    engine_use: false
+    status: canonical
+    canonical_location: /study/confidence_interval_method
+    compatibility_locations: []
+    notes: [Method parameters used by the engine remain under values.]
+  width_definition:
+    owner: StudySpec
+    path: /study/width_definition
+    kind: estimand_descriptor
+    data_type: [string]
+    unit: null
+    authorability: user_or_inferred
+    allowed_values: [full_width, half_width, margin_of_error, upper_limit]
+    constraints: {}
+    derived_from: []
+    conflict_policy: reject
+    selector_use: true
+    engine_use: false
+    status: canonical_transitional
+    canonical_location: /study/width_definition
+    compatibility_locations: []
+    notes: [upper_limit is currently used by one-sided precision requests and must be added to the core schema before canonical emission.]
+  censoring_probability:
+    owner: StudySpec
+    path: /study/censoring_probability
+    kind: study_value
+    data_type: [number]
+    unit: probability
+    authorability: compatibility_only
+    allowed_values: null
+    constraints: {minimum: 0, exclusive_maximum: 1}
+    derived_from: []
+    conflict_policy: reject
+    selector_use: true
+    engine_use: true
+    status: misplaced_legacy
+    canonical_location: /values/censoring_probability
+    compatibility_locations: [/study/censoring_probability]
+    notes: []
+  standard_censoring_probability:
+    owner: StudySpec
+    path: /study/standard_censoring_probability
+    kind: study_value
+    data_type: [number]
+    unit: probability
+    authorability: compatibility_only
+    allowed_values: null
+    constraints: {minimum: 0, exclusive_maximum: 1}
+    derived_from: []
+    conflict_policy: reject
+    selector_use: true
+    engine_use: true
+    status: misplaced_legacy
+    canonical_location: /values/standard_censoring_probability
+    compatibility_locations: [/study/standard_censoring_probability]
+    notes: []
+  treatment_censoring_probability:
+    owner: StudySpec
+    path: /study/treatment_censoring_probability
+    kind: study_value
+    data_type: [number]
+    unit: probability
+    authorability: compatibility_only
+    allowed_values: null
+    constraints: {minimum: 0, exclusive_maximum: 1}
+    derived_from: []
+    conflict_policy: reject
+    selector_use: true
+    engine_use: true
+    status: misplaced_legacy
+    canonical_location: /values/treatment_censoring_probability
+    compatibility_locations: [/study/treatment_censoring_probability]
+    notes: []
+
+values_namespace:
+  definition_source: references/procedure_catalog.yaml#procedures[*].input_contracts
+  duplication_policy: Procedure-specific value definitions remain in the procedure catalog; this file defines only shared cross-procedure semantics.
+  validation_order:
+    - validate common fields before selection
+    - bind a procedure
+    - validate procedure-specific fields against the selected procedure input_contracts
+    - reject unused or unknown values unless an explicit composition contract consumes them
+  common_fields:
+    alpha:
+      owner: StudySpec
+      path: /values/alpha
+      kind: study_value
+      data_type: [number]
+      unit: probability
+      authorability: user_or_inferred
+      allowed_values: null
+      constraints: {exclusive_minimum: 0, exclusive_maximum: 1}
+      derived_from: [/values/confidence_level]
+      conflict_policy: reject
+      selector_use: true
+      engine_use: true
+      status: canonical
+      canonical_location: /values/alpha
+      compatibility_locations: []
+      notes: [A policy default must carry its policy identifier in provenance.]
+    target_power:
+      owner: StudySpec
+      path: /values/target_power
+      kind: study_value
+      data_type: [number]
+      unit: probability
+      authorability: user_or_inferred
+      allowed_values: null
+      constraints: {exclusive_minimum: 0, exclusive_maximum: 1}
+      derived_from: [/values/beta]
+      conflict_policy: reject
+      selector_use: true
+      engine_use: true
+      status: canonical
+      canonical_location: /values/target_power
+      compatibility_locations: []
+      notes: [Not applicable to achieved-power, precision-only, or other non-power requests.]
+    sidedness:
+      owner: StudySpec
+      path: /values/sidedness
+      kind: study_value
+      data_type: [integer, string]
+      unit: side
+      authorability: user_or_inferred
+      allowed_values: [1, 2, one_sided, two_sided]
+      constraints: {}
+      derived_from: [/study/directionality]
+      conflict_policy: reject
+      selector_use: true
+      engine_use: true
+      status: canonical_transitional
+      canonical_location: /values/sidedness
+      compatibility_locations: []
+      notes: [The target canonical representation is integer 1 or 2; strings remain readable during migration.]
+    allocation:
+      owner: StudySpec
+      path: /values/allocation
+      kind: study_value
+      data_type: [number, object]
+      unit: ratio_or_counts
+      authorability: user_or_inferred
+      allowed_values: null
+      constraints: {number_exclusive_minimum: 0}
+      derived_from: []
+      conflict_policy: reject
+      selector_use: true
+      engine_use: true
+      status: canonical
+      canonical_location: /values/allocation
+      compatibility_locations: []
+      notes: [Structured allocation must name group direction; a bare non-1 ratio may require clarification.]
+    confidence_level:
+      owner: StudySpec
+      path: /values/confidence_level
+      kind: study_value
+      data_type: [number]
+      unit: probability
+      authorability: user_or_inferred
+      allowed_values: null
+      constraints: {exclusive_minimum: 0, exclusive_maximum: 1}
+      derived_from: []
+      conflict_policy: reject
+      selector_use: true
+      engine_use: true
+      status: canonical
+      canonical_location: /values/confidence_level
+      compatibility_locations: [/study/confidence_level]
+      notes: []
+    margin:
+      owner: StudySpec
+      path: /values/margin
+      kind: study_value
+      data_type: [number, object]
+      unit: method_specific
+      authorability: user_or_inferred
+      allowed_values: null
+      constraints: {}
+      derived_from: []
+      conflict_policy: reject
+      selector_use: true
+      engine_use: true
+      status: canonical
+      canonical_location: /values/margin
+      compatibility_locations: [/study/margin]
+      notes: []
+    censoring_probability:
+      owner: StudySpec
+      path: /values/censoring_probability
+      kind: study_value
+      data_type: [number]
+      unit: probability
+      authorability: user_or_inferred
+      allowed_values: null
+      constraints: {minimum: 0, exclusive_maximum: 1}
+      derived_from: []
+      conflict_policy: reject
+      selector_use: true
+      engine_use: true
+      status: canonical
+      canonical_location: /values/censoring_probability
+      compatibility_locations: [/study/censoring_probability]
+      notes: []
+    standard_censoring_probability:
+      owner: StudySpec
+      path: /values/standard_censoring_probability
+      kind: study_value
+      data_type: [number]
+      unit: probability
+      authorability: user_or_inferred
+      allowed_values: null
+      constraints: {minimum: 0, exclusive_maximum: 1}
+      derived_from: []
+      conflict_policy: reject
+      selector_use: true
+      engine_use: true
+      status: canonical
+      canonical_location: /values/standard_censoring_probability
+      compatibility_locations: [/study/standard_censoring_probability]
+      notes: []
+    treatment_censoring_probability:
+      owner: StudySpec
+      path: /values/treatment_censoring_probability
+      kind: study_value
+      data_type: [number]
+      unit: probability
+      authorability: user_or_inferred
+      allowed_values: null
+      constraints: {minimum: 0, exclusive_maximum: 1}
+      derived_from: []
+      conflict_policy: reject
+      selector_use: true
+      engine_use: true
+      status: canonical
+      canonical_location: /values/treatment_censoring_probability
+      compatibility_locations: [/study/treatment_censoring_probability]
+      notes: []
+
+semantic_rules:
+  - code: OUTCOME_TYPE_ALIAS_NORMALIZED
+    severity: normalization
+    when: {path: /study/outcome_type, value_in: [time-to-event, survival, rate, repeated_continuous, procedure-specific]}
+    assert: {replace_from_field_normalization_aliases: outcome_type}
+    message: Normalize known outcome aliases before selection without changing procedure identifiers.
+  - code: OUTCOME_CODE_CONFLICT
+    severity: error
+    when: {path_present: /study/outcome_code, procedure_bound: true}
+    assert: {equals_selected_catalog_field: outcome_code}
+    message: A supplied outcome_code must agree with the selected catalog procedure.
+  - code: DESIGN_CLUSTER_CONFLICT
+    severity: error
+    when: {paths_present: [/study/design_type, /study/clustered]}
+    assert: {field_agrees_with_design_projection: clustered}
+    message: clustered must agree with the canonical design_type projection.
+  - code: DESIGN_REPEATED_CONFLICT
+    severity: error
+    when: {paths_present: [/study/design_type, /study/repeated_measures]}
+    assert: {field_agrees_with_design_projection: repeated_measures}
+    message: repeated_measures must agree with the canonical design_type projection.
+  - code: DESIGN_PAIRING_CONFLICT
+    severity: error
+    when: {paths_present: [/study/design_type, /study/paired_or_independent], design_projection_unambiguous: true}
+    assert: {field_agrees_with_design_projection: paired_or_independent}
+    message: paired_or_independent must agree with design_type when the projection is unambiguous.
+  - code: MISPLACED_STUDY_VALUE
+    severity: normalization
+    when: {path_in: [/study/margin, /study/confidence_level, /study/censoring_probability, /study/standard_censoring_probability, /study/treatment_censoring_probability]}
+    assert: {move_to_declared_canonical_location: true, preserve_provenance: imported_legacy}
+    message: Read the legacy study location and write the value at its canonical /values location.
+  - code: DUPLICATE_LOCATION_CONFLICT
+    severity: error
+    when: {canonical_and_compatibility_locations_present: true}
+    assert: {values_equivalent: true}
+    message: Canonical and compatibility locations must not contain different values.
+  - code: ANALYSIS_METHOD_BINDING_CONFLICT
+    severity: error
+    when: {path_present: /study/analysis_method, procedure_bound: true}
+    assert: {compatible_with_selected_procedure: true}
+    message: A requested analysis method must be compatible with the selected procedure.
+  - code: PROCEDURE_VALUE_UNKNOWN
+    severity: error
+    when: {procedure_bound: true, value_not_in_selected_input_contracts_or_common_fields: true}
+    assert: {explicit_composition_consumer_exists: true}
+    message: A bound request must not silently ignore unknown values.
+
+compatibility:
+  current_study_fields_source: scripts/study_spec_v2.py#STUDY_FIELDS
+  current_field_count: 24
+  procedure_specific_value_field_count_at_design: 235
+  existing_study_spec_v2_shape_retained_during_review: true
+  review_decision: approved
+  compatibility_values_removed_before_major_version: false
+  canonical_writer_changes_require_contract_tests: true
+  review_gate:
+    - approve canonical locations for misplaced study values
+    - approve target integer representation for number_of_groups
+    - approve catalog alias normalization vocabulary
+    - approve analysis_method as a preselection constraint only
+    - approve outcome_code as a selected-catalog projection

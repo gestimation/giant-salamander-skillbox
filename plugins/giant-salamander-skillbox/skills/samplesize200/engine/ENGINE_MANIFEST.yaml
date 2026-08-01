@@ -1,0 +1,50 @@
+engine_name: samplesize200
+engine_version: 0.6.9
+source_release: samplesize200 Alpha 0.6.9
+source_release_scoped_sha256: 25b6f4da18b5d95594ad763bf64664491a487e98d7d1c702a3b9c0fd67d9ddc3
+bundled_files: 27
+bundled_bytes: 562988
+bundled_runtime_sha256: 6dac771bc86c046a43c577377a262fe039c776ec7fac836089cd9ba3a6e731e3
+per_file_sha256:
+  __init__.py: cbceadb09552511a9aa7cdc72e54bc08c80fe3cd56dfb465ec3bbab955adbc91
+  _version.py: aa131c1187153fbcc35cd653ce5d1f4c429658b7900cf65df2c27e90a545e25f
+  agreement.py: f74e1c9e2d7ceb44a1173d9d6c8955d0669449c025a2cf793dd2baafa32d46ee
+  binary.py: 06bf6c251ad96c4321378a4aab5407accdc6c89926b2739b96f10a3727cad976
+  cli.py: 1ac1955cdbd24c814e10e0708f8a44ab0375d7406b769613592f49aab3530099
+  competing.py: 3507fd42cf33860376ceaffe39ae2774f9e8422f0d0a9a6cf3c6c440ed1c8c3c
+  confidence.py: 8dbffa0b4e92da3317637eae63e74f05cb5e36188eafbed032255d0987596608
+  continuous.py: 8e8581671b989c2810327080a6f872ccb57598e376511af0477f9018dab1c52a
+  correlation.py: 66fbab4c926ebe95d91443ec1b9e9c2597815653d49bd1d9b6c374753a276beb
+  detectable_effect.py: 7a24886c00e7cf1eea21f5409be2be2ca5b7a2ed904ea691cc76db8ad6843629
+  detectable_effect_design.py: 145eccc38cfa4957e034feaf80ffdd7a64596e050df73951763d05db4efa4d06
+  diagnostics.py: 52e891a484412fbfc63dafaa6f603dbe8524b705f7fb2828b77b2ca3b8f6f8a4
+  distributions.py: d96637d83a0a08b51354cbe9f76d0e0325bdfc72ec1c5805bdc95e07af2bd3b4
+  longitudinal.py: 97e3c01c2e65c75b8797be28e9581e225be996c645f8ec3485eb3266393fa39e
+  margin.py: 4367675916bcf87293e79c5ca229ac511d7ee10e8852268a8d3708e14d7afcb8
+  multi_cluster.py: a5813ce99122ebb994613862a269a798f8d0c4bbb8267e3ffb5e97212d22c2e5
+  multi_composition.py: dca97d0b7d019ea50d4c89baf11e48d734e81c1f0a09bb018b9a941e1a2d2bd7
+  one_survival.py: b9dfbe6120d4bd0b65b780922f7e97b90ba139b7b5ecdb50ce9ef975cc198553
+  ordinal.py: 5db89e99eda8002ca96f90e2e79fa756f565071eab7990de8b0f4eeeb7f80959
+  paired.py: 75f601234fa0eae5e69f07b6eaf9f1b5998adc54d1936bb036dc139230e8ea93
+  power.py: 34f969531736399ac86591e5af4a0b87fb55be243a4b28c90bcc7a03e5039024
+  power_design.py: bbc03495ad49a5ae3a9202ed153318cb029b7788d55162b5d2dd856743264675
+  procedures.py: f137a3bdc33db752a98e6914bf9be5c206f2d36a7eecbbde65a7e8c229b165c3
+  rates.py: 9577c1bb3fb964e007110d00b035153a0155a3eef31c65ea5af404ac825ab9ad
+  rounding.py: 1570fae07b48cf9039cd66262ec94656f0c44c8d0f3e6c583cb8d4800c77e211
+  schema_contract.py: 429f79d067cda5b7c51e5a775e678f3f64b8d44d088e529d7804d2ab6dcb159f
+  survival.py: 8a86d6d61b9f97ad7dac92aeca0534fab8986e7da0717edf6f1ebd1d29040427
+required_python_version: '>=3.10'
+runtime_dependencies:
+  standard_library:
+  - argparse
+  - dataclasses
+  - json
+  - math
+  - statistics
+  pure_python: []
+  binary_or_compiled:
+  - scipy>=1.11
+  skill_runtime:
+  - vendored pure-Python PyYAML runtime
+build_timestamp: '1970-01-01T00:00:00+00:00'
+build_tool_version: 1.0.0-rc.6
