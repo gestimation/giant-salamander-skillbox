@@ -2,7 +2,7 @@
 
 Release candidate: `skillbox-2026.08.02-rc7`
 
-Cross-host acceptance for the previous bundle completed: 2026-08-01
+Cross-host acceptance and rc7 publication completed: 2026-08-02
 
 ## Automated checks
 
@@ -26,11 +26,11 @@ Cross-host acceptance for the previous bundle completed: 2026-08-01
 
 ## Codex
 
-- [ ] install the rc.2 all-in-one ZIP unchanged before the rc.7 tag exists
-- [ ] start a new task
-- [ ] invoke `$readatable`, `$reviewcitation`, and `$samplesize200`
-- [ ] run one representative operation for each skill
-- [ ] after publication, refresh the GitHub marketplace and confirm the rc.7 tag
+- [x] install the rc.2 all-in-one ZIP unchanged before the rc.7 tag exists
+- [x] start a new task
+- [x] invoke `$readatable`, `$reviewcitation`, and `$samplesize200`
+- [x] run one representative operation for each skill
+- [x] install from the GitHub marketplace pinned to the rc.7 tag and repeat the execution check
 
 ## Claude Code
 
@@ -39,7 +39,7 @@ Cross-host acceptance for the previous bundle completed: 2026-08-01
 - [x] invoke each `/giant-salamander-skillbox:<skill-name>` command
 - [x] confirm natural-language routing for each skill
 - [x] run one representative operation for each skill
-- [ ] after publication, refresh the GitHub marketplace and confirm the rc.7 tag
+- [x] refresh the GitHub marketplace and confirm the rc.7 tag
 
 ## OpenAI submission
 
@@ -54,8 +54,8 @@ Cross-host acceptance for the previous bundle completed: 2026-08-01
 
 ## Publication
 
-- [ ] create the immutable Git tag
-- [ ] publish four ZIPs, `SHA256SUMS.txt`, cheat sheet, and release notes
-- [ ] download every asset from GitHub Releases and recheck its hash
-- [ ] confirm both marketplace entries resolve the release tag
-- [ ] update Notion links to the new GitHub Release
+- [x] create the immutable Git tag
+- [x] publish four ZIPs, `SHA256SUMS.txt`, four Japanese/English cheat sheets, and release notes
+- [x] download every asset from GitHub Releases and recheck its hash
+- [x] confirm both marketplace entries resolve the release tag
+- [x] update Notion links to the new GitHub Release
