@@ -4,7 +4,7 @@
     "name": "gestimation",
     "url": "https://github.com/gestimation/giant-salamander-skillbox"
   },
-  "description": "Review statistical tables and citations, and plan validated study sizes.",
+  "description": "Review statistical tables and citations, and calculate study sample sizes.",
   "plugins": [
     {
       "name": "giant-salamander-skillbox",
@@ -13,10 +13,10 @@
         "source": "git-subdir",
         "url": "https://github.com/gestimation/giant-salamander-skillbox.git",
         "path": "plugins/giant-salamander-skillbox",
-        "ref": "skillbox-2026.08.02-rc7"
+        "ref": "skillbox-2026.08.02-rc8"
       },
-      "description": "Review statistical tables and citations, and plan validated study sizes.",
-      "version": "1.0.0-rc.2",
+      "description": "Review statistical tables and citations, and calculate study sample sizes.",
+      "version": "1.0.0-rc.3",
       "author": {
         "name": "gestimation",
         "url": "https://github.com/gestimation/giant-salamander-skillbox"

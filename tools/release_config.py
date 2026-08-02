@@ -6,17 +6,17 @@ from copy import deepcopy
 
 
 REPOSITORY_URL = "https://github.com/gestimation/giant-salamander-skillbox"
-RELEASE_REF = "skillbox-2026.08.02-rc7"
+RELEASE_REF = "skillbox-2026.08.02-rc8"
 AUTHOR = {
     "name": "gestimation",
     "url": REPOSITORY_URL,
 }
 
 BUNDLE_NAME = "giant-salamander-skillbox"
-BUNDLE_VERSION = "1.0.0-rc.2"
+BUNDLE_VERSION = "1.0.0-rc.3"
 BUNDLE_FILENAME = f"{BUNDLE_NAME}-{BUNDLE_VERSION}.zip"
 BUNDLE_DESCRIPTION = (
-    "Review statistical tables and citations, and plan validated study sizes."
+    "Review statistical tables and citations, and calculate study sample sizes."
 )
 BUNDLE_KEYWORDS = [
     "statistics",
@@ -27,11 +27,14 @@ BUNDLE_KEYWORDS = [
 ]
 BUNDLE_INTERFACE = {
     "displayName": "Giant Salamander Skillbox",
-    "shortDescription": "研究の表・引用・標本サイズを検証します。",
+    "shortDescription": "Tables, citations, sample size",
     "longDescription": (
-        "統計表を読みやすく再構成するreadatable、科学文書の引用と参考文献を"
-        "点検するreviewcitation、検証済み計算方法で研究規模を設計する"
-        "samplesize200をまとめた研究支援プラグインです。"
+        "Giant Salamander Skillbox combines readatable for reconstructing statistical "
+        "tables, reviewcitation for checking citations and public bibliographic records "
+        "when host web access is available, and samplesize200 for validated sample-size, "
+        "event, power, and detectable-effect calculations. No separate gestimation "
+        "account or authentication is required, and user content is not sent to a "
+        "gestimation-operated server."
     ),
     "developerName": "gestimation",
     "category": "Productivity",
@@ -40,9 +43,9 @@ BUNDLE_INTERFACE = {
     "privacyPolicyURL": f"{REPOSITORY_URL}/blob/main/docs/PRIVACY.md",
     "termsOfServiceURL": f"{REPOSITORY_URL}/blob/main/docs/TERMS.md",
     "defaultPrompt": [
-        "この統計表を読みやすいMarkdown表に再構成して",
-        "この文書の引用と参考文献を標準レビューして",
-        "この研究計画に必要なサンプルサイズを計算して",
+        "Use readatable to reconstruct this statistical table while preserving headers, units, sample sizes, and footnotes.",
+        "Use reviewcitation to reconcile in-text citations with the reference list and flag items needing verification.",
+        "Use samplesize200 to select a validated method and calculate the required sample size for this study.",
     ],
 }
 

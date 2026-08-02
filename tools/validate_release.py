@@ -14,6 +14,7 @@ from pathlib import Path, PurePosixPath
 
 from release_config import (
     BUNDLE_FILENAME,
+    BUNDLE_INTERFACE,
     BUNDLE_NAME,
     BUNDLE_VERSION,
     PLUGINS,
@@ -33,6 +34,7 @@ DIST_DIR = ROOT / "dist"
 BUNDLE_DIR = ROOT / "plugins" / BUNDLE_NAME
 CODEX_MARKETPLACE_PATH = ROOT / ".agents" / "plugins" / "marketplace.json"
 CLAUDE_MARKETPLACE_PATH = ROOT / ".claude-plugin" / "marketplace.json"
+OPENAI_SUBMISSION_PATH = ROOT / "docs" / "OPENAI_SUBMISSION.md"
 EXPECTED = {
     name: (name, config["filename"])
     for name, config in PLUGINS.items()
@@ -211,6 +213,27 @@ def validate_tree() -> int:
     if expected_guide not in show_help:
         fail("samplesize200 show_help.py does not use the lowercase quick-guide path")
     return file_count
+
+
+def validate_openai_submission_copy() -> None:
+    """Keep public listing fields synchronized with release_config.py."""
+    text = OPENAI_SUBMISSION_PATH.read_text(encoding="utf-8")
+    expected_fragments = [
+        f"`{BUNDLE_FILENAME}`",
+        f"- Version: `{BUNDLE_VERSION}`",
+        f"```text\n{BUNDLE_INTERFACE['shortDescription']}\n```",
+        f"```text\n{BUNDLE_INTERFACE['longDescription']}\n```",
+    ]
+    expected_fragments.extend(
+        f"{index}. `{prompt}`"
+        for index, prompt in enumerate(BUNDLE_INTERFACE["defaultPrompt"], start=1)
+    )
+    missing = [fragment for fragment in expected_fragments if fragment not in text]
+    if missing:
+        fail(
+            "docs/OPENAI_SUBMISSION.md is not synchronized with "
+            f"release_config.py: {missing}"
+        )
 
 
 def validate_bundle_tree() -> int:
@@ -492,6 +515,7 @@ def validate_archives() -> int:
 
 
 def main() -> None:
+    validate_openai_submission_copy()
     files = validate_tree()
     bundle_files = validate_bundle_tree()
     archives = validate_archives()
