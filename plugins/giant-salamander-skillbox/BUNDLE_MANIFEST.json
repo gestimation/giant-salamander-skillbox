@@ -1,7 +1,7 @@
 {
   "name": "giant-salamander-skillbox",
-  "version": "1.0.0-rc.2",
-  "releaseRef": "skillbox-2026.08.02-rc7",
+  "version": "1.0.0-rc.3",
+  "releaseRef": "skillbox-2026.08.02-rc8",
   "canonicalSource": "skills/",
   "skills": [
     {

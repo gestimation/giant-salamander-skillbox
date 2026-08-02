@@ -1,7 +1,7 @@
 {
   "name": "giant-salamander-skillbox",
-  "version": "1.0.0-rc.2",
-  "description": "Review statistical tables and citations, and plan validated study sizes.",
+  "version": "1.0.0-rc.3",
+  "description": "Review statistical tables and citations, and calculate study sample sizes.",
   "author": {
     "name": "gestimation",
     "url": "https://github.com/gestimation/giant-salamander-skillbox"
@@ -19,8 +19,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Giant Salamander Skillbox",
-    "shortDescription": "研究の表・引用・標本サイズを検証します。",
-    "longDescription": "統計表を読みやすく再構成するreadatable、科学文書の引用と参考文献を点検するreviewcitation、検証済み計算方法で研究規模を設計するsamplesize200をまとめた研究支援プラグインです。",
+    "shortDescription": "Tables, citations, sample size",
+    "longDescription": "Giant Salamander Skillbox combines readatable for reconstructing statistical tables, reviewcitation for checking citations and public bibliographic records when host web access is available, and samplesize200 for validated sample-size, event, power, and detectable-effect calculations. No separate gestimation account or authentication is required, and user content is not sent to a gestimation-operated server.",
     "developerName": "gestimation",
     "category": "Productivity",
     "capabilities": [
@@ -30,9 +30,9 @@
     "privacyPolicyURL": "https://github.com/gestimation/giant-salamander-skillbox/blob/main/docs/PRIVACY.md",
     "termsOfServiceURL": "https://github.com/gestimation/giant-salamander-skillbox/blob/main/docs/TERMS.md",
     "defaultPrompt": [
-      "この統計表を読みやすいMarkdown表に再構成して",
-      "この文書の引用と参考文献を標準レビューして",
-      "この研究計画に必要なサンプルサイズを計算して"
+      "Use readatable to reconstruct this statistical table while preserving headers, units, sample sizes, and footnotes.",
+      "Use reviewcitation to reconcile in-text citations with the reference list and flag items needing verification.",
+      "Use samplesize200 to select a validated method and calculate the required sample size for this study."
     ]
   }
 }
