@@ -6,9 +6,9 @@ samplesize200は、研究計画を会話で整理し、登録済みの方法を�
 
 ## インストール
 
-正式な配布元は[GitHub Releases](https://github.com/gestimation/giant-salamander-skillbox/releases)です。初めて使う場合は、`readatable`、`reviewcitation`、`samplesize200`をまとめた統合プラグイン`giant-salamander-skillbox-1.0.0-rc.2.zip`を推奨します。ZIPは展開・再圧縮せず、ChatGPT Work、CodexまたはClaude Codeのプラグイン画面からそのままインストールします。
+正式な配布元は[GitHub Releases](https://github.com/gestimation/giant-salamander-skillbox/releases)です。初めて使う場合は、`readatable`、`reviewcitation`、`samplesize200`、`draftcostsheet`をまとめた統合プラグイン`giant-salamander-skillbox-1.0.0-rc.4.zip`を推奨します。ZIPは展開・再圧縮せず、ChatGPT Work、CodexまたはClaude Codeのプラグイン画面からそのままインストールします。
 
-samplesize200だけを使用する場合は、個別プラグイン`samplesize200-1.0.0-rc.7.zip`をChatGPT WorkまたはCodexへインストールできます。統合プラグインと個別プラグインは重複してインストールしません。
+samplesize200だけを使用する場合は、個別プラグイン`samplesize200-1.0.0-rc.8.zip`をChatGPT WorkまたはCodexへインストールできます。統合プラグインと個別プラグインは重複してインストールしません。
 
 CodexでMarketplaceを使用する場合は、次のコマンドを実行します。
 

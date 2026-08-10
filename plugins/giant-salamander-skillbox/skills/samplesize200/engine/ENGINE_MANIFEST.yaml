@@ -47,4 +47,4 @@ runtime_dependencies:
   skill_runtime:
   - vendored pure-Python PyYAML runtime
 build_timestamp: '1970-01-01T00:00:00+00:00'
-build_tool_version: 1.0.0-rc.7
+build_tool_version: 1.0.0-rc.8

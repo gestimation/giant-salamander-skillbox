@@ -6,34 +6,37 @@ from copy import deepcopy
 
 
 REPOSITORY_URL = "https://github.com/gestimation/giant-salamander-skillbox"
-RELEASE_REF = "skillbox-2026.08.02-rc8"
+RELEASE_REF = "skillbox-2026.08.10-rc10"
 AUTHOR = {
     "name": "gestimation",
     "url": REPOSITORY_URL,
 }
 
 BUNDLE_NAME = "giant-salamander-skillbox"
-BUNDLE_VERSION = "1.0.0-rc.3"
+BUNDLE_VERSION = "1.0.0-rc.4"
 BUNDLE_FILENAME = f"{BUNDLE_NAME}-{BUNDLE_VERSION}.zip"
 BUNDLE_DESCRIPTION = (
-    "Review statistical tables and citations, and calculate study sample sizes."
+    "Review tables and citations, plan study size, and draft medical costs."
 )
 BUNDLE_KEYWORDS = [
     "statistics",
     "tables",
     "citations",
     "sample-size",
+    "medical-costs",
     "research",
 ]
 BUNDLE_INTERFACE = {
     "displayName": "Giant Salamander Skillbox",
-    "shortDescription": "Tables, citations, sample size",
+    "shortDescription": "Tables, citations, size & cost",
     "longDescription": (
         "Giant Salamander Skillbox combines readatable for reconstructing statistical "
         "tables, reviewcitation for checking citations and public bibliographic records "
         "when host web access is available, and samplesize200 for validated sample-size, "
-        "event, power, and detectable-effect calculations. No separate gestimation "
-        "account or authentication is required, and user content is not sent to a "
+        "event, power, and detectable-effect calculations. It also includes "
+        "draftcostsheet for traceable medical-cost sheets using authoritative unit-cost "
+        "sources when host web access is available. No separate gestimation account or "
+        "authentication is required, and user content is not sent to a "
         "gestimation-operated server."
     ),
     "developerName": "gestimation",
@@ -45,7 +48,7 @@ BUNDLE_INTERFACE = {
     "defaultPrompt": [
         "Use readatable to reconstruct this statistical table while preserving headers, units, sample sizes, and footnotes.",
         "Use reviewcitation to reconcile in-text citations with the reference list and flag items needing verification.",
-        "Use samplesize200 to select a validated method and calculate the required sample size for this study.",
+        "Use samplesize200 for study size or draftcostsheet for a source-linked medical-cost sheet.",
     ],
 }
 
@@ -56,8 +59,11 @@ PUBLISHED_ASSET_SHA256 = {
     "reviewcitation-0.3.4.zip": (
         "8475b87ac2730e099043073d1d055e1c16fd2909020c96a7c1299e1aa585aaad"
     ),
-    "samplesize200-1.0.0-rc.7.zip": (
-        "8b2ef987c1dfd1933bfb9b7be321ccbf0bc3bd1dd60405a2a9f5c52bcbead614"
+    "samplesize200-1.0.0-rc.8.zip": (
+        "88643f5c1635ae2371cbfd3db5a381fa6593a1540bf6360d1f53abc02091a1f5"
+    ),
+    "draftcostsheet-0.2.2.zip": (
+        "cfbcedb66cb6a398a8ebe5c3dafe9b9fedb22dfbac35ae0f57a9d51c9410fdbc"
     ),
 }
 
@@ -93,8 +99,8 @@ PLUGINS = {
         },
     },
     "samplesize200": {
-        "version": "1.0.0-rc.7",
-        "filename": "samplesize200-1.0.0-rc.7.zip",
+        "version": "1.0.0-rc.8",
+        "filename": "samplesize200-1.0.0-rc.8.zip",
         "description": "Plan and calculate study size with 188 validated calculators.",
         "keywords": ["sample-size", "power", "statistics", "study-design"],
         "interface": {
@@ -105,6 +111,21 @@ PLUGINS = {
             "category": "Productivity",
             "capabilities": ["Interactive"],
             "defaultPrompt": "この研究に必要なサンプルサイズを計算して",
+        },
+    },
+    "draftcostsheet": {
+        "version": "0.2.2",
+        "filename": "draftcostsheet-0.2.2.zip",
+        "description": "Draft traceable medical-cost sheets from authoritative sources.",
+        "keywords": ["medical-costs", "costing", "health-economics", "research"],
+        "interface": {
+            "displayName": "draftcostsheet",
+            "shortDescription": "医療費を出典付きで再現・試算します。",
+            "longDescription": "治療、プロトコール、診療経路または既存の費用推計から、資源量と単価を分離した追跡可能な医療費シートを作成します。対象地域、価格時点、価格概念、時間範囲を明示し、利用可能な場合は公的な単価資料を取得します。根拠が不足する場合は値を推測せず、部分推計または未解決として報告します。",
+            "developerName": "gestimation",
+            "category": "Productivity",
+            "capabilities": ["Interactive"],
+            "defaultPrompt": "この治療の患者1人あたり医療費を公的な単価資料から見積もって",
         },
     },
 }

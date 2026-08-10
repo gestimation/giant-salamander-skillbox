@@ -101,13 +101,14 @@ This skills-only plugin contains {versions}.
 - `readatable` reconstructs and normalizes statistical tables.
 - `reviewcitation` reviews scientific citations and reference lists.
 - `samplesize200` supports validated study-size planning workflows.
+- `draftcostsheet` drafts traceable medical-cost sheets from authoritative sources.
 
 Official releases and the separate user-facing cheat sheet are available at
 {REPOSITORY_URL}/releases. The cheat sheet is intentionally not bundled in the
 plugin runtime package.
 
 `samplesize200` requires Python 3.10 or later and SciPy 1.11 or later in the
-execution environment. The other two skills are instruction-only.
+execution environment. The other three skills are instruction-only.
 """
 
 

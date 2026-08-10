@@ -1,7 +1,7 @@
 {
   "name": "giant-salamander-skillbox",
-  "version": "1.0.0-rc.3",
-  "releaseRef": "skillbox-2026.08.02-rc8",
+  "version": "1.0.0-rc.4",
+  "releaseRef": "skillbox-2026.08.10-rc10",
   "canonicalSource": "skills/",
   "skills": [
     {
@@ -16,8 +16,13 @@
     },
     {
       "name": "samplesize200",
-      "version": "1.0.0-rc.7",
-      "treeSha256": "b545c9eed17c2465207c8aad812284642229c620a2ddf46d19b2fbc1dfe82ae2"
+      "version": "1.0.0-rc.8",
+      "treeSha256": "000706124da6afba8db5b40a835a6a8f038d115075294a6e1e7070951e30496f"
+    },
+    {
+      "name": "draftcostsheet",
+      "version": "0.2.2",
+      "treeSha256": "dba90e11c787ff650338d6441798a6241286d7b35e2d7dcc244321cda85376a9"
     }
   ]
 }

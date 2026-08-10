@@ -1,4 +1,4 @@
-version: 1.0.0-rc.7
+version: 1.0.0-rc.8
 corrections:
 - correction_id: CIT-NAGASHIMA-ISSUE-001
   engine_release_corrected: samplesize200 Alpha 0.6.9

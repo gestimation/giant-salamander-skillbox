@@ -1,7 +1,7 @@
 product: samplesize200
 series: Giant Salamander Skillbox
 edition: StudySpec v2 Canonical Contract
-version: 1.0.0-rc.7
+version: 1.0.0-rc.8
 release_status: release_candidate
 final_public_api: true
 license:
