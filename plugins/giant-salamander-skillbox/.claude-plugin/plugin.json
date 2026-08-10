@@ -2,8 +2,8 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "giant-salamander-skillbox",
   "displayName": "Giant Salamander Skillbox",
-  "version": "1.0.0-rc.3",
-  "description": "Review statistical tables and citations, and calculate study sample sizes.",
+  "version": "1.0.0-rc.4",
+  "description": "Review tables and citations, plan study size, and draft medical costs.",
   "author": {
     "name": "gestimation",
     "url": "https://github.com/gestimation/giant-salamander-skillbox"
@@ -16,6 +16,7 @@
     "tables",
     "citations",
     "sample-size",
+    "medical-costs",
     "research"
   ],
   "skills": "./skills/"

@@ -8,15 +8,16 @@ Installable research-support skills for ChatGPT Work, Codex, and Claude Code.
 | --- | --- | --- |
 | [readatable](skills/readatable/) | 0.7.1 | Improves the readability and presentation of tables. |
 | [reviewcitation](skills/reviewcitation/) | 0.3.4 | Reviews citation placement and reference consistency. |
-| [samplesize200](skills/samplesize200/) | 1.0.0-rc.7 | Supports reproducible sample-size planning workflows. |
+| [samplesize200](skills/samplesize200/) | 1.0.0-rc.8 | Supports reproducible sample-size planning workflows. |
+| [draftcostsheet](skills/draftcostsheet/) | 0.2.2 | Drafts traceable medical-cost sheets from authoritative sources. |
 
 ## Installation
 
-### Recommended: install all three skills
+### Recommended: install all four skills
 
 Open the repository's
 [Releases](https://github.com/gestimation/giant-salamander-skillbox/releases)
-page and download `giant-salamander-skillbox-1.0.0-rc.3.zip`. Install the ZIP
+page and download `giant-salamander-skillbox-1.0.0-rc.4.zip`. Install the ZIP
 unchanged in ChatGPT Work, Codex, or Claude Code.
 
 For Codex marketplace installation:
@@ -37,8 +38,9 @@ the chat input:
 
 Claude Code namespaces the skills as
 `/giant-salamander-skillbox:readatable`,
-`/giant-salamander-skillbox:reviewcitation`, and
-`/giant-salamander-skillbox:samplesize200`.
+`/giant-salamander-skillbox:reviewcitation`,
+`/giant-salamander-skillbox:samplesize200`, and
+`/giant-salamander-skillbox:draftcostsheet`.
 
 ### Install one skill only
 
@@ -46,7 +48,7 @@ Download the corresponding single-skill ZIP from the Releases page and install
 it unchanged in ChatGPT Work or Codex.
 
 Do not extract or repackage a ZIP. The all-in-one plugin contains both
-`.codex-plugin/plugin.json` and `.claude-plugin/plugin.json`, plus all three
+`.codex-plugin/plugin.json` and `.claude-plugin/plugin.json`, plus all four
 skills. The individual ZIPs remain one-skill plugins for ChatGPT Work and Codex.
 
 The directories under `skills/` are the canonical skill sources. The release
@@ -59,14 +61,14 @@ included in the plugin runtime package.
 
 ## Runtime requirements
 
-readatable and reviewcitation are instruction-only skills.
+readatable, reviewcitation, and draftcostsheet are instruction-only skills.
 
 samplesize200 requires Python 3.10 or later and SciPy 1.11 or later in the execution environment. Its remaining runtime files, including its vendored YAML dependency, are included in the skill directory. Start with the [quick guide](skills/samplesize200/references/samplesize200_quick_guide.md); the [Python API](skills/samplesize200/references/PYTHON_API_1_0.md) and [solution catalog](skills/samplesize200/references/SOLUTION_CATALOG_1_0.md) provide further detail.
 
 ## Naming
 
 Skill names are written in lowercase everywhere: `readatable`,
-`reviewcitation`, and `samplesize200`. Release ZIP filenames use the same
+`reviewcitation`, `samplesize200`, and `draftcostsheet`. Release ZIP filenames use the same
 lowercase names.
 
 ## Release integrity

@@ -5,18 +5,19 @@
 
 ## 初めて使う場合
 
-3スキルをまとめた`giant-salamander-skillbox`のインストールを推奨します。
+4スキルをまとめた`giant-salamander-skillbox`のインストールを推奨します。
 
 収録スキル：
 
 - `readatable`：統計表を読みやすく再構成する
 - `reviewcitation`：引用と参考文献を点検する
 - `samplesize200`：研究に必要なサンプルサイズを設計する
+- `draftcostsheet`：出典と計算過程を追える医療費シートを作成する
 
 ## ZIPによる手動インストール
 
 1. [GitHub Releases](https://github.com/gestimation/giant-salamander-skillbox/releases)を開く。
-2. 3スキルを収録した`giant-salamander-skillbox-1.0.0-rc.3.zip`、または必要な
+2. 4スキルを収録した`giant-salamander-skillbox-1.0.0-rc.4.zip`、または必要な
    スキルだけを収録した個別プラグインZIPをダウンロードする。
 3. ChatGPT Work、CodexまたはClaude Codeのプラグイン画面で、ZIPを展開・再圧縮
    せず、そのまま指定してインストールする。
@@ -37,7 +38,7 @@ codex plugin add giant-salamander-skillbox@giant-salamander-skillbox
 ```
 
 インストール後は新しいタスクを開始し、`$readatable`、`$reviewcitation`、
-`$samplesize200`を指定して動作を確認します。
+`$samplesize200`、`$draftcostsheet`を指定して動作を確認します。
 
 ## Claude CodeでMarketplaceを使う
 
@@ -55,11 +56,12 @@ Claude Code Desktopでは、チャット入力欄から次のスラッシュコ�
 /giant-salamander-skillbox:readatable
 /giant-salamander-skillbox:reviewcitation
 /giant-salamander-skillbox:samplesize200
+/giant-salamander-skillbox:draftcostsheet
 ```
 
 ## 実行環境
 
-`readatable`と`reviewcitation`は指示中心のスキルです。`samplesize200`は実行環境に
+`readatable`、`reviewcitation`、`draftcostsheet`は指示中心のスキルです。`samplesize200`は実行環境に
 Python 3.10以上とSciPy 1.11以上を必要とします。依存関係がない場合は、計算結果を
 推測せず、不足している実行環境を確認してください。
 

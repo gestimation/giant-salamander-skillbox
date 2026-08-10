@@ -4,7 +4,7 @@
     "name": "gestimation",
     "url": "https://github.com/gestimation/giant-salamander-skillbox"
   },
-  "description": "Review statistical tables and citations, and calculate study sample sizes.",
+  "description": "Review tables and citations, plan study size, and draft medical costs.",
   "plugins": [
     {
       "name": "giant-salamander-skillbox",
@@ -13,10 +13,10 @@
         "source": "git-subdir",
         "url": "https://github.com/gestimation/giant-salamander-skillbox.git",
         "path": "plugins/giant-salamander-skillbox",
-        "ref": "skillbox-2026.08.02-rc8"
+        "ref": "skillbox-2026.08.10-rc10"
       },
-      "description": "Review statistical tables and citations, and calculate study sample sizes.",
-      "version": "1.0.0-rc.3",
+      "description": "Review tables and citations, plan study size, and draft medical costs.",
+      "version": "1.0.0-rc.4",
       "author": {
         "name": "gestimation",
         "url": "https://github.com/gestimation/giant-salamander-skillbox"
@@ -29,6 +29,7 @@
         "tables",
         "citations",
         "sample-size",
+        "medical-costs",
         "research"
       ],
       "category": "Research"

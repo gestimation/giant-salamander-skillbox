@@ -3,13 +3,13 @@
 この文書は、`Giant Salamander Skillbox`をSkills-onlyプラグインとして申請する際に、
 OpenAI Platformへ転記するための原稿です。公開表示の主言語は英語とし、日本語版も
 併記します。申請対象はGitHub Releaseと同一内容の
-`giant-salamander-skillbox-1.0.0-rc.3.zip`です。
+`giant-salamander-skillbox-1.0.0-rc.4.zip`です。
 
 ## 1. Submission type
 
 - Submission type: Skills only
 - Plugin ID: `giant-salamander-skillbox`
-- Version: `1.0.0-rc.3`
+- Version: `1.0.0-rc.4`
 - Developer identity: `gestimation`
 - Category: Productivity
 - Supported languages: English and Japanese
@@ -29,13 +29,13 @@ Giant Salamander Skillbox
 ### Short description
 
 ```text
-Tables, citations, sample size
+Tables, citations, size & cost
 ```
 
 ### Long description
 
 ```text
-Giant Salamander Skillbox combines readatable for reconstructing statistical tables, reviewcitation for checking citations and public bibliographic records when host web access is available, and samplesize200 for validated sample-size, event, power, and detectable-effect calculations. No separate gestimation account or authentication is required, and user content is not sent to a gestimation-operated server.
+Giant Salamander Skillbox combines readatable for reconstructing statistical tables, reviewcitation for checking citations and public bibliographic records when host web access is available, and samplesize200 for validated sample-size, event, power, and detectable-effect calculations. It also includes draftcostsheet for traceable medical-cost sheets using authoritative unit-cost sources when host web access is available. No separate gestimation account or authentication is required, and user content is not sent to a gestimation-operated server.
 ```
 
 ## 3. 公開表示用文面 — 日本語
@@ -49,13 +49,13 @@ Giant Salamander Skillbox
 ### 短い説明
 
 ```text
-統計表と引用文献を点検し、研究に必要なサンプルサイズを計算します。
+統計表・引用・研究規模・医療費推計を支援します。
 ```
 
 ### 詳しい説明
 
 ```text
-Giant Salamander Skillboxは、統計表を再構成するreadatable、ホスト環境のウェブアクセスが利用できる場合に引用と公開書誌情報を点検するreviewcitation、検証済みの方法でサンプルサイズ、イベント数、達成検出力、検出可能差を計算するsamplesize200をまとめた研究支援プラグインです。gestimationの別アカウントや独自認証は不要で、利用者のコンテンツをgestimationが運用するサーバーへ送信しません。
+Giant Salamander Skillboxは、統計表を再構成するreadatable、ホスト環境のウェブアクセスが利用できる場合に引用と公開書誌情報を点検するreviewcitation、検証済みの方法でサンプルサイズ、イベント数、達成検出力、検出可能差を計算するsamplesize200、ならびに公的単価資料を用いて追跡可能な医療費シートを作成するdraftcostsheetをまとめた研究支援プラグインです。gestimationの別アカウントや独自認証は不要で、利用者のコンテンツをgestimationが運用するサーバーへ送信しません。
 ```
 
 ## 4. Listing metadata
@@ -72,20 +72,20 @@ Giant Salamander Skillboxは、統計表を再構成するreadatable、ホスト
 
 1. `Use readatable to reconstruct this statistical table while preserving headers, units, sample sizes, and footnotes.`
 2. `Use reviewcitation to reconcile in-text citations with the reference list and flag items needing verification.`
-3. `Use samplesize200 to select a validated method and calculate the required sample size for this study.`
+3. `Use samplesize200 for study size or draftcostsheet for a source-linked medical-cost sheet.`
 
 ## 6. スタータープロンプト — 日本語
 
 1. `readatableを使って、この統計表を見出し、単位、対象者数、脚注を保った読みやすいMarkdown表に再構成して。`
 2. `reviewcitationを使って、本文中の引用と参考文献一覧を照合し、バンクーバー系書式を点検して、確認が必要な項目を報告して。`
-3. `samplesize200を使って、この研究デザインに適した検証済みの計算方法を選び、必要なサンプルサイズを計算して。`
+3. `samplesize200で研究規模を設計するか、draftcostsheetで出典付きの医療費シートを作成して。`
 
 ## 7. Data handling and external access — English
 
 ### Concise portal answer
 
 ```text
-No user content is transmitted to or retained by gestimation. The plugin has no developer-operated server, user account, authentication system, telemetry, or external write action. Processing occurs in the execution environment provided by ChatGPT or Codex. When the user requests external verification, reviewcitation may use host-provided web search to consult public sources such as PubMed. samplesize200 runs bundled calculation scripts in the host-provided execution environment. Data handled by ChatGPT, Codex, web search providers, or other host-provided services remains subject to those providers' terms and retention policies.
+No user content is transmitted to or retained by gestimation. The plugin has no developer-operated server, user account, authentication system, telemetry, or external write action. Processing occurs in the execution environment provided by ChatGPT or Codex. When the user requests external verification, reviewcitation may use host-provided web search to consult public sources such as PubMed, and draftcostsheet may consult public clinical and unit-cost sources. samplesize200 runs bundled calculation scripts in the host-provided execution environment. Data handled by ChatGPT, Codex, web search providers, or other host-provided services remains subject to those providers' terms and retention policies.
 ```
 
 ### Permissions and external services
@@ -94,25 +94,25 @@ No user content is transmitted to or retained by gestimation. The plugin has no 
 - Developer-operated telemetry or analytics: None
 - Developer authentication: None
 - External write actions: None
-- External read access: Only when requested and available through host-provided tools; for example, PubMed verification by `reviewcitation`
+- External read access: Only when requested and available through host-provided tools; for example, PubMed verification by `reviewcitation` or public unit-cost retrieval by `draftcostsheet`
 - Sensitive data requirement: None. Users should avoid sharing information they are not authorized to process in their host environment.
 
 ## 8. データ処理と外部アクセス — 日本語
 
 ```text
-利用者のコンテンツをgestimationへ送信またはgestimationが管理する環境へ保存することはありません。本プラグインには、開発者が運用するサーバー、利用者アカウント、独自認証、遠隔計測、外部への書き込み操作がありません。処理はChatGPTまたはCodexが提供する実行環境で行われます。利用者が外部確認を依頼した場合、reviewcitationはホスト環境のウェブ検索を使ってPubMedなどの公開情報を参照することがあります。samplesize200は同梱された計算スクリプトをホスト環境で実行します。ChatGPT、Codex、検索サービスなどが取り扱うデータには、各サービスの利用規約および保存方針が適用されます。
+利用者のコンテンツをgestimationへ送信またはgestimationが管理する環境へ保存することはありません。本プラグインには、開発者が運用するサーバー、利用者アカウント、独自認証、遠隔計測、外部への書き込み操作がありません。処理はChatGPTまたはCodexが提供する実行環境で行われます。利用者が外部確認を依頼した場合、reviewcitationはホスト環境のウェブ検索を使ってPubMedなどの公開情報を参照し、draftcostsheetは公開された臨床資料や単価資料を参照することがあります。samplesize200は同梱された計算スクリプトをホスト環境で実行します。ChatGPT、Codex、検索サービスなどが取り扱うデータには、各サービスの利用規約および保存方針が適用されます。
 ```
 
 ## 9. Reviewer notes — English
 
 ```text
-This is a skills-only plugin with no MCP server and no custom UI. It requires no authentication, test account, demo credentials, or external setup, and it performs no external write actions. The submitted ZIP uses the same file tree tested in ChatGPT, Codex, and Claude Code. Positive test case 3 uses host-provided web search to verify a PubMed record; the remaining test cases require no developer-operated service. The plugin includes three independently triggered skills: readatable, reviewcitation, and samplesize200.
+This is a skills-only plugin with no MCP server and no custom UI. It requires no authentication, test account, demo credentials, or external setup, and it performs no external write actions. The submitted ZIP uses the same file tree tested in ChatGPT, Codex, and Claude Code. Web-enabled test cases use host-provided search to verify public bibliographic or unit-cost sources; the remaining test cases require no developer-operated service. The plugin includes four independently triggered skills: readatable, reviewcitation, samplesize200, and draftcostsheet.
 ```
 
 ## 10. Release notes — English
 
 ```text
-Initial public submission of Giant Salamander Skillbox, a skills-only research plugin containing readatable 0.7.1, reviewcitation 0.3.4, and samplesize200 1.0.0-rc.7. It reconstructs statistical tables, reviews scientific citations, and performs registered sample-size and power calculations. The submitted bundle is reproducibly built from the public GitHub release sources and has been tested in ChatGPT, Codex, and Claude Code. It contains no MCP server, custom UI, authentication, developer-operated telemetry, or external write action. No test account or setup is required.
+Giant Salamander Skillbox 1.0.0-rc.4 adds draftcostsheet 0.2.2 to readatable 0.7.1, reviewcitation 0.3.4, and samplesize200 1.0.0-rc.8. The new skill drafts traceable medical-cost sheets, retrieves authoritative unit-cost sources when host web access is available, and reports partial or unresolved estimates instead of inventing missing values. samplesize200 rc.8 is a packaging-normalization release with no engine or numerical-method change. The submitted bundle is reproducibly built from the public GitHub release sources. It contains no MCP server, custom UI, authentication, developer-operated telemetry, or external write action. No test account or setup is required.
 ```
 
 ## 11. 公開地域

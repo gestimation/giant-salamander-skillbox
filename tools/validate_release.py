@@ -238,7 +238,7 @@ def validate_openai_submission_copy() -> None:
 
 def validate_bundle_tree() -> int:
     if not BUNDLE_DIR.is_dir():
-        fail("Missing generated three-skill plugin directory")
+        fail("Missing generated multi-skill plugin directory")
 
     expected_top_level = {
         ".codex-plugin",
@@ -489,7 +489,7 @@ def validate_archives() -> int:
             and PurePosixPath(name).parts[0] == "skills"
         }
         if archived_skills != set(PLUGINS):
-            fail(f"{BUNDLE_FILENAME} must contain exactly the three public skills")
+            fail(f"{BUNDLE_FILENAME} must contain exactly the configured public skills")
 
         archived_files = {name: archive.read(name) for name in names}
         expected_files = {

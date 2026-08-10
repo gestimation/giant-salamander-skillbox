@@ -10,7 +10,7 @@
         "source": "git-subdir",
         "url": "https://github.com/gestimation/giant-salamander-skillbox.git",
         "path": "./plugins/giant-salamander-skillbox",
-        "ref": "skillbox-2026.08.02-rc8"
+        "ref": "skillbox-2026.08.10-rc10"
       },
       "policy": {
         "installation": "AVAILABLE",

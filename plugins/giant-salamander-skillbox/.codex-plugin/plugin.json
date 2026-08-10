@@ -1,7 +1,7 @@
 {
   "name": "giant-salamander-skillbox",
-  "version": "1.0.0-rc.3",
-  "description": "Review statistical tables and citations, and calculate study sample sizes.",
+  "version": "1.0.0-rc.4",
+  "description": "Review tables and citations, plan study size, and draft medical costs.",
   "author": {
     "name": "gestimation",
     "url": "https://github.com/gestimation/giant-salamander-skillbox"
@@ -14,13 +14,14 @@
     "tables",
     "citations",
     "sample-size",
+    "medical-costs",
     "research"
   ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Giant Salamander Skillbox",
-    "shortDescription": "Tables, citations, sample size",
-    "longDescription": "Giant Salamander Skillbox combines readatable for reconstructing statistical tables, reviewcitation for checking citations and public bibliographic records when host web access is available, and samplesize200 for validated sample-size, event, power, and detectable-effect calculations. No separate gestimation account or authentication is required, and user content is not sent to a gestimation-operated server.",
+    "shortDescription": "Tables, citations, size & cost",
+    "longDescription": "Giant Salamander Skillbox combines readatable for reconstructing statistical tables, reviewcitation for checking citations and public bibliographic records when host web access is available, and samplesize200 for validated sample-size, event, power, and detectable-effect calculations. It also includes draftcostsheet for traceable medical-cost sheets using authoritative unit-cost sources when host web access is available. No separate gestimation account or authentication is required, and user content is not sent to a gestimation-operated server.",
     "developerName": "gestimation",
     "category": "Productivity",
     "capabilities": [
@@ -32,7 +33,7 @@
     "defaultPrompt": [
       "Use readatable to reconstruct this statistical table while preserving headers, units, sample sizes, and footnotes.",
       "Use reviewcitation to reconcile in-text citations with the reference list and flag items needing verification.",
-      "Use samplesize200 to select a validated method and calculate the required sample size for this study."
+      "Use samplesize200 for study size or draftcostsheet for a source-linked medical-cost sheet."
     ]
   }
 }
