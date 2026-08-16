@@ -6,14 +6,14 @@ from copy import deepcopy
 
 
 REPOSITORY_URL = "https://github.com/gestimation/giant-salamander-skillbox"
-RELEASE_REF = "skillbox-2026.08.10-rc10"
+RELEASE_REF = "skillbox-2026.08.16"
 AUTHOR = {
     "name": "gestimation",
     "url": REPOSITORY_URL,
 }
 
 BUNDLE_NAME = "giant-salamander-skillbox"
-BUNDLE_VERSION = "1.0.0-rc.4"
+BUNDLE_VERSION = "1.0.0"
 BUNDLE_FILENAME = f"{BUNDLE_NAME}-{BUNDLE_VERSION}.zip"
 BUNDLE_DESCRIPTION = (
     "Review tables and citations, plan study size, and draft medical costs."
@@ -62,6 +62,9 @@ PUBLISHED_ASSET_SHA256 = {
     "samplesize200-1.0.0-rc.8.zip": (
         "88643f5c1635ae2371cbfd3db5a381fa6593a1540bf6360d1f53abc02091a1f5"
     ),
+    "samplesize200-1.0.0-rc.9.zip": (
+        "971aa1f7234019df167266e2630344a759905192c11b394da34e07a461544cf5"
+    ),
     "draftcostsheet-0.2.2.zip": (
         "cfbcedb66cb6a398a8ebe5c3dafe9b9fedb22dfbac35ae0f57a9d51c9410fdbc"
     ),
@@ -99,8 +102,8 @@ PLUGINS = {
         },
     },
     "samplesize200": {
-        "version": "1.0.0-rc.8",
-        "filename": "samplesize200-1.0.0-rc.8.zip",
+        "version": "1.0.0-rc.9",
+        "filename": "samplesize200-1.0.0-rc.9.zip",
         "description": "Plan and calculate study size with 188 validated calculators.",
         "keywords": ["sample-size", "power", "statistics", "study-design"],
         "interface": {

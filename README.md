@@ -8,7 +8,7 @@ Installable research-support skills for ChatGPT Work, Codex, and Claude Code.
 | --- | --- | --- |
 | [readatable](skills/readatable/) | 0.7.1 | Improves the readability and presentation of tables. |
 | [reviewcitation](skills/reviewcitation/) | 0.3.4 | Reviews citation placement and reference consistency. |
-| [samplesize200](skills/samplesize200/) | 1.0.0-rc.8 | Supports reproducible sample-size planning workflows. |
+| [samplesize200](skills/samplesize200/) | 1.0.0-rc.9 | Supports reproducible sample-size planning workflows. |
 | [draftcostsheet](skills/draftcostsheet/) | 0.2.2 | Drafts traceable medical-cost sheets from authoritative sources. |
 
 ## Installation
@@ -17,7 +17,7 @@ Installable research-support skills for ChatGPT Work, Codex, and Claude Code.
 
 Open the repository's
 [Releases](https://github.com/gestimation/giant-salamander-skillbox/releases)
-page and download `giant-salamander-skillbox-1.0.0-rc.4.zip`. Install the ZIP
+page and download `giant-salamander-skillbox-1.0.0.zip`. Install the ZIP
 unchanged in ChatGPT Work, Codex, or Claude Code.
 
 For Codex marketplace installation:
