@@ -3,13 +3,13 @@
 この文書は、`Giant Salamander Skillbox`をSkills-onlyプラグインとして申請する際に、
 OpenAI Platformへ転記するための原稿です。公開表示の主言語は英語とし、日本語版も
 併記します。申請対象はGitHub Releaseと同一内容の
-`giant-salamander-skillbox-1.0.0-rc.4.zip`です。
+`giant-salamander-skillbox-1.0.0.zip`です。
 
 ## 1. Submission type
 
 - Submission type: Skills only
 - Plugin ID: `giant-salamander-skillbox`
-- Version: `1.0.0-rc.4`
+- Version: `1.0.0`
 - Developer identity: `gestimation`
 - Category: Productivity
 - Supported languages: English and Japanese
@@ -106,13 +106,13 @@ No user content is transmitted to or retained by gestimation. The plugin has no 
 ## 9. Reviewer notes — English
 
 ```text
-This is a skills-only plugin with no MCP server and no custom UI. It requires no authentication, test account, demo credentials, or external setup, and it performs no external write actions. The submitted ZIP uses the same file tree tested in ChatGPT, Codex, and Claude Code. Web-enabled test cases use host-provided search to verify public bibliographic or unit-cost sources; the remaining test cases require no developer-operated service. The plugin includes four independently triggered skills: readatable, reviewcitation, samplesize200, and draftcostsheet.
+This is a skills-only plugin with no MCP server and no custom UI. It requires no authentication, test account, demo credentials, or external setup, and it performs no external write actions. The four-skill release candidate was installed and exercised successfully in ChatGPT, Codex, and Claude Code before stable promotion; the stable package changes release metadata and product documentation, not skill behavior or numerical methods. Web-enabled test cases use host-provided search to verify public bibliographic or unit-cost sources; the remaining test cases require no developer-operated service. The plugin includes four independently triggered skills: readatable, reviewcitation, samplesize200, and draftcostsheet.
 ```
 
 ## 10. Release notes — English
 
 ```text
-Giant Salamander Skillbox 1.0.0-rc.4 adds draftcostsheet 0.2.2 to readatable 0.7.1, reviewcitation 0.3.4, and samplesize200 1.0.0-rc.8. The new skill drafts traceable medical-cost sheets, retrieves authoritative unit-cost sources when host web access is available, and reports partial or unresolved estimates instead of inventing missing values. samplesize200 rc.8 is a packaging-normalization release with no engine or numerical-method change. The submitted bundle is reproducibly built from the public GitHub release sources. It contains no MCP server, custom UI, authentication, developer-operated telemetry, or external write action. No test account or setup is required.
+Giant Salamander Skillbox 1.0.0 is the first stable four-skill bundle. It contains readatable 0.7.1, reviewcitation 0.3.4, samplesize200 1.0.0-rc.9, and draftcostsheet 0.2.2. The release-candidate bundle was installed and exercised successfully in ChatGPT Work, Codex, and Claude Code before stable promotion. samplesize200 rc.9 changes only product and distribution documentation; its engine remains 0.6.9 and its numerical methods are unchanged. The submitted bundle is reproducibly built from the public GitHub release sources. It contains no MCP server, custom UI, authentication, developer-operated telemetry, or external write action. No test account or setup is required.
 ```
 
 ## 11. 公開地域

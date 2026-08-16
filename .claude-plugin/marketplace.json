@@ -13,10 +13,10 @@
         "source": "git-subdir",
         "url": "https://github.com/gestimation/giant-salamander-skillbox.git",
         "path": "plugins/giant-salamander-skillbox",
-        "ref": "skillbox-2026.08.10-rc10"
+        "ref": "skillbox-2026.08.16"
       },
       "description": "Review tables and citations, plan study size, and draft medical costs.",
-      "version": "1.0.0-rc.4",
+      "version": "1.0.0",
       "author": {
         "name": "gestimation",
         "url": "https://github.com/gestimation/giant-salamander-skillbox"

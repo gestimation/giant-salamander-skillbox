@@ -6,9 +6,9 @@ samplesize200 is a Giant Salamander Skillbox skill that organizes study plans th
 
 ## Installation
 
-The official distribution source is [GitHub Releases](https://github.com/gestimation/giant-salamander-skillbox/releases). For a first installation, use the all-in-one plugin `giant-salamander-skillbox-1.0.0-rc.4.zip`, which contains `readatable`, `reviewcitation`, `samplesize200`, and `draftcostsheet`. Install the ZIP unchanged from the plugin screen in ChatGPT Work, Codex, or Claude Code; do not extract or repackage it.
+The official distribution source is [GitHub Releases](https://github.com/gestimation/giant-salamander-skillbox/releases). For a first installation, use the all-in-one plugin `giant-salamander-skillbox-1.0.0.zip`, which contains `readatable`, `reviewcitation`, `samplesize200`, and `draftcostsheet`. Install the ZIP unchanged from the plugin screen in ChatGPT Work, Codex, or Claude Code; do not extract or repackage it.
 
-To install only samplesize200, install the single-skill plugin `samplesize200-1.0.0-rc.8.zip` in ChatGPT Work or Codex. Do not install both the all-in-one plugin and the single-skill plugin.
+To install only samplesize200, install the single-skill plugin `samplesize200-1.0.0-rc.9.zip` in ChatGPT Work or Codex. Do not install both the all-in-one plugin and the single-skill plugin.
 
 For Codex marketplace installation, run:
 
